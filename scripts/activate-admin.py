@@ -138,7 +138,9 @@ def http():
     LINK.symlink_to(SITE)
     challenge=ROOT/'lab-public/.well-known/acme-challenge/fallbackhosting-activation'
     for directory in [ROOT/'lab-public/.well-known', challenge.parent]:
-        directory.mkdir(mode=0o755,exist_ok=True)
+        if not directory.exists():
+            directory.mkdir(mode=0o755)
+            directory.chmod(0o755)
         assert directory.stat().st_mode & 0o005 == 0o005, 'Challenge directory not readable/traversable'
     install_bytes(challenge,b'fallbackhosting-activation-v1\n')
     reload_nginx()

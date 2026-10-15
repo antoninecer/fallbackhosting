@@ -1,6 +1,6 @@
 # Current project state
 
-Updated 2026-10-15T09:04:58Z, Codex. Observations are point-in-time, not live monitoring.
+Updated 2026-10-15T11:41:11Z, Codex. Observations are point-in-time, not live monitoring.
 
 ## Milestones
 
@@ -38,3 +38,9 @@ Operator report: technical SSH setup, initially absent destination sudo/Docker p
 ## Multi-node admin local verification
 
 Thirteen tests PASS (eight PHP admin HTTP/concurrency tests, five public-export tests), PHP syntax checks PASS, actual seeded admin loopback login/list(ctx1 Docker/LXC/prior timestamps)/logout PASS without inventory mutation. Temporary test servers stopped. No screenshots/browser visual QA available; no live pool/vhost/cert/account changes. Private JSON 0700/0600, initial credential securely generated and not printed, auth uses Argon2id hash. Inventory one gateway/multiple nodes is a reviewable extension of existing home-node pattern, not a replacement for Coolify or fallback architecture. Docs: MULTI-NODE-ADMIN.md and ADMIN-ACTIVATION.md.
+
+## Approved lab activation in progress
+
+Operator explicitly approved exact ADMIN-ACTIVATION.md scope and Git push. Tooling/progress committed and pushed as a0f67d9. Prepare phase PASS at 11:38:31Z: private verified backup, dedicated unprivileged account/release/data/FPM pool and graceful reload; pre-existing shared config hashes unchanged. HTTP challenge vhost activated after exact-path recovery from restrictive-directory-mode failure; HTTP challenge/canaries PASS. Dedicated lab certificate issued, expires 2027-01-13. Post-certificate canary found separate Quantum API HTTP 429 versus earlier 200; cards32.php remains 200/TLS valid. HTTPS activation paused pending canary reconciliation. Do not issue certificate again; certificate.started without done is a post-check interruption, not an issuance failure.
+
+After every meaningful result publish reviewed public event + checkpoint via scripts/record-progress.py and verify public HTTPS before next phase. Public page now includes dated completed steps/errors, not just generic task status. No additional operator approval required within approved activation scope.

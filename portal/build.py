@@ -33,6 +33,18 @@ TASKS = {
  "FH-0018": "Kontrola a opakovatelné nasazení administrace",
 }
 
+PUBLIC_EVENTS = {
+ "admin_canary_wait": "Kontrola před pokračováním: certifikát vydán, vedlejší API vrátilo HTTP 429. Čekáme na opakovanou kontrolu; chráněná referenční stránka je dostupná.",
+ "home_inventory_pass": "Dokončeno: ověření OS, prostředků, Dockeru a Compose domácího uzlu.",
+ "git_push_pass": "Dokončeno: projektové změny a postup nasazení odeslány do Gitu.",
+ "admin_prepare_pass": "Dokončeno: ověřená záloha, oddělený účet a PHP prostředí administrace; produkční kontroly prošly.",
+ "admin_http_failed": "Aktivace HTTP pozastavena: kontrola přístupu k nové ACME složce selhala před načtením konfigurace. Probíhá oprava.",
+ "admin_http_pass": "Dokončeno: HTTP ověření domény a ACME challenge; produkční kontroly prošly.",
+ "admin_certificate_pass": "Dokončeno: samostatný HTTPS certifikát pro lab.ventureout.cz vydán.",
+ "admin_https_pass": "Dokončeno: administrace na lab.ventureout.cz má platné HTTPS; přihlášení, vzhledové soubory a ochrana neveřejných cest ověřeny.",
+ "admin_login_pass": "Dokončeno: skutečné přihlášení administrátora, zobrazení ctx1 a odhlášení ověřeny.",
+}
+
 def rows(path, pattern):
     result = []
     for line in path.read_text().splitlines():
@@ -72,6 +84,12 @@ def public_data(root=ROOT):
         raise ValueError("Invalid checkpoint reference")
     result["checkpoint"] = Path(checkpoint).stem
     result["checkpoint_utc"] = datetime.strptime(Path(checkpoint).name[:16], "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).isoformat()
+    result["events"] = []
+    for event in state.get("public_events", []):
+        if set(event) != {"id", "utc"} or event["id"] not in PUBLIC_EVENTS:
+            raise ValueError("Unknown public event")
+        datetime.strptime(event["utc"], "%Y-%m-%dT%H:%M:%SZ")
+        result["events"].append({"title": PUBLIC_EVENTS[event["id"]], "utc": event["utc"]})
     result["generated_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     return result
 
@@ -82,6 +100,7 @@ def render(data):
     e = html.escape
     milestones = "".join(f'<li class="milestone"><span class="code">{m["id"]}</span><div><h3>{e(m["title"])}</h3>{badge(m["status"], "Částečně ověřeno" if m["id"] == "M01" and m["status"] == "NEEDS_TEST" else None)}</div></li>' for m in data["milestones"])
     tasks = "".join(f'<tr data-status="{t["status"]}"><td><span class="code">{t["id"]}</span></td><td>{e(t["title"])}</td><td>{t["milestone"]}</td><td>{badge(t["status"])}</td></tr>' for t in data["tasks"])
+    events = "".join(f'<li><time datetime="{e(event["utc"])}">{e(event["utc"])}</time><p>{e(event["title"])}</p></li>' for event in reversed(data["events"]))
     counts = {s: sum(t["status"] == s for t in data["tasks"]) for s in STATUSES}
     done = sum(m["status"] == "DONE" for m in data["milestones"])
     return f'''<!doctype html>
@@ -90,6 +109,7 @@ def render(data):
 <main><section class="hero" id="stav"><p class="eyebrow">VÝVOJ PLATFORMY / PRŮBĚŽNÝ ZÁZNAM</p><h1>Projekt roste.<br><span>Každý krok má svůj záznam.</span></h1><p class="intro">FallbackHosting propojí nasazování aplikací se samostatnou záložní verzí webu. Tady najdete, co už vzniklo, co čeká na ověření a kam směřujeme dál.</p><div class="hero-bottom"><a class="button" href="#ukoly">Zobrazit průběh <span aria-hidden="true">↘</span></a><span class="phase">Aktuální etapa <strong>{e(data['milestone'])} · {e(MILESTONES[int(data['milestone'][1:])])}</strong></span></div></section>
 <section class="stats" aria-label="Souhrn"><div><span>Dokončené milníky</span><strong>{done}<small> / {len(data['milestones'])}</small></strong></div><div><span>Hotové úkoly</span><strong>{counts['DONE']}</strong></div><div><span>Rozpracováno / ověřování</span><strong>{counts['IN_PROGRESS'] + counts['TESTING']}</strong></div><div><span>Čeká na podklady</span><strong>{counts['BLOCKED']}</strong></div></section>
 <section class="overview"><article class="panel"><p class="eyebrow">CO UŽ MÁME</p><h2>Pevný základ pro další práci.</h2><ul class="checks"><li>Projektová dokumentace a pravidla bezpečných změn</li><li>Obnova práce z uložených checkpointů</li><li>Úvodní audit infrastruktury a návrh projektového centra</li><li>Veřejný přehled projektu na vlastní HTTPS adrese</li></ul><p class="muted">Oracle, SSH a vytvoření i úklid testovacího Docker kontejneru jsou ověřené. U domácího uzlu jsou ověřeny také OS, prostředky a Compose. Zbývá nezávislá kontrola SSH identity, externí aplikační kontrola a doplnění zálohových postupů. Automatické přepínání do záložního režimu zatím není zprovozněno.</p></article><article class="panel next"><p class="eyebrow">TEĎ A POTOM</p><h2>Připravujeme vstup do platformy a připojení serveru.</h2><p>Aktuální krok: {e(data['next_task'])}. Průběh jednotlivých úkolů najdete v přehledu níže.</p><p class="muted">Veřejná prezentace je pouze pro čtení. Chráněné řídicí centrum je další součástí plánu.</p></article></section>
+<section id="posledni-kroky"><h2>Poslední dokončené kroky a výsledky</h2><ol>{events}</ol></section>
 <section id="milniky"><div class="section-head"><div><p class="eyebrow">CESTA K PRVNÍMU VYDÁNÍ</p><h2>Milníky projektu</h2></div><p class="muted">Hotovo znamená ověřeno a zaznamenáno.</p></div><ol class="roadmap">{milestones}</ol></section>
 <section id="ukoly"><div class="section-head"><div><p class="eyebrow">KONKRÉTNÍ KROKY</p><h2>Pracovní přehled</h2></div><label class="filter">Zobrazit <select id="task-filter"><option value="ALL">Všechny úkoly</option><option value="DONE">Hotové</option><option value="ACTIVE">Rozpracované</option><option value="BLOCKED">Čekající</option><option value="READY">Připravené</option></select></label></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Úkol</th><th>Etapa</th><th>Stav</th></tr></thead><tbody>{tasks}</tbody></table></div><p id="filter-result" role="status" class="muted"></p></section>
 <section class="record"><div><p class="eyebrow">POSLEDNÍ ULOŽENÝ ZÁZNAM</p><h2>Stav s časem a kontextem.</h2><p class="muted">Tato stránka zobrazuje uložený stav projektu. Není to živý monitoring ani potvrzení, že agent právě pracuje.</p></div><dl><dt>Checkpoint</dt><dd class="checkpoint">{e(data['checkpoint'])}</dd><dt>Čas checkpointu (UTC)</dt><dd><time datetime="{e(data['checkpoint_utc'])}">{e(data['checkpoint_utc'])}</time></dd><dt>Vygenerování stránky (UTC)</dt><dd><time datetime="{e(data['generated_utc'])}">{e(data['generated_utc'])}</time></dd></dl></section>

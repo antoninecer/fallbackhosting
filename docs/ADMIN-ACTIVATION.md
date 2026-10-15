@@ -30,7 +30,7 @@ The app has no remote actions; per-server fields are stored configuration, not a
 
 If syntax fails, do not reload. Preserve failure evidence privately. Disable only the newly created lab symlink by moving it to this backup directory; test Nginx and reload only if it was activated. Existing project site and other virtual hosts remain enabled. Move only the new FPM pool to backup, test FPM and gracefully reload after its Nginx use is disabled; never overwrite all shared config from backup. Keep dedicated certificate and private inventory/auth data for reconciliation, do not delete automatically. For a later app-only rollback atomically select the prior reviewed release and recheck auth/inventory compatibility; no data migration is present. Keep new service user unused until operator approves cleanup; no automatic user deletion. Recheck protected canaries and record checkpoint after rollback.
 
-No approval is inferred from preparation or elapsed time. All targets/actions above need the operator's exact scope confirmation before execution.
+No approval is inferred from preparation or elapsed time. The operator has explicitly confirmed the targets/actions above.
 
 ## Repeatable execution from Git
 
@@ -48,3 +48,11 @@ sudo -n python3 scripts/activate-admin.py verify
 The fixed private backup directory stores verified backup archive, existing-config hashes and per-phase started/done timestamps. A phase is never blindly replayed: started without done means UNKNOWN; inspect actual files, services and certificate first. On a fresh server execute phases in order. On this server use verify for repeatable read-only verification. Do not delete markers to force a replay. A later release uses an explicitly reviewed release-update procedure, not this first-install tool.
 
 Recovery within the approved scope: `sudo -n python3 scripts/activate-admin.py rollback`. It disables only the newly created lab vhost/pool, syntax-tests before graceful reload, retains all data, account, release and certificate, and checks unchanged pre-existing configs and protected canaries. Failure during rollback requires reconciliation rather than rerun. No complete shared-config restore is automatic.
+
+## First execution evidence and interruption reconciliation
+
+Prepare passed with private journal timestamp 2026-10-15T11:38:31Z. First HTTP attempt stopped before reload because a newly created challenge directory inherited restrictive umask. Exact partial paths were inspected; only that new directory was corrected, remaining HTTP operations performed once, and http.done recorded. Script now sets the intended 0755 mode explicitly on directories it creates.
+
+Dedicated certificate was successfully issued; post-check detected HTTP 429 from the separate Quantum API root while protected cards32.php remained 200 with valid TLS. Certificate issuance must never be repeated to repair this check. Preserve certificate.started, inspect existing SAN/expiry and wait for baseline restoration before marking certificate.done and proceeding. No other API configuration or rate-limit changes are authorized. Raw API output and logs are not exported.
+
+After **each** verified or failed phase, use `python3 scripts/record-progress.py <reviewed-event-id> --evidence '<sanitized evidence>' --next '<exact next action>'`; this writes canonical state/checkpoint, rebuilds public artifacts and checks the visible event/checkpoint over HTTPS before further work. Public text comes only from reviewed ID mappings in portal/build.py, never from free-form evidence or private inventory.

@@ -55,6 +55,17 @@ class PublicPortalTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 portal.public_data(root)
 
+    def test_public_events_require_reviewed_ids_and_valid_timestamps(self):
+        for event in ({"id":"PRIVATE_UNKNOWN","utc":"2026-10-15T11:00:00Z"},
+                      {"id":"admin_prepare_pass","utc":"invalid"},
+                      {"id":"admin_prepare_pass","utc":"2026-10-15T11:00:00Z","raw":"PRIVATE"}):
+            with self.subTest(event=event), tempfile.TemporaryDirectory() as temp:
+                root=self.fixture(temp)
+                path=root/"state/current.json"
+                state=json.loads(path.read_text());state["public_events"]=[event]
+                path.write_text(json.dumps(state))
+                with self.assertRaises(ValueError): portal.public_data(root)
+
     def test_path_traversal_is_rejected(self):
         with tempfile.TemporaryDirectory() as temp:
             root = self.fixture(temp)

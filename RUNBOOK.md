@@ -68,3 +68,7 @@ Before any unattended broker, review and approve its exact deployment and the ag
 ## Private server administration (local only)
 
 See docs/MULTI-NODE-ADMIN.md and ADMIN-ACTIVATION.md. Source admin/public is sole app document root; never serve admin/, .local/ or repo root. Actual ctx1 inventory/auth are private local working data, not Git/export. Existing bootstrap/seed refuse overwrite: reconcile files first on resume. Initial unique credential is available only to operator in ignored .local/operator/initial-admin.json; retrieve in own private SSH terminal, never paste credentials into chat or command output captured by agent. Application auth JSON contains hash only. No public activation until isolated web user/pool/vhost exact approval; use no SSH/Docker privileges for web runtime. Local tests use disposable data and short-lived loopback listeners, not live services. Back up private inventory/auth before future mutation, preserve lock/revision/audit and do not overwrite after interruption.
+
+## Mandatory public progress after each stage
+
+After each meaningful completed or failed stage, write checkpoint and canonical state, append a reviewed public_events ID/UTC in state/current.json, run `python3 portal/build.py`, and verify the new event over HTTPS on project.lab.ventureout.cz before beginning another stage. Public labels are fixed reviewed mappings in portal/build.py; never export raw checkpoint text, credentials or inventory. Saved timestamps are evidence, not agent heartbeat. Commit/push verified increments under existing operator authorization.
