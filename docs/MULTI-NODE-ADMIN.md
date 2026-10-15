@@ -47,3 +47,7 @@ Black-box tests in tests/test_admin.py run PHP only on an ephemeral loopback lis
 Production defaults require configured HTTPS origin; loopback mode must not be set in deployment. No live service, FPM pool, Nginx host, certificate, OS user or home change performed for this feature. Browser/mobile visual review is still unverified if no browser is available. Actual local ctx1 login check is reported separately in checkpoint; private values/credentials never enter test output.
 
 Repository rollback: reviewed revert. Before any later config edit/deployment, take a protected inventory/auth backup; restore under the same lock after maintenance, preserve revision/audit continuity, invalidate sessions after an auth restore. Initial seed/bootstrap refuses overwrite. Exact live activation/rollback scope: docs/ADMIN-ACTIVATION.md. Do not infer production approval from a successful local test.
+
+## Activation update — 2026-10-15
+
+Explicit operator approval was followed by private backup, dedicated unprivileged web account/FPM pool, root-managed frozen application release, lab vhost and dedicated Certbot certificate. Real HTTPS login, ctx1 Docker inventory and logout passed without inventory mutation. Public progress publishes each verified/failed increment. Exact interruptions, checks and recovery are in ADMIN-ACTIVATION.md and checkpoints; journal prevents blind replay. Browser/mobile QA and operational rollback drill remain unperformed. No broker/remote operations implemented.

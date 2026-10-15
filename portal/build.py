@@ -34,6 +34,7 @@ TASKS = {
 }
 
 PUBLIC_EVENTS = {
+ "admin_https_failed": "HTTPS certifikát je aktivní; kontrola aplikace odhalila nepřístupný nový adresář. Oprava přístupového režimu probíhá, okolní weby prošly kontrolou.",
  "admin_canary_wait": "Kontrola před pokračováním: certifikát vydán, vedlejší API vrátilo HTTP 429. Čekáme na opakovanou kontrolu; chráněná referenční stránka je dostupná.",
  "home_inventory_pass": "Dokončeno: ověření OS, prostředků, Dockeru a Compose domácího uzlu.",
  "git_push_pass": "Dokončeno: projektové změny a postup nasazení odeslány do Gitu.",

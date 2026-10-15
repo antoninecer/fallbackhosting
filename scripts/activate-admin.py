@@ -113,6 +113,7 @@ def prepare():
         directory.mkdir(mode=0o755)
         directory.chmod(0o755)
     (RELEASE/'public').mkdir(mode=0o755)
+    (RELEASE/'public').chmod(0o755)
     for name in ['lib.php','manage.php','public/index.php','public/admin.css']:
         install_bytes(RELEASE/name,blob('admin/'+name))
     (RELEASE.parent.parent/'current').symlink_to(RELEASE)
@@ -152,7 +153,7 @@ def certificate():
     assert Path('/etc/letsencrypt/live/lab.ventureout.cz/fullchain.pem').is_file()
     verify_existing()
 
-def verify_app():
+def verify_app(check_existing=True):
     status,kind,final,body=fetch('https://lab.ventureout.cz/')
     assert status == 200 and kind == 'text/html' and b'name="password"' in body and b'ctx1' not in body
     assert fetch('https://lab.ventureout.cz/admin.css')[0:2] == (200,'text/css')
@@ -161,14 +162,15 @@ def verify_app():
     assert fetch('http://lab.ventureout.cz/')[2] == 'https://lab.ventureout.cz/'
     for name in ['lib.php','manage.php','public/index.php','public/admin.css']:
         assert (RELEASE/name).read_bytes() == blob('admin/'+name)
-    verify_existing()
+    if check_existing:
+        verify_existing()
     print('PASS lab TLS/login/CSS/private-path denials/release integrity')
 
 def https():
     assert SITE.read_bytes() == blob('deploy/lab-http.conf'), 'Unexpected lab configuration'
     install_bytes(SITE,blob('deploy/admin-lab-https.conf'))
     reload_nginx()
-    verify_app()
+    verify_app(check_existing=False)
 
 def rollback():
     # Preserve partial-state evidence and all data/certificates/releases/accounts.

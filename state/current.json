@@ -2,15 +2,15 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "IN_PROGRESS",
+  "phase": "TESTING",
   "task_id": "FH-0018",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T114046Z-FH-0018-admin-canary-wait.md",
-  "current_summary": "Dedicated lab certificate issued, SAN correct, expires 2027-01-13; certificate phase post-check stopped on unrelated Quantum API HTTP 429 (baseline 200). Protected cards32.php remains 200/TLS valid; nginx and FPM active. No HTTPS vhost loaded yet. Certificate issuance must NOT be repeated; certificate.started remains without done pending canary reconciliation.",
-  "next_safe_action": "Allow bounded cooldown then one canary pass. If baseline restored, reconcile certificate journal without issuance; otherwise investigate read-only and keep activation paused.",
+  "last_checkpoint": "checkpoints/20261015T114348Z-FH-0018-admin-https-pass.md",
+  "current_summary": "Final full lab verification and protected canaries PASS after API cooldown; existing shared config hashes unchanged, exact approved HTTPS template/source intact. HTTPS journal reconciled, no repeat issuance or extra reload. Real HTTPS login/ctx1/logout passed; dedicated account has no Docker/sudo groups. Backend deployment complete; browser/mobile QA and operational rollback drill NOT performed, task TESTING.",
+  "next_safe_action": "Operator opens lab/admin on desktop and mobile; retrieve initial credential privately and rotate via reviewed procedure. Complete independent host identity and audit backup/dependency coverage before unattended remote operations. Browser/rollback evidence needed to close deployment QA.",
   "blocking_issue": null,
   "warnings": [
-    "Public progress live; private multi-node admin locally tested with secured bootstrap, NOT deployed. No admin credential/private inventory in public export.",
+    "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
     "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
     "No secrets/private inventory in public presentation; no push without authorization.",
     "Saved agent state is not a live heartbeat.",
@@ -88,7 +88,7 @@
     "task_id": "FH-0016"
   },
   "admin_inventory": {
-    "status": "LOCAL_TESTED_NOT_DEPLOYED",
+    "status": "LIVE_HTTPS_AUTH_VERIFIED",
     "task_id": "FH-0017",
     "gateway_count": 1,
     "supports_multiple_nodes": true,
@@ -96,13 +96,15 @@
     "prefilled_runtime": "docker",
     "private_config": "IGNORED_LOCAL_ONLY",
     "initial_admin": "PROVISIONED_LOCALLY_CREDENTIAL_NOT_EXPORTED",
-    "tests_passed": 13,
+    "tests_passed": 14,
     "browser_qa": "NOT_PERFORMED",
     "ssh_key_access": "NONE",
     "remote_operations": "NOT_IMPLEMENTED",
     "deployment_plan": "docs/ADMIN-ACTIVATION.md",
     "activation_approval": "EXPLICIT_OPERATOR_APPROVAL_RECORDED_IN_CHECKPOINT",
-    "preflight": "PASS_CURRENT_SERVICES_TARGET_ABSENCE_DNS_PRIVATE_SEED_SOURCE_INTEGRITY"
+    "preflight": "PASS_CURRENT_SERVICES_TARGET_ABSENCE_DNS_PRIVATE_SEED_SOURCE_INTEGRITY",
+    "deployment_revision": "21c050b36e8ddd4cd3d7ec5e87a727f556348e9b",
+    "final_canaries": "PASS_AFTER_COOLDOWN_EXISTING_CONFIG_HASHES_UNCHANGED"
   },
   "public_events": [
     {
@@ -128,6 +130,22 @@
     {
       "id": "admin_canary_wait",
       "utc": "2026-10-15T11:40:46Z"
+    },
+    {
+      "id": "admin_certificate_pass",
+      "utc": "2026-10-15T11:41:55Z"
+    },
+    {
+      "id": "admin_https_failed",
+      "utc": "2026-10-15T11:42:23Z"
+    },
+    {
+      "id": "admin_login_pass",
+      "utc": "2026-10-15T11:42:58Z"
+    },
+    {
+      "id": "admin_https_pass",
+      "utc": "2026-10-15T11:43:48Z"
     }
   ]
 }
