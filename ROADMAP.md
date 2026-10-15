@@ -28,7 +28,7 @@ FH-0017: private multi-node server configuration under M02 is active; ctx1 Docke
 
 Current reconciliation: existing lab inventory HTTPS is already live; only the new center/form-fix release activation is BLOCKED_BY_OPERATOR (FH-0019). Independent ctx1 ED25519 identity is now VERIFIED from trusted-console attestation and client comparison (FH-0014). M01 remains NEEDS_TEST for backup/dependency/external application coverage. Operator prioritizes read-only audit, local broker/admin fixtures, then controlled owned Docker exercises on ctx1; no production service changes authorized by this reconciliation.
 
-Latest task update 2026-10-15 20:51 UTC: operator reported the authenticated center route returning 503. Inspection found the active admin release lacked the center artifact; FH-0019 is IN_PROGRESS to prepare and verify a read-only authenticated artifact release with exact symlink rollback. No release switch yet. Other service/config changes remain out of scope.
+Latest task update 2026-10-15 20:55 UTC: center 503 fixed by activating the authenticated read-only artifact in immutable release `5b57a1e7886cf0976f948dc46da845c66c704d11`. Server-side auth/assets/logout, anonymous denial, inventory preservation and canaries PASS. Operator visual review and live rollback drill remain NOT_TESTED, so FH-0019 is TESTING. Current work moves to read-only FH-0002 dependency/backup coverage.
 
 Further evidence: operator-attested 2026-10-15 node backup and zstd integrity VERIFIED, monthly schedule reported; restore NOT TESTED/offsite copy NOT DOCUMENTED. Controlled owned ctx1 lifecycle and cleanup passed; M03 remains PLANNED for actual Coolify deployment, not closed by broker fixtures or diagnostics.
 

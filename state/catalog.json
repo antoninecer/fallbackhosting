@@ -676,9 +676,9 @@
     {
       "id": "FH-0019",
       "title": "Protected center application activation",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex + Operator",
-      "acceptance": "Fix the reported 503 at the exact authenticated center URL by activating the reviewed read-only center artifact in one immutable PHP release. Existing admin auth/session protects all assets; inventory and unrelated production remain unchanged. Rollback is the previous release symlink; no Nginx/PHP-FPM/cert/DNS/firewall changes.",
+      "acceptance": "Read-only center artifact and PHP handler active in immutable release 5b57a1e7886cf0976f948dc46da845c66c704d11. Live HTTPS auth, all five assets, anonymous and post-logout denial, traversal rejection, unchanged inventory and protected canaries PASS. Operator visual review and live rollback drill remain NOT_TESTED.",
       "dependencies": [
         "FH-0005",
         "FH-0007"
@@ -686,7 +686,8 @@
       "evidence": [
         "checkpoints/20261015T150304Z-M01-readonly-pass.md",
         "checkpoints/20261015T205239Z-FH-0019-center-candidate-pass.md",
-        "checkpoints/20261015T205357Z-FH-0019-center-release-ready.md"
+        "checkpoints/20261015T205357Z-FH-0019-center-release-ready.md",
+        "checkpoints/20261015T205503Z-FH-0019-center-live-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -708,6 +709,14 @@
           "utc": "2026-10-15T20:51:08Z",
           "evidence": [
             "checkpoints/20261015T205108Z-FH-0019-center-activation-ready.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T20:55:03Z",
+          "evidence": [
+            "checkpoints/20261015T205503Z-FH-0019-center-live-pass.md"
           ]
         }
       ]

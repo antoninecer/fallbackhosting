@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M02",
-  "phase": "IN_PROGRESS",
-  "task_id": "FH-0019",
-  "live_verified_at_utc": "2026-10-15T20:53:57Z",
-  "last_checkpoint": "checkpoints/20261015T205357Z-FH-0019-center-release-ready.md",
-  "current_summary": "Local read-only center release is ready: 88 tests, pinned-source/artifact integrity, PHP syntax, FPM config and protected HTTPS/reference/project canaries passed. The exact previous release and private inventory baseline are recorded for rollback. Production switch is the next action; no switch has occurred yet.",
-  "next_safe_action": "Install the verified candidate as a new root-owned immutable release; atomically switch only /var/www/fallback-admin/current. Perform one graceful php8.3-fpm reload only if the previous-code cache otherwise prevents the new center path from loading, after php-fpm8.3 -t and canary precheck. Verify login, five protected assets, logout revocation, unchanged inventory and post-change canaries; restore the prior symlink if any acceptance check fails.",
+  "milestone": "M01",
+  "phase": "TESTING",
+  "task_id": "FH-0002",
+  "live_verified_at_utc": "2026-10-15T20:55:03Z",
+  "last_checkpoint": "checkpoints/20261015T205503Z-FH-0019-center-live-pass.md",
+  "current_summary": "FH-0019 center release is live and server-verified: authenticated page/assets pass, anonymous and post-logout access denied, inventory unchanged, protected canaries pass. Wider visual QA and rollback drill are pending. Resume FH-0002 with read-only dependency and backup coverage audit; restore remains NOT_TESTED and external copy NOT_DOCUMENTED.",
+  "next_safe_action": "Perform read-only FH-0002 dependency and backup-coverage audit. Compare existing backup records and infrastructure/service definitions to identify data or volumes not proven covered; record UNKNOWN where evidence is absent. Do not change backup schedules, files or infrastructure.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -119,7 +119,9 @@
     "login_fix_status": "DEPLOYED_LIVE_HTTPS_TEST_PASS_AFTER_GRACEFUL_PHP_FPM_RELOAD",
     "login_fix_test": "NO_PREAUTH_COOKIE_LOGIN_PASS_CTX1_VISIBLE_SESSION_ROTATION_LOGOUT_PASS_INVENTORY_UNCHANGED",
     "operator_browser_confirmation": "OPERATOR_REPORTED_AUTHENTICATED_ADMIN_PAGE_REACHED",
-    "browser_qa": "NOT_PERFORMED"
+    "center_release_revision": "5b57a1e7886cf0976f948dc46da845c66c704d11",
+    "center_release_status": "LIVE_HTTPS_AUTH_ASSET_LOGOUT_CANARIES_PASS",
+    "center_operator_browser_confirmation": "PENDING"
   },
   "public_events": [
     {
@@ -261,6 +263,10 @@
     {
       "id": "center_release_ready",
       "utc": "2026-10-15T20:53:57Z"
+    },
+    {
+      "id": "center_activation_pass",
+      "utc": "2026-10-15T20:55:03Z"
     },
     {
       "id": "ssh_identity_verified",

@@ -106,6 +106,7 @@ PUBLIC_EVENTS = {
  "center_activation_started": "Řídicí centrum vracelo chybu při otevření. Ověřili jsme chybějící chráněný podklad; připravujeme bezpečné opravené vydání bez změn síťové konfigurace.",
  "center_release_candidate_tested": "Opravené vydání řídicího centra prošlo 88 testy a kontrolou integrity zdrojů a souborů; zatím je připravené pouze místně.",
  "center_release_ready": "Řídicí centrum je připravené k aktivaci jako nové neměnné vydání. Ověření přihlášení, návratu zpět a chráněných služeb proběhlo; změna zatím není aktivní.",
+ "center_activation_pass": "Řídicí centrum je dostupné po přihlášení. Přístup bez relace i po odhlášení je zamítnutý; všechny chráněné soubory a kontrolní weby prošly.",
 }
 
 def rows(path, pattern):
