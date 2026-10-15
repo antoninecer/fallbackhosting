@@ -29,13 +29,17 @@ class PublicPortalTests(unittest.TestCase):
 
     def fixture(self, directory):
         root = Path(directory)
-        for name in ("ROADMAP.md", "TASKS.md", "state/current.json"):
+        for name in ("ROADMAP.md", "TASKS.md", "state/current.json", "state/catalog.json"):
             dest = root / name
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text((ROOT / name).read_text())
+        for source in list((ROOT / "checkpoints").glob("*.md")) + list((ROOT / "docs").glob("*.md")):
+            dest = root / source.relative_to(ROOT)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text("PRIVATE_EVIDENCE_MARKER")
         state = json.loads((root / "state/current.json").read_text())
         checkpoint = root / state["last_checkpoint"]
-        checkpoint.parent.mkdir(parents=True)
+        checkpoint.parent.mkdir(parents=True, exist_ok=True)
         checkpoint.write_text("PRIVATE_CHECKPOINT_MARKER")
         return root
 
@@ -49,8 +53,12 @@ class PublicPortalTests(unittest.TestCase):
             state["ssh_transport"] = {"private_inventory": "PRIVATE_SSH_MARKER"}
             state["operations_service"] = {"private_policy": "PRIVATE_POLICY_MARKER"}
             p.write_text(json.dumps(state))
-            tasks = root / "TASKS.md"
-            tasks.write_text(tasks.read_text().replace("Operator + Codex", "PRIVATE_OWNER_MARKER"))
+            path = root / "state/catalog.json"
+            catalog = json.loads(path.read_text())
+            catalog["tasks"][0]["owner"] = "PRIVATE_OWNER_MARKER"
+            catalog["tasks"][0]["acceptance"] = "PRIVATE_ACCEPTANCE_MARKER"
+            path.write_text(json.dumps(catalog))
+            portal.model.sync_markdown(root, catalog, write=True)
             exported = portal.render(portal.public_data(root))
             self.assertNotIn("PRIVATE_", exported)
             self.assertNotIn("/opt/", exported)

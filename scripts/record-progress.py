@@ -26,10 +26,10 @@ checkpoint=f"checkpoints/{now.strftime('%Y%m%dT%H%M%SZ')}-{state['task_id']}-{a.
 - Associated Git revision: {revision}; uncommitted changes must be inspected before resumption.
 - Last verified action/results: {a.evidence}
 - Files changed: state/current.json, this checkpoint and generated public artifact; inspect Git for source/docs changes.
-- Infrastructure scope: approved ADMIN-ACTIVATION.md only; actual actions/results above. No home runtime changes.
+- Scope: repository state/checkpoint/public static projection; any operational action requires its separately recorded exact authorization. No home runtime changes in this recorded stage.
 - Open issues/unverified: independent fingerprint, external application baseline, full dependency/backup coverage, browser QA and certificate-renewal reload validation remain open.
 - Next exact step: {a.next}
-- Rollback: approved scoped activation rollback; preserve private journal/data/release/certificate/account. Interrupted phases require reconciliation.
+- Rollback: reviewed Git revert and public rebuild for repository work; operational activation rollback remains documented separately in docs/ADMIN-ACTIVATION.md.
 - Required approvals: none within already approved activation/Git-push scope.
 ''')
 state['last_checkpoint']=checkpoint

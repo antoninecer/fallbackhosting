@@ -74,3 +74,9 @@ See docs/MULTI-NODE-ADMIN.md and ADMIN-ACTIVATION.md. Source admin/public is sol
 After each meaningful completed or failed stage, write checkpoint and canonical state, append a reviewed public_events ID/UTC in state/current.json, run `python3 portal/build.py`, and verify the new event over HTTPS on project.lab.ventureout.cz before beginning another stage. Public labels are fixed reviewed mappings in portal/build.py; never export raw checkpoint text, credentials or inventory. Saved timestamps are evidence, not agent heartbeat. Commit/push verified increments under existing operator authorization.
 
 Project progress displays human-readable times in Europe/Prague (CET/CEST, including daylight saving). Canonical state, checkpoint IDs and HTML datetime attributes retain UTC. No host timezone change is required.
+
+## Canonical project records
+
+Edit milestone/task records only in state/catalog.json, then run `python3 scripts/project-data.py sync` and `python3 scripts/project-data.py check`. The two Markdown tables are generated and the public build rejects drift. Contract, evidence requirements and rollback: docs/PROJECT-DATA.md. Public labels still require explicit review in portal/build.py.
+
+For the first application deployment, the operator requests small demo Docker applications selected by the agent. Prefer a simple stateless web demo; choose the concrete image/version and resource limits when preparing the deployment plan. No image selected or deployed by this note.

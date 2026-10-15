@@ -44,3 +44,7 @@ Later authenticated editing needs a separately reviewed service, authorization, 
 ## Operator-requested public presentation
 
 2026-10-15: operator requested an externally visible simple progress presentation. Public read-only projection is implemented separately under portal/; it contains only reviewed milestone/task labels and statuses plus checkpoint identity/time. Operational document bodies, inventories, runbooks and administration remain excluded. This presentation does not replace or complete the protected Project Control Center. PHP is unnecessary: static HTML/CSS and small JavaScript with Python build-time generation suffice. See docs/PORTAL-DEPLOYMENT.md.
+
+## FH-0006 implementation follow-up
+
+Canonical repository catalog, strict validator and generated Markdown tables are implemented; see docs/PROJECT-DATA.md. The existing public projection consumes validated records with reviewed labels only. This is repository-only implementation, not protected-center deployment. Europe/Prague replaces the original proposed UTC display labels; storage remains UTC.

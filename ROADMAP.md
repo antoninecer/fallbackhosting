@@ -2,6 +2,8 @@
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+<!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->
+
 | ID | Milestone | Current status | Gate for DONE |
 | --- | --- | --- | --- |
 | M00 | Foundation and Git state | DONE | Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately |

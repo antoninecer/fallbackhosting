@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M02",
   "phase": "TESTING",
-  "task_id": "FH-0018",
+  "task_id": "FH-0006",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T142704Z-FH-0018-prague-time-pass.md",
-  "current_summary": "Project event, checkpoint and page-generation times now render in Europe/Prague using zoneinfo; summer, winter, DST transition and UTC attribute preservation tests PASS. Canonical UTC unchanged; no host or service configuration change.",
-  "next_safe_action": "Continue FH-0006 repository-only canonical schema/export implementation; FH-0018 visual and rollback QA remain pending.",
+  "last_checkpoint": "checkpoints/20261015T143520Z-FH-0006-data-model-pass.md",
+  "current_summary": "All 28 repository tests PASS. All 11 milestone/18 task IDs preserved; strict catalog validation, synchronized Markdown, existing evidence/commit checks, lifecycle/history checks, private-field exclusion, stale/unknown observations and heartbeat, and last-valid-page retention verified. No service or remote changes.",
+  "next_safe_action": "Review and commit validated FH-0006 implementation, record completion against that revision, then start FH-0007 UI preparation.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -154,6 +154,15 @@
     {
       "id": "prague_time_pass",
       "utc": "2026-10-15T14:27:04Z"
+    },
+    {
+      "id": "data_model_started",
+      "utc": "2026-10-15T14:30:45Z"
+    },
+    {
+      "id": "data_model_pass",
+      "utc": "2026-10-15T14:35:20Z"
     }
-  ]
+  ],
+  "catalog_path": "state/catalog.json"
 }

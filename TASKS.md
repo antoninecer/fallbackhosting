@@ -2,6 +2,8 @@
 
 Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED requires reason and next safe step. Legacy PLANNED maps to BACKLOG for tasks only. Milestone statuses remain defined in ROADMAP.md.
 
+<!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->
+
 | ID | Milestone | Status | Owner | Acceptance / next step |
 | --- | --- | --- | --- | --- |
 | FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
@@ -9,7 +11,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
 | FH-0005 | M02 | BLOCKED | Operator + Codex | Proposal in docs/M02-CONTROL-CENTER.md; operator UI/privacy/auth design approval pending |
-| FH-0006 | M02 | READY | Codex | Next: repository-only schema/export implementation after mandatory initialization; validate references, evidence, sanitization and stale states; no deployment |
+| FH-0006 | M02 | TESTING | Codex | Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints. |
 | FH-0007 | M02 | BACKLOG | Codex | Depends FH-0006; responsive accessible UI, all modules and mobile verification |
 | FH-0008 | M02 | BACKLOG | Operator + Codex | Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes |
 | FH-0009 | M02 | TESTING | Codex | Live HTTPS/page/assets/isolation/canaries passed; browser/mobile/filter QA pending; evidence in latest live checkpoint |

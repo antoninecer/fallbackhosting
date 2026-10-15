@@ -2,6 +2,7 @@
 """Build a public, read-only view. Never export raw operational documents."""
 import argparse
 import html
+import importlib.util
 import json
 import re
 import shutil
@@ -10,6 +11,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+_model_spec = importlib.util.spec_from_file_location("project_model", ROOT / "portal/model.py")
+model = importlib.util.module_from_spec(_model_spec)
+_model_spec.loader.exec_module(model)
 STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", "BACKLOG", "TESTING"}
 LABELS = {"DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
@@ -35,6 +39,8 @@ TASKS = {
 }
 
 PUBLIC_EVENTS = {
+ "data_model_pass": "Dokončeno: 11 milníků a 18 úkolů má jednotný datový zdroj. Kontroly návazností, důkazů, soukromí a zastaralých údajů prošly; tabulky dokumentace se generují z katalogu.",
+ "data_model_started": "Probíhá: sjednocení projektových dat, kontrola návazností a bezpečného exportu pro řídicí centrum.",
  "prague_time_pass": "Dokončeno: časy na projektové stránce se zobrazují podle Prahy včetně letního a zimního času.",
  "admin_recheck_pass": "Dokončeno: opakované skutečné HTTPS přihlášení a odhlášení administrátora i všech 14 místních testů prošlo. Vizuální kontrola v prohlížeči a zkouška rollbacku zbývají.",
  "admin_https_failed": "HTTPS certifikát je aktivní; kontrola aplikace odhalila nepřístupný nový adresář. Oprava přístupového režimu probíhá, okolní weby prošly kontrolou.",
@@ -58,12 +64,16 @@ def rows(path, pattern):
     return result
 
 def public_data(root=ROOT):
+    catalog = model.load(root)
+    model.sync_markdown(root, catalog)
     state = json.loads((root / "state/current.json").read_text())
+    if state.get("catalog_path") != "state/catalog.json":
+        raise ValueError("Invalid canonical catalog reference")
     milestone = state["milestone"]
     if not re.fullmatch(r"M(?:0[0-9]|10)", milestone):
         raise ValueError("Invalid current milestone")
-    ms = rows(root / "ROADMAP.md", r"M\d{2}")
-    tasks = rows(root / "TASKS.md", r"FH-\d{4}")
+    ms = [[m["id"], m["title"], m["status"], m["acceptance"]] for m in catalog["milestones"]]
+    tasks = [[t["id"], t["milestone"], t["status"], t["owner"], t["acceptance"]] for t in catalog["tasks"]]
     if [r[0] for r in ms] != [f"M{i:02}" for i in range(11)]:
         raise ValueError("Expected unique ordered M00–M10")
     result = {"milestone": milestone, "milestones": [], "tasks": []}

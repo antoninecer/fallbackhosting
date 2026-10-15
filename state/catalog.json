@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "milestones": [
+    {
+      "id": "M00",
+      "title": "Foundation and Git state",
+      "status": "DONE",
+      "owner": "Operator + Codex",
+      "acceptance": "Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately",
+      "dependencies": [],
+      "evidence": [
+        "checkpoints/20261015T071334Z-FH-0001-validation.md"
+      ],
+      "completed_at_utc": "2026-10-15T07:13:34Z",
+      "completion_revision": "328ba269706a9324d5ec6854ad4d0ba85cc2eefe"
+    },
+    {
+      "id": "M01",
+      "title": "Verified inventory and safety baselines",
+      "status": "NEEDS_TEST",
+      "owner": "Operator + Codex",
+      "acceptance": "Evidence of live state; protected reference endpoint baseline; backup/rollback plans",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M02",
+      "title": "Independent Project Control Center",
+      "status": "IN_PROGRESS",
+      "owner": "Operator + Codex",
+      "acceptance": "Protected portal survives home-node outage; tasks/incidents/checkpoints visible",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M03",
+      "title": "Coolify deployment on home node",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Authorized admin can deploy/redeploy one example app without changing edge config",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M04",
+      "title": "Wildcard routing and TLS",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M05",
+      "title": "Versioned Fallback Builder",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Safe exported HTML/assets; preview; immutable release; atomic publish; rollback",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M06",
+      "title": "Standby Gateway + recovery",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Per-app failover, hysteresis, manual force/restore, no cross-app outage",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M07",
+      "title": "Emergency Contact",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Independently hosted contact mechanism passes abuse/delivery tests",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M08",
+      "title": "Resilience and recovery tests",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "One app, Docker, LXC, Tailscale outage tests; existing Quantum unaffected",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M09",
+      "title": "Durable AI continuity",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Checkpoint + automatic project UI ingestion; controlled restart after interruption",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    },
+    {
+      "id": "M10",
+      "title": "v1 release",
+      "status": "PLANNED",
+      "owner": "Operator + Codex",
+      "acceptance": "Backup/restore, security review, docs and repeatable install tests",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "FH-0001",
+      "title": "Projektová dokumentace a obnova práce",
+      "status": "DONE",
+      "owner": "Codex",
+      "acceptance": "Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence",
+      "dependencies": [],
+      "evidence": [
+        "checkpoints/20261015T071334Z-FH-0001-validation.md"
+      ],
+      "completed_at_utc": "2026-10-15T07:13:34Z",
+      "completion_revision": "328ba269706a9324d5ec6854ad4d0ba85cc2eefe",
+      "milestone": "M00",
+      "scope": "Scope and context: TASKS.md, FH-0001",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0002",
+      "title": "Inventura infrastruktury",
+      "status": "BLOCKED",
+      "owner": "Operator + Codex",
+      "acceptance": "Initial sanitized audit delivered; full scoped home inventory, dependency and backup evidence still unavailable; obtain authorized evidence",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M01",
+      "scope": "Scope and context: TASKS.md, FH-0002",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0003",
+      "title": "Ověření referenční aplikace",
+      "status": "BLOCKED",
+      "owner": "Operator + Codex",
+      "acceptance": "Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M01",
+      "scope": "Scope and context: TASKS.md, FH-0003",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0004",
+      "title": "Návrh nasazování aplikací",
+      "status": "BACKLOG",
+      "owner": "Operator + Codex",
+      "acceptance": "Coolify requirements/security/backup plan and explicit installation approval; do not install",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Scope and context: TASKS.md, FH-0004",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0005",
+      "title": "Návrh chráněného projektového centra",
+      "status": "BLOCKED",
+      "owner": "Operator + Codex",
+      "acceptance": "Proposal in docs/M02-CONTROL-CENTER.md; operator UI/privacy/auth design approval pending",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0005",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0006",
+      "title": "Validace a export projektových dat",
+      "status": "TESTING",
+      "owner": "Codex",
+      "acceptance": "Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints.",
+      "dependencies": [],
+      "evidence": [
+        "checkpoints/20261015T143520Z-FH-0006-validated.md",
+        "docs/PROJECT-DATA.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Repository-only canonical data/schema, reference and evidence validation, sanitized projection and stale state handling; no deployment.",
+      "rollback": "Reviewed Git revert of catalog/model and synchronized tables, then rebuild the prior static public page.",
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T14:32:17Z",
+          "evidence": [
+            "checkpoints/20261015T143036Z-FH-0006-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T14:35:20Z",
+          "evidence": [
+            "checkpoints/20261015T143520Z-FH-0006-validated.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FH-0007",
+      "title": "Rozhraní projektového centra",
+      "status": "BACKLOG",
+      "owner": "Codex",
+      "acceptance": "Depends FH-0006; responsive accessible UI, all modules and mobile verification",
+      "dependencies": [
+        "FH-0006"
+      ],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0007",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0008",
+      "title": "Příprava bezpečného nasazení",
+      "status": "BACKLOG",
+      "owner": "Operator + Codex",
+      "acceptance": "Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes",
+      "dependencies": [
+        "FH-0005",
+        "FH-0007"
+      ],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0008",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0009",
+      "title": "Veřejná prezentace průběhu projektu",
+      "status": "TESTING",
+      "owner": "Codex",
+      "acceptance": "Live HTTPS/page/assets/isolation/canaries passed; browser/mobile/filter QA pending; evidence in latest live checkpoint",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0009",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0010",
+      "title": "Úvodní stránka připravované platformy",
+      "status": "READY",
+      "owner": "Operator + Codex",
+      "acceptance": "Historical static entry proposal superseded by live authenticated admin FH-0017/FH-0018; reconcile any future entry work with that deployment",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0010",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0011",
+      "title": "Návrh připojení aplikačního serveru",
+      "status": "BLOCKED",
+      "owner": "Operator + Codex",
+      "acceptance": "SSH and isolated Docker lifecycle/cleanup passed after operator group grant (FH-0016); independent fingerprint, node inventory and constrained operations boundary pending",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Scope and context: TASKS.md, FH-0011",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0012",
+      "title": "Ověření obnovy HTTPS certifikátu",
+      "status": "READY",
+      "owner": "Operator + Codex",
+      "acceptance": "Dedicated webroot renewal recorded, but no per-cert/global deploy hook observed. Prepare exact nginx syntax-test/reload hook and renewal-test proposal; scoped approval required before changes",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0012",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0013",
+      "title": "Návrh oddělené služby pro autorizované operace",
+      "status": "TESTING",
+      "owner": "Codex + Operator",
+      "acceptance": "Isolated SSH service proposal documented; operator review pending; no service deployed or operational permissions granted",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Scope and context: TASKS.md, FH-0013",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0014",
+      "title": "Nezávislé ověření identity aplikačního serveru",
+      "status": "BLOCKED",
+      "owner": "Operator + Codex",
+      "acceptance": "Independently verify actual negotiated SSH host fingerprint using trusted ctx1 console, compare privately with pinned client trust; record source/time/verifier/result before broker activation",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M01",
+      "scope": "Scope and context: TASKS.md, FH-0014",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0015",
+      "title": "Návrh oddělení oprávnění technického přístupu",
+      "status": "READY",
+      "owner": "Operator + Codex",
+      "acceptance": "Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Scope and context: TASKS.md, FH-0015",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0016",
+      "title": "Ověřený test vytvoření, spuštění a úklidu kontejneru",
+      "status": "DONE",
+      "owner": "Codex",
+      "acceptance": "New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required",
+      "dependencies": [],
+      "evidence": [
+        "checkpoints/20261015T083547Z-FH-0016-docker-smoke-pass.md",
+        "docs/DOCKER-SMOKE-TEST.md"
+      ],
+      "completed_at_utc": "2026-10-15T08:35:47Z",
+      "completion_revision": "0173faebc1aedf5157a7315aa15cb2f9a62f5a91",
+      "milestone": "M03",
+      "scope": "Scope and context: TASKS.md, FH-0016",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0017",
+      "title": "Administrace více aplikačních serverů",
+      "status": "TESTING",
+      "owner": "Codex + Operator",
+      "acceptance": "Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Activation complete under FH-0018; browser QA pending; docs/MULTI-NODE-ADMIN.md",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0017",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0018",
+      "title": "Kontrola a opakovatelné nasazení administrace",
+      "status": "TESTING",
+      "owner": "Codex",
+      "acceptance": "Approved lab HTTPS admin LIVE; real login/ctx1/logout and private paths PASS. Final canaries/config hashes PASS after cooldown; browser/mobile QA and rollback drill outstanding; per-stage public progress recorded; no home changes",
+      "dependencies": [],
+      "evidence": [],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M02",
+      "scope": "Scope and context: TASKS.md, FH-0018",
+      "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
+      "history": []
+    }
+  ],
+  "incidents": [],
+  "observations": [
+    {
+      "id": "OBS-0001",
+      "component": "Independent gateway and lab administration",
+      "dependencies": [],
+      "provenance": "HISTORICAL",
+      "status": "PASS",
+      "observed_at_utc": "2026-10-15T11:43:48Z",
+      "expires_at_utc": null,
+      "method": "Recorded deployment checks; no current monitoring claim.",
+      "evidence": [
+        "checkpoints/20261015T114348Z-FH-0018-admin-https-pass.md"
+      ]
+    }
+  ],
+  "agent": {
+    "identity": "Codex",
+    "task_id": "FH-0006",
+    "heartbeat_utc": null,
+    "session_ended": false,
+    "checkpoint": "checkpoints/20261015T143045Z-FH-0006-data-model-started.md",
+    "revision": "f2f3d28063b3e88fefa5e286b156571c37716726"
+  }
+}

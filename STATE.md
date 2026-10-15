@@ -58,3 +58,7 @@ Fresh HTTPS auth/session rotation/ctx1/logout PASS without inventory mutation; 1
 ## Prague display time
 
 Project page event/checkpoint/generation times now display Europe/Prague with automatic CET/CEST. Eight portal tests and live HTTPS conversion check PASS; canonical UTC and host settings unchanged. See latest checkpoint for verification UTC.
+
+## FH-0006 canonical catalog
+
+Repository data implementation validated: 11 milestones/18 tasks preserved in state/catalog.json, Markdown tables generated, public export fail-closed on invalid records/drift. All 28 repository tests PASS, including privacy, references, transitions, stale/unknown health and heartbeat, and last-valid-page retention. See latest checkpoint for timestamp and completion revision. No protected-center deployment, remote action or service change. Small demo containers requested by operator for later deployment; no image selected yet.
