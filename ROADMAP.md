@@ -2,10 +2,10 @@
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
-| ID | Milestone | Initial status | Gate for DONE |
+| ID | Milestone | Current status | Gate for DONE |
 | --- | --- | --- | --- |
-| M00 | Foundation and Git state | IN_PROGRESS | Docs and checkpoint committed/pushed; fresh-session resume works |
-| M01 | Verified inventory and safety baselines | PLANNED | Evidence of live state; protected reference endpoint baseline; backup/rollback plans |
+| M00 | Foundation and Git state | DONE | Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately |
+| M01 | Verified inventory and safety baselines | NEEDS_TEST | Evidence of live state; protected reference endpoint baseline; backup/rollback plans |
 | M02 | Independent Project Control Center | PLANNED | Protected portal survives home-node outage; tasks/incidents/checkpoints visible |
 | M03 | Coolify deployment on home node | PLANNED | Authorized admin can deploy/redeploy one example app without changing edge config |
 | M04 | Wildcard routing and TLS | PLANNED | Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary |
@@ -17,3 +17,5 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 | M10 | v1 release | PLANNED | Backup/restore, security review, docs and repeatable install tests |
 
 Milestones may be reprioritized only after updating the architecture decision and explaining consequences. Use Git commits/PRs and evidence, not optimistic progress claims.
+
+Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance supersedes automatic push under explicit operator instructions. M02 remains PLANNED; design delivery is not portal completion.

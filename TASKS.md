@@ -1,46 +1,25 @@
-# Tasks (human-readable backlog)
+# Tasks
 
-Tasks are never silently treated as DONE. Each entry needs verification, evidence, and an updated checkpoint.
+Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED requires reason and next safe step. Legacy PLANNED maps to BACKLOG for tasks only. Milestone statuses remain defined in ROADMAP.md.
 
-## Active
+| ID | Milestone | Status | Owner | Acceptance / next step |
+| --- | --- | --- | --- | --- |
+| FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
+| FH-0002 | M01 | BLOCKED | Operator + Codex | Initial sanitized audit delivered; full scoped home inventory, dependency and backup evidence still unavailable; obtain authorized evidence |
+| FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
+| FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
+| FH-0005 | M02 | BLOCKED | Operator + Codex | Proposal in docs/M02-CONTROL-CENTER.md; operator UI/privacy/auth design approval pending |
+| FH-0006 | M02 | READY | Codex | Next: repository-only schema/export implementation after mandatory initialization; validate references, evidence, sanitization and stale states; no deployment |
+| FH-0007 | M02 | BACKLOG | Codex | Depends FH-0006; responsive accessible UI, all modules and mobile verification |
+| FH-0008 | M02 | BACKLOG | Operator + Codex | Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes |
 
-### FH-0001 — First public repo foundation [IN_PROGRESS]
+FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. Session 001 scope ends at design.
 
-- **Milestone:** M00
-- **Owner:** Operator + assisted AI
-- **Goal:** Add startup documentation, binding agent rules, roadmap, state, tasks and resume scripts.
-- **Before doing:** Review staged files for credentials/private topology; the GitHub repository is public.
-- **Acceptance:** `git status` clean after commit and successful push to `main`; remote files visible.
-- **Safe rollback:** revert documentation commit with reviewed commit; never rewrite Git history.
-- **Last verified evidence:** Empty Git repo cloned; SSH authentication previously succeeded. First push not yet verified.
-- **Next action:** Extract starter kit into the repo, inspect, stage, commit and push.
+## Scope, dependencies, rollback and evidence
 
-## Ready after M00
+FH-0001: repository only; Bash/Git/Python available; rollback via reviewed revert. Validation and timestamps in latest checkpoint. Remote main observed at initial base commit; no push performed.
+FH-0002/0003: read-only; existing tools/network only; no runtime rollback needed. Evidence/unknowns: docs/M01-AUDIT.md. Failed sandbox startup is a tooling limitation, not a production incident.
+FH-0005: documentation only; architecture constraints and audit are dependencies; rollback via revert. No approval or deployed portal claimed.
+FH-0006: repository only; acceptance includes canonical-state migration preserving IDs, explicit schema, validation, allowlisted export and meaningful negative tests. Rollback via revert; no secret/runtime configuration.
 
-### FH-0002 — Read-only inventory [PLANNED]
-
-- **Milestone:** M01
-- **Goal:** Verify actual host, LXC, Docker, Tailscale, Nginx, DNS and storage state without changing services.
-- **Acceptance:** Signed/dated sanitized inventory and a list of unknowns, with secrets stored outside Git.
-
-### FH-0003 — Protected production canary [PLANNED]
-
-- **Milestone:** M01
-- **Goal:** Measure Quantum Random availability from Oracle and externally before Lab proxy work.
-- **Acceptance:** Safe read-only probe and explicit error criteria; no credentials in Git.
-
-### FH-0004 — Deployment-control design [PLANNED]
-
-- **Milestone:** M03
-- **Goal:** Confirm Coolify requirements in nested unprivileged LXC, security separation and backup.
-- **Acceptance:** Tested plan, operator approval prior to installation, and rollback.
-
-### FH-0005 — Project center design [PLANNED]
-
-- **Milestone:** M02
-- **Goal:** Define minimal authenticated portal on Oracle backed by Git/task state.
-- **Acceptance:** UI scope and privacy model approved, no dependence on home availability.
-
-## Incident registry
-
-No FallbackHosting incident is currently recorded. Prior host issues described in `STATE.md` are historical context, **not unresolved incidents unless independently confirmed**.
+No new confirmed production incident. Historical EFI warning remains an uncertainty requiring operator review before any PVE reboot.

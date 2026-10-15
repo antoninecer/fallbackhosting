@@ -1,16 +1,17 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M00",
-  "phase": "IN_PROGRESS",
-  "task_id": "FH-0001",
-  "live_verified_at_utc": null,
-  "last_checkpoint": null,
-  "current_summary": "Initial public Git repository cloned; project starter docs pending first push.",
-  "next_safe_action": "Review and commit project documents, push to origin/main, then verify remote.",
+  "milestone": "M02",
+  "phase": "PLANNED",
+  "task_id": "FH-0006",
+  "live_verified_at_utc": "2026-10-15T07:06:50Z",
+  "last_checkpoint": "checkpoints/20261015T071334Z-FH-0001-validation.md",
+  "current_summary": "M00 locally complete; M01 initial audit needs further evidence; M02 proposal delivered, not deployed.",
+  "next_safe_action": "Initialize and checkpoint FH-0006, then implement repository-only validated canonical schema and sanitized exporter; no deployment.",
   "blocking_issue": null,
   "warnings": [
-    "Public repository: never commit secrets/private infrastructure details.",
-    "Previously reported service checks are historical, not live monitoring."
+    "M01 external baseline, home inventory and dependency/backup evidence incomplete.",
+    "M02 design approval pending; production changes and push require explicit scope approval.",
+    "Saved state is not a live agent heartbeat."
   ]
 }

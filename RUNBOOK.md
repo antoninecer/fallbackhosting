@@ -29,7 +29,7 @@ git diff --cached --stat
 # Review full staged diff for private or secret material.
 git diff --cached
 git commit -m 'docs: initialize FallbackHosting foundation'
-git push -u origin main
+# Push only after explicit operator authorization; no automatic push.
 ```
 
 ## When agent credits run out

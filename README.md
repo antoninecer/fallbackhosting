@@ -2,7 +2,7 @@
 
 **Self-hosted deployment platform with resilient, independently hosted standby pages.**
 
-Status: **M00 / Foundation – in progress**. This repository is a project foundation, **not a deployed product**.
+Status: **M00 complete; M01 audit needs further verification; M02 design proposed**. This repository is a project foundation, **not a deployed product**.
 
 ## Vision
 
@@ -39,3 +39,5 @@ These facts are **historical observations**. They are not live monitoring. See `
 M00 docs + Git → M01 inventory/baselines → M02 independent project portal → M03 deployment platform → M04 wildcard routing & TLS → M05 snapshot builder → M06 standby routing → M07 emergency contacts → M08 failure tests → M09 agent continuity → M10 release.
 
 This roadmap is a plan, **not a record of completed deliveries**.
+
+Session 001 audit: [M01](docs/M01-AUDIT.md). Portal proposal: [M02](docs/M02-CONTROL-CENTER.md). Current next task: `state/current.json` and latest checkpoint. No runtime deployment performed.
