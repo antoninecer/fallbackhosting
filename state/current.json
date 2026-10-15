@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M03",
-  "phase": "BLOCKED",
-  "task_id": "FH-0014",
+  "milestone": "M02",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0017",
   "live_verified_at_utc": "2026-10-15T08:35:47Z",
-  "last_checkpoint": "checkpoints/20261015T083752Z-FH-0016-validated.md",
-  "current_summary": "SSH and isolated Docker create/start/remove test passed after operator Docker-group change; cleanup and existing reference unchanged. Independent fingerprint and enforced agent/key isolation still pending.",
-  "next_safe_action": "Obtain independent host fingerprint from trusted console and review broker/agent privilege boundary before any deployment; do not repeat the completed Docker probe.",
-  "blocking_issue": "Independent SSH fingerprint unverified and enforced key/agent separation unresolved; Docker access blocker resolved.",
+  "last_checkpoint": "checkpoints/20261015T090458Z-FH-0017-local-validated.md",
+  "current_summary": "Multi-node PHP administration locally implemented and tested, ctx1 Docker record privately prefilled, initial admin secured; public activation pending exact approval.",
+  "next_safe_action": "Review docs/ADMIN-ACTIVATION.md exact new web account/pool/release/vhost/certificate/backup/reload scope; obtain activation approval, then production/browser checks. No remote operations.",
+  "blocking_issue": "Live admin activation requires exact production approval; local app and ctx1 config ready. Independent SSH fingerprint and broker/agent isolation remain separate unresolved gates.",
   "warnings": [
-    "Public progress presentation is live; protected platform/admin features are not deployed.",
+    "Public progress live; private multi-node admin locally tested with secured bootstrap, NOT deployed. No admin credential/private inventory in public export.",
     "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
     "No secrets/private inventory in public presentation; no push without authorization.",
     "Saved agent state is not a live heartbeat.",
@@ -38,7 +38,7 @@
     "independent_fingerprint": "NEEDS_TEST",
     "key_material_read_or_copied_by_agent": false,
     "permissions_changed_by_agent": false,
-    "private_inventory_location": "UNKNOWN_OPERATOR_CUSTODY",
+    "private_inventory_location": "IGNORED_LOCAL_ADMIN_INVENTORY_NO_KEY_MAPPING",
     "docker_probe": {
       "evidence_recorded_at_utc": "2026-10-15T08:35:47Z",
       "cli": "FOUND",
@@ -86,5 +86,20 @@
     "evidence_recorded_at_utc": "2026-10-15T08:35:47Z",
     "evidence": "checkpoints/20261015T083547Z-FH-0016-docker-smoke-pass.md",
     "task_id": "FH-0016"
+  },
+  "admin_inventory": {
+    "status": "LOCAL_TESTED_NOT_DEPLOYED",
+    "task_id": "FH-0017",
+    "gateway_count": 1,
+    "supports_multiple_nodes": true,
+    "prefilled_node_alias": "ctx1",
+    "prefilled_runtime": "docker",
+    "private_config": "IGNORED_LOCAL_ONLY",
+    "initial_admin": "PROVISIONED_LOCALLY_CREDENTIAL_NOT_EXPORTED",
+    "tests_passed": 13,
+    "browser_qa": "NOT_PERFORMED",
+    "ssh_key_access": "NONE",
+    "remote_operations": "NOT_IMPLEMENTED",
+    "deployment_plan": "docs/ADMIN-ACTIVATION.md"
   }
 }

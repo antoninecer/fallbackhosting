@@ -20,6 +20,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0014 | M01 | BLOCKED | Operator + Codex | Independently verify actual negotiated SSH host fingerprint using trusted ctx1 console, compare privately with pinned client trust; record source/time/verifier/result before broker activation |
 | FH-0015 | M03 | READY | Operator + Codex | Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval |
 | FH-0016 | M03 | DONE | Codex | New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required |
+| FH-0017 | M02 | TESTING | Codex + Operator | Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Exact activation and browser QA pending; docs/MULTI-NODE-ADMIN.md |
 
 FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. The original Session 001 scope ended at design; the subsequent operator request adds the public presentation under FH-0009.
 
@@ -67,3 +68,7 @@ On explicit operator request, agent found /usr/bin/docker but daemon-version que
 ## FH-0016 — isolated Docker lifecycle verified
 
 Operator granted Docker-group membership and requested retest. Scope: one unique own resource using existing immutable image, no ports/mounts/network or image pull; inert command run, exact removal, absence and unchanged existing reference verified. Acceptance passed with recorded UTC 2026-10-15T08:35:47Z and evidence in docs/DOCKER-SMOKE-TEST.md. Rollback exercised by own-container removal. Dependencies: existing technical SSH trust and image; independent identity remains a separate unresolved gate. No permission granted by agent. Completion revision: containing local commit. This is not Coolify deployment or cross-project isolation verification.
+
+## FH-0017 — multi-node counterpart administration
+
+Operator requests one public VPS with multiple application nodes and ctx1 prefilled as Docker. Scope: PHP auth/config UI, private local inventory/bootstrap, no remote actions or deployment installation. Acceptance: authenticated list/add/edit/disable, multiple distinct IDs, declared runtime/platform separate from dated observations, changed target invalidates old results, locked atomic updates/conflicts, no key fields or private export, safe initial admin and ctx1 seed. Thirteen tests plus actual seeded loopback login/list/logout passed; activation/browser tests outstanding, so TESTING. Dependencies: existing PHP 8.3/Argon2id/session support, protected local state and explicit production plan. Evidence: latest FH-0017 checkpoint and docs/MULTI-NODE-ADMIN.md. Rollback: reviewed source revert; back up private state before edits and never overwrite seed/auth; exact new-pool/vhost rollback in docs/ADMIN-ACTIVATION.md. No runtime/account/remote grant implied.

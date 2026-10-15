@@ -32,3 +32,7 @@ This is an internal development platform for the owner and authorized collaborat
 - Dynamic actions in standby are disabled or routed to a separate approved emergency contact service.
 - Milestones, incidents and the last verified agent checkpoint are accessible on an independently hosted protected project dashboard.
 - A new agent can resume from repository state without relying on chat history.
+
+## Administrator server inventory
+
+One public gateway can front multiple authorized application nodes. Administrator configures counterpart name/address/SSH account/runtime/platform and opaque identity reference; private SSH keys remain in separate technical custody. Project applications later bind to a selected node. Declared platform and historical/observed health are distinct. Initial server inventory UI does not grant SSH/Docker rights or perform remote operations. This extends the original single-home-node example without changing independent standby semantics or public-hosting non-goals.

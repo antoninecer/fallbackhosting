@@ -21,3 +21,5 @@ Milestones may be reprioritized only after updating the architecture decision an
 Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance supersedes automatic push under explicit operator instructions. M02 is now IN_PROGRESS: public presentation live, private portal and failure tests still pending.
 
 Transport follow-up: M03 remains PLANNED, preparation only. Technical SSH probes passed; following operator Docker-group grant, isolated Docker lifecycle/cleanup passed (FH-0016). Independent SSH fingerprint and enforceable agent/key boundary remain open (FH-0011, FH-0013–0015); no deployment milestone completed by transport checks.
+
+FH-0017: private multi-node server configuration under M02 is locally implemented/tested; ctx1 Docker record and initial admin prepared. Exact isolated lab activation and browser checks pending. M02 remains IN_PROGRESS and M03 deployment still PLANNED; local configuration does not close audit/fingerprint/Coolify gates.

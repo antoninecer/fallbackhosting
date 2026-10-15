@@ -1,6 +1,6 @@
 # lab.ventureout.cz — exact activation proposal
 
-Status: source/templates prepared, not deployed. User clarified this is the actual future platform address; project.lab.ventureout.cz remains progress reporting. Initial publication is a truthful static introduction, not an admin panel or deployment interface. Full workflow: docs/PLATFORM-WORKFLOW.md.
+Status: historical static-only proposal, not deployed. Superseded for the requested private admin by docs/ADMIN-ACTIVATION.md; do not execute this older static procedure as the admin deployment. User clarified this is the actual future platform address; project.lab.ventureout.cz remains progress reporting. Initial publication is a truthful static introduction, not an admin panel or deployment interface. Full workflow: docs/PLATFORM-WORKFLOW.md.
 
 ## Exact targets/actions requiring approval
 

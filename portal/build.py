@@ -29,6 +29,7 @@ TASKS = {
  "FH-0014": "Nezávislé ověření identity aplikačního serveru",
  "FH-0015": "Návrh oddělení oprávnění technického přístupu",
  "FH-0016": "Ověřený test vytvoření, spuštění a úklidu kontejneru",
+ "FH-0017": "Administrace více aplikačních serverů",
 }
 
 def rows(path, pattern):

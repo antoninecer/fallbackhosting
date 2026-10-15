@@ -27,4 +27,5 @@ build/
 # Rebuildable public presentation / local Python cache
 /public/
 /lab-public/
+/.local/
 __pycache__/
