@@ -105,6 +105,18 @@ class AdminTests(unittest.TestCase):
         (self.data/'auth.json').unlink()
         self.assertEqual(self.request()[0],503)
 
+    def test_login_survives_missing_pre_auth_cookie_but_keeps_origin_guard(self):
+        csrf=self.csrf()
+        self.cookie=''
+        rejected=self.request(data={'action':'login','csrf':csrf,'username':'admin','password':self.password},origin='https://evil.example')
+        self.assertEqual(rejected[0],403)
+        self.cookie=''
+        status,_,headers=self.request(data={'action':'login','csrf':csrf,'username':'admin','password':self.password})
+        self.assertEqual(status,303)
+        self.assertIn('FHADMINSESSID=',headers['Set-Cookie'])
+        self.assertIn('192.0.2.10',self.request()[1])
+        self.assertEqual(self.request(data={'action':'logout','csrf':'bad'},origin='https://evil.example')[0],403)
+
     def test_csrf_origin_and_unauthorized_raw_paths(self):
         self.login()
         self.assertEqual(self.request(data={'action':'save-server','csrf':'bad'})[0],403)

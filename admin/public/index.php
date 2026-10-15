@@ -38,10 +38,15 @@ try {
     if (array_key_exists('center', $_GET) && !in_array($_SERVER['REQUEST_METHOD'], ['GET','HEAD'], true)) { http_response_code(405); header('Allow: GET, HEAD'); exit; }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 8192) { http_response_code(413); exit('Požadavek je příliš velký.'); }
-        if (($_SERVER['HTTP_ORIGIN'] ?? '') !== $origin || !is_string($_POST['csrf'] ?? null) || !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
+        $action = field($_POST,'action',20);
+        $originValid = ($_SERVER['HTTP_ORIGIN'] ?? '') === $origin;
+        // Login uses exact Origin validation because browsers may omit the
+        // pre-auth session cookie on a form POST. Authenticated actions still
+        // require the session-bound synchronizer token below.
+        $csrfValid = is_string($_POST['csrf'] ?? null) && hash_equals($_SESSION['csrf'], $_POST['csrf']);
+        if (!$originValid || ($action !== 'login' && !$csrfValid)) {
             http_response_code(403); exit('Požadavek nemá platné ověření. Obnovte stránku.');
         }
-        $action = field($_POST,'action',20);
         if ($action === 'login') {
             if (!login_allowed($_SERVER['REMOTE_ADDR'] ?? 'unknown')) { http_response_code(429); $error='Příliš mnoho pokusů. Zkuste to za deset minut.'; }
             else {
