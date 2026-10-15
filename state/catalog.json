@@ -573,7 +573,7 @@
     {
       "id": "FH-0020",
       "title": "Isolated Docker operations core",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Fixture-only v1 implements eight managed actions and scoped Unix views; all 57 repository/16 broker tests PASS. Real driver/issuer/host sandbox/service activation remain separate gates.",
       "dependencies": [],
@@ -581,8 +581,8 @@
         "checkpoints/20261015T151332Z-FH-0020-validated.md",
         "docs/OPERATIONS-PROTOTYPE.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T15:14:02Z",
+      "completion_revision": "9a7efa4e4d5902ffb595776f3302219fe7419ccb",
       "milestone": "M03",
       "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
       "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
@@ -593,6 +593,15 @@
           "utc": "2026-10-15T15:13:32Z",
           "evidence": [
             "checkpoints/20261015T151332Z-FH-0020-validated.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T15:14:02Z",
+          "evidence": [
+            "checkpoints/20261015T151332Z-FH-0020-validated.md",
+            "docs/OPERATIONS-PROTOTYPE.md"
           ]
         }
       ]

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0020",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T151333Z-FH-0020-docker-core-tests-pass.md",
-  "current_summary": "All 57 repository tests and 16 broker security/lifecycle fixtures PASS. Eight actions, Unix peer authorization, registry+labels, one-use write approval, confirmed remove, dedupe, bounded logs/audit and timeout/recovery UNKNOWN verified. Core has no real SSH/Docker runner or installed service. External web baseline tool inaccessible; M01 remains partial.",
-  "next_safe_action": "Commit broker core and close fixture implementation against concrete revision; continue PHP/Unix prototype and authorized owned ctx1 Docker exercise.",
+  "last_checkpoint": "checkpoints/20261015T151402Z-FH-0020-docker-core-tests-pass.md",
+  "current_summary": "FH-0020 DONE against local implementation commit 9a7efa4: all 57 repository/16 broker tests passed. Scope is local fixture core and bounded Unix protocol only; real transport/service/issuer deployment not performed.",
+  "next_safe_action": "Perform explicitly authorized one-resource ctx1 Docker exercise with immutable existing image, strict verified SSH, private journal, baseline preservation and exact cleanup.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -245,6 +245,10 @@
     {
       "id": "docker_core_tests_pass",
       "utc": "2026-10-15T15:13:33Z"
+    },
+    {
+      "id": "docker_core_tests_pass",
+      "utc": "2026-10-15T15:14:02Z"
     }
   ],
   "catalog_path": "state/catalog.json"
