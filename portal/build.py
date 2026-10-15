@@ -51,6 +51,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "agent_boundary_proposal": "Připraveno k posouzení: konkrétní plán oddělení agenta, webu a technické služby, včetně zachování obnovovacího přístupu a testů zamítnutí. Oprávnění zatím nejsou změněná; místní vývoj pokračuje.",
+ "agent_boundary_started": "Probíhá návrh oddělení oprávnění: vývojový agent, webová administrace a technická služba mají mít jasně oddělený přístup. Zatím připravujeme postup a ověření, oprávnění na hostiteli neměníme.",
  "admin_ops_browser_pass": "Dokončeno místně: propojení PHP a brokeru i přehled dvou testovacích uzlů prošly. Prohlížeč ověřil mobil, tablet a desktop; požadavky, nejasné výsledky, chyby a audit jsou jasně odlišené od živého monitoringu.",
  "admin_ops_rpc_pass": "Ověřeno místně: PHP komunikuje s brokerem přes omezený Unix protokol. Testovací životní cyklus, výpisy, potvrzené odstranění, odmítnutí oprávnění a bezpečný přehled výsledků prošly; žádné změny živé administrace.",
  "admin_ops_started": "Probíhá místní propojení PHP administrace s odděleným brokerem: aplikace na uzlech, datované stavy, požadavky, výsledky a audit. Živé administrace ani služeb se tento krok netýká.",

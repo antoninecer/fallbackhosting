@@ -94,3 +94,7 @@ At 2026-10-15T15:21:58Z–15:22:05Z, one owned limited container create/start/in
 ## Local PHP operations integration
 
 PHP-to-Unix peer broker fixture roundtrip implements scoped lifecycle/read requests and a selected read-only app/node/container/jobs/errors/audit page. Browser 360/768/1440 PASS, screenshots inspected, actual transient RUNNING and timeout UNKNOWN snapshots explicitly historical. No production route, signing authority or SSH transport installed; existing lab frozen release unchanged. See docs/ADMIN-OPERATIONS-PROTOTYPE.md and latest checkpoint for exact validation.
+
+## Constrained execution proposal
+
+FH-0015 TESTING: docs/AGENT-EXECUTION-BOUNDARY.md prepared with external runner identity, protected code/policy/issuer/trust roots, preserved operator recovery and negative canary tests. Read-only current sudo/Docker membership reconfirmed at 15:34:07Z; key isolation still NOT ESTABLISHED. No key read, account/group/sudo/SSH/service change. Proposal review does not block other local engineering.

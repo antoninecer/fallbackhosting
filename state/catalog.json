@@ -500,17 +500,37 @@
     {
       "id": "FH-0015",
       "title": "Návrh oddělení oprávnění technického přístupu",
-      "status": "READY",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval",
+      "acceptance": "Concrete separate constrained-runner/issuer/code/policy/key-custody/recovery proposal prepared; current unrestricted sudo/Docker path re-observed. Operator review and real negative tests required; no enforcement or permission change claimed.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T153558Z-FH-0015-proposal-validated.md",
+        "docs/AGENT-EXECUTION-BOUNDARY.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Scope and context: TASKS.md, FH-0015",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T15:33:49Z",
+          "evidence": [
+            "checkpoints/20261015T153349Z-FH-0015-boundary-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:35:58Z",
+          "evidence": [
+            "checkpoints/20261015T153558Z-FH-0015-proposal-validated.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0016",

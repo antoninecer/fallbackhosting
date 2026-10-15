@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0021",
+  "phase": "TESTING",
+  "task_id": "FH-0015",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T153349Z-FH-0021-admin-ops-browser-pass.md",
-  "current_summary": "FH-0021 DONE against local commit c698711: 62 repository tests, real PHP/Unix inert-driver integration and Chromium 360/768/1440 scoped app/job/error/audit view PASS. Fixture/snapshot scope only; no live operation route/service or trusted issuer installed.",
-  "next_safe_action": "Proceed to FH-0015 constrained agent/key execution proposal with read-only privilege recheck; retain pending production activation gate.",
+  "last_checkpoint": "checkpoints/20261015T153558Z-FH-0015-agent-boundary-proposal.md",
+  "current_summary": "FH-0015 concrete constrained runner/key custody/issuer/recovery proposal prepared, current unrestricted sudo+Docker paths re-observed read-only. TESTING for review; no actual key read or account/group/sudo/SSH/service change, no enforced-isolation claim. Continue independent repository work.",
+  "next_safe_action": "Prepare FH-0012 exact certificate deploy-hook/renewal-test proposal and local fake-command checks; do not install hook/change timers or reload services.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -82,7 +82,8 @@
     "local_agent_unrestricted_sudo": "AGENT_OBSERVED",
     "enforced_key_isolation": "NOT_ESTABLISHED",
     "local_tests": "62_REPOSITORY_TESTS_PASS",
-    "php_integration": "LOCAL_FIXTURE_AND_READ_ONLY_VIEW_VERIFIED_NOT_DEPLOYED"
+    "php_integration": "LOCAL_FIXTURE_AND_READ_ONLY_VIEW_VERIFIED_NOT_DEPLOYED",
+    "agent_boundary_design": "docs/AGENT-EXECUTION-BOUNDARY.md"
   },
   "last_docker_smoke": {
     "name": "fallbackhosting-smoke-20261015t083413z-d081cf7059dd3d09",
@@ -295,6 +296,14 @@
     {
       "id": "admin_ops_browser_pass",
       "utc": "2026-10-15T15:33:49Z"
+    },
+    {
+      "id": "agent_boundary_started",
+      "utc": "2026-10-15T15:33:49Z"
+    },
+    {
+      "id": "agent_boundary_proposal",
+      "utc": "2026-10-15T15:35:58Z"
     }
   ],
   "catalog_path": "state/catalog.json",
