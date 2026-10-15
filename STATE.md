@@ -5,7 +5,7 @@ Updated 2026-10-15T14:24:49Z, Codex. Observations are point-in-time, not live mo
 ## Milestones
 
 - M00 DONE, locally committed. Git push explicitly authorized by operator.
-- M01 NEEDS_TEST, partially verified: Oracle, SSH, Docker lifecycle/cleanup and home OS/resources/Compose observed. Independent SSH identity, external application baseline and dependency/backup coverage remain open. Controlled failure tests belong to M08.
+- M01 NEEDS_TEST, partially verified: Oracle, SSH, Docker lifecycle/cleanup and home OS/resources/Compose observed. Independent SSH identity and operator-attested backup/integrity are verified; external application, remaining dependency coverage, restore/offsite evidence remain open. Controlled failure tests belong to M08.
 - M02 IN_PROGRESS: https://project.lab.ventureout.cz/ is LIVE as sanitized public progress presentation; private server-inventory admin LIVE at https://lab.ventureout.cz/, ctx1 seeded and real HTTPS admin login/list/logout verified; broader center modules remain planned. FH-0009 browser QA now passed in headless Chromium at 360/768/1440, including screenshot inspection, keyboard scrolling and all filters; see follow-up checkpoint.
 - M03 PLANNED: operator requested next-phase server onboarding. Design and bounded inventory script prepared; technical SSH access provisioned/tested by operator and subsequently verified by agent. No Coolify or agent-performed remote account/key/permission changes.
 
@@ -82,3 +82,11 @@ Trusted-console operator attestation privately matched existing ED25519 client t
 ## Local broker v1 validation
 
 FH-0020: eight fixture actions, OS-peer plus signed-principal/project scope, separate one-use write approvals, durable registry/jobs/audit, timeout UNKNOWN/no repeat, bounded Unix framing and historical admin view implemented. All 57 repository tests/16 broker tests PASS. No real driver, service or protected issuer activated. Independent external web fetch remained unavailable; M01 external app and backup/dependency coverage remain open. User permits owned controlled ctx1 Docker exercises; no unrelated workload changes permitted by that exercise scope.
+
+## ctx1 backup/integrity VERIFIED by operator
+
+Operator confirms successful 2026-10-15 LXC backup and zstd -t, monthly schedule set. Backup and integrity VERIFIED (operator attestation); restore NOT TESTED, external copy NOT DOCUMENTED. Exact execution UTC/archive path not supplied. Canonical record in state/current.json backup_verification and FH-0002 evidence. Remaining audit work continues; no agent restore or infrastructure change.
+
+## Controlled ctx1 Docker exercise PASS
+
+At 2026-10-15T15:21:58Z–15:22:05Z, one owned limited container create/start/inspect/log/restart/stop/remove/absence passed; original reference unchanged. Protected canaries and frozen lab integrity PASS afterward. Initial attempts exposed incompatible local-log compression/max-file=1; corrected only new-container max-file to 2, keeping all isolation. Every prior test resource cleanup verified. No daemon/service/host changes; no live broker.

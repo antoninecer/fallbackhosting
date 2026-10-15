@@ -75,3 +75,7 @@ Strict existing technical SSH PASS; Rocky 9.8/LXC/x86_64/3 CPUs/8 GiB RAM/2 GiB 
 ## Independent identity verification — supersedes earlier missing-attestation gate
 
 Operator supplied trusted hypervisor-console ED25519 attestation and explicitly approved VERIFIED status. Agent matched it privately against the existing client trust record and completed strict pinned-algorithm read-only SSH. Both private ctx1 inventory records updated with provenance, comparison timestamp, lock/revision/audit and private backups; fingerprint/endpoint are excluded from Git. Operator execution time was not supplied. M01 still needs full backup/dependency and independent external application coverage.
+
+## Backup and integrity — operator attestation for 2026-10-15
+
+Administrator confirms successful ctx1 LXC backup and successful zstd -t integrity test, with monthly automatic backup configured. Record backup/integrity VERIFIED with OPERATOR_ATTESTED provenance; agent did not execute these checks. Exact execution time and archive location were not supplied. Recoverability remains NOT TESTED and external copy NOT DOCUMENTED. This supersedes blanket missing-backup evidence, not remaining dependency/external application gates or restore/offsite verification.

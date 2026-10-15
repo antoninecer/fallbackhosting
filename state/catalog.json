@@ -146,19 +146,29 @@
     {
       "id": "FH-0002",
       "title": "Inventura infrastruktury",
-      "status": "BLOCKED",
+      "status": "READY",
       "owner": "Operator + Codex",
-      "acceptance": "Node OS/resources/services and independent SSH identity verified; complete backup/dependency coverage and independent external app evidence still required.",
+      "acceptance": "Operator attests successful 2026-10-15 LXC backup and zstd -t integrity VERIFIED, monthly schedule configured. Restore NOT TESTED, external copy NOT DOCUMENTED. Continue dependency coverage; do not claim full M01 complete.",
       "dependencies": [],
       "evidence": [
-        "checkpoints/20261015T150304Z-M01-readonly-pass.md"
+        "checkpoints/20261015T150304Z-M01-readonly-pass.md",
+        "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M01",
       "scope": "Scope and context: TASKS.md, FH-0002",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "utc": "2026-10-15T15:21:57Z",
+          "evidence": [
+            "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0003",
@@ -628,21 +638,38 @@
     {
       "id": "FH-0022",
       "title": "Controlled ctx1 managed Docker exercise",
-      "status": "READY",
+      "status": "TESTING",
       "owner": "Codex",
-      "acceptance": "Operator authorizes test Docker workloads on ctx1. Only uniquely owned small resources; unchanged original workload and exact cleanup evidence.",
+      "acceptance": "Authorized real ctx1 one-owned-container create/start/inspect/log/restart/stop/remove/absence PASS, original baseline unchanged, protected canaries PASS. Earlier bounded-log configuration failure corrected only for new test container; no service changes.",
       "dependencies": [
         "FH-0020"
       ],
       "evidence": [
-        "checkpoints/20261015T150304Z-M01-readonly-pass.md"
+        "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
       "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
-      "history": []
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T15:14:02Z",
+          "evidence": [
+            "checkpoints/20261015T151402Z-FH-0022-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:23:37Z",
+          "evidence": [
+            "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],
@@ -658,6 +685,19 @@
       "method": "Recorded deployment checks; no current monitoring claim.",
       "evidence": [
         "checkpoints/20261015T114348Z-FH-0018-admin-https-pass.md"
+      ]
+    },
+    {
+      "id": "OBS-0002",
+      "component": "Application node backup and archive integrity",
+      "dependencies": [],
+      "provenance": "HISTORICAL",
+      "status": "PASS",
+      "observed_at_utc": null,
+      "expires_at_utc": null,
+      "method": "OPERATOR_ATTESTED backup and zstd -t on 2026-10-15, exact UTC unknown; monthly schedule reported. Restore NOT TESTED; external copy NOT DOCUMENTED.",
+      "evidence": [
+        "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
       ]
     }
   ],

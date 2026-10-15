@@ -7,7 +7,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | ID | Milestone | Status | Owner | Acceptance / next step |
 | --- | --- | --- | --- | --- |
 | FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
-| FH-0002 | M01 | BLOCKED | Operator + Codex | Node OS/resources/services and independent SSH identity verified; complete backup/dependency coverage and independent external app evidence still required. |
+| FH-0002 | M01 | READY | Operator + Codex | Operator attests successful 2026-10-15 LXC backup and zstd -t integrity VERIFIED, monthly schedule configured. Restore NOT TESTED, external copy NOT DOCUMENTED. Continue dependency coverage; do not claim full M01 complete. |
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
 | FH-0005 | M02 | TESTING | Operator + Codex | Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed. |
@@ -27,7 +27,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0019 | M02 | BLOCKED_BY_OPERATOR | Codex + Operator | Approve exact new reviewed lab application release switch and rollback; no Nginx/PHP-FPM/cert/DNS/firewall change. Existing inventory deployment is already live. |
 | FH-0020 | M03 | DONE | Codex | Fixture-only v1 implements eight managed actions and scoped Unix views; all 57 repository/16 broker tests PASS. Real driver/issuer/host sandbox/service activation remain separate gates. |
 | FH-0021 | M02 | READY | Codex | Local applications per server, dated container state, requests/progress/results/errors and sanitized audit; authenticated prototype only. |
-| FH-0022 | M03 | READY | Codex | Operator authorizes test Docker workloads on ctx1. Only uniquely owned small resources; unchanged original workload and exact cleanup evidence. |
+| FH-0022 | M03 | TESTING | Codex | Authorized real ctx1 one-owned-container create/start/inspect/log/restart/stop/remove/absence PASS, original baseline unchanged, protected canaries PASS. Earlier bounded-log configuration failure corrected only for new test container; no service changes. |
 
 FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. The original Session 001 scope ended at design; the subsequent operator request adds the public presentation under FH-0009.
 

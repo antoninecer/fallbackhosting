@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0020",
+  "phase": "TESTING",
+  "task_id": "FH-0022",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T151402Z-FH-0020-docker-core-tests-pass.md",
-  "current_summary": "FH-0020 DONE against local implementation commit 9a7efa4: all 57 repository/16 broker tests passed. Scope is local fixture core and bounded Unix protocol only; real transport/service/issuer deployment not performed.",
-  "next_safe_action": "Perform explicitly authorized one-resource ctx1 Docker exercise with immutable existing image, strict verified SSH, private journal, baseline preservation and exact cleanup.",
+  "last_checkpoint": "checkpoints/20261015T152337Z-FH-0022-docker-exercise-pass.md",
+  "current_summary": "Authorized real ctx1 lifecycle PASS at 15:21:58Z\u201315:22:05Z: own create/isolation/start/inspect/bounded log/restart/stop/remove/absence, original baseline unchanged. Post-test protected Oracle/project/lab verification PASS. All earlier own resources cleaned. Per-container bounded-log correction only; no service/host/daemon change. Backup/integrity operator VERIFIED, restore NOT TESTED/offsite NOT DOCUMENTED.",
+  "next_safe_action": "Commit verified exercise/backup evidence and close FH-0022, then implement local PHP-to-Unix broker client and scoped applications/jobs/audit view.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -74,7 +74,7 @@
     }
   },
   "operations_service": {
-    "status": "PROPOSED_NOT_DEPLOYED",
+    "status": "LOCAL_FIXTURE_CORE_IMPLEMENTED_NOT_DEPLOYED",
     "design": "docs/SSH-OPERATIONS-SERVICE.md",
     "review_task": "FH-0013",
     "identity_task": "FH-0014",
@@ -249,7 +249,54 @@
     {
       "id": "docker_core_tests_pass",
       "utc": "2026-10-15T15:14:02Z"
+    },
+    {
+      "id": "docker_exercise_started",
+      "utc": "2026-10-15T15:14:03Z"
+    },
+    {
+      "id": "docker_exercise_guard_stop",
+      "utc": "2026-10-15T15:17:14Z"
+    },
+    {
+      "id": "docker_isolation_verified",
+      "utc": "2026-10-15T15:19:26Z"
+    },
+    {
+      "id": "backup_attested",
+      "utc": "2026-10-15T15:21:57Z"
+    },
+    {
+      "id": "docker_log_policy_fix",
+      "utc": "2026-10-15T15:21:57Z"
+    },
+    {
+      "id": "docker_exercise_pass",
+      "utc": "2026-10-15T15:23:37Z"
     }
   ],
-  "catalog_path": "state/catalog.json"
+  "catalog_path": "state/catalog.json",
+  "backup_verification": {
+    "node_alias": "ctx1",
+    "backup_date": "2026-10-15",
+    "recorded_at_utc": "2026-10-15T15:21:57Z",
+    "execution_at_utc": null,
+    "provenance": "OPERATOR_ATTESTED",
+    "backup": "VERIFIED",
+    "integrity": "VERIFIED",
+    "integrity_method": "zstd -t",
+    "schedule": "MONTHLY_OPERATOR_CONFIRMED",
+    "restore": "NOT_TESTED",
+    "external_copy": "NOT_DOCUMENTED",
+    "evidence": "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
+  },
+  "controlled_docker_exercise": {
+    "status": "PASS_CLEANED",
+    "observed_start_utc": "2026-10-15T15:21:58Z",
+    "observed_end_utc": "2026-10-15T15:22:05Z",
+    "cleanup": "ABSENCE_VERIFIED",
+    "original_reference": "UNCHANGED",
+    "image_pull": false,
+    "evidence": "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
+  }
 }
