@@ -114,3 +114,7 @@ FH-0005 TESTING: exact Git/artifact/mode verifier implemented, four isolated tes
 ## Application access proposal — 2026-10-15T16:02:56.884737+00:00
 
 FH-0015 TESTING: docs/APPLICATION-ACCESS-SECURITY.md records researched role/identity/revocation/isolation proposal and exact operator decisions. VM trust boundaries are proposed architecture review only. No MFA/RBAC/VM deployment or enforced key-isolation claim; current broker approvals retained. Public project reports sanitized decisions, not private recovery data. Local engineering remains actionable.
+
+## Modular existing-tool integration — 2026-10-15T16:23:17Z
+
+Operator accepted app security design and requested portability to ordinary Linux KVM. FH-0004 TESTING: offline provider planner and five tests implemented; full suite 76 PASS. Coolify/Docker app layer is independent of Proxmox/libvirt hypervisor layer; actual adapters NOT_IMPLEMENTED. Coolify team Admin is too broad for app-only delegation; no native role access granted. Current LXC unchanged; VM/backup workers are future explicit operations, not activated. General role/isolation approval no longer pending; exact installation/credential/host scope still required.

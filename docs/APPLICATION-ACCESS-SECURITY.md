@@ -1,6 +1,6 @@
 # Návrh přístupů a izolace aplikací
 
-Stav: PROPOSED / FH-0015 TESTING, 15. 10. 2026. Doporučení podle primárních zdrojů, nikoliv potvrzení bezpečnosti současného provozu. Zadání: osobní aplikační účty bez SSH a bezpečné ovládání přidělených aplikací. Schválení návrhu neopravňuje k instalaci ani změně oprávnění.
+Stav: DESIGN_ACCEPTED_BY_OPERATOR / FH-0015 TESTING, 15. 10. 2026. Implementace a provozní ověření zůstávají otevřené. Doporučení podle primárních zdrojů, nikoliv potvrzení bezpečnosti současného provozu. Zadání: osobní aplikační účty bez SSH a bezpečné ovládání přidělených aplikací. Schválení návrhu neopravňuje k instalaci ani změně oprávnění.
 
 ## Doporučený model
 
@@ -40,7 +40,7 @@ Současný prototyp vyžaduje zvláštní jednorázové schválení operátora p
 
 ## Izolace běhu a dat
 
-Pro nejvyšší praktickou izolaci navrhuji samostatnou QEMU/KVM VM pro každou hranici důvěry; citlivá nebo nedůvěryhodná aplikace vlastní VM. Aplikace jedné důvěryhodné skupiny mohou sdílet VM pouze jako výslovně schválený kompromis. VM přidává oddělený kernel, ale neodstraňuje rizika hypervizoru, správce a sdíleného hardwaru. Aktuální LXC zůstává testovací prostředí. Přechod na VM je NÁVRH změny architektury, nikoliv provedená nebo schválená migrace. Instalace Coolify či změna jeho plánovaného umístění se tímto nepovoluje.
+Pro nejvyšší praktickou izolaci navrhuji samostatnou QEMU/KVM VM pro každou hranici důvěry; citlivá nebo nedůvěryhodná aplikace vlastní VM. Aplikace jedné důvěryhodné skupiny mohou sdílet VM pouze jako výslovně schválený kompromis. VM přidává oddělený kernel, ale neodstraňuje rizika hypervizoru, správce a sdíleného hardwaru. Aktuální LXC zůstává testovací prostředí. Operátor přijal směr VM podle hranice důvěry s modulárními poskytovateli; konkrétní migrace není provedena ani schválena. Viz docs/MODULAR-PROVIDERS.md. Instalace Coolify či změna jeho plánovaného umístění se tímto nepovoluje.
 
 Uvnitř cílové VM vyhodnotit rootless Docker jako další ochranu; nejprve ověřit kompatibilitu síťování, limitů a zvoleného deployment nástroje. Rootless není náhrada autorizace ani samostatného kernelu. Každá aplikace má vlastní síť a datové svazky, vlastní databázový účet a tajemství; nepřipojovat cizí ani hostitelské adresáře. Výchozí síťová politika má omezit komunikaci mezi aplikacemi i přístup do správy a metadata služeb; konkrétní firewall/routing vyžaduje schválení.
 
@@ -76,3 +76,7 @@ GO: pokračovat v dokumentaci, datovém modelu a lokálních negativních testec
 - [Proxmox upstream container guide](https://github.com/proxmox/pve-docs/blob/master/pct.adoc): doporučení QEMU VM pro maximální izolaci aplikačních kontejnerů.
 
 Konkrétní role, rozsah VM a proces schválení jsou náš návrh odvozený z těchto principů; zdroje nepotvrzují bezpečnost naší implementace.
+
+## Operator acceptance follow-up
+
+Operator accepted this security design and requested portable providers for Docker, Proxmox and plain Linux KVM. Role matrix and isolation direction are accepted for implementation; private identity/recovery enrollment and exact operational targets remain to be arranged before deployment. Earlier decision requests for the general role/isolation direction are superseded, not new blockers. No live account, service or infrastructure change authorized by an unspecified design acceptance.

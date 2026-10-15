@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "TESTING",
-  "task_id": "FH-0015",
+  "task_id": "FH-0004",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T160257Z-FH-0015-access-security-proposed.md",
-  "current_summary": "Researched application access security proposal documented: role matrix, passkeys/recovery, deny-by-default app scope, revocation, separate issuer/broker, VM trust boundaries as pending architecture option. Reviewed operator decisions published without private data. Documentation only; no runtime security approval or deployment.",
-  "next_safe_action": "Develop local authorization/revocation negative tests. Before real delegation, record operator choices on isolation, identity recovery and role matrix; request exact infrastructure scope separately.",
+  "last_checkpoint": "checkpoints/20261015T162318Z-FH-0004-modular-providers-tested.md",
+  "current_summary": "Operator-approved security direction reconciled with portable existing-tool architecture. Offline provider planner and five safety tests added; 76 repository tests PASS after generated-table sync and deterministic existing timeout-fixture correction. Coolify role fit remains NEEDS_TEST; no infrastructure or service change.",
+  "next_safe_action": "Implement local application role/revocation checks and validate upstream API permission scope. Real Proxmox/libvirt drivers and exact deployment targets remain separate authorized operations; continue local work.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -328,6 +328,10 @@
     {
       "id": "access_security_proposed",
       "utc": "2026-10-15T16:02:57Z"
+    },
+    {
+      "id": "modular_providers_tested",
+      "utc": "2026-10-15T16:23:18Z"
     }
   ],
   "catalog_path": "state/catalog.json",

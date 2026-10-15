@@ -206,17 +206,46 @@
     {
       "id": "FH-0004",
       "title": "N\u00e1vrh nasazov\u00e1n\u00ed aplikac\u00ed",
-      "status": "BACKLOG",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Coolify requirements/security/backup plan and explicit installation approval; do not install",
+      "acceptance": "Operator accepted modular existing-tool architecture: Coolify/Docker apps, Proxmox or Linux libvirt/KVM VM/backup adapters. Offline provider planner tested; actual API scopes, drivers, host capabilities, installation scope and rollback remain untested. Do not install.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T161948Z-FH-0004-modular-start.md",
+        "checkpoints/20261015T162317Z-FH-0004-modular-pass.md",
+        "docs/MODULAR-PROVIDERS.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Scope and context: TASKS.md, FH-0004",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "BACKLOG",
+          "to": "READY",
+          "utc": "2026-10-15T16:19:48Z",
+          "evidence": [
+            "checkpoints/20261015T161948Z-FH-0004-modular-start.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T16:19:48Z",
+          "evidence": [
+            "checkpoints/20261015T161948Z-FH-0004-modular-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T16:23:17Z",
+          "evidence": [
+            "checkpoints/20261015T162317Z-FH-0004-modular-pass.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0005",

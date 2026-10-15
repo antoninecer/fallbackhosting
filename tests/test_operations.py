@@ -147,11 +147,22 @@ class OperationsTests(unittest.TestCase):
 
     def test_actual_driver_timeout_is_bounded_without_claiming_remote_stop(self):
         self.deploy();original=self.driver.execute
-        def slow(*args,**kwargs):time.sleep(0.2);return original(*args,**kwargs)
+        entered=threading.Event();release=threading.Event();finished=threading.Event()
+        def slow(*args,**kwargs):
+            entered.set()
+            try:
+                if not release.wait(3):raise RuntimeError('Fixture release deadline')
+                return original(*args,**kwargs)
+            finally:finished.set()
         self.driver.execute=slow;self.policy['test_timeout_seconds']=0.01
-        started=time.monotonic();result=self.submit(self.request('start'))
-        self.assertLess(time.monotonic()-started,0.15);self.assertEqual(result['state'],'UNKNOWN')
-        time.sleep(0.25)  # owned fixture thread completes; no active external operation
+        try:
+            started=time.monotonic();result=self.submit(self.request('start'))
+            self.assertLess(time.monotonic()-started,1)
+            self.assertTrue(entered.is_set());self.assertFalse(finished.is_set())
+            self.assertEqual(result['state'],'UNKNOWN')
+        finally:
+            release.set()
+            self.assertTrue(finished.wait(2))  # release only the owned inert worker
 
     def test_restart_recovery_marks_dispatched_unknown_without_driver_call(self):
         self.deploy()

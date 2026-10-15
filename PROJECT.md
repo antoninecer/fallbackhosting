@@ -36,3 +36,7 @@ This is an internal development platform for the owner and authorized collaborat
 ## Administrator server inventory
 
 One public gateway can front multiple authorized application nodes. Administrator configures counterpart name/address/SSH account/runtime/platform and opaque identity reference; private SSH keys remain in separate technical custody. Project applications later bind to a selected node. Declared platform and historical/observed health are distinct. Initial server inventory UI does not grant SSH/Docker rights or perform remote operations. This extends the original single-home-node example without changing independent standby semantics or public-hosting non-goals.
+
+## Accepted modular-provider direction — 2026-10-15
+
+Operator approved the application security design and provider portability: reuse Coolify/Docker for apps, Proxmox native API or libvirt/QEMU/KVM for VM lifecycle and backups. Docker on plain Linux requires neither Proxmox nor VM provisioning. Current LXC remains the demo; VM isolation is selected per trust boundary. docs/MODULAR-PROVIDERS.md records boundaries, local planning tests and pending operational gates. No hypervisor/deployer replacement, Coolify installation/location change or live migration performed; independent Oracle standby remains mandatory.
