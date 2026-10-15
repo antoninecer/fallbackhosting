@@ -1,6 +1,6 @@
 # Current project state
 
-Updated 2026-10-15T11:44:13Z, Codex. Observations are point-in-time, not live monitoring.
+Updated 2026-10-15T14:24:49Z, Codex. Observations are point-in-time, not live monitoring.
 
 ## Milestones
 
@@ -27,7 +27,7 @@ Independent SSH fingerprint remains NEEDS_TEST. Broker/service not installed. Do
 
 ## Next exact step
 
-FH-0018: exact activation scope and push approved; record repeatable activation steps, then secure isolated runtime, verify HTTPS/auth/private config and protected-site canaries. Local PHP admin and ctx1 config are ready; initial unique admin credential is private, not in chat/Git/webroot. Authenticated admin is now active; final route/TLS/assets/private-path/canary/config verification PASS. Independent fingerprint (FH-0014), full node inventory, broker/agent privilege boundary and Coolify remain separate gates; saving node metadata performs no remote action.
+FH-0018 is deployed and remains TESTING pending browser/mobile QA and operational rollback evidence. Repeat real HTTPS authentication and all 14 repository tests passed during the follow-up session; see latest checkpoint for UTC. Next repository-only implementation is FH-0006 canonical schema/export, with reference, evidence, sanitization and stale-state validation. No remote deployment is implied. Independent SSH identity and constrained operations boundary remain separate gates.
 
 Evidence: latest checkpoints, docs/PORTAL-DEPLOYMENT.md, docs/SERVER-ONBOARDING.md, docs/M01-AUDIT.md. Associated revision is the containing commit; inspect Git before resuming.
 
@@ -50,3 +50,7 @@ After every meaningful result publish reviewed public event + checkpoint via scr
 The approved HTTPS vhost is active and lab.ventureout.cz serves authenticated inventory. Release public-directory umask defect corrected only at exact new path, no further reload required; frozen code intact. Real HTTPS login, session rotation/security flags, ctx1 Docker list and logout PASS; actual inventory unchanged. Private runtime 0700/files0600, dedicated fallback-web has only its own group; root-managed release/public0755. Repeated probes hit unrelated API 429 again; final full canary/config/app verification subsequently PASS after cooldown. This is not a Docker management service: broker and deployment actions remain planned. Initial credential remains in private operator handoff, never published.
 
 Latest verified result supersedes activation-in-progress observations above: all prepare/http/certificate/https journal phases now have done evidence; final canaries and unchanged shared config hashes PASS after cooldown. Backend activation and real admin login complete. FH-0018 remains TESTING for browser/mobile review and operational rollback drill; neither is claimed performed. No home outage independence test performed.
+
+## Follow-up documentation reconciliation
+
+Fresh HTTPS auth/session rotation/ctx1/logout PASS without inventory mutation; 14 local tests PASS. Browser tooling unavailable; no visual QA or rollback drill claimed. Earlier activation-in-progress paragraphs are historical and superseded by the live result. No operational configuration changed in this follow-up.

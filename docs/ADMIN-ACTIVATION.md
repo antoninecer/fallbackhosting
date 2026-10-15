@@ -1,6 +1,6 @@
 # lab admin activation — approved activation, journaled execution
 
-This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. All preparation is complete locally; Operator explicitly approved this exact scope and Git push; no further approval is pending for these actions. No shared config, account, PHP service or certificate changed yet.
+This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. Activation is complete and HTTPS authentication verified; the operator explicitly approved the exact scope below and Git push. The dedicated account, FPM pool, vhost and certificate are deployed. Browser/mobile QA and a live rollback drill remain unperformed. Commands below document the original activation; do not replay completed phases.
 
 ## Requested exact scope
 

@@ -4,7 +4,7 @@
 
 - GitHub: `https://github.com/antoninecer/fallbackhosting` (public).
 - Reported working copy: `/opt/fallback` on `setonuk`, using non-root account `tonda`.
-- Public read-only presentation `project.lab.ventureout.cz` is **live**; protected administrative portal remains planned.
+- Public read-only presentation `project.lab.ventureout.cz` is **live**; authenticated server-inventory administration is live at `lab.ventureout.cz`; broader control-center modules remain planned.
 - Keep sensitive connection details (IP inventory, credentials, SSH private keys, tokens) in an access-controlled operator secret store **outside Git**.
 
 ## Starting a Codex/agent session
@@ -51,7 +51,7 @@ A standby snapshot is not a backup of databases. During standby: disable logins,
 
 ## Public project presentation
 
-Public build: `python3 portal/build.py`, after each validated update of canonical tasks/milestones/state/checkpoint. Output public/ is the only webroot; never expose the repository root. Test with `python3 -m unittest discover -s tests -p test_portal.py -v`. Reviewed deployment/rollback and approval scope: docs/PORTAL-DEPLOYMENT.md. Project publication is complete under operator approval; lab introduction is built locally and awaits separate exact gateway approval. Regeneration updates the live project page without reload; no server-side commands are exposed to visitors.
+Public build: `python3 portal/build.py`, after each validated update of canonical tasks/milestones/state/checkpoint. Output public/ is the only webroot; never expose the repository root. Test with `python3 -m unittest discover -s tests -p test_portal.py -v`. Reviewed deployment/rollback and approval scope: docs/PORTAL-DEPLOYMENT.md. Project publication is complete under operator approval; the lab domain now serves the approved authenticated inventory administration. The local static lab introduction is a historical artifact, not the live lab app. Regeneration updates the live project page without reload; no server-side commands are exposed to visitors.
 
 ## First platform server setup
 

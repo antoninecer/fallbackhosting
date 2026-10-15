@@ -34,6 +34,7 @@ TASKS = {
 }
 
 PUBLIC_EVENTS = {
+ "admin_recheck_pass": "Dokončeno: opakované skutečné HTTPS přihlášení a odhlášení administrátora i všech 14 místních testů prošlo. Vizuální kontrola v prohlížeči a zkouška rollbacku zbývají.",
  "admin_https_failed": "HTTPS certifikát je aktivní; kontrola aplikace odhalila nepřístupný nový adresář. Oprava přístupového režimu probíhá, okolní weby prošly kontrolou.",
  "admin_canary_wait": "Kontrola před pokračováním: certifikát vydán, vedlejší API vrátilo HTTP 429. Čekáme na opakovanou kontrolu; chráněná referenční stránka je dostupná.",
  "home_inventory_pass": "Dokončeno: ověření OS, prostředků, Dockeru a Compose domácího uzlu.",

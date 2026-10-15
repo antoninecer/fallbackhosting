@@ -5,9 +5,9 @@
   "phase": "TESTING",
   "task_id": "FH-0018",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T114348Z-FH-0018-admin-https-pass.md",
-  "current_summary": "Final full lab verification and protected canaries PASS after API cooldown; existing shared config hashes unchanged, exact approved HTTPS template/source intact. HTTPS journal reconciled, no repeat issuance or extra reload. Real HTTPS login/ctx1/logout passed; dedicated account has no Docker/sudo groups. Backend deployment complete; browser/mobile QA and operational rollback drill NOT performed, task TESTING.",
-  "next_safe_action": "Operator opens lab/admin on desktop and mobile; retrieve initial credential privately and rotate via reviewed procedure. Complete independent host identity and audit backup/dependency coverage before unattended remote operations. Browser/rollback evidence needed to close deployment QA.",
+  "last_checkpoint": "checkpoints/20261015T142436Z-FH-0018-admin-recheck-pass.md",
+  "current_summary": "Real HTTPS admin login, secure session rotation, ctx1 display and logout PASS; private inventory unchanged. All 14 repository tests PASS. Deployment docs reconciled; browser tooling absent, visual QA and live rollback drill remain unperformed. No runtime configuration changed.",
+  "next_safe_action": "Implement FH-0006 repository-only canonical schema/export with reference, sanitization, evidence and stale-state validation; retain FH-0018 TESTING until remaining QA evidence exists.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -146,6 +146,10 @@
     {
       "id": "admin_https_pass",
       "utc": "2026-10-15T11:43:48Z"
+    },
+    {
+      "id": "admin_recheck_pass",
+      "utc": "2026-10-15T14:24:36Z"
     }
   ]
 }
