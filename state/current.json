@@ -5,9 +5,9 @@
   "phase": "TESTING",
   "task_id": "FH-0004",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md",
-  "current_summary": "Private Coolify 4.4.6/DB/Redis healthy, IPv4-only app setting resolves LXC limitation. HTTP routes/four assets, disabled registration redirect, Chromium360/768/1440 and original workload/post Oracle canaries PASS. Admin email/bootstrap and real login/logout pending; no automation key/validated deployment target, public route or app deployment claimed.",
-  "next_safe_action": "Receive requested private administrator email, bootstrap unique native admin and verify actual login/logout. Prepare distinct controller-to-target credential plan and exact future validation scope; keep public registration/proxy disabled.",
+  "last_checkpoint": "checkpoints/20261015T204510Z-FH-0017-login-fix-live-pass.md",
+  "current_summary": "Private Coolify 4.4.6/DB/Redis healthy, IPv4-only app setting resolves LXC limitation. HTTP routes/four assets, disabled registration redirect, Chromium360/768/1440 and original workload/post Oracle canaries PASS. Admin login fix deployed and live HTTPS-tested after graceful PHP-FPM reload: login succeeds without a pre-auth session cookie, ctx1 appears, logout succeeds, inventory unchanged. Actual operator-browser confirmation remains pending; Coolify bootstrap and validated deployment target remain pending.",
+  "next_safe_action": "Operator can sign in at https://lab.ventureout.cz/ with the existing admin credentials; if browser still rejects login, capture the exact resulting message and timestamp. Continue other safe project tasks; keep public registration/proxy disabled.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -114,7 +114,12 @@
     "activation_approval": "EXPLICIT_OPERATOR_APPROVAL_RECORDED_IN_CHECKPOINT",
     "preflight": "PASS_CURRENT_SERVICES_TARGET_ABSENCE_DNS_PRIVATE_SEED_SOURCE_INTEGRITY",
     "deployment_revision": "21c050b36e8ddd4cd3d7ec5e87a727f556348e9b",
-    "final_canaries": "PASS_AFTER_COOLDOWN_EXISTING_CONFIG_HASHES_UNCHANGED"
+    "final_canaries": "PASS_AFTER_COOLDOWN_EXISTING_CONFIG_HASHES_UNCHANGED",
+    "login_fix_revision": "f285d8ab5400c9364f4008c6c06db035ebe0f26e",
+    "login_fix_status": "DEPLOYED_LIVE_HTTPS_TEST_PASS_AFTER_GRACEFUL_PHP_FPM_RELOAD",
+    "login_fix_test": "NO_PREAUTH_COOKIE_LOGIN_PASS_CTX1_VISIBLE_SESSION_ROTATION_LOGOUT_PASS_INVENTORY_UNCHANGED",
+    "operator_browser_confirmation": "PENDING",
+    "browser_qa": "NOT_PERFORMED"
   },
   "public_events": [
     {
@@ -236,6 +241,10 @@
     {
       "id": "ssh_identity_verified",
       "utc": "2026-10-15T15:09:05Z"
+    },
+    {
+      "id": "admin_login_cookie_fix_pass",
+      "utc": "2026-10-15T20:44:58Z"
     },
     {
       "id": "ssh_identity_verified",

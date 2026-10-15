@@ -24,7 +24,7 @@ Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance su
 
 Transport follow-up: M03 remains PLANNED, preparation only. Technical SSH probes passed; following operator Docker-group grant, isolated Docker lifecycle/cleanup passed (FH-0016). Independent SSH fingerprint and enforceable agent/key boundary remain open (FH-0011, FH-0013–0015); no deployment milestone completed by transport checks.
 
-FH-0017: private multi-node server configuration under M02 is locally implemented/tested; ctx1 Docker record and initial admin prepared. Exact isolated lab activation and browser checks pending. M02 remains IN_PROGRESS and M03 deployment still PLANNED; local configuration does not close audit/fingerprint/Coolify gates.
+FH-0017: private multi-node server configuration under M02 is active; ctx1 Docker record and initial admin are present. A browser-reported login 403 was fixed and live HTTPS tested, including a request without the pre-auth cookie; session rotation, ctx1 display, logout and unchanged inventory passed. Operator browser confirmation remains pending. M02 remains IN_PROGRESS and M03 deployment still PLANNED; this does not close audit/fingerprint/Coolify gates.
 
 Current reconciliation: existing lab inventory HTTPS is already live; only the new center/form-fix release activation is BLOCKED_BY_OPERATOR (FH-0019). Independent ctx1 ED25519 identity is now VERIFIED from trusted-console attestation and client comparison (FH-0014). M01 remains NEEDS_TEST for backup/dependency/external application coverage. Operator prioritizes read-only audit, local broker/admin fixtures, then controlled owned Docker exercises on ctx1; no production service changes authorized by this reconciliation.
 
