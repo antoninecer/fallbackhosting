@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "project": "FallbackHosting",
+  "milestone": "M00",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0001",
+  "live_verified_at_utc": null,
+  "last_checkpoint": null,
+  "current_summary": "Initial public Git repository cloned; project starter docs pending first push.",
+  "next_safe_action": "Review and commit project documents, push to origin/main, then verify remote.",
+  "blocking_issue": null,
+  "warnings": [
+    "Public repository: never commit secrets/private infrastructure details.",
+    "Previously reported service checks are historical, not live monitoring."
+  ]
+}

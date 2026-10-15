@@ -1,0 +1,25 @@
+# Secrets and local runtime files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+private/
+secrets/
+credentials/
+*.sqlite
+*.db
+*.log
+*.dump
+*.sql.gz
+__pycache__/
+.pytest_cache/
+node_modules/
+.DS_Store
+# Local build artifacts
+.dist/
+dist/
+build/
+*.tmp
