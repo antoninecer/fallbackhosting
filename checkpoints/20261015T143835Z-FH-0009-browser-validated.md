@@ -1,0 +1,11 @@
+# Public progress browser verification
+- UTC: 2026-10-15T14:38:35Z; FH-0009 TESTING pending containing implementation commit.
+- Chromium headless against actual HTTPS page PASS at 360/768/1440 px: no document horizontal overflow, bounded progress panel (352/416/416 px), keyboard focus/PageDown scrolling, all five task filters and no JavaScript page errors.
+- Added 40 history rows in browser memory: following milestones section moved 0 px at all three widths. No source/runtime records mutated by this simulation.
+- Screenshots at all three widths inspected; responsive layout and bounded history visually reviewed. Mobile task table intentionally scrolls horizontally inside its own region.
+- Local screenshots and JSON report: ignored .local/qa/20261015T143739Z; not exported to public Git/webroot.
+- Tooling: Playwright venv, Chromium and extracted missing libraries under /tmp only. First launch lacked libraries; later run PASS. No system package installation or service changes.
+- Reproduction: LD_LIBRARY_PATH=/tmp/fallback-browser-libs/usr/lib/aarch64-linux-gnu PLAYWRIGHT_BROWSERS_PATH=/tmp/fallback-browser-cache /tmp/fallback-browser-venv/bin/python scripts/check-public-browser.py
+- Eight portal tests and canonical catalog/table checks PASS before browser run.
+- Rollback: reviewed Git revert and static public rebuild.
+- Limitations: headless Chromium, not physical device or other browser engines; no admin visual or live operational rollback test performed.

@@ -287,9 +287,12 @@
       "title": "Veřejná prezentace průběhu projektu",
       "status": "TESTING",
       "owner": "Codex",
-      "acceptance": "Live HTTPS/page/assets/isolation/canaries passed; browser/mobile/filter QA pending; evidence in latest live checkpoint",
+      "acceptance": "Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T143835Z-FH-0009-browser-validated.md",
+        "docs/PORTAL-DEPLOYMENT.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M02",

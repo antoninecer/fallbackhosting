@@ -80,3 +80,5 @@ Project progress displays human-readable times in Europe/Prague (CET/CEST, inclu
 Edit milestone/task records only in state/catalog.json, then run `python3 scripts/project-data.py sync` and `python3 scripts/project-data.py check`. The two Markdown tables are generated and the public build rejects drift. Contract, evidence requirements and rollback: docs/PROJECT-DATA.md. Public labels still require explicit review in portal/build.py.
 
 For the first application deployment, the operator requests small demo Docker applications selected by the agent. Prefer a simple stateless web demo; choose the concrete image/version and resource limits when preparing the deployment plan. No image selected or deployed by this note.
+
+Public browser QA is reproducible with scripts/check-public-browser.py using an independently installed Playwright/Chromium. It visits only the public page, tests widths 360/768/1440, scroll/focus, filters and stable section position; screenshots/reports go to ignored .local/qa. Temporary tooling is not a production dependency and is not guaranteed to survive cleanup/reboot.

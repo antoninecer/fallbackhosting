@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0006",
+  "phase": "TESTING",
+  "task_id": "FH-0009",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T143602Z-FH-0006-data-model-pass.md",
-  "current_summary": "FH-0006 DONE: implementation committed as 3d405f6, all 28 repository tests passed and live HTTPS public result verified; canonical IDs, references, evidence, privacy, lifecycle and stale-state handling implemented. No remote/service changes.",
-  "next_safe_action": "Implement operator-requested bounded scrollable progress history, then verify browser/mobile layout using isolated tooling.",
+  "last_checkpoint": "checkpoints/20261015T143835Z-FH-0009-progress-scroll-pass.md",
+  "current_summary": "Live HTTPS Chromium QA PASS at 360/768/1440: bounded panel, keyboard focus/PageDown, five filters, no document overflow/JS errors; adding 40 rows moves later content 0 px. Screenshots at all three widths inspected. Tooling isolated in /tmp; no system/service changes.",
+  "next_safe_action": "Commit verified public history improvement and record FH-0009 completion; then continue control-center UI work. Admin visual/rollback QA remains separate.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -166,6 +166,14 @@
     {
       "id": "data_model_pass",
       "utc": "2026-10-15T14:36:02Z"
+    },
+    {
+      "id": "browser_qa_wait",
+      "utc": "2026-10-15T14:37:33Z"
+    },
+    {
+      "id": "progress_scroll_pass",
+      "utc": "2026-10-15T14:38:35Z"
     }
   ],
   "catalog_path": "state/catalog.json"

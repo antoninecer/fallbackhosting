@@ -6,7 +6,7 @@ Updated 2026-10-15T14:24:49Z, Codex. Observations are point-in-time, not live mo
 
 - M00 DONE, locally committed. Git push explicitly authorized by operator.
 - M01 NEEDS_TEST, partially verified: Oracle, SSH, Docker lifecycle/cleanup and home OS/resources/Compose observed. Independent SSH identity, external application baseline and dependency/backup coverage remain open. Controlled failure tests belong to M08.
-- M02 IN_PROGRESS: https://project.lab.ventureout.cz/ is LIVE as sanitized public progress presentation; private server-inventory admin LIVE at https://lab.ventureout.cz/, ctx1 seeded and real HTTPS admin login/list/logout verified; broader center modules remain planned. FH-0009 TESTING pending browser/mobile/filter QA. Operator said the page looks good, but device sizes and interaction coverage were not specified.
+- M02 IN_PROGRESS: https://project.lab.ventureout.cz/ is LIVE as sanitized public progress presentation; private server-inventory admin LIVE at https://lab.ventureout.cz/, ctx1 seeded and real HTTPS admin login/list/logout verified; broader center modules remain planned. FH-0009 browser QA now passed in headless Chromium at 360/768/1440, including screenshot inspection, keyboard scrolling and all filters; see follow-up checkpoint.
 - M03 PLANNED: operator requested next-phase server onboarding. Design and bounded inventory script prepared; technical SSH access provisioned/tested by operator and subsequently verified by agent. No Coolify or agent-performed remote account/key/permission changes.
 
 ## Verified runtime changes
@@ -62,3 +62,7 @@ Project page event/checkpoint/generation times now display Europe/Prague with au
 ## FH-0006 canonical catalog
 
 Repository data implementation validated: 11 milestones/18 tasks preserved in state/catalog.json, Markdown tables generated, public export fail-closed on invalid records/drift. All 28 repository tests PASS, including privacy, references, transitions, stale/unknown health and heartbeat, and last-valid-page retention. See latest checkpoint for timestamp and completion revision. No protected-center deployment, remote action or service change. Small demo containers requested by operator for later deployment; no image selected yet.
+
+## Public history and browser follow-up
+
+Operator-requested bounded history is live. Headless Chromium at 360/768/1440 PASS: keyboard scrolling, five filters, no page overflow/errors, 40 extra rows cause 0 px section movement. All three screenshots inspected; private report path in checkpoint. Admin visual QA and operational rollback remain separate and unperformed. No system package/service changes; browser tooling isolated under /tmp.
