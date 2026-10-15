@@ -19,3 +19,5 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 Milestones may be reprioritized only after updating the architecture decision and explaining consequences. Use Git commits/PRs and evidence, not optimistic progress claims.
 
 Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance supersedes automatic push under explicit operator instructions. M02 is now IN_PROGRESS: public presentation live, private portal and failure tests still pending.
+
+Transport follow-up: M03 remains PLANNED, preparation only. Technical SSH probes passed; Docker CLI exists but current daemon access is denied, no container test completed. Independent SSH fingerprint and enforceable agent/key boundary remain open (FH-0011, FH-0013–0015); no deployment milestone completed by transport checks.

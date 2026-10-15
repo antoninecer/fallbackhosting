@@ -56,3 +56,7 @@ Add a sanitized read-only static presentation, separate from the authenticated p
 ## Platform first-run setup
 
 Operator clarified admin-provisioned users/projects/subdomains and per-user app management with safe per-app standby contacts. See docs/PLATFORM-WORKFLOW.md and docs/SERVER-ONBOARDING.md. No public admin setup, raw Docker API or general shell is exposed. Key custody belongs to the approved deployment controller; an audit key and controller automation key are distinct. Any change to the original planned home Coolify placement or broad privileges requires explicit architecture review.
+
+## Isolated SSH operations boundary — proposed, not deployed
+
+Operator-provisioned Oracle-to-home technical SSH was independently exercised by agent at 2026-10-15T08:25:31Z with strict existing host trust; independent fingerprint attestation is still required. Proposed local operations service owns key access, accepts only authorized structured allowlisted jobs over a private Unix socket, and starts with read-only identity/uptime actions. Private mapping, trust and service code cannot be writable by web/agent callers. No target sudo/Docker privileges are granted. Current agent unrestricted sudo and possible Docker privilege path prevent a claim of enforced key isolation; exact constrained-agent plan needs human review. Proposal and acceptance/rollback: docs/SSH-OPERATIONS-SERVICE.md. This is a review proposal complementing the planned home Coolify deployment; gateway/static serving has no dependency on broker or home availability.

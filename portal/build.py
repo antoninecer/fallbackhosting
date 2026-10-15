@@ -25,6 +25,9 @@ TASKS = {
  "FH-0010": "Úvodní stránka připravované platformy",
  "FH-0011": "Návrh připojení aplikačního serveru",
  "FH-0012": "Ověření obnovy HTTPS certifikátu",
+ "FH-0013": "Návrh oddělené služby pro autorizované operace",
+ "FH-0014": "Nezávislé ověření identity aplikačního serveru",
+ "FH-0015": "Návrh oddělení oprávnění technického přístupu",
 }
 
 def rows(path, pattern):

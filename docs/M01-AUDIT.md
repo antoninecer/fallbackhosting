@@ -51,3 +51,9 @@ M01 remains NEEDS_TEST: external baseline, dependency analysis and operational b
 ## Deployment baseline follow-up — 2026-10-15
 
 Approved project presentation deployment repeated protected route/TLS/asset checks and sampled six other unrelated root URLs before/after. A pre-existing root probe returned 502, two returned 404; all sampled status/content-type/final-URL values were unchanged by deployment. Underlying application causes remain UNKNOWN and were not investigated or modified in this scope. This is a measured baseline, not a claim all production workflows are healthy. Full external app verification remains incomplete because web fetch tool was unavailable.
+
+## Technical SSH evidence — 2026-10-15T08:25:31Z
+
+After operator provisioning and explicit test authorization, agent performed bounded hostname/effective-user/uptime probes via existing technical Oracle identity: all exited 0 and identity values matched expected target/account. No private key contents accessed/copied, no account/permission/trust changes. StrictHostKeyChecking=yes and UpdateHostKeys=no used. Independent source fingerprint remains NEEDS_TEST, not proven by these probes. Remote absence of sudo/Docker permissions is operator-reported, not independently queried. OS/resources and Docker management remain unverified. Current local unrestricted sudo was observed, so file separation does not enforce exclusion of Codex from key-owner privileges.
+
+Explicit subsequent Docker probe: CLI found at standard path, daemon-version query failed with socket permission denial. No resource create/delete test occurred and no remote sudo was used. This does not establish daemon health/version or existing workload inventory; no permission changed. See latest Docker-denied checkpoint for evidence-recorded UTC.

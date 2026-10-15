@@ -2,19 +2,62 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M03",
-  "phase": "PLANNED",
+  "phase": "BLOCKED",
   "task_id": "FH-0011",
-  "live_verified_at_utc": "2026-10-15T07:58:16Z",
-  "last_checkpoint": "checkpoints/20261015T080413Z-FH-0011-handoff.md",
-  "current_summary": "Project presentation live; lab entry prepared; next-phase SSH/server onboarding design recorded, awaiting existing ctx1 access information.",
-  "next_safe_action": "Obtain existing ctx1 SSH account/port/key-access information or operator-run read-only inventory; approve exact access provisioning before changes.",
-  "blocking_issue": "ctx1 SSH account/access unverified; lab gateway activation separately awaits exact scoped approval.",
+  "live_verified_at_utc": "2026-10-15T08:25:31Z",
+  "last_checkpoint": "checkpoints/20261015T083231Z-FH-0013-validated.md",
+  "current_summary": "Technical SSH verified. Docker CLI exists but daemon access denied; no test container created. Isolated operations-service proposal drafted; fingerprint and enforceable key isolation pending.",
+  "next_safe_action": "Review proposed restricted Docker smoke-test/helper scope and broker isolation; obtain independent host fingerprint. Do not grant rights or retry Docker via remote sudo without exact approval.",
+  "blocking_issue": "Remote Docker API access denied; independent host fingerprint unverified; local unrestricted agent sudo prevents enforcing key isolation.",
   "warnings": [
     "Public progress presentation is live; protected platform/admin features are not deployed.",
-    "Current milestone points to next-phase design; M02 remains IN_PROGRESS and M01 needs further evidence.",
     "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
     "No secrets/private inventory in public presentation; no push without authorization.",
     "Saved agent state is not a live heartbeat.",
-    "Project certificate renewal webroot exists but automatic post-renewal Nginx reload is not configured/verified; FH-0012."
-  ]
+    "Project certificate renewal webroot exists but automatic post-renewal Nginx reload is not configured/verified; FH-0012.",
+    "M01/M02 gates remain incomplete; M03 transport verification is not deployment readiness.",
+    "Independent SSH host fingerprint pending; current agent unrestricted sudo defeats strict account-only key isolation.",
+    "No target sudo/Docker privilege grant and no broker deployment approved."
+  ],
+  "ssh_transport": {
+    "verification": "AGENT_OBSERVED",
+    "verified_at_utc": "2026-10-15T08:25:31Z",
+    "operator_report": {
+      "recorded_at_utc": "2026-10-15T08:29:13Z",
+      "test_execution_utc": null,
+      "setup": "existing technical accounts and key-based SSH working",
+      "remote_sudo": "NOT_GRANTED_REPORTED",
+      "remote_docker": "NOT_GRANTED_REPORTED_AND_EFFECTIVE_SOCKET_DENIAL_OBSERVED"
+    },
+    "probes": {
+      "hostname": "PASS_EXPECTED_NODE",
+      "effective_user": "PASS_EXPECTED_TECHNICAL_ACCOUNT",
+      "uptime": "PASS"
+    },
+    "host_trust": "EXISTING_TRUST_ACCEPTED_STRICTLY",
+    "independent_fingerprint": "NEEDS_TEST",
+    "key_material_read_or_copied_by_agent": false,
+    "permissions_changed_by_agent": false,
+    "private_inventory_location": "UNKNOWN_OPERATOR_CUSTODY",
+    "docker_probe": {
+      "evidence_recorded_at_utc": "2026-10-15T08:31:28Z",
+      "cli": "FOUND",
+      "daemon_query": "FAILED_PERMISSION_DENIED",
+      "exit_code": 1,
+      "daemon_version": "UNKNOWN",
+      "container_create_delete": "NOT_RUN_PREREQUISITE_DENIED",
+      "resources_created": 0,
+      "cleanup": "NOT_NEEDED",
+      "remote_sudo_used": false
+    }
+  },
+  "operations_service": {
+    "status": "PROPOSED_NOT_DEPLOYED",
+    "design": "docs/SSH-OPERATIONS-SERVICE.md",
+    "review_task": "FH-0013",
+    "identity_task": "FH-0014",
+    "agent_boundary_task": "FH-0015",
+    "local_agent_unrestricted_sudo": "AGENT_OBSERVED",
+    "enforced_key_isolation": "NOT_ESTABLISHED"
+  }
 }

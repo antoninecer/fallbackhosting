@@ -30,6 +30,8 @@ class PublicPortalTests(unittest.TestCase):
             state = json.loads(p.read_text())
             state["current_summary"] = "PRIVATE_STATE_MARKER"
             state["warnings"] = ["PRIVATE_WARNING_MARKER"]
+            state["ssh_transport"] = {"private_inventory": "PRIVATE_SSH_MARKER"}
+            state["operations_service"] = {"private_policy": "PRIVATE_POLICY_MARKER"}
             p.write_text(json.dumps(state))
             tasks = root / "TASKS.md"
             tasks.write_text(tasks.read_text().replace("Operator + Codex", "PRIVATE_OWNER_MARKER"))

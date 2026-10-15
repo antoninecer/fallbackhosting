@@ -1,10 +1,10 @@
 # Server onboarding — design and first safe step
 
-2026-10-15, operator requested this as part of first platform setup. Status: design only; no ctx1 account/key/SSH/service changes or Coolify installation performed.
+2026-10-15, operator requested this as part of first platform setup. Status: onboarding design; operator has since provisioned technical SSH transport. Agent performed the explicitly requested identity/uptime and Docker access diagnostics; no account/key/permission/service changes or Coolify installation performed by agent.
 
 ## Intended node
 
-The operator's intended deployment target is ctx1, historically LXC 102 on home Proxmox, Rocky Linux 9.8 with Docker/Compose. Those identity/OS/resource claims need live verification. Only the historical home test HTTP endpoint was rechecked successfully from Oracle. No SSH account or usable key has been confirmed. Proxmox access is not required or authorized for this step.
+The operator's intended deployment target is ctx1, historically LXC 102 on home Proxmox, Rocky Linux 9.8 with Docker/Compose. Those identity/OS/resource claims need live verification. Home test HTTP was rechecked successfully from Oracle. Operator-provisioned technical SSH accounts/key now work: agent hostname, effective-user and uptime probes passed at 2026-10-15T08:25:31Z under existing strict host trust. Independent fingerprint attestation still pending. Proxmox access is not required or authorized for this step.
 
 The deployment control plane remains planned on home infrastructure per ARCHITECTURE.md. Oracle independently hosts the gateway, snapshots and project progress page. Do not conflate an agent's audit key on Oracle with the eventual deployment controller's automation key: choose the controller location and approved privilege model before creating or distributing keys. There is no Coolify service confirmed on either node.
 
@@ -29,10 +29,14 @@ Official docs reviewed 2026-10-15:
 
 No change to the planned Coolify architecture is made here. If the required privilege model conflicts with project least-privilege constraints, document alternatives and request human architecture review before installation. No root SSH enablement, firewall changes or service restarts are authorized by this design.
 
-## Needed from operator now
+## Current access evidence and next gate
 
-Confirm whether a dedicated SSH account already exists, its username/SSH port and whether Oracle already has authorized key access. Do not send passwords/private keys or complete confidential inventory. If no account exists, first use the existing ctx1 console to run the bounded read-only inventory below; do not create an account, install software or grant sudo/Docker membership yet.
+Technical accounts and key access already exist per operator, with subsequent agent transport verification. Exact private connection details remain in operator custody; no additional credentials should be sent in chat or Git. Destination sudo and Docker rights are NOT granted per operator. Do not grant them, recreate accounts/keys, or run installation. Independent console fingerprint comparison is the next gate.
 
 `scripts/inspect-node.sh` is intended to be copied/reviewed and run locally on ctx1 by the operator. It reads only selected OS/resources/version/service values, does not list apps/containers or read configs/secrets, and marks denied Docker access UNKNOWN. It was syntax-checked in the repository, not executed on ctx1. Return only sanitized results through a private operator channel if needed.
 
-Next exact gate: inspect actual ctx1 state and approve an exact account/key/known-host provisioning plan with rollback. No remote login attempts using guessed usernames and no new SSH methods have been made.
+Next exact gate: independently compare the actual negotiated host-key fingerprint using trusted target console evidence, then review docs/SSH-OPERATIONS-SERVICE.md. No guessed usernames or new SSH methods used. Current agent unrestricted sudo means actual key isolation is not yet enforced; do not claim a separate Unix account alone protects the key from this agent. No permissions changed.
+
+## Explicit Docker diagnostic follow-up
+
+Operator requested a disposable Docker create/delete probe. Agent confirmed /usr/bin/docker exists but daemon query returned socket permission denied (exit 1); therefore no resource was created or deleted. Current daemon version/health remains UNKNOWN. This is an observed permission blocker; do not re-run as root, add Docker-group membership or grant sudo without exact operator approval. Any constrained test helper is a proposal only in docs/SSH-OPERATIONS-SERVICE.md.

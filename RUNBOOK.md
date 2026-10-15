@@ -56,3 +56,11 @@ Public build: `python3 portal/build.py`, after each validated update of canonica
 ## First platform server setup
 
 Follow docs/SERVER-ONBOARDING.md. Operator may review/copy scripts/inspect-node.sh and run it on ctx1 for bounded read-only evidence. No key, user, sudo, SSH or Docker changes are implied. Unknown host-key/account state stops remote connection; never guess credentials or use disabled host-key checking. Coolify connection validation can mutate/restart Docker, so it requires a separate approved plan.
+
+## Technical SSH status and safe continuation
+
+Operator provisioned the technical transport; agent hostname/effective-user/uptime probes passed at 2026-10-15T08:25:31Z using existing technical identity via its owner process, no key copying. Reuse private operator inventory; exact endpoint/key location are intentionally omitted from this public runbook. Do not recreate keys/accounts or resolve denial with new sudo/Docker rights. Existing StrictHostKeyChecking success is not independent fingerprint proof.
+
+For FH-0014 the operator uses existing trusted ctx1 console to fingerprint the actual negotiated public SSH host key and compares privately with the configured client's trusted entry, recording source/time/verifier/match. Procedure: docs/SSH-OPERATIONS-SERVICE.md. Do not accept new keys, remove known_hosts records, or obtain the sole attestation over the same unverified connection.
+
+Before any unattended broker, review and approve its exact deployment and the agent privilege boundary. Current unrestricted agent sudo defeats simple account/file isolation. No service is installed; no target permission grant approved. Proposed jobs are fixed read-only actions; public presentation never submits them.
