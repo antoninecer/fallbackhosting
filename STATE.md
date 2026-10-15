@@ -102,3 +102,7 @@ FH-0015 TESTING: docs/AGENT-EXECUTION-BOUNDARY.md prepared with external runner 
 ## Certificate reload proposal
 
 FH-0012 TESTING: own two-certificate hook/proposal and five injected callback tests prepared, all 67 repository tests PASS. Root-managed future install/reconfigure/timeout/canary/served-leaf/rollback plan documented. Nothing installed or renewed/reloaded; automatic end-to-end renewal remains unconfigured/unverified.
+
+## Scoped dependency follow-up — 2026-10-15T15:46:48Z
+
+See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies are local; one home Docker bind mount observed, archive inclusion UNKNOWN. Operator backup/integrity VERIFIED; restore NOT TESTED/offsite NOT DOCUMENTED. FH-0002 TESTING, M01 NEEDS_TEST; no infrastructure changes.

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M02",
+  "milestone": "M01",
   "phase": "TESTING",
-  "task_id": "FH-0012",
+  "task_id": "FH-0002",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T154228Z-FH-0012-renewal-proposal-pass.md",
-  "current_summary": "FH-0012 two-lineage root-managed hook/reconfigure/backup/rollback proposal prepared; five mock-only hook tests and all 67 repository tests PASS. Current own cert metadata unchanged, no hook installed, no staging renewal, timer change or service reload. End-to-end renewal remains NOT TESTED.",
-  "next_safe_action": "Continue M01 authorized read-only dependency classification for independent public/static/admin components; keep external/restore/offsite gaps explicit.",
+  "last_checkpoint": "checkpoints/20261015T154712Z-FH-0002-dependency-audit-verified.md",
+  "current_summary": "Bounded read-only gateway/home dependency classification PASS; 67 repository tests PASS. Operator backup and integrity VERIFIED; restore NOT TESTED, offsite NOT DOCUMENTED, bind-mount archive coverage UNKNOWN. FH-0002 TESTING, M01 NEEDS_TEST; no operational changes.",
+  "next_safe_action": "Prepare the pending admin release verification locally; no production activation. Obtain sanitized archive inclusion and independent external application evidence before closing M01.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -312,6 +312,14 @@
     {
       "id": "renewal_proposal_pass",
       "utc": "2026-10-15T15:42:28Z"
+    },
+    {
+      "id": "dependency_audit_started",
+      "utc": "2026-10-15T15:44:11Z"
+    },
+    {
+      "id": "dependency_audit_verified",
+      "utc": "2026-10-15T15:47:12Z"
     }
   ],
   "catalog_path": "state/catalog.json",

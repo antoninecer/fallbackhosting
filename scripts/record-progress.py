@@ -27,7 +27,7 @@ checkpoint=f"checkpoints/{now.strftime('%Y%m%dT%H%M%SZ')}-{state['task_id']}-{a.
 - Last verified action/results: {a.evidence}
 - Files changed: state/current.json, this checkpoint and generated public artifact; inspect Git for source/docs changes.
 - Scope: repository state/checkpoint/public static projection; any operational action requires its separately recorded exact authorization. No home runtime changes in this recorded stage.
-- Open issues/unverified: independent fingerprint, external application baseline, full dependency/backup coverage, browser QA and certificate-renewal reload validation remain open.
+- Open issues/unverified: external application baseline, complete dependency/backup coverage, production-release QA and certificate-renewal reload validation remain open. Independent fingerprint is VERIFIED; restore NOT TESTED and external backup copy NOT DOCUMENTED.
 - Next exact step: {a.next}
 - Rollback: reviewed Git revert and public rebuild for repository work; operational activation rollback remains documented separately in docs/ADMIN-ACTIVATION.md.
 - Required approvals: none within already approved activation/Git-push scope.

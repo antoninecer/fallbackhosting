@@ -128,7 +128,7 @@
   "tasks": [
     {
       "id": "FH-0001",
-      "title": "Projektová dokumentace a obnova práce",
+      "title": "Projektov\u00e1 dokumentace a obnova pr\u00e1ce",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence",
@@ -146,13 +146,15 @@
     {
       "id": "FH-0002",
       "title": "Inventura infrastruktury",
-      "status": "READY",
+      "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Operator attests successful 2026-10-15 LXC backup and zstd -t integrity VERIFIED, monthly schedule configured. Restore NOT TESTED, external copy NOT DOCUMENTED. Continue dependency coverage; do not claim full M01 complete.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T150304Z-M01-readonly-pass.md",
-        "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
+        "checkpoints/20261015T152157Z-FH-0002-backup-attested.md",
+        "checkpoints/20261015T154648Z-FH-0002-dependency-pass.md",
+        "docs/DEPENDENCY-AUDIT.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -167,12 +169,28 @@
           "evidence": [
             "checkpoints/20261015T152157Z-FH-0002-backup-attested.md"
           ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T15:44:10Z",
+          "evidence": [
+            "checkpoints/20261015T154410Z-FH-0002-dependency-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:46:48Z",
+          "evidence": [
+            "checkpoints/20261015T154648Z-FH-0002-dependency-pass.md"
+          ]
         }
       ]
     },
     {
       "id": "FH-0003",
-      "title": "Ověření referenční aplikace",
+      "title": "Ov\u011b\u0159en\u00ed referen\u010dn\u00ed aplikace",
       "status": "BLOCKED",
       "owner": "Operator + Codex",
       "acceptance": "Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline",
@@ -187,7 +205,7 @@
     },
     {
       "id": "FH-0004",
-      "title": "Návrh nasazování aplikací",
+      "title": "N\u00e1vrh nasazov\u00e1n\u00ed aplikac\u00ed",
       "status": "BACKLOG",
       "owner": "Operator + Codex",
       "acceptance": "Coolify requirements/security/backup plan and explicit installation approval; do not install",
@@ -202,7 +220,7 @@
     },
     {
       "id": "FH-0005",
-      "title": "Návrh chráněného projektového centra",
+      "title": "N\u00e1vrh chr\u00e1n\u011bn\u00e9ho projektov\u00e9ho centra",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed.",
@@ -245,7 +263,7 @@
     },
     {
       "id": "FH-0006",
-      "title": "Validace a export projektových dat",
+      "title": "Validace a export projektov\u00fdch dat",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints.",
@@ -289,7 +307,7 @@
     },
     {
       "id": "FH-0007",
-      "title": "Rozhraní projektového centra",
+      "title": "Rozhran\u00ed projektov\u00e9ho centra",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Local-only eight-module read-only prototype implemented; 36 repository tests and Chromium 360/768/1440 keyboard/filter/copy/download/long-text checks PASS. Deployment/authentication remains separate FH-0008 scope.",
@@ -343,7 +361,7 @@
     },
     {
       "id": "FH-0008",
-      "title": "Příprava bezpečného nasazení",
+      "title": "P\u0159\u00edprava bezpe\u010dn\u00e9ho nasazen\u00ed",
       "status": "BACKLOG",
       "owner": "Operator + Codex",
       "acceptance": "Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes",
@@ -361,7 +379,7 @@
     },
     {
       "id": "FH-0009",
-      "title": "Veřejná prezentace průběhu projektu",
+      "title": "Ve\u0159ejn\u00e1 prezentace pr\u016fb\u011bhu projektu",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint.",
@@ -389,7 +407,7 @@
     },
     {
       "id": "FH-0010",
-      "title": "Úvodní stránka připravované platformy",
+      "title": "\u00davodn\u00ed str\u00e1nka p\u0159ipravovan\u00e9 platformy",
       "status": "READY",
       "owner": "Operator + Codex",
       "acceptance": "Historical static entry proposal superseded by live authenticated admin FH-0017/FH-0018; reconcile any future entry work with that deployment",
@@ -404,7 +422,7 @@
     },
     {
       "id": "FH-0011",
-      "title": "Návrh připojení aplikačního serveru",
+      "title": "N\u00e1vrh p\u0159ipojen\u00ed aplika\u010dn\u00edho serveru",
       "status": "BLOCKED",
       "owner": "Operator + Codex",
       "acceptance": "SSH identity, node OS/resources/Compose and isolated Docker lifecycle verified; constrained operations boundary/Coolify installation remain separate gates.",
@@ -419,7 +437,7 @@
     },
     {
       "id": "FH-0012",
-      "title": "Ověření obnovy HTTPS certifikátu",
+      "title": "Ov\u011b\u0159en\u00ed obnovy HTTPS certifik\u00e1tu",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Scoped two-lineage hook/proposal and five mocked tests prepared; 67 repository tests PASS. Real registration, renewal, reload and rollback NOT TESTED; exact maintenance approval required, no runtime changes.",
@@ -454,7 +472,7 @@
     },
     {
       "id": "FH-0013",
-      "title": "Návrh oddělené služby pro autorizované operace",
+      "title": "N\u00e1vrh odd\u011blen\u00e9 slu\u017eby pro autorizovan\u00e9 operace",
       "status": "TESTING",
       "owner": "Codex + Operator",
       "acceptance": "Isolated SSH service proposal documented; operator review pending; no service deployed or operational permissions granted",
@@ -469,7 +487,7 @@
     },
     {
       "id": "FH-0014",
-      "title": "Nezávislé ověření identity aplikačního serveru",
+      "title": "Nez\u00e1visl\u00e9 ov\u011b\u0159en\u00ed identity aplika\u010dn\u00edho serveru",
       "status": "DONE",
       "owner": "Operator + Codex",
       "acceptance": "Independent trusted-console ED25519 attestation supplied by operator, matched existing client trust and strict pinned-algorithm probe; private prepared/live identity VERIFIED with audit and backup. No trust or infrastructure change.",
@@ -519,7 +537,7 @@
     },
     {
       "id": "FH-0015",
-      "title": "Návrh oddělení oprávnění technického přístupu",
+      "title": "N\u00e1vrh odd\u011blen\u00ed opr\u00e1vn\u011bn\u00ed technick\u00e9ho p\u0159\u00edstupu",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Concrete separate constrained-runner/issuer/code/policy/key-custody/recovery proposal prepared; current unrestricted sudo/Docker path re-observed. Operator review and real negative tests required; no enforcement or permission change claimed.",
@@ -554,7 +572,7 @@
     },
     {
       "id": "FH-0016",
-      "title": "Ověřený test vytvoření, spuštění a úklidu kontejneru",
+      "title": "Ov\u011b\u0159en\u00fd test vytvo\u0159en\u00ed, spu\u0161t\u011bn\u00ed a \u00faklidu kontejneru",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required",
@@ -572,7 +590,7 @@
     },
     {
       "id": "FH-0017",
-      "title": "Administrace více aplikačních serverů",
+      "title": "Administrace v\u00edce aplika\u010dn\u00edch server\u016f",
       "status": "TESTING",
       "owner": "Codex + Operator",
       "acceptance": "Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Activation complete under FH-0018; browser QA pending; docs/MULTI-NODE-ADMIN.md",
@@ -587,7 +605,7 @@
     },
     {
       "id": "FH-0018",
-      "title": "Kontrola a opakovatelné nasazení administrace",
+      "title": "Kontrola a opakovateln\u00e9 nasazen\u00ed administrace",
       "status": "TESTING",
       "owner": "Codex",
       "acceptance": "Existing lab inventory HTTPS live. Prior direct-HTTP auth passed; local browser test found no-referrer/Origin compatibility issue in matching frozen source. Same-origin fix tested locally, not deployed. Live browser QA/rollback remain open.",

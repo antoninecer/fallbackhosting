@@ -7,7 +7,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | ID | Milestone | Status | Owner | Acceptance / next step |
 | --- | --- | --- | --- | --- |
 | FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
-| FH-0002 | M01 | READY | Operator + Codex | Operator attests successful 2026-10-15 LXC backup and zstd -t integrity VERIFIED, monthly schedule configured. Restore NOT TESTED, external copy NOT DOCUMENTED. Continue dependency coverage; do not claim full M01 complete. |
+| FH-0002 | M01 | TESTING | Operator + Codex | Operator attests successful 2026-10-15 LXC backup and zstd -t integrity VERIFIED, monthly schedule configured. Restore NOT TESTED, external copy NOT DOCUMENTED. Continue dependency coverage; do not claim full M01 complete. |
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
 | FH-0005 | M02 | TESTING | Operator + Codex | Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed. |

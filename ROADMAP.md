@@ -29,3 +29,7 @@ FH-0017: private multi-node server configuration under M02 is locally implemente
 Current reconciliation: existing lab inventory HTTPS is already live; only the new center/form-fix release activation is BLOCKED_BY_OPERATOR (FH-0019). Independent ctx1 ED25519 identity is now VERIFIED from trusted-console attestation and client comparison (FH-0014). M01 remains NEEDS_TEST for backup/dependency/external application coverage. Operator prioritizes read-only audit, local broker/admin fixtures, then controlled owned Docker exercises on ctx1; no production service changes authorized by this reconciliation.
 
 Further evidence: operator-attested 2026-10-15 node backup and zstd integrity VERIFIED, monthly schedule reported; restore NOT TESTED/offsite copy NOT DOCUMENTED. Controlled owned ctx1 lifecycle and cleanup passed; M03 remains PLANNED for actual Coolify deployment, not closed by broker fixtures or diagnostics.
+
+## Scoped dependency follow-up — 2026-10-15T15:46:48Z
+
+See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies are local; one home Docker bind mount observed, archive inclusion UNKNOWN. Operator backup/integrity VERIFIED; restore NOT TESTED/offsite NOT DOCUMENTED. FH-0002 TESTING, M01 NEEDS_TEST; no infrastructure changes.

@@ -79,3 +79,7 @@ Operator supplied trusted hypervisor-console ED25519 attestation and explicitly 
 ## Backup and integrity — operator attestation for 2026-10-15
 
 Administrator confirms successful ctx1 LXC backup and successful zstd -t integrity test, with monthly automatic backup configured. Record backup/integrity VERIFIED with OPERATOR_ATTESTED provenance; agent did not execute these checks. Exact execution time and archive location were not supplied. Recoverability remains NOT TESTED and external copy NOT DOCUMENTED. This supersedes blanket missing-backup evidence, not remaining dependency/external application gates or restore/offsite verification.
+
+## Scoped dependency follow-up — 2026-10-15T15:46:48Z
+
+See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies are local; one home Docker bind mount observed, archive inclusion UNKNOWN. Operator backup/integrity VERIFIED; restore NOT TESTED/offsite NOT DOCUMENTED. FH-0002 TESTING, M01 NEEDS_TEST; no infrastructure changes.
