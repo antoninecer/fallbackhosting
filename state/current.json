@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0021",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T153312Z-FH-0021-admin-ops-browser-pass.md",
-  "current_summary": "FH-0021 local integration validated: all 62 repository tests PASS; actual PHP-to-Unix scoped lifecycle/read and authority/frame/privacy tests PASS. Chromium 360/768/1440 two-node app/job/RUNNING/UNKNOWN/error/audit snapshots and screenshot review PASS. No production route, web mutation controller, issuer, real SSH driver or service activation.",
-  "next_safe_action": "Commit local integration, record completion revision, then prepare constrained agent/key execution plan; pending production approval does not stop repository work.",
+  "last_checkpoint": "checkpoints/20261015T153349Z-FH-0021-admin-ops-browser-pass.md",
+  "current_summary": "FH-0021 DONE against local commit c698711: 62 repository tests, real PHP/Unix inert-driver integration and Chromium 360/768/1440 scoped app/job/error/audit view PASS. Fixture/snapshot scope only; no live operation route/service or trusted issuer installed.",
+  "next_safe_action": "Proceed to FH-0015 constrained agent/key execution proposal with read-only privilege recheck; retain pending production activation gate.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -291,6 +291,10 @@
     {
       "id": "admin_ops_browser_pass",
       "utc": "2026-10-15T15:33:12Z"
+    },
+    {
+      "id": "admin_ops_browser_pass",
+      "utc": "2026-10-15T15:33:49Z"
     }
   ],
   "catalog_path": "state/catalog.json",

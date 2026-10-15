@@ -619,7 +619,7 @@
     {
       "id": "FH-0021",
       "title": "Admin operations integration prototype",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Local PHP/Unix client and read-only app/node/dated-container/jobs/results/errors/audit prototype verified: 62 tests and Chromium 360/768/1440 PASS. No live route/service or web mutation controller activated.",
       "dependencies": [
@@ -629,8 +629,8 @@
         "checkpoints/20261015T153312Z-FH-0021-validated.md",
         "docs/ADMIN-OPERATIONS-PROTOTYPE.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T15:33:48Z",
+      "completion_revision": "c698711162272beb7764d061c4cb167d7823c0a7",
       "milestone": "M02",
       "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
       "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
@@ -649,6 +649,15 @@
           "utc": "2026-10-15T15:33:12Z",
           "evidence": [
             "checkpoints/20261015T153312Z-FH-0021-validated.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T15:33:48Z",
+          "evidence": [
+            "checkpoints/20261015T153312Z-FH-0021-validated.md",
+            "docs/ADMIN-OPERATIONS-PROTOTYPE.md"
           ]
         }
       ]
