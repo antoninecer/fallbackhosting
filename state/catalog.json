@@ -206,7 +206,7 @@
     {
       "id": "FH-0006",
       "title": "Validace a export projektových dat",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints.",
       "dependencies": [],
@@ -214,8 +214,8 @@
         "checkpoints/20261015T143520Z-FH-0006-validated.md",
         "docs/PROJECT-DATA.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T14:36:02Z",
+      "completion_revision": "3d405f6ca46c00d90a8020164157250d8c505466",
       "milestone": "M02",
       "scope": "Repository-only canonical data/schema, reference and evidence validation, sanitized projection and stale state handling; no deployment.",
       "rollback": "Reviewed Git revert of catalog/model and synchronized tables, then rebuild the prior static public page.",
@@ -234,6 +234,15 @@
           "utc": "2026-10-15T14:35:20Z",
           "evidence": [
             "checkpoints/20261015T143520Z-FH-0006-validated.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T14:36:02Z",
+          "evidence": [
+            "checkpoints/20261015T143520Z-FH-0006-validated.md",
+            "docs/PROJECT-DATA.md"
           ]
         }
       ]

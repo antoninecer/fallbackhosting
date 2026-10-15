@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0006",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T143520Z-FH-0006-data-model-pass.md",
-  "current_summary": "All 28 repository tests PASS. All 11 milestone/18 task IDs preserved; strict catalog validation, synchronized Markdown, existing evidence/commit checks, lifecycle/history checks, private-field exclusion, stale/unknown observations and heartbeat, and last-valid-page retention verified. No service or remote changes.",
-  "next_safe_action": "Review and commit validated FH-0006 implementation, record completion against that revision, then start FH-0007 UI preparation.",
+  "last_checkpoint": "checkpoints/20261015T143602Z-FH-0006-data-model-pass.md",
+  "current_summary": "FH-0006 DONE: implementation committed as 3d405f6, all 28 repository tests passed and live HTTPS public result verified; canonical IDs, references, evidence, privacy, lifecycle and stale-state handling implemented. No remote/service changes.",
+  "next_safe_action": "Implement operator-requested bounded scrollable progress history, then verify browser/mobile layout using isolated tooling.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -162,6 +162,10 @@
     {
       "id": "data_model_pass",
       "utc": "2026-10-15T14:35:20Z"
+    },
+    {
+      "id": "data_model_pass",
+      "utc": "2026-10-15T14:36:02Z"
     }
   ],
   "catalog_path": "state/catalog.json"
