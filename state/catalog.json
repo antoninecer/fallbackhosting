@@ -285,7 +285,7 @@
     {
       "id": "FH-0009",
       "title": "Veřejná prezentace průběhu projektu",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint.",
       "dependencies": [],
@@ -293,12 +293,22 @@
         "checkpoints/20261015T143835Z-FH-0009-browser-validated.md",
         "docs/PORTAL-DEPLOYMENT.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T14:38:54Z",
+      "completion_revision": "c38c05638d70a7d9ee561e7341a6c6f769e289e4",
       "milestone": "M02",
       "scope": "Scope and context: TASKS.md, FH-0009",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T14:38:54Z",
+          "evidence": [
+            "checkpoints/20261015T143835Z-FH-0009-browser-validated.md",
+            "docs/PORTAL-DEPLOYMENT.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0010",

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0009",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T143835Z-FH-0009-progress-scroll-pass.md",
-  "current_summary": "Live HTTPS Chromium QA PASS at 360/768/1440: bounded panel, keyboard focus/PageDown, five filters, no document overflow/JS errors; adding 40 rows moves later content 0 px. Screenshots at all three widths inspected. Tooling isolated in /tmp; no system/service changes.",
-  "next_safe_action": "Commit verified public history improvement and record FH-0009 completion; then continue control-center UI work. Admin visual/rollback QA remains separate.",
+  "last_checkpoint": "checkpoints/20261015T143855Z-FH-0009-progress-scroll-pass.md",
+  "current_summary": "FH-0009 DONE against implementation commit c38c056: live HTTPS page/assets/isolation previously verified; headless Chromium 360/768/1440, all screenshots, keyboard scrolling, five filters and stable section position PASS. History stays bounded; no services changed.",
+  "next_safe_action": "FH-0007: prepare protected control-center read-only UI from validated catalog; keep operational data out of public projection. Admin visual and rollback QA remain separate.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -174,6 +174,10 @@
     {
       "id": "progress_scroll_pass",
       "utc": "2026-10-15T14:38:35Z"
+    },
+    {
+      "id": "progress_scroll_pass",
+      "utc": "2026-10-15T14:38:55Z"
     }
   ],
   "catalog_path": "state/catalog.json"
