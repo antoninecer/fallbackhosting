@@ -638,7 +638,7 @@
     {
       "id": "FH-0022",
       "title": "Controlled ctx1 managed Docker exercise",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Authorized real ctx1 one-owned-container create/start/inspect/log/restart/stop/remove/absence PASS, original baseline unchanged, protected canaries PASS. Earlier bounded-log configuration failure corrected only for new test container; no service changes.",
       "dependencies": [
@@ -647,8 +647,8 @@
       "evidence": [
         "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T15:24:20Z",
+      "completion_revision": "1875eecaa4380563788e2063bcc91e45dcabe8fb",
       "milestone": "M03",
       "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
       "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
@@ -665,6 +665,14 @@
           "from": "IN_PROGRESS",
           "to": "TESTING",
           "utc": "2026-10-15T15:23:37Z",
+          "evidence": [
+            "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T15:24:20Z",
           "evidence": [
             "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
           ]

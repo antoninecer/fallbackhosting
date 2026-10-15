@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0022",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T152337Z-FH-0022-docker-exercise-pass.md",
-  "current_summary": "Authorized real ctx1 lifecycle PASS at 15:21:58Z\u201315:22:05Z: own create/isolation/start/inspect/bounded log/restart/stop/remove/absence, original baseline unchanged. Post-test protected Oracle/project/lab verification PASS. All earlier own resources cleaned. Per-container bounded-log correction only; no service/host/daemon change. Backup/integrity operator VERIFIED, restore NOT TESTED/offsite NOT DOCUMENTED.",
-  "next_safe_action": "Commit verified exercise/backup evidence and close FH-0022, then implement local PHP-to-Unix broker client and scoped applications/jobs/audit view.",
+  "last_checkpoint": "checkpoints/20261015T152420Z-FH-0022-docker-exercise-pass.md",
+  "current_summary": "FH-0022 DONE against local commit 1875eec: real owned ctx1 lifecycle/cleanup and unchanged original baseline PASS, protected canaries PASS, no service/daemon change. Operator backup/integrity evidence also committed; restore NOT TESTED, offsite NOT DOCUMENTED.",
+  "next_safe_action": "Start FH-0021 local PHP-to-Unix broker integration and scoped applications/jobs/errors/audit prototype. Keep production activation separately BLOCKED_BY_OPERATOR.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -273,6 +273,10 @@
     {
       "id": "docker_exercise_pass",
       "utc": "2026-10-15T15:23:37Z"
+    },
+    {
+      "id": "docker_exercise_pass",
+      "utc": "2026-10-15T15:24:20Z"
     }
   ],
   "catalog_path": "state/catalog.json",
