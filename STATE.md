@@ -98,3 +98,7 @@ PHP-to-Unix peer broker fixture roundtrip implements scoped lifecycle/read reque
 ## Constrained execution proposal
 
 FH-0015 TESTING: docs/AGENT-EXECUTION-BOUNDARY.md prepared with external runner identity, protected code/policy/issuer/trust roots, preserved operator recovery and negative canary tests. Read-only current sudo/Docker membership reconfirmed at 15:34:07Z; key isolation still NOT ESTABLISHED. No key read, account/group/sudo/SSH/service change. Proposal review does not block other local engineering.
+
+## Certificate reload proposal
+
+FH-0012 TESTING: own two-certificate hook/proposal and five injected callback tests prepared, all 67 repository tests PASS. Root-managed future install/reconfigure/timeout/canary/served-leaf/rollback plan documented. Nothing installed or renewed/reloaded; automatic end-to-end renewal remains unconfigured/unverified.

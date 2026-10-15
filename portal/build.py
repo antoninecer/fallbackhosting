@@ -51,6 +51,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "renewal_proposal_pass": "Připraveno k posouzení: omezený návrh obnovy HTTPS a reload hooku prošel pěti testy, celkem všech 67 testů prošlo. Hook není nainstalovaný a žádný skutečný reload ani obnovu certifikátu jsme nespouštěli.",
+ "renewal_plan_started": "Probíhá místní příprava obnovy HTTPS: omezený reload hook, kontrola konfigurace a referenčního webu. Testujeme náhradními příkazy, certifikáty, časovače ani běžící služby neměníme.",
  "agent_boundary_proposal": "Připraveno k posouzení: konkrétní plán oddělení agenta, webu a technické služby, včetně zachování obnovovacího přístupu a testů zamítnutí. Oprávnění zatím nejsou změněná; místní vývoj pokračuje.",
  "agent_boundary_started": "Probíhá návrh oddělení oprávnění: vývojový agent, webová administrace a technická služba mají mít jasně oddělený přístup. Zatím připravujeme postup a ověření, oprávnění na hostiteli neměníme.",
  "admin_ops_browser_pass": "Dokončeno místně: propojení PHP a brokeru i přehled dvou testovacích uzlů prošly. Prohlížeč ověřil mobil, tablet a desktop; požadavky, nejasné výsledky, chyby a audit jsou jasně odlišené od živého monitoringu.",

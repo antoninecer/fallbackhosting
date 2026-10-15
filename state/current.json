@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M02",
   "phase": "TESTING",
-  "task_id": "FH-0015",
+  "task_id": "FH-0012",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T153558Z-FH-0015-agent-boundary-proposal.md",
-  "current_summary": "FH-0015 concrete constrained runner/key custody/issuer/recovery proposal prepared, current unrestricted sudo+Docker paths re-observed read-only. TESTING for review; no actual key read or account/group/sudo/SSH/service change, no enforced-isolation claim. Continue independent repository work.",
-  "next_safe_action": "Prepare FH-0012 exact certificate deploy-hook/renewal-test proposal and local fake-command checks; do not install hook/change timers or reload services.",
+  "last_checkpoint": "checkpoints/20261015T154228Z-FH-0012-renewal-proposal-pass.md",
+  "current_summary": "FH-0012 two-lineage root-managed hook/reconfigure/backup/rollback proposal prepared; five mock-only hook tests and all 67 repository tests PASS. Current own cert metadata unchanged, no hook installed, no staging renewal, timer change or service reload. End-to-end renewal remains NOT TESTED.",
+  "next_safe_action": "Continue M01 authorized read-only dependency classification for independent public/static/admin components; keep external/restore/offsite gaps explicit.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -304,6 +304,14 @@
     {
       "id": "agent_boundary_proposal",
       "utc": "2026-10-15T15:35:58Z"
+    },
+    {
+      "id": "renewal_plan_started",
+      "utc": "2026-10-15T15:37:30Z"
+    },
+    {
+      "id": "renewal_proposal_pass",
+      "utc": "2026-10-15T15:42:28Z"
     }
   ],
   "catalog_path": "state/catalog.json",

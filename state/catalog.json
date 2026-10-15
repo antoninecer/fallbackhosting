@@ -420,17 +420,37 @@
     {
       "id": "FH-0012",
       "title": "Ověření obnovy HTTPS certifikátu",
-      "status": "READY",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Dedicated webroot renewal recorded, but no per-cert/global deploy hook observed. Prepare exact nginx syntax-test/reload hook and renewal-test proposal; scoped approval required before changes",
+      "acceptance": "Scoped two-lineage hook/proposal and five mocked tests prepared; 67 repository tests PASS. Real registration, renewal, reload and rollback NOT TESTED; exact maintenance approval required, no runtime changes.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T154228Z-FH-0012-proposal-validated.md",
+        "docs/CERTIFICATE-RENEWAL.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M02",
       "scope": "Scope and context: TASKS.md, FH-0012",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T15:37:29Z",
+          "evidence": [
+            "checkpoints/20261015T153729Z-FH-0012-renewal-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:42:28Z",
+          "evidence": [
+            "checkpoints/20261015T154228Z-FH-0012-proposal-validated.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0013",
