@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0007",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T145236Z-FH-0007-center-browser-pass.md",
-  "current_summary": "FH-0007 local prototype validated: 36 repository tests and Chromium 360/768/1440 eight-module/filter/keyboard/clipboard/download/long-text checks PASS; screenshots reviewed. Existing public page also rechecked in browser at three widths after blocker clarification, PASS. Center remains private local artifact, no operational deployment.",
-  "next_safe_action": "Review and commit FH-0007 implementation, record completion revision, then prepare exact protected-center deployment proposal separately.",
+  "last_checkpoint": "checkpoints/20261015T145251Z-FH-0007-center-browser-pass.md",
+  "current_summary": "FH-0007 DONE against implementation commit e5e6f47: local eight-module center, 36 repository tests, headless Chromium three-width keyboard/filter/copy/download/long-text checks and screenshot review PASS. Separate public page three-width browser retest also PASS. No center authentication or production deployment claimed.",
+  "next_safe_action": "Prepare exact protected-center deployment/authentication proposal, keeping live public presentation and existing inventory separate; operational activation requires its own reviewed scope.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -202,6 +202,10 @@
     {
       "id": "center_browser_pass",
       "utc": "2026-10-15T14:52:36Z"
+    },
+    {
+      "id": "center_browser_pass",
+      "utc": "2026-10-15T14:52:51Z"
     }
   ],
   "catalog_path": "state/catalog.json"

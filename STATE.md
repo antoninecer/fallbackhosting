@@ -27,7 +27,7 @@ Independent SSH fingerprint remains NEEDS_TEST. Broker/service not installed. Do
 
 ## Next exact step
 
-FH-0018 is deployed and remains TESTING pending browser/mobile QA and operational rollback evidence. Repeat real HTTPS authentication and all 14 repository tests passed during the follow-up session; see latest checkpoint for UTC. Next repository-only implementation is FH-0006 canonical schema/export, with reference, evidence, sanitization and stale-state validation. No remote deployment is implied. Independent SSH identity and constrained operations boundary remain separate gates.
+FH-0006 and FH-0007 local data/UI implementation DONE with tests, browser evidence and concrete completion revisions in the canonical catalog. Prepare the exact protected-center deployment/authentication proposal separately; no production center deployment performed. Public progress remains live and separate. FH-0018 admin visual/operational rollback QA, independent SSH identity, backup/dependency coverage and constrained remote operations boundary remain open.
 
 Evidence: latest checkpoints, docs/PORTAL-DEPLOYMENT.md, docs/SERVER-ONBOARDING.md, docs/M01-AUDIT.md. Associated revision is the containing commit; inspect Git before resuming.
 

@@ -259,7 +259,7 @@
     {
       "id": "FH-0007",
       "title": "Rozhraní projektového centra",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Local-only eight-module read-only prototype implemented; 36 repository tests and Chromium 360/768/1440 keyboard/filter/copy/download/long-text checks PASS. Deployment/authentication remains separate FH-0008 scope.",
       "dependencies": [
@@ -269,8 +269,8 @@
         "checkpoints/20261015T145226Z-FH-0007-validated.md",
         "docs/CONTROL-CENTER-UI.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T14:52:51Z",
+      "completion_revision": "e5e6f4793dd34535593e70af94e7bc90aba5869a",
       "milestone": "M02",
       "scope": "Repository-only read-only control-center prototype; private generated output and loopback tests, no deployment.",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
@@ -297,6 +297,15 @@
           "utc": "2026-10-15T14:52:26Z",
           "evidence": [
             "checkpoints/20261015T145226Z-FH-0007-validated.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T14:52:51Z",
+          "evidence": [
+            "checkpoints/20261015T145226Z-FH-0007-validated.md",
+            "docs/CONTROL-CENTER-UI.md"
           ]
         }
       ]
