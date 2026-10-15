@@ -440,15 +440,15 @@
     {
       "id": "FH-0014",
       "title": "Nezávislé ověření identity aplikačního serveru",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Operator + Codex",
       "acceptance": "Independent trusted-console ED25519 attestation supplied by operator, matched existing client trust and strict pinned-algorithm probe; private prepared/live identity VERIFIED with audit and backup. No trust or infrastructure change.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T150904Z-FH-0014-verified.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-15T15:10:32Z",
+      "completion_revision": "d2cabaa9531ac5521af4ba8903612a2a1ceb7a09",
       "milestone": "M01",
       "scope": "Scope and context: TASKS.md, FH-0014",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
@@ -473,6 +473,14 @@
           "from": "IN_PROGRESS",
           "to": "TESTING",
           "utc": "2026-10-15T15:09:04Z",
+          "evidence": [
+            "checkpoints/20261015T150904Z-FH-0014-verified.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-15T15:10:32Z",
           "evidence": [
             "checkpoints/20261015T150904Z-FH-0014-verified.md"
           ]

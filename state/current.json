@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0014",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T150905Z-FH-0014-ssh-identity-verified.md",
-  "current_summary": "Operator independently attested ctx1 ED25519 via trusted hypervisor console; agent compared privately with existing client trust and strict pinned-algorithm read-only SSH PASS. Prepared/live private inventory VERIFIED with lock/revision/audit/private backups; unrelated data/modes preserved. No infrastructure/trust changes; no fingerprint or endpoint in public projection.",
-  "next_safe_action": "Commit attestation evidence, mark FH-0014 DONE against concrete revision, then resume FH-0020 broker fixture implementation and tests.",
+  "last_checkpoint": "checkpoints/20261015T151032Z-FH-0014-ssh-identity-verified.md",
+  "current_summary": "FH-0014 DONE against local evidence commit d2cabaa: operator trusted-console attestation, existing client trust match and strict pinned-algorithm read-only SSH PASS; both private inventory records VERIFIED with locked audited updates and backups. Sanitized dashboard verified, no private fingerprint/address exported.",
+  "next_safe_action": "Resume FH-0020 local broker security fixtures, then local admin integration and separately authorized managed ctx1 exercise. No production service/config activation.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -233,6 +233,10 @@
     {
       "id": "ssh_identity_verified",
       "utc": "2026-10-15T15:09:05Z"
+    },
+    {
+      "id": "ssh_identity_verified",
+      "utc": "2026-10-15T15:10:32Z"
     }
   ],
   "catalog_path": "state/catalog.json"
