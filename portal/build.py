@@ -52,6 +52,7 @@ BLOCKERS = {
 
 PUBLIC_EVENTS = {
  "dependency_audit_verified": "Kontrola závislostí dokončena v omezeném rozsahu: veřejný přehled a základ administrace používají místní soubory. Zahrnutí připojených dat Dockeru do zálohy zatím není doložené; obnova netestovaná, externí kopie nedoložená.",
+ "center_release_verifier_tested": "Připravena místní kontrola nové verze administrace: přesná revize, otisky souborů a oprávnění. Čtyři testy prošly; nová verze zatím není nasazená a čeká na schválení.",
  "dependency_audit_started": "Probíhá kontrola závislostí: místní veřejný přehled a administrace, testovací Docker a rozsah zálohové evidence. Jen čtení, bez změn provozu; neověřené části zůstanou výslovně označené.",
  "renewal_proposal_pass": "Připraveno k posouzení: omezený návrh obnovy HTTPS a reload hooku prošel pěti testy, celkem všech 67 testů prošlo. Hook není nainstalovaný a žádný skutečný reload ani obnovu certifikátu jsme nespouštěli.",
  "renewal_plan_started": "Probíhá místní příprava obnovy HTTPS: omezený reload hook, kontrola konfigurace a referenčního webu. Testujeme náhradními příkazy, certifikáty, časovače ani běžící služby neměníme.",

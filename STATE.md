@@ -106,3 +106,7 @@ FH-0012 TESTING: own two-certificate hook/proposal and five injected callback te
 ## Scoped dependency follow-up — 2026-10-15T15:46:48Z
 
 See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies are local; one home Docker bind mount observed, archive inclusion UNKNOWN. Operator backup/integrity VERIFIED; restore NOT TESTED/offsite NOT DOCUMENTED. FH-0002 TESTING, M01 NEEDS_TEST; no infrastructure changes.
+
+## Offline release verification — 2026-10-15T15:48:50.738818+00:00
+
+FH-0005 TESTING: exact Git/artifact/mode verifier implemented, four isolated tests PASS. No real new release staged/verified or activated. Runtime readiness/rollback remain untested; FH-0019 BLOCKED_BY_OPERATOR.

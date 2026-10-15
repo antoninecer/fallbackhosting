@@ -227,7 +227,8 @@
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T150107Z-FH-0005-auth-validated.md",
-        "docs/CONTROL-CENTER-DEPLOYMENT.md"
+        "docs/CONTROL-CENTER-DEPLOYMENT.md",
+        "checkpoints/20261015T154850Z-FH-0005-release-verifier-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
