@@ -90,3 +90,7 @@ Operator confirms successful 2026-10-15 LXC backup and zstd -t, monthly schedule
 ## Controlled ctx1 Docker exercise PASS
 
 At 2026-10-15T15:21:58Z–15:22:05Z, one owned limited container create/start/inspect/log/restart/stop/remove/absence passed; original reference unchanged. Protected canaries and frozen lab integrity PASS afterward. Initial attempts exposed incompatible local-log compression/max-file=1; corrected only new-container max-file to 2, keeping all isolation. Every prior test resource cleanup verified. No daemon/service/host changes; no live broker.
+
+## Local PHP operations integration
+
+PHP-to-Unix peer broker fixture roundtrip implements scoped lifecycle/read requests and a selected read-only app/node/container/jobs/errors/audit page. Browser 360/768/1440 PASS, screenshots inspected, actual transient RUNNING and timeout UNKNOWN snapshots explicitly historical. No production route, signing authority or SSH transport installed; existing lab frozen release unchanged. See docs/ADMIN-OPERATIONS-PROTOTYPE.md and latest checkpoint for exact validation.

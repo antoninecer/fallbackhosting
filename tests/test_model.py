@@ -33,7 +33,7 @@ class CatalogTests(unittest.TestCase):
     def test_committed_status_and_history_cannot_be_silently_rewritten(self):
         before = copy.deepcopy(self.catalog)
         after = copy.deepcopy(before)
-        after['tasks'][1]['status'] = 'READY'
+        after['tasks'][1]['status'] = 'IN_PROGRESS' if before['tasks'][1]['status']=='READY' else 'READY'
         with self.assertRaises(ValueError): model.validate_change(before, after)
         after = copy.deepcopy(before)
         after['tasks'][5]['history'] = []

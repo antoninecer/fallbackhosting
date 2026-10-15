@@ -267,7 +267,7 @@ class Broker:
                 row=db.execute('SELECT state,code,result FROM jobs WHERE id=? AND principal=? AND project=? AND node=? AND app=?',(request['request_id'],principal,request['project'],request['node'],request['app'])).fetchone()
                 if not row:raise Denied('JOB_NOT_FOUND')
                 return {'job_id':request['request_id'],'state':row[0],'code':row[1],'result':json.loads(row[2]) if row[2] else None}
-            rows=db.execute('SELECT id,action,state,code,created,finished,result FROM jobs WHERE principal=? AND project=? AND node=? AND app=? ORDER BY rowid DESC LIMIT 50',(principal,request['project'],request['node'],request['app'])).fetchall()
+            rows=db.execute('SELECT id,action,state,code,created,finished,result FROM jobs WHERE principal=? AND project=? AND node=? AND app=? ORDER BY rowid DESC LIMIT 16',(principal,request['project'],request['node'],request['app'])).fetchall()
             jobs=[dict(job_id=r[0],action=r[1],state=r[2],code=r[3],created_utc=r[4],finished_utc=r[5]) for r in rows]
             observation=None
             for row in rows:
@@ -275,5 +275,5 @@ class Broker:
                 if isinstance(result,dict) and 'container_id' in result and 'state' in result:
                     observation={k:result[k] for k in ('container_id','state','observed_utc')}
                     break
-            audit=[dict(utc=r[0],job_id=r[1],action=r[2],result=r[3]) for r in db.execute('SELECT utc,job_id,action,result FROM audit WHERE principal=? AND job_id IN (SELECT id FROM jobs WHERE project=? AND node=? AND app=?) ORDER BY seq DESC LIMIT 50',(principal,request['project'],request['node'],request['app']))]
+            audit=[dict(utc=r[0],job_id=r[1],action=r[2],result=r[3]) for r in db.execute('SELECT utc,job_id,action,result FROM audit WHERE principal=? AND job_id IN (SELECT id FROM jobs WHERE project=? AND node=? AND app=?) ORDER BY seq DESC LIMIT 16',(principal,request['project'],request['node'],request['app']))]
         return {'node':request['node'],'project':request['project'],'app':request['app'],'last_observation':observation,'health_provenance':'HISTORICAL' if observation else 'UNKNOWN','current_health':'UNKNOWN','jobs':jobs,'errors':[j for j in jobs if j['state'] in {'FAILED','UNKNOWN'}],'audit':audit}

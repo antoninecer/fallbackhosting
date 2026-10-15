@@ -86,3 +86,7 @@ Public browser QA is reproducible with scripts/check-public-browser.py using an 
 ## Local control-center prototype
 
 Build with `python3 center/build.py`; output is restricted to ignored .local/control-center with content-addressed releases and an atomic current pointer. This prototype is not authenticated and must not be exposed publicly. Local tests: docs/CONTROL-CENTER-UI.md and scripts/check-center-browser.py. Public progress and live inventory remain separate.
+
+## Local operations integration
+
+Contract/limitations: docs/OPERATIONS-PROTOTYPE.md and docs/ADMIN-OPERATIONS-PROTOTYPE.md. PHP client uses bounded Unix frames and externally issued scoped capabilities, never a key/shell/SSH API. No production operation route or service is installed. Optional scripts/check-operations-browser.py serves only its generated private fixture page on loopback and stops afterward. Completed ctx1 exercise/cleanup evidence is separate in docs/CONTROLLED-DOCKER-EXERCISE.md.

@@ -12,6 +12,7 @@ import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 from operations.core import ACTIONS, WRITES, Broker, Denied, Signer, canonical, decode_json
 from operations.fixtures import FakeDriver
 from operations.protocol import serve_connection, read_exact, MAX_FRAME
@@ -175,6 +176,18 @@ class OperationsTests(unittest.TestCase):
         thread=threading.Thread(target=serve_connection,args=(right,self.broker));thread.start();left.sendall(struct.pack('!I',MAX_FRAME+1))
         count=struct.unpack('!I',read_exact(left,4))[0];response=decode_json(read_exact(left,count))
         thread.join(timeout=3);left.close();self.assertEqual(response,{'error':'FRAME_TOO_LARGE'})
+
+    def test_frame_budget_is_absolute_even_when_bytes_keep_arriving(self):
+        from operations.protocol import read_exact
+        class Drip:
+            count=0
+            def settimeout(self,value): pass
+            def recv(self,count): self.count+=1;return b'x'
+        connection=Drip()
+        with patch('operations.protocol.time.monotonic',side_effect=[0.0,0.8,1.6,2.4]):
+            with self.assertRaisesRegex(Denied,'FRAME_TIMEOUT'):
+                read_exact(connection,4,deadline=2)
+        self.assertEqual(connection.count,3)
 
     def test_duplicate_json_fields_and_unknown_actions_rejected(self):
         with self.assertRaises(Denied):decode_json('{"action":"list","action":"remove"}')
