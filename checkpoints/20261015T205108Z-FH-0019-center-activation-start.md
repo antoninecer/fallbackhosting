@@ -1,0 +1,8 @@
+# 20261015T205108Z-FH-0019-center-activation-start
+- UTC: 2026-10-15T20:51:08Z; Codex; M02/FH-0019 IN_PROGRESS.
+- Operator reached the authenticated admin page and reported that `https://lab.ventureout.cz/?center=index.html` returns “Administrace zatím není bezpečně připravena. Kontaktujte správce.” This is treated as a request to make this exact authenticated center route work.
+- Read-only cause found: active PHP release has no `center-artifact/`; `admin/center.php` therefore fails closed with HTTP 503. Center source/artifact builder and release verifier already exist; FH-0005/FH-0007 acceptance and unit/browser fixture evidence exist.
+- Exact scope: prepare, validate and atomically switch one immutable root-owned application release at `/var/www/fallback-admin/current` that adds the reviewed `admin-query` center artifact. Existing server inventory/admin behavior must remain intact. No Nginx/PHP-FPM config/service, DNS, TLS, firewall, host service, credentials, or Docker changes.
+- Rollback: atomically restore previous symlink `/var/www/fallback-admin/releases/f285d8ab5400c9364f4008c6c06db035ebe0f26e`; retain new and previous releases and runtime data. No reload required.
+- Pre-deploy acceptance: full local test suite; pinned-source/artifact manifest verifier; current release pointer and source integrity; private inventory revision 3 snapshot; protected canaries pass. Post-deploy: authenticated HTTPS route and all five assets 200; unauthenticated route/assets denied; logout revokes asset access; displayed artifact is read-only and uses only query-authenticated assets; ctx1 inventory unchanged; protected canaries/TLS/reference/project pass.
+- No production switch performed in this checkpoint.

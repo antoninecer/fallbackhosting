@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M03",
-  "phase": "TESTING",
-  "task_id": "FH-0004",
-  "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T204510Z-FH-0017-login-fix-live-pass.md",
-  "current_summary": "Private Coolify 4.4.6/DB/Redis healthy, IPv4-only app setting resolves LXC limitation. HTTP routes/four assets, disabled registration redirect, Chromium360/768/1440 and original workload/post Oracle canaries PASS. Admin login fix deployed and live HTTPS-tested after graceful PHP-FPM reload: login succeeds without a pre-auth session cookie, ctx1 appears, logout succeeds, inventory unchanged. Actual operator-browser confirmation remains pending; Coolify bootstrap and validated deployment target remain pending.",
-  "next_safe_action": "Operator can sign in at https://lab.ventureout.cz/ with the existing admin credentials; if browser still rejects login, capture the exact resulting message and timestamp. Continue other safe project tasks; keep public registration/proxy disabled.",
+  "milestone": "M02",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0019",
+  "live_verified_at_utc": "2026-10-15T20:51:08Z",
+  "last_checkpoint": "checkpoints/20261015T205108Z-FH-0019-center-activation-start.md",
+  "current_summary": "Operator reached the authenticated admin page and reported that its exact center URL returns 503. Active PHP release lacks the protected center artifact. Local preparation and verification are underway; no production release switch has occurred.",
+  "next_safe_action": "Build the read-only control-center artifact in local ignored storage; run the full test suite and pinned-source/manifest verification before creating the immutable release. Preserve the authenticated query route and all inventory/canary baselines.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -118,7 +118,7 @@
     "login_fix_revision": "f285d8ab5400c9364f4008c6c06db035ebe0f26e",
     "login_fix_status": "DEPLOYED_LIVE_HTTPS_TEST_PASS_AFTER_GRACEFUL_PHP_FPM_RELOAD",
     "login_fix_test": "NO_PREAUTH_COOKIE_LOGIN_PASS_CTX1_VISIBLE_SESSION_ROTATION_LOGOUT_PASS_INVENTORY_UNCHANGED",
-    "operator_browser_confirmation": "PENDING",
+    "operator_browser_confirmation": "OPERATOR_REPORTED_AUTHENTICATED_ADMIN_PAGE_REACHED",
     "browser_qa": "NOT_PERFORMED"
   },
   "public_events": [
@@ -245,6 +245,10 @@
     {
       "id": "admin_login_cookie_fix_pass",
       "utc": "2026-10-15T20:44:58Z"
+    },
+    {
+      "id": "admin_node_note_reconciled",
+      "utc": "2026-10-15T20:49:32Z"
     },
     {
       "id": "ssh_identity_verified",

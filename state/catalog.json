@@ -130,7 +130,7 @@
   "tasks": [
     {
       "id": "FH-0001",
-      "title": "Projektov\u00e1 dokumentace a obnova pr\u00e1ce",
+      "title": "Projektová dokumentace a obnova práce",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence",
@@ -192,7 +192,7 @@
     },
     {
       "id": "FH-0003",
-      "title": "Ov\u011b\u0159en\u00ed referen\u010dn\u00ed aplikace",
+      "title": "Ověření referenční aplikace",
       "status": "BLOCKED",
       "owner": "Operator + Codex",
       "acceptance": "Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline",
@@ -207,7 +207,7 @@
     },
     {
       "id": "FH-0004",
-      "title": "Nasazen\u00ed Coolify na testovac\u00edm uzlu",
+      "title": "Nasazení Coolify na testovacím uzlu",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Private Coolify 4.4.6 control plane healthy on ctx1, loopback-only routes/assets/browser checks and original workload/canaries PASS. Initial admin email/bootstrap and real login/logout pending; no host automation credential or validated deployment target. M03 demo deployment acceptance remains open.",
@@ -270,7 +270,7 @@
     },
     {
       "id": "FH-0005",
-      "title": "N\u00e1vrh chr\u00e1n\u011bn\u00e9ho projektov\u00e9ho centra",
+      "title": "Návrh chráněného projektového centra",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed.",
@@ -314,7 +314,7 @@
     },
     {
       "id": "FH-0006",
-      "title": "Validace a export projektov\u00fdch dat",
+      "title": "Validace a export projektových dat",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints.",
@@ -358,7 +358,7 @@
     },
     {
       "id": "FH-0007",
-      "title": "Rozhran\u00ed projektov\u00e9ho centra",
+      "title": "Rozhraní projektového centra",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Local-only eight-module read-only prototype implemented; 36 repository tests and Chromium 360/768/1440 keyboard/filter/copy/download/long-text checks PASS. Deployment/authentication remains separate FH-0008 scope.",
@@ -412,7 +412,7 @@
     },
     {
       "id": "FH-0008",
-      "title": "P\u0159\u00edprava bezpe\u010dn\u00e9ho nasazen\u00ed",
+      "title": "Příprava bezpečného nasazení",
       "status": "BACKLOG",
       "owner": "Operator + Codex",
       "acceptance": "Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes",
@@ -430,7 +430,7 @@
     },
     {
       "id": "FH-0009",
-      "title": "Ve\u0159ejn\u00e1 prezentace pr\u016fb\u011bhu projektu",
+      "title": "Veřejná prezentace průběhu projektu",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint.",
@@ -458,7 +458,7 @@
     },
     {
       "id": "FH-0010",
-      "title": "\u00davodn\u00ed str\u00e1nka p\u0159ipravovan\u00e9 platformy",
+      "title": "Úvodní stránka připravované platformy",
       "status": "READY",
       "owner": "Operator + Codex",
       "acceptance": "Historical static entry proposal superseded by live authenticated admin FH-0017/FH-0018; reconcile any future entry work with that deployment",
@@ -473,7 +473,7 @@
     },
     {
       "id": "FH-0011",
-      "title": "N\u00e1vrh p\u0159ipojen\u00ed aplika\u010dn\u00edho serveru",
+      "title": "Návrh připojení aplikačního serveru",
       "status": "BLOCKED",
       "owner": "Operator + Codex",
       "acceptance": "SSH identity, node OS/resources/Compose and isolated Docker lifecycle verified; constrained operations boundary/Coolify installation remain separate gates.",
@@ -488,7 +488,7 @@
     },
     {
       "id": "FH-0012",
-      "title": "Ov\u011b\u0159en\u00ed obnovy HTTPS certifik\u00e1tu",
+      "title": "Ověření obnovy HTTPS certifikátu",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Scoped two-lineage hook/proposal and five mocked tests prepared; 67 repository tests PASS. Real registration, renewal, reload and rollback NOT TESTED; exact maintenance approval required, no runtime changes.",
@@ -523,7 +523,7 @@
     },
     {
       "id": "FH-0013",
-      "title": "N\u00e1vrh odd\u011blen\u00e9 slu\u017eby pro autorizovan\u00e9 operace",
+      "title": "Návrh oddělené služby pro autorizované operace",
       "status": "TESTING",
       "owner": "Codex + Operator",
       "acceptance": "Isolated SSH service proposal documented; operator review pending; no service deployed or operational permissions granted",
@@ -538,7 +538,7 @@
     },
     {
       "id": "FH-0014",
-      "title": "Nez\u00e1visl\u00e9 ov\u011b\u0159en\u00ed identity aplika\u010dn\u00edho serveru",
+      "title": "Nezávislé ověření identity aplikačního serveru",
       "status": "DONE",
       "owner": "Operator + Codex",
       "acceptance": "Independent trusted-console ED25519 attestation supplied by operator, matched existing client trust and strict pinned-algorithm probe; private prepared/live identity VERIFIED with audit and backup. No trust or infrastructure change.",
@@ -588,7 +588,7 @@
     },
     {
       "id": "FH-0015",
-      "title": "N\u00e1vrh odd\u011blen\u00ed opr\u00e1vn\u011bn\u00ed technick\u00e9ho p\u0159\u00edstupu",
+      "title": "Návrh oddělení oprávnění technického přístupu",
       "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Operator accepted access/isolation design. Local role/revocation policy and eight tests PASS; trusted identity/policy source, actual issuer/broker atomic admission and enforceable agent/key/VM boundaries remain unimplemented or unverified. No permission changes claimed.",
@@ -627,7 +627,7 @@
     },
     {
       "id": "FH-0016",
-      "title": "Ov\u011b\u0159en\u00fd test vytvo\u0159en\u00ed, spu\u0161t\u011bn\u00ed a \u00faklidu kontejneru",
+      "title": "Ověřený test vytvoření, spuštění a úklidu kontejneru",
       "status": "DONE",
       "owner": "Codex",
       "acceptance": "New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required",
@@ -645,10 +645,10 @@
     },
     {
       "id": "FH-0017",
-      "title": "Administrace v\u00edce aplika\u010dn\u00edch server\u016f",
+      "title": "Administrace více aplikačních serverů",
       "status": "TESTING",
       "owner": "Codex + Operator",
-      "acceptance": "Multi-node PHP admin and private ctx1 seed active. Browser-reported login 403 fixed; live HTTPS login without pre-auth cookie, session rotation, ctx1 view, logout and unchanged inventory PASS after graceful PHP-FPM reload. Operator browser confirmation pending; docs/MULTI-NODE-ADMIN.md",
+      "acceptance": "Multi-node PHP admin and private ctx1 seed active. Browser-reported login 403 fixed; operator confirmed reaching authenticated admin. Live HTTPS login without pre-auth cookie, session rotation, ctx1 view, logout and unchanged inventory PASS after graceful PHP-FPM reload. Stale identity note corrected without changing observation. Full browser QA remains pending; docs/MULTI-NODE-ADMIN.md",
       "dependencies": [],
       "evidence": [],
       "completed_at_utc": null,
@@ -660,7 +660,7 @@
     },
     {
       "id": "FH-0018",
-      "title": "Kontrola a opakovateln\u00e9 nasazen\u00ed administrace",
+      "title": "Kontrola a opakovatelné nasazení administrace",
       "status": "TESTING",
       "owner": "Codex",
       "acceptance": "Existing lab inventory HTTPS live. Login fixed and source release f285d8ab5400c9364f4008c6c06db035ebe0f26e deployed; live HTTPS login without pre-auth cookie, session rotation, ctx1 view, logout and unchanged inventory PASS after graceful PHP-FPM reload. Operator browser QA and rollback drill remain open.",
@@ -676,9 +676,9 @@
     {
       "id": "FH-0019",
       "title": "Protected center application activation",
-      "status": "BLOCKED_BY_OPERATOR",
+      "status": "IN_PROGRESS",
       "owner": "Codex + Operator",
-      "acceptance": "Approve exact new reviewed lab application release switch and rollback; no Nginx/PHP-FPM/cert/DNS/firewall change. Existing inventory deployment is already live.",
+      "acceptance": "Fix the reported 503 at the exact authenticated center URL by activating the reviewed read-only center artifact in one immutable PHP release. Existing admin auth/session protects all assets; inventory and unrelated production remain unchanged. Rollback is the previous release symlink; no Nginx/PHP-FPM/cert/DNS/firewall changes.",
       "dependencies": [
         "FH-0005",
         "FH-0007"
@@ -689,9 +689,26 @@
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M02",
-      "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
-      "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
-      "history": []
+      "scope": "Existing authenticated lab app only: build and activate one immutable root-owned release with the read-only query-delivered center artifact. No admin credential, inventory, web-server config/service, PHP-FPM config/service, DNS, TLS or firewall changes.",
+      "rollback": "Atomically restore /var/www/fallback-admin/current to /var/www/fallback-admin/releases/f285d8ab5400c9364f4008c6c06db035ebe0f26e; retain both releases and private data; no service reload.",
+      "history": [
+        {
+          "from": "BLOCKED_BY_OPERATOR",
+          "to": "READY",
+          "utc": "2026-10-15T20:51:08Z",
+          "evidence": [
+            "checkpoints/20261015T205108Z-FH-0019-center-activation-start.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T20:51:08Z",
+          "evidence": [
+            "checkpoints/20261015T205108Z-FH-0019-center-activation-ready.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0020",

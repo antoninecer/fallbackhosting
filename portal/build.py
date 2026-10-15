@@ -102,6 +102,8 @@ PUBLIC_EVENTS = {
  "admin_https_pass": "Dokončeno: administrace na lab.ventureout.cz má platné HTTPS; přihlášení, vzhledové soubory a ochrana neveřejných cest ověřeny.",
  "admin_login_pass": "Dokončeno: skutečné přihlášení administrátora, zobrazení ctx1 a odhlášení ověřeny.",
  "admin_login_cookie_fix_pass": "Oprava přihlášení ověřena přes HTTPS i bez předchozí session cookie; kontrola původu požadavku zůstává zapnutá. ctx1, odhlášení i nezměněný inventář potvrzeny.",
+ "admin_node_note_reconciled": "Administrátor potvrdil přístup do správy. Opravena zavádějící poznámka; ověřený stav identity zůstal zachován.",
+ "center_activation_started": "Řídicí centrum vracelo chybu při otevření. Ověřili jsme chybějící chráněný podklad; připravujeme bezpečné opravené vydání bez změn síťové konfigurace.",
 }
 
 def rows(path, pattern):
