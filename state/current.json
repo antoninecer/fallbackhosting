@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M02",
+  "milestone": "M03",
   "phase": "TESTING",
-  "task_id": "FH-0005",
+  "task_id": "FH-0015",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T154850Z-FH-0005-center-release-verifier-tested.md",
-  "current_summary": "Offline admin release verifier implemented; four isolated tests PASS. Exact source commit, separately reviewed manifest pin, bounded hashes, file set and modes checked. No production staging or activation. FH-0005 TESTING; FH-0019 BLOCKED_BY_OPERATOR.",
-  "next_safe_action": "Continue local readiness checks; production activation requires exact operator approval. M01 still needs sanitized archive inclusion and independent external application evidence.",
+  "last_checkpoint": "checkpoints/20261015T160257Z-FH-0015-access-security-proposed.md",
+  "current_summary": "Researched application access security proposal documented: role matrix, passkeys/recovery, deny-by-default app scope, revocation, separate issuer/broker, VM trust boundaries as pending architecture option. Reviewed operator decisions published without private data. Documentation only; no runtime security approval or deployment.",
+  "next_safe_action": "Develop local authorization/revocation negative tests. Before real delegation, record operator choices on isolation, identity recovery and role matrix; request exact infrastructure scope separately.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -324,6 +324,10 @@
     {
       "id": "center_release_verifier_tested",
       "utc": "2026-10-15T15:48:50Z"
+    },
+    {
+      "id": "access_security_proposed",
+      "utc": "2026-10-15T16:02:57Z"
     }
   ],
   "catalog_path": "state/catalog.json",

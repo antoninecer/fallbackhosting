@@ -545,7 +545,9 @@
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T153558Z-FH-0015-proposal-validated.md",
-        "docs/AGENT-EXECUTION-BOUNDARY.md"
+        "docs/AGENT-EXECUTION-BOUNDARY.md",
+        "docs/APPLICATION-ACCESS-SECURITY.md",
+        "checkpoints/20261015T160256Z-FH-0015-access-proposal-reviewed.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,

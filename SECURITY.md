@@ -23,3 +23,7 @@ Operator-provisioned SSH identity remains private to its technical account; do n
 ## Private inventory administration
 
 Server endpoint/account mapping and initial bootstrap credential are restricted local data excluded by /.local/ ignore rule and never served/exported. Web stores no SSH key or key path; opaque identity references are metadata only. Local admin supports Argon2id auth, protected sessions/CSRF/Origin, bounded login attempts, escaped display and revision-checked atomic inventory/audit updates. This does not enforce separation from root-capable Codex and is not a full security review. Planned production runtime uses a dedicated unprivileged web user/pool, reviewed non-web-writable release, private state and no key/broker/Docker/sudo rights. Exact activation approval and canaries remain mandatory; no public registration or web bootstrap.
+
+## Access/isolation proposal — 2026-10-15
+
+Proposed, not activated: docs/APPLICATION-ACCESS-SECURITY.md defines per-person application roles without user SSH, independent authorization, MFA/recovery and VM-per-trust-boundary option. VM placement is pending architecture review; current home LXC/Coolify plan is not silently replaced. Existing broker write-approval gates and independent Oracle standby remain unchanged. No runtime isolation or multi-user deployment completion claimed.

@@ -34,3 +34,7 @@ Gateway serves versioned standby releases on Oracle independently of Docker/Tail
 4. M04: registered domain/TLS routing. M05: safe fallback editor/export/preview and immutable publication. M06: dependency-aware health switching/recovery. M07: independent contacts if configured. M08: controlled failures and cross-project/production-isolation tests.
 
 The static landing is not completion of these gates. PVE/LXC live versions/resources remain unverified; home HTTP reachability does not establish Docker management access.
+
+## Access/isolation proposal — 2026-10-15
+
+Proposed, not activated: docs/APPLICATION-ACCESS-SECURITY.md defines per-person application roles without user SSH, independent authorization, MFA/recovery and VM-per-trust-boundary option. VM placement is pending architecture review; current home LXC/Coolify plan is not silently replaced. Existing broker write-approval gates and independent Oracle standby remain unchanged. No runtime isolation or multi-user deployment completion claimed.

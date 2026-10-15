@@ -110,3 +110,7 @@ See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies
 ## Offline release verification — 2026-10-15T15:48:50.738818+00:00
 
 FH-0005 TESTING: exact Git/artifact/mode verifier implemented, four isolated tests PASS. No real new release staged/verified or activated. Runtime readiness/rollback remain untested; FH-0019 BLOCKED_BY_OPERATOR.
+
+## Application access proposal — 2026-10-15T16:02:56.884737+00:00
+
+FH-0015 TESTING: docs/APPLICATION-ACCESS-SECURITY.md records researched role/identity/revocation/isolation proposal and exact operator decisions. VM trust boundaries are proposed architecture review only. No MFA/RBAC/VM deployment or enforced key-isolation claim; current broker approvals retained. Public project reports sanitized decisions, not private recovery data. Local engineering remains actionable.

@@ -68,3 +68,7 @@ The original home node is now the first member of a node list: a single independ
 ## Local operations prototype follow-up
 
 Operator requested fixture-only managed Docker operations and private admin integration. A Python core with strict policy/capabilities/one-use write approvals, durable registry/jobs/audit and bounded Unix peer protocol is implemented locally; no SSH driver, listener or service is installed. Independent ctx1 identity is verified; runtime key/agent privilege separation remains unresolved. This supplements planned home Coolify and does not add any public gateway dependency. Contract/limits: docs/OPERATIONS-PROTOTYPE.md.
+
+## Access/isolation proposal — 2026-10-15
+
+Proposed, not activated: docs/APPLICATION-ACCESS-SECURITY.md defines per-person application roles without user SSH, independent authorization, MFA/recovery and VM-per-trust-boundary option. VM placement is pending architecture review; current home LXC/Coolify plan is not silently replaced. Existing broker write-approval gates and independent Oracle standby remain unchanged. No runtime isolation or multi-user deployment completion claimed.
