@@ -1,14 +1,14 @@
 # Multiple app nodes and private configuration — FH-0017
 
-Status: implemented and locally tested; production activation NOT performed. Architecture extension requested by operator on 2026-10-15, recorded here for review. No Coolify/runtime replacement or node operation added.
+Status: multi-node inventory and authenticated read-only project center are active at `lab.ventureout.cz`. The operator reached the authenticated admin page; live HTTPS checks cover the center route/assets and session revocation. Full visual QA and production rollback drill remain unverified. Architecture extension requested by operator on 2026-10-15; no Coolify/runtime replacement or node operation was added.
 
 ## What exists and what remains
 
 | Area | Verified result | Remaining gate |
 | --- | --- | --- |
 | M00 | Docs/resume/checkpoints/local commits | No automatic push |
-| M01 | Oracle initial audit, reference canary, technical SSH, isolated Docker lifecycle and cleanup | Independent fingerprint, fuller node inventory, backups/dependency and external checks |
-| M02 | Public progress HTTPS page live; private PHP multi-node admin implemented locally | Exact lab/PHP/account activation approval, production/browser QA, full private center modules and failure tests |
+| M01 | Oracle audit, reference canary, technical SSH and isolated Docker lifecycle; ctx1 fingerprint independently verified; backup/integrity/schedule operator-verified | Restore, external backup copy, backup-volume inclusion and independent external app checks |
+| M02 | Public progress HTTPS page and private PHP multi-node admin live; read-only project center integrated under the same session | Full center visual QA and live rollback drill; separate operations controls remain local prototypes |
 | M03 | Docker technical access works; operations-service proposal | Coolify/controller security review and explicitly approved installation/deployment |
 | M04–M10 | Roadmap/design only | Routing, snapshots, switching, contact processing, resilience/continuity/release gates |
 

@@ -4,8 +4,8 @@
   "milestone": "M01",
   "phase": "TESTING",
   "task_id": "FH-0002",
-  "live_verified_at_utc": "2026-10-15T20:55:03Z",
-  "last_checkpoint": "checkpoints/20261015T205503Z-FH-0019-center-live-pass.md",
+  "live_verified_at_utc": "2026-10-15T20:56:37Z",
+  "last_checkpoint": "checkpoints/20261015T205637Z-FH-0019-center-docs-reconciled.md",
   "current_summary": "FH-0019 center release is live and server-verified: authenticated page/assets pass, anonymous and post-logout access denied, inventory unchanged, protected canaries pass. Wider visual QA and rollback drill are pending. Resume FH-0002 with read-only dependency and backup coverage audit; restore remains NOT_TESTED and external copy NOT_DOCUMENTED.",
   "next_safe_action": "Perform read-only FH-0002 dependency and backup-coverage audit. Compare existing backup records and infrastructure/service definitions to identify data or volumes not proven covered; record UNKNOWN where evidence is absent. Do not change backup schedules, files or infrastructure.",
   "blocking_issue": null,
@@ -267,6 +267,10 @@
     {
       "id": "center_activation_pass",
       "utc": "2026-10-15T20:55:03Z"
+    },
+    {
+      "id": "admin_center_docs_reconciled",
+      "utc": "2026-10-15T20:56:37Z"
     },
     {
       "id": "ssh_identity_verified",

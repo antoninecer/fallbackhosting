@@ -4,7 +4,7 @@
 
 - GitHub: `https://github.com/antoninecer/fallbackhosting` (public).
 - Reported working copy: `/opt/fallback` on `setonuk`, using non-root account `tonda`.
-- Public read-only presentation `project.lab.ventureout.cz` is **live**; authenticated server-inventory administration is live at `lab.ventureout.cz`; broader control-center modules remain planned.
+- Public read-only presentation `project.lab.ventureout.cz` is **live**; authenticated server-inventory administration and the read-only project control center are live at `lab.ventureout.cz`. Docker operations remain a local fixture prototype.
 - Keep sensitive connection details (IP inventory, credentials, SSH private keys, tokens) in an access-controlled operator secret store **outside Git**.
 
 ## Starting a Codex/agent session
@@ -83,9 +83,9 @@ For the first application deployment, the operator requests small demo Docker ap
 
 Public browser QA is reproducible with scripts/check-public-browser.py using an independently installed Playwright/Chromium. It visits only the public page, tests widths 360/768/1440, scroll/focus, filters and stable section position; screenshots/reports go to ignored .local/qa. Temporary tooling is not a production dependency and is not guaranteed to survive cleanup/reboot.
 
-## Local control-center prototype
+## Protected project control center
 
-Build with `python3 center/build.py`; output is restricted to ignored .local/control-center with content-addressed releases and an atomic current pointer. This prototype is not authenticated and must not be exposed publicly. Local tests: docs/CONTROL-CENTER-UI.md and scripts/check-center-browser.py. Public progress and live inventory remain separate.
+The read-only center is active only behind the admin session at `https://lab.ventureout.cz/?center=index.html`; HTML, CSS, JS, resume and manifest are delivered through the same authenticated query route. Its release is root-owned and immutable. Public progress and private inventory remain separate. `python3 center/build.py` defaults to an unauthenticated local static prototype under ignored `.local/control-center`; never publish that output. The reviewed production artifact uses `--delivery admin-query`, is tested in an authenticated fixture, and must be included only in the pinned release flow. Local tests: docs/CONTROL-CENTER-UI.md and scripts/check-center-auth-browser.py.
 
 ## Local operations integration
 

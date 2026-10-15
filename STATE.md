@@ -21,6 +21,8 @@ Updated 2026-10-15T16:47:01Z, Codex. Observations are point-in-time, not live mo
 
 2026-10-15 20:55 UTC: FH-0019 center release is live at commit `5b57a1e7886cf0976f948dc46da845c66c704d11`. Exact source/artifact verification, root ownership/modes, authenticated HTTPS center and all five assets PASS; anonymous/post-logout access denied; traversal rejected; inventory unchanged; canaries PASS after one graceful PHP-FPM reload. Operator visual confirmation and rollback drill remain untested; status TESTING. Next current task FH-0002: read-only dependency/backup coverage audit. Evidence: `checkpoints/20261015T205503Z-FH-0019-center-live-pass.md`.
 
+2026-10-15 20:56 UTC: Updated RUNBOOK and MULTI-NODE-ADMIN to distinguish the deployed session-protected read-only center from the local unauthenticated prototype and Docker operations fixtures. No runtime changes. Next safe work remains FH-0002 read-only dependency/backup-coverage evidence; restore, external copy and volume inclusion are still unverified.
+
 ## Verified runtime changes
 
 Operator approved the exact project-domain deployment and existing Certbot use. Dedicated vhost/symlink, Certbot webroot certificate and two nginx -t gated reloads completed. Certificate expires 2027-01-13. Private backup and config hash manifest: /var/backups/fallbackhosting-project-20261015 (outside Git/webroot). All 22 pre-existing regular Nginx config hashes unchanged. Existing protocol-options warnings predate changes.
