@@ -11,6 +11,22 @@ portal = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(portal)
 
 class PublicPortalTests(unittest.TestCase):
+    def test_prague_time_handles_summer_winter_and_dst_transition(self):
+        self.assertEqual(portal.prague_time("2026-10-15T14:24:00Z"), "15. 10. 2026 16:24:00 · Praha (CEST)")
+        self.assertEqual(portal.prague_time("2026-12-15T14:24:00+00:00"), "15. 12. 2026 15:24:00 · Praha (CET)")
+        self.assertEqual(portal.prague_time("2026-10-25T00:30:00Z"), "25. 10. 2026 02:30:00 · Praha (CEST)")
+        self.assertEqual(portal.prague_time("2026-10-25T01:30:00Z"), "25. 10. 2026 02:30:00 · Praha (CET)")
+        with self.assertRaises(ValueError):
+            portal.prague_time("2026-10-15T14:24:00")
+
+    def test_render_displays_prague_but_preserves_utc_datetime(self):
+        data = portal.public_data()
+        data["events"] = [{"title":"Test", "utc":"2026-10-15T14:24:00Z"}]
+        page = portal.render(data)
+        self.assertIn('<time datetime="2026-10-15T14:24:00Z">15. 10. 2026 16:24:00 · Praha (CEST)</time>', page)
+        self.assertIn("Čas checkpointu (Praha)", page)
+        self.assertNotIn("Vygenerování stránky (UTC)", page)
+
     def fixture(self, directory):
         root = Path(directory)
         for name in ("ROADMAP.md", "TASKS.md", "state/current.json"):

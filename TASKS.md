@@ -77,3 +77,5 @@ Operator requests one public VPS with multiple application nodes and ctx1 prefil
 ## 2026-10-15 follow-up verification
 
 FH-0018: real HTTPS admin login/session rotation/ctx1/logout rechecked successfully; private inventory unchanged. All 14 local tests passed. No browser tooling available; visual/mobile QA and live rollback drill remain unperformed. Deployment is not marked DONE. Historical static lab-entry instructions are superseded by the deployed authenticated app.
+
+FH-0009 display follow-up: Europe/Prague timestamps implemented; eight portal tests including summer/winter/DST and UTC preservation PASS, live HTTPS display verified. Browser/mobile/filter QA remains pending. Rollback: reviewed Git revert and public rebuild.

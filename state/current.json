@@ -5,9 +5,9 @@
   "phase": "TESTING",
   "task_id": "FH-0018",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T142436Z-FH-0018-admin-recheck-pass.md",
-  "current_summary": "Real HTTPS admin login, secure session rotation, ctx1 display and logout PASS; private inventory unchanged. All 14 repository tests PASS. Deployment docs reconciled; browser tooling absent, visual QA and live rollback drill remain unperformed. No runtime configuration changed.",
-  "next_safe_action": "Implement FH-0006 repository-only canonical schema/export with reference, sanitization, evidence and stale-state validation; retain FH-0018 TESTING until remaining QA evidence exists.",
+  "last_checkpoint": "checkpoints/20261015T142704Z-FH-0018-prague-time-pass.md",
+  "current_summary": "Project event, checkpoint and page-generation times now render in Europe/Prague using zoneinfo; summer, winter, DST transition and UTC attribute preservation tests PASS. Canonical UTC unchanged; no host or service configuration change.",
+  "next_safe_action": "Continue FH-0006 repository-only canonical schema/export implementation; FH-0018 visual and rollback QA remain pending.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -150,6 +150,10 @@
     {
       "id": "admin_recheck_pass",
       "utc": "2026-10-15T14:24:36Z"
+    },
+    {
+      "id": "prague_time_pass",
+      "utc": "2026-10-15T14:27:04Z"
     }
   ]
 }

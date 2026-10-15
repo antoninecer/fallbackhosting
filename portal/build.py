@@ -7,6 +7,7 @@ import re
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", "BACKLOG", "TESTING"}
@@ -34,6 +35,7 @@ TASKS = {
 }
 
 PUBLIC_EVENTS = {
+ "prague_time_pass": "Dokončeno: časy na projektové stránce se zobrazují podle Prahy včetně letního a zimního času.",
  "admin_recheck_pass": "Dokončeno: opakované skutečné HTTPS přihlášení a odhlášení administrátora i všech 14 místních testů prošlo. Vizuální kontrola v prohlížeči a zkouška rollbacku zbývají.",
  "admin_https_failed": "HTTPS certifikát je aktivní; kontrola aplikace odhalila nepřístupný nový adresář. Oprava přístupového režimu probíhá, okolní weby prošly kontrolou.",
  "admin_canary_wait": "Kontrola před pokračováním: certifikát vydán, vedlejší API vrátilo HTTP 429. Čekáme na opakovanou kontrolu; chráněná referenční stránka je dostupná.",
@@ -98,11 +100,18 @@ def public_data(root=ROOT):
 def badge(status, label=None):
     return f'<span class="badge {status.lower()}">{html.escape(label or LABELS[status])}</span>'
 
+def prague_time(value):
+    moment = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if moment.tzinfo is None:
+        raise ValueError("Timestamp must include a timezone")
+    local = moment.astimezone(ZoneInfo("Europe/Prague"))
+    return local.strftime("%d. %m. %Y %H:%M:%S") + " · Praha (" + local.tzname() + ")"
+
 def render(data):
     e = html.escape
     milestones = "".join(f'<li class="milestone"><span class="code">{m["id"]}</span><div><h3>{e(m["title"])}</h3>{badge(m["status"], "Částečně ověřeno" if m["id"] == "M01" and m["status"] == "NEEDS_TEST" else None)}</div></li>' for m in data["milestones"])
     tasks = "".join(f'<tr data-status="{t["status"]}"><td><span class="code">{t["id"]}</span></td><td>{e(t["title"])}</td><td>{t["milestone"]}</td><td>{badge(t["status"])}</td></tr>' for t in data["tasks"])
-    events = "".join(f'<li><time datetime="{e(event["utc"])}">{e(event["utc"])}</time><p>{e(event["title"])}</p></li>' for event in reversed(data["events"]))
+    events = "".join(f'<li><time datetime="{e(event["utc"])}">{e(prague_time(event["utc"]))}</time><p>{e(event["title"])}</p></li>' for event in reversed(data["events"]))
     counts = {s: sum(t["status"] == s for t in data["tasks"]) for s in STATUSES}
     done = sum(m["status"] == "DONE" for m in data["milestones"])
     return f'''<!doctype html>
@@ -114,7 +123,7 @@ def render(data):
 <section id="posledni-kroky"><h2>Poslední dokončené kroky a výsledky</h2><ol>{events}</ol></section>
 <section id="milniky"><div class="section-head"><div><p class="eyebrow">CESTA K PRVNÍMU VYDÁNÍ</p><h2>Milníky projektu</h2></div><p class="muted">Hotovo znamená ověřeno a zaznamenáno.</p></div><ol class="roadmap">{milestones}</ol></section>
 <section id="ukoly"><div class="section-head"><div><p class="eyebrow">KONKRÉTNÍ KROKY</p><h2>Pracovní přehled</h2></div><label class="filter">Zobrazit <select id="task-filter"><option value="ALL">Všechny úkoly</option><option value="DONE">Hotové</option><option value="ACTIVE">Rozpracované</option><option value="BLOCKED">Čekající</option><option value="READY">Připravené</option></select></label></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Úkol</th><th>Etapa</th><th>Stav</th></tr></thead><tbody>{tasks}</tbody></table></div><p id="filter-result" role="status" class="muted"></p></section>
-<section class="record"><div><p class="eyebrow">POSLEDNÍ ULOŽENÝ ZÁZNAM</p><h2>Stav s časem a kontextem.</h2><p class="muted">Tato stránka zobrazuje uložený stav projektu. Není to živý monitoring ani potvrzení, že agent právě pracuje.</p></div><dl><dt>Checkpoint</dt><dd class="checkpoint">{e(data['checkpoint'])}</dd><dt>Čas checkpointu (UTC)</dt><dd><time datetime="{e(data['checkpoint_utc'])}">{e(data['checkpoint_utc'])}</time></dd><dt>Vygenerování stránky (UTC)</dt><dd><time datetime="{e(data['generated_utc'])}">{e(data['generated_utc'])}</time></dd></dl></section>
+<section class="record"><div><p class="eyebrow">POSLEDNÍ ULOŽENÝ ZÁZNAM</p><h2>Stav s časem a kontextem.</h2><p class="muted">Tato stránka zobrazuje uložený stav projektu. Není to živý monitoring ani potvrzení, že agent právě pracuje.</p></div><dl><dt>Checkpoint</dt><dd class="checkpoint">{e(data['checkpoint'])}</dd><dt>Čas checkpointu (Praha)</dt><dd><time datetime="{e(data['checkpoint_utc'])}">{e(prague_time(data['checkpoint_utc']))}</time></dd><dt>Vygenerování stránky (Praha)</dt><dd><time datetime="{e(data['generated_utc'])}">{e(prague_time(data['generated_utc']))}</time></dd></dl></section>
 </main><footer><span>F/ FallbackHosting</span><span>Ověřit. Zaznamenat. Pokračovat.</span><a href="https://github.com/antoninecer/fallbackhosting" rel="noopener noreferrer">Veřejný repozitář ↗</a></footer></body></html>'''
 
 def build(output, root=ROOT):

@@ -54,3 +54,7 @@ Latest verified result supersedes activation-in-progress observations above: all
 ## Follow-up documentation reconciliation
 
 Fresh HTTPS auth/session rotation/ctx1/logout PASS without inventory mutation; 14 local tests PASS. Browser tooling unavailable; no visual QA or rollback drill claimed. Earlier activation-in-progress paragraphs are historical and superseded by the live result. No operational configuration changed in this follow-up.
+
+## Prague display time
+
+Project page event/checkpoint/generation times now display Europe/Prague with automatic CET/CEST. Eight portal tests and live HTTPS conversion check PASS; canonical UTC and host settings unchanged. See latest checkpoint for verification UTC.
