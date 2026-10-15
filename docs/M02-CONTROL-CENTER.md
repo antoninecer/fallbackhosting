@@ -40,3 +40,7 @@ Agent activity shows timestamp freshness and associated revision. Resume Project
 Local implementation changes use reviewed Git revert; generated artifacts are reproducible. Deployment proposal must identify exact previous Nginx files and release pointer, secure backups and approved narrow reload. Failed generation must never overwrite active release. Authentication failure blocks publication. DNS, certificate issuance/replacement, service configuration, installation and reload are outside current authorization.
 
 Later authenticated editing needs a separately reviewed service, authorization, CSRF protection, audit trail, concurrency control and backup; do not add writes or shell execution to the static MVP.
+
+## Operator-requested public presentation
+
+2026-10-15: operator requested an externally visible simple progress presentation. Public read-only projection is implemented separately under portal/; it contains only reviewed milestone/task labels and statuses plus checkpoint identity/time. Operational document bodies, inventories, runbooks and administration remain excluded. This presentation does not replace or complete the protected Project Control Center. PHP is unnecessary: static HTML/CSS and small JavaScript with Python build-time generation suffice. See docs/PORTAL-DEPLOYMENT.md.

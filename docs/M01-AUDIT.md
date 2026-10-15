@@ -43,3 +43,7 @@ Use bounded GET with TLS verification to reference URL, assert expected route/co
 This audit changed no runtime state; runtime rollback is unnecessary. Documentation rollback: reviewed Git revert. Future deployments require exact backup targets, tested restoration, nginx syntax check, unrelated-site canary, explicit scoped approval and narrow reload. These procedures have not been executed or validated as operational recovery.
 
 M01 remains NEEDS_TEST: external baseline, dependency analysis and operational backup/rollback verification are outstanding.
+
+## Correction — public presentation follow-up
+
+2026-10-15: initial sites-enabled command enumerated only symbolic links. Subsequent read-only enumeration found regular vhost files as well. The original two-name list is incomplete and must not be used as production coverage. Existing site names/roots are intentionally not exported to the public presentation. No configuration was changed.

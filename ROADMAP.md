@@ -6,7 +6,7 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 | --- | --- | --- | --- |
 | M00 | Foundation and Git state | DONE | Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately |
 | M01 | Verified inventory and safety baselines | NEEDS_TEST | Evidence of live state; protected reference endpoint baseline; backup/rollback plans |
-| M02 | Independent Project Control Center | PLANNED | Protected portal survives home-node outage; tasks/incidents/checkpoints visible |
+| M02 | Independent Project Control Center | IN_PROGRESS | Protected portal survives home-node outage; tasks/incidents/checkpoints visible |
 | M03 | Coolify deployment on home node | PLANNED | Authorized admin can deploy/redeploy one example app without changing edge config |
 | M04 | Wildcard routing and TLS | PLANNED | Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary |
 | M05 | Versioned Fallback Builder | PLANNED | Safe exported HTML/assets; preview; immutable release; atomic publish; rollback |

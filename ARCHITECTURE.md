@@ -48,3 +48,7 @@ Separate **per-application** state from **gateway/node** state. An HTTP response
 ## Operational implementation notes
 
 No actual Coolify installation, wildcard Nginx routing, fallback engine, wildcard TLS or Project Control Center is confirmed deployed yet. Follow `STATE.md` for last observed facts; recheck in runtime before changing anything.
+
+## Public progress presentation (operator request, 2026-10-15)
+
+Add a sanitized read-only static presentation, separate from the authenticated project administration center. Build-time canonical Markdown/JSON projection exports reviewed labels/statuses and checkpoint identity/time only. Nginx serves three local files; no PHP, database, Docker, Tailscale or home runtime dependency. This does not weaken authentication requirements for administrative modules or expose runbooks/inventory. Activation plan requires scoped approval in docs/PORTAL-DEPLOYMENT.md.

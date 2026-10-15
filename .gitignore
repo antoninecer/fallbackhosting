@@ -23,3 +23,7 @@ node_modules/
 dist/
 build/
 *.tmp
+
+# Rebuildable public presentation / local Python cache
+/public/
+__pycache__/

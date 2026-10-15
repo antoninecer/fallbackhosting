@@ -2,7 +2,7 @@
 
 **Self-hosted deployment platform with resilient, independently hosted standby pages.**
 
-Status: **M00 complete; M01 audit needs further verification; M02 design proposed**. This repository is a project foundation, **not a deployed product**.
+Status: **M00 complete; M01 audit needs further verification; M02 public presentation built locally, activation pending**. This repository is a project foundation, **not a deployed product**.
 
 ## Vision
 
@@ -41,3 +41,5 @@ M00 docs + Git → M01 inventory/baselines → M02 independent project portal �
 This roadmap is a plan, **not a record of completed deliveries**.
 
 Session 001 audit: [M01](docs/M01-AUDIT.md). Portal proposal: [M02](docs/M02-CONTROL-CENTER.md). Current next task: `state/current.json` and latest checkpoint. No runtime deployment performed.
+
+Public progress presentation source is in `portal/`; build with `python3 portal/build.py`. Domain activation is pending scoped approval; see [deployment proposal](docs/PORTAL-DEPLOYMENT.md). This public view is distinct from protected administration.

@@ -48,3 +48,7 @@ The last successfully committed checkpoint remains durable. When access is resto
 ## Recovery rule
 
 A standby snapshot is not a backup of databases. During standby: disable logins, writes, checkout and DB-backed operations; offer approved static content and independent contact only. Returning online requires a stable health verification period.
+
+## Public project presentation
+
+Public build: `python3 portal/build.py`, after each validated update of canonical tasks/milestones/state/checkpoint. Output public/ is the only webroot; never expose the repository root. Test with `python3 -m unittest discover -s tests -p test_portal.py -v`. Reviewed deployment/rollback and approval scope: docs/PORTAL-DEPLOYMENT.md. Publication is pending; no live gateway changes yet.
