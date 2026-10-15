@@ -67,3 +67,11 @@ Operator added target Docker-group membership and requested retest. Agent observ
 OBSERVED through existing strict technical SSH, running tracked scripts/inspect-node.sh via stdin, exit 0: Rocky Linux 9.8, Linux x86_64, LXC virtualization, 3 CPUs, 8192 MiB RAM (8069 available), 2048 MiB swap (unused), root filesystem 98G/1.3G used/92G available. Docker service active; client/server 29.9.0; daemon reports 3 CPUs and 8589934592 memory bytes; Compose v5.6.0. No writes, installs, permission changes or workload mutations. PVE host version/container numeric ID remain historical, not inspected.
 
 M01 is **partially verified**, not an untested infrastructure. Remaining audit gates: independent SSH identity attestation, external application canary, dependency and backup/rollback coverage. Controlled outage tests belong to M08; they do not need to be performed merely to close M01. Public wording now distinguishes partial verification from no evidence.
+
+## Read-only refresh — 2026-10-15T15:01:59Z
+
+Strict existing technical SSH PASS; Rocky 9.8/LXC/x86_64/3 CPUs/8 GiB RAM/2 GiB swap, Docker 29.9.0 and Compose 5.6.0 re-observed. Selected Docker/Tailscale/sshd active; firewalld inactive is a service observation only, not exposure proof. One running container by count. Oracle protected route/TLS/assets and frozen lab integrity verify PASS. No mutation. Independent fingerprint still requires trusted-console evidence; full backup/dependency and independent external app checks remain open. Latest checkpoint provides provenance; no private mapping exported.
+
+## Independent identity verification — supersedes earlier missing-attestation gate
+
+Operator supplied trusted hypervisor-console ED25519 attestation and explicitly approved VERIFIED status. Agent matched it privately against the existing client trust record and completed strict pinned-algorithm read-only SSH. Both private ctx1 inventory records updated with provenance, comparison timestamp, lock/revision/audit and private backups; fingerprint/endpoint are excluded from Git. Operator execution time was not supplied. M01 still needs full backup/dependency and independent external application coverage.

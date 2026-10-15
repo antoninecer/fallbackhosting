@@ -26,7 +26,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_migration_preserves_all_existing_ids_and_generated_tables(self):
         self.assertEqual([m['id'] for m in self.catalog['milestones']], [f'M{i:02}' for i in range(11)])
-        self.assertEqual([t['id'] for t in self.catalog['tasks']], [f'FH-{i:04}' for i in range(1, 19)])
+        self.assertEqual([t['id'] for t in self.catalog['tasks'][:18]], [f'FH-{i:04}' for i in range(1, 19)])
+        self.assertEqual(len({t['id'] for t in self.catalog['tasks']}),len(self.catalog['tasks']))
         model.sync_markdown(ROOT, self.catalog)
 
     def test_committed_status_and_history_cannot_be_silently_rewritten(self):

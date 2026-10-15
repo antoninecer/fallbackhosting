@@ -4,3 +4,5 @@
 .progress-log{max-height:min(26rem,65vh);overflow-y:auto;overscroll-behavior-y:contain;scrollbar-gutter:stable;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);padding:0 24px;margin-bottom:48px}.progress-log:focus-visible{outline:3px solid #326cbe;outline-offset:4px}.progress-log ol{list-style:none;margin:0;padding:0}.progress-log li{padding:18px 0;border-bottom:1px solid var(--line)}.progress-log li:last-child{border-bottom:0}.progress-log time{font-size:12px;color:var(--muted)}.progress-log p{margin:6px 0 0;font-size:14px;overflow-wrap:anywhere}@media(max-width:560px){.progress-log{padding:0 16px;max-height:22rem}}
 
 .blocker-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:48px}.blocker-grid .panel{padding:22px}.blocker-grid h3{margin-top:8px}.blocker-grid p{margin-bottom:0}@media(max-width:560px){.blocker-grid{grid-template-columns:1fr}}
+
+.badge.blocked_by_operator{background:#fff0d4;color:#805a13}

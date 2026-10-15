@@ -74,3 +74,7 @@ Local-only read-only center built with eight modules, immutable artifact/manifes
 ## Authenticated center adapter and browser discrepancy
 
 41 repository tests and disposable Chromium 360/768/1440 login/asset/copy/download/logout checks PASS. Local query adapter and deployment proposal prepared; no live release switch. Frozen live source still sends no-referrer, which reproduced Origin:null form rejection in local Chromium; same-origin correction tested locally. Earlier direct-HTTP auth checks did not prove browser form behavior. Current operator priorities: read-only M01, mock-only Docker broker and local admin integration; pending new activation must not stall safe engineering.
+
+## Independent ctx1 identity VERIFIED
+
+Trusted-console operator attestation privately matched existing ED25519 client trust and strict pinned-algorithm SSH. Both prepared/live private inventory updated with VERIFIED provenance and private backups; no host/trust/service/network changes. Earlier missing-fingerprint paragraphs are historical and superseded. Complete backup/dependency and independent external app evidence remain open; broker runtime privilege isolation remains separate.

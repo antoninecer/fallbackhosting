@@ -7,7 +7,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | ID | Milestone | Status | Owner | Acceptance / next step |
 | --- | --- | --- | --- | --- |
 | FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
-| FH-0002 | M01 | BLOCKED | Operator + Codex | Home OS/resources/Compose and transport observed; still missing complete backup/dependency coverage and independently verified host identity. Record remaining scoped evidence. |
+| FH-0002 | M01 | BLOCKED | Operator + Codex | Node OS/resources/services and independent SSH identity verified; complete backup/dependency coverage and independent external app evidence still required. |
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
 | FH-0005 | M02 | TESTING | Operator + Codex | Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed. |
@@ -16,14 +16,18 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0008 | M02 | BACKLOG | Operator + Codex | Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes |
 | FH-0009 | M02 | DONE | Codex | Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint. |
 | FH-0010 | M02 | READY | Operator + Codex | Historical static entry proposal superseded by live authenticated admin FH-0017/FH-0018; reconcile any future entry work with that deployment |
-| FH-0011 | M03 | BLOCKED | Operator + Codex | SSH, isolated Docker lifecycle and node OS/resources/Compose observed; independent fingerprint and constrained operations boundary remain pending. No Coolify installation implied. |
+| FH-0011 | M03 | BLOCKED | Operator + Codex | SSH identity, node OS/resources/Compose and isolated Docker lifecycle verified; constrained operations boundary/Coolify installation remain separate gates. |
 | FH-0012 | M02 | READY | Operator + Codex | Dedicated webroot renewal recorded, but no per-cert/global deploy hook observed. Prepare exact nginx syntax-test/reload hook and renewal-test proposal; scoped approval required before changes |
 | FH-0013 | M03 | TESTING | Codex + Operator | Isolated SSH service proposal documented; operator review pending; no service deployed or operational permissions granted |
-| FH-0014 | M01 | BLOCKED | Operator + Codex | Independently verify actual negotiated SSH host fingerprint using trusted ctx1 console, compare privately with pinned client trust; record source/time/verifier/result before broker activation |
+| FH-0014 | M01 | TESTING | Operator + Codex | Independent trusted-console ED25519 attestation supplied by operator, matched existing client trust and strict pinned-algorithm probe; private prepared/live identity VERIFIED with audit and backup. No trust or infrastructure change. |
 | FH-0015 | M03 | READY | Operator + Codex | Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval |
 | FH-0016 | M03 | DONE | Codex | New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required |
 | FH-0017 | M02 | TESTING | Codex + Operator | Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Activation complete under FH-0018; browser QA pending; docs/MULTI-NODE-ADMIN.md |
 | FH-0018 | M02 | TESTING | Codex | Existing lab inventory HTTPS live. Prior direct-HTTP auth passed; local browser test found no-referrer/Origin compatibility issue in matching frozen source. Same-origin fix tested locally, not deployed. Live browser QA/rollback remain open. |
+| FH-0019 | M02 | BLOCKED_BY_OPERATOR | Codex + Operator | Approve exact new reviewed lab application release switch and rollback; no Nginx/PHP-FPM/cert/DNS/firewall change. Existing inventory deployment is already live. |
+| FH-0020 | M03 | IN_PROGRESS | Codex | Local fixtures: strict authorization, managed resource ownership, one-use approvals, idempotency/UNKNOWN, bounds/audit; no broker service activation. |
+| FH-0021 | M02 | READY | Codex | Local applications per server, dated container state, requests/progress/results/errors and sanitized audit; authenticated prototype only. |
+| FH-0022 | M03 | READY | Codex | Operator authorizes test Docker workloads on ctx1. Only uniquely owned small resources; unchanged original workload and exact cleanup evidence. |
 
 FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. The original Session 001 scope ended at design; the subsequent operator request adds the public presentation under FH-0009.
 

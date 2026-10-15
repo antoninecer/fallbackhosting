@@ -74,3 +74,7 @@ Exact helper path/content, allowed image, sudoers rule, approval enforcement, ba
 ## Current transport capability after operator change
 
 Operator separately granted broad Docker-group access and authorized a new diagnostic; create/start/exit-0/remove/absence passed without remote sudo. No helper/broker was installed. Earlier denied probe and helper proposal are historical context/possible restricted alternative, not current access blockers. Broker API remains read-only by design until separately reviewed; broad technical credentials are not authorization for arbitrary project operations or isolation proof. Account/group reduction or remote forced-command restriction would need exact approval and operator recovery plan.
+
+## Current development authorization
+
+Operator explicitly requests a local mock-first v1 supporting managed list/inspect/logs/start/stop/restart/approved-template deploy/confirmed remove. This extends the original read-only proposal only in repository fixtures; no broker service or remote driver is activated. Operator separately permits controlled test Docker workloads on ctx1 with managed resource identification and exact cleanup. Trusted-console ED25519 attestation was supplied and privately matched to existing client trust; independent host identity gate is now VERIFIED. Agent/key privilege isolation and exact service deployment remain separate unresolved gates.

@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M02",
   "phase": "TESTING",
-  "task_id": "FH-0005",
+  "task_id": "FH-0014",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T150107Z-FH-0005-center-auth-pass.md",
-  "current_summary": "41 repository tests and disposable browser auth/center/assets/clipboard/download/logout PASS at 360/768/1440. Fixed no-referrer/Origin form compatibility locally with same-origin; frozen live source still old, no deployment. Operator priorities now M01 read-only verification and mock-only operations service; preserve tested work then continue.",
-  "next_safe_action": "Reconcile M01 read-only evidence and independent fingerprint gate; implement isolated Docker operations core with fixtures, no service activation or live Docker mutation.",
+  "last_checkpoint": "checkpoints/20261015T150905Z-FH-0014-ssh-identity-verified.md",
+  "current_summary": "Operator independently attested ctx1 ED25519 via trusted hypervisor console; agent compared privately with existing client trust and strict pinned-algorithm read-only SSH PASS. Prepared/live private inventory VERIFIED with lock/revision/audit/private backups; unrelated data/modes preserved. No infrastructure/trust changes; no fingerprint or endpoint in public projection.",
+  "next_safe_action": "Commit attestation evidence, mark FH-0014 DONE against concrete revision, then resume FH-0020 broker fixture implementation and tests.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -16,7 +16,7 @@
     "Saved agent state is not a live heartbeat.",
     "Project certificate renewal webroot exists but automatic post-renewal Nginx reload is not configured/verified; FH-0012.",
     "M01/M02 gates remain incomplete; M03 transport verification is not deployment readiness.",
-    "Independent SSH host fingerprint pending; current agent unrestricted sudo defeats strict account-only key isolation.",
+    "Independent SSH host identity verified; current agent unrestricted sudo still defeats strict account-only key isolation.",
     "Operator granted broad destination Docker-group access; isolated test passed, but this is not per-project least privilege or general deployment authorization. Broker not deployed."
   ],
   "ssh_transport": {
@@ -35,7 +35,7 @@
       "uptime": "PASS"
     },
     "host_trust": "EXISTING_TRUST_ACCEPTED_STRICTLY",
-    "independent_fingerprint": "NEEDS_TEST",
+    "independent_fingerprint": "VERIFIED",
     "key_material_read_or_copied_by_agent": false,
     "permissions_changed_by_agent": false,
     "private_inventory_location": "IGNORED_LOCAL_ADMIN_INVENTORY_NO_KEY_MAPPING",
@@ -64,6 +64,13 @@
       "resources_created": 0,
       "cleanup": "NOT_NEEDED",
       "remote_sudo_used": false
+    },
+    "independent_identity_evidence": {
+      "provenance": "OPERATOR_TRUSTED_CONSOLE_PLUS_AGENT_CLIENT_MATCH",
+      "recorded_at_utc": "2026-10-15T15:09:04Z",
+      "operator_execution_utc": null,
+      "algorithm": "ED25519",
+      "private_inventory_updated": true
     }
   },
   "operations_service": {
@@ -218,6 +225,14 @@
     {
       "id": "center_auth_pass",
       "utc": "2026-10-15T15:01:07Z"
+    },
+    {
+      "id": "m01_refresh_pass",
+      "utc": "2026-10-15T15:03:04Z"
+    },
+    {
+      "id": "ssh_identity_verified",
+      "utc": "2026-10-15T15:09:05Z"
     }
   ],
   "catalog_path": "state/catalog.json"
