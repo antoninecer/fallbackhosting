@@ -10,7 +10,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0002 | M01 | BLOCKED | Operator + Codex | Home OS/resources/Compose and transport observed; still missing complete backup/dependency coverage and independently verified host identity. Record remaining scoped evidence. |
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
-| FH-0005 | M02 | READY | Operator + Codex | Operator agreed to repository-only control-center data/UI work. Design proposal available in docs/M02-CONTROL-CENTER.md; implementation underway in FH-0007. Protected-center deployment remains separate. |
+| FH-0005 | M02 | TESTING | Operator + Codex | Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed. |
 | FH-0006 | M02 | DONE | Codex | Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints. |
 | FH-0007 | M02 | DONE | Codex | Local-only eight-module read-only prototype implemented; 36 repository tests and Chromium 360/768/1440 keyboard/filter/copy/download/long-text checks PASS. Deployment/authentication remains separate FH-0008 scope. |
 | FH-0008 | M02 | BACKLOG | Operator + Codex | Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes |
@@ -23,7 +23,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0015 | M03 | READY | Operator + Codex | Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval |
 | FH-0016 | M03 | DONE | Codex | New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required |
 | FH-0017 | M02 | TESTING | Codex + Operator | Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Activation complete under FH-0018; browser QA pending; docs/MULTI-NODE-ADMIN.md |
-| FH-0018 | M02 | TESTING | Codex | Approved lab HTTPS admin LIVE; real login/ctx1/logout and private paths PASS. Final canaries/config hashes PASS after cooldown; browser/mobile QA and rollback drill outstanding; per-stage public progress recorded; no home changes |
+| FH-0018 | M02 | TESTING | Codex | Existing lab inventory HTTPS live. Prior direct-HTTP auth passed; local browser test found no-referrer/Origin compatibility issue in matching frozen source. Same-origin fix tested locally, not deployed. Live browser QA/rollback remain open. |
 
 FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. The original Session 001 scope ended at design; the subsequent operator request adds the public presentation under FH-0009.
 

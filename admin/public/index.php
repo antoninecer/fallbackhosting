@@ -6,7 +6,7 @@ require dirname(__DIR__) . '/lib.php';
 header('Content-Type: text/html; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer');
+header('Referrer-Policy: same-origin');
 header("Content-Security-Policy: default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");
 header('X-Frame-Options: DENY');
 $error = '';
@@ -35,6 +35,7 @@ try {
     if (isset($_SESSION['last_seen']) && time() - $_SESSION['last_seen'] > 1800) { $_SESSION = []; session_regenerate_id(true); }
     $_SESSION['last_seen'] = time();
     $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
+    if (array_key_exists('center', $_GET) && !in_array($_SERVER['REQUEST_METHOD'], ['GET','HEAD'], true)) { http_response_code(405); header('Allow: GET, HEAD'); exit; }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 8192) { http_response_code(413); exit('Požadavek je příliš velký.'); }
         if (($_SERVER['HTTP_ORIGIN'] ?? '') !== $origin || !is_string($_POST['csrf'] ?? null) || !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
@@ -71,8 +72,12 @@ try {
             $_SESSION['notice']='Konfigurace serveru uložena. Žádná vzdálená operace nebyla spuštěna.';
             header('Location: /',true,303); exit;
         }
-    } elseif ($_SERVER['REQUEST_METHOD'] !== 'GET') { http_response_code(405); header('Allow: GET, POST'); exit; }
+    } elseif ($_SERVER['REQUEST_METHOD'] !== 'GET' && !(array_key_exists('center', $_GET) && $_SERVER['REQUEST_METHOD'] === 'HEAD')) { http_response_code(405); header('Allow: GET, POST'); exit; }
     $loggedIn = isset($_SESSION['user']) && hash_equals($auth['username'],$_SESSION['user']);
+    if (array_key_exists('center', $_GET)) {
+        require dirname(__DIR__) . '/center.php';
+        serve_center($_GET['center'], $loggedIn, $local);
+    }
     $inventory = $loggedIn ? read_json('inventory') : null;
 } catch (InputError $failure) {
     http_response_code(422); $error=$failure->getMessage();
@@ -97,7 +102,7 @@ function observation(array $server, string $kind): string {
 }
 ?>
 <!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FallbackHosting · Správa serverů</title><link rel="stylesheet" href="/admin.css"></head>
-<body><header><a class="brand" href="/">F/ <span>FallbackHosting</span></a><span class="tag">Administrace</span><?php if ($loggedIn): ?><form method="post"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><input type="hidden" name="action" value="logout"><button class="quiet">Odhlásit</button></form><?php endif; ?></header>
+<body><header><a class="brand" href="/">F/ <span>FallbackHosting</span></a><span class="tag">Administrace</span><?php if ($loggedIn): ?><a href="/?center=index.html">Řídicí centrum</a><form method="post"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><input type="hidden" name="action" value="logout"><button class="quiet">Odhlásit</button></form><?php endif; ?></header>
 <main><?php if ($error !== ''): ?><p class="alert" role="alert"><?=e($error)?></p><?php endif; ?><?php if ($notice !== ''): ?><p class="notice" role="status"><?=e($notice)?></p><?php endif; ?>
 <?php if (!$loggedIn): ?>
 <section class="login panel"><p class="eyebrow">SPRÁVA PLATFORMY</p><h1>Přihlášení správce</h1><p class="muted">Konfigurace aplikačních serverů a jejich ověření.</p><form method="post"><input type="hidden" name="action" value="login"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><label>Uživatelské jméno<input name="username" autocomplete="username" maxlength="40" required></label><label>Heslo<input type="password" name="password" autocomplete="current-password" maxlength="256" required></label><button>Přihlásit se</button></form></section>

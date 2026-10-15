@@ -46,6 +46,9 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "center_auth_pass": "Dokončeno místně: centrum i všechny jeho soubory jsou chráněné relací; přihlášení, odhlášení a stažení prošly ve třech velikostech prohlížeče. Oprava nalezené chyby formuláře je připravená, živou verzi jsme zatím neměnili.",
+ "center_auth_retest": "Kontrola místního přihlášení: testy přímých požadavků prošly, prohlížeč odhalil nesoulad při ověření formuláře. Příčinu ověřujeme v dočasném prostředí; živá administrace zůstává beze změny.",
+ "center_auth_plan_started": "Probíhá: přesný návrh zabezpečeného nasazení centra přes existující přihlášení. Chráníme i soubory, styly a podklad ke stažení; provoz zatím neměníme.",
  "center_browser_pass": "Dokončeno místně: centrum prošlo prohlížečem při šířkách 360, 768 a 1440 px. Ověřeny filtry, klávesnice, kopírování a stažení podkladu; všech 36 místních testů prošlo. Nasazení centra je samostatný krok.",
  "center_browser_retest": "Kontrola místního centra: přísná ochrana stránky zablokovala způsob čekání testovacího nástroje. Test upravujeme; ochranu stránky ponecháváme zapnutou.",
  "center_unit_pass": "Dokončeno místně: osm modulů centra a osm testů ochrany dat, vloženého HTML, obnovy práce a zachování poslední platné verze. Probíhá kontrola v prohlížeči; centrum zatím není nasazené.",

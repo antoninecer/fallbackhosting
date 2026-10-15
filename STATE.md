@@ -70,3 +70,7 @@ Operator-requested bounded history is live. Headless Chromium at 360/768/1440 PA
 ## FH-0007 local control-center UI
 
 Local-only read-only center built with eight modules, immutable artifact/manifest and atomic current pointer. All 36 repository tests and loopback Chromium 360/768/1440 filters/keyboard/clipboard/download/long-text checks PASS; screenshots reviewed. No authentication/deployment is claimed. Public blocker explanations now show actual missing evidence; superseded FH-0005 local design wait moved to READY under operator approval. FH-0008 deployment remains separate.
+
+## Authenticated center adapter and browser discrepancy
+
+41 repository tests and disposable Chromium 360/768/1440 login/asset/copy/download/logout checks PASS. Local query adapter and deployment proposal prepared; no live release switch. Frozen live source still sends no-referrer, which reproduced Origin:null form rejection in local Chromium; same-origin correction tested locally. Earlier direct-HTTP auth checks did not prove browser form behavior. Current operator priorities: read-only M01, mock-only Docker broker and local admin integration; pending new activation must not stall safe engineering.

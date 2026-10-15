@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0007",
+  "phase": "TESTING",
+  "task_id": "FH-0005",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T145251Z-FH-0007-center-browser-pass.md",
-  "current_summary": "FH-0007 DONE against implementation commit e5e6f47: local eight-module center, 36 repository tests, headless Chromium three-width keyboard/filter/copy/download/long-text checks and screenshot review PASS. Separate public page three-width browser retest also PASS. No center authentication or production deployment claimed.",
-  "next_safe_action": "Prepare exact protected-center deployment/authentication proposal, keeping live public presentation and existing inventory separate; operational activation requires its own reviewed scope.",
+  "last_checkpoint": "checkpoints/20261015T150107Z-FH-0005-center-auth-pass.md",
+  "current_summary": "41 repository tests and disposable browser auth/center/assets/clipboard/download/logout PASS at 360/768/1440. Fixed no-referrer/Origin form compatibility locally with same-origin; frozen live source still old, no deployment. Operator priorities now M01 read-only verification and mock-only operations service; preserve tested work then continue.",
+  "next_safe_action": "Reconcile M01 read-only evidence and independent fingerprint gate; implement isolated Docker operations core with fixtures, no service activation or live Docker mutation.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -206,6 +206,18 @@
     {
       "id": "center_browser_pass",
       "utc": "2026-10-15T14:52:51Z"
+    },
+    {
+      "id": "center_auth_plan_started",
+      "utc": "2026-10-15T14:53:51Z"
+    },
+    {
+      "id": "center_auth_retest",
+      "utc": "2026-10-15T14:58:12Z"
+    },
+    {
+      "id": "center_auth_pass",
+      "utc": "2026-10-15T15:01:07Z"
     }
   ],
   "catalog_path": "state/catalog.json"

@@ -95,6 +95,7 @@ class AdminTests(unittest.TestCase):
         flags={item.strip().lower() for item in headers['Set-Cookie'].split(';')[1:]}
         self.assertTrue({'secure','httponly','samesite=strict'} <= flags)
         self.assertIn('no-store',headers['Cache-Control'].split(', '))
+        self.assertEqual(headers['Referrer-Policy'],'same-origin')
         self.assertIn("frame-ancestors 'none'",headers['Content-Security-Policy'])
         self.assertEqual(self.post_node(node('second'))[0],401)
         self.login();self.assertIn('192.0.2.10',self.request()[1])

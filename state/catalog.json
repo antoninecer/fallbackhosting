@@ -191,11 +191,14 @@
     {
       "id": "FH-0005",
       "title": "Návrh chráněného projektového centra",
-      "status": "READY",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Operator agreed to repository-only control-center data/UI work. Design proposal available in docs/M02-CONTROL-CENTER.md; implementation underway in FH-0007. Protected-center deployment remains separate.",
+      "acceptance": "Local authenticated center adapter and exact release proposal prepared; 41 tests and disposable browser 360/768/1440 PASS. Production activation remains a separate operator decision; source header compatibility fix is not deployed.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T150107Z-FH-0005-auth-validated.md",
+        "docs/CONTROL-CENTER-DEPLOYMENT.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M02",
@@ -208,6 +211,22 @@
           "utc": "2026-10-15T14:46:45Z",
           "evidence": [
             "checkpoints/20261015T144645Z-FH-0007-blocker-reconciliation.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T14:53:50Z",
+          "evidence": [
+            "checkpoints/20261015T145350Z-FH-0005-auth-design-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:01:07Z",
+          "evidence": [
+            "checkpoints/20261015T150107Z-FH-0005-auth-validated.md"
           ]
         }
       ]
@@ -484,7 +503,7 @@
       "title": "Kontrola a opakovatelné nasazení administrace",
       "status": "TESTING",
       "owner": "Codex",
-      "acceptance": "Approved lab HTTPS admin LIVE; real login/ctx1/logout and private paths PASS. Final canaries/config hashes PASS after cooldown; browser/mobile QA and rollback drill outstanding; per-stage public progress recorded; no home changes",
+      "acceptance": "Existing lab inventory HTTPS live. Prior direct-HTTP auth passed; local browser test found no-referrer/Origin compatibility issue in matching frozen source. Same-origin fix tested locally, not deployed. Live browser QA/rollback remain open.",
       "dependencies": [],
       "evidence": [],
       "completed_at_utc": null,

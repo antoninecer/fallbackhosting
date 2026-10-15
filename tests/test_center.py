@@ -60,6 +60,13 @@ class CenterTests(unittest.TestCase):
         data['observations']=[]
         self.assertIn('Žádná pozorování. Stav je neznámý.',center.render(data))
 
+    def test_query_delivery_keeps_all_assets_behind_session_route(self):
+        page = center.render(self.data, delivery='admin-query')
+        for name in ('center.css','center.js','resume.txt'):
+            self.assertIn('/?center='+name,page)
+        self.assertNotIn('Místní prototyp',page)
+        with self.assertRaises(ValueError): center.render(self.data,delivery='unknown')
+
     def test_builder_refuses_public_output(self):
         with self.assertRaises(ValueError):
             center.build(ROOT / 'public/center')

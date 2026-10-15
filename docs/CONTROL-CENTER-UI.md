@@ -32,3 +32,7 @@ Current temporary tooling uses `/tmp/fallback-browser-venv`, `/tmp/fallback-brow
 ## Rollback
 
 Repository changes: reviewed Git revert. Local artifact: atomically select a previously verified release under .local/control-center/releases and verify its manifest; do not change production links. Build-failure retention is tested. Operational deployment/rollback is separate FH-0008 work and remains unperformed by this UI task.
+
+## Local session adapter follow-up
+
+Optional admin-query artifact mode and the PHP session-gated adapter are now locally implemented/tested, not activated. Static mode alone remains unauthenticated. Exact plan and the tested form-Origin compatibility correction are documented in CONTROL-CENTER-DEPLOYMENT.md.
