@@ -72,5 +72,15 @@ class PublicPortalTests(unittest.TestCase):
             portal.build(Path(temp))
             self.assertEqual({p.name for p in Path(temp).iterdir()}, {"index.html", "style.css", "app.js"})
 
+    def test_lab_is_separate_static_landing_without_admin(self):
+        with tempfile.TemporaryDirectory() as temp:
+            portal.build_lab(Path(temp))
+            self.assertEqual({p.name for p in Path(temp).iterdir()}, {"index.html", "style.css"})
+            body = (Path(temp) / "index.html").read_text()
+            self.assertIn("https://project.lab.ventureout.cz/", body)
+            self.assertIn("nasazování zatím není dostupné", body)
+            self.assertNotIn("<form", body)
+            self.assertNotIn("/opt/", body)
+
 if __name__ == "__main__":
     unittest.main()

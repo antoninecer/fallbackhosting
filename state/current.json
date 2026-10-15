@@ -1,17 +1,20 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M02",
-  "phase": "IN_PROGRESS",
-  "task_id": "FH-0009",
-  "live_verified_at_utc": "2026-10-15T07:06:50Z",
-  "last_checkpoint": "checkpoints/20261015T072125Z-FH-0009-validated.md",
-  "current_summary": "Public project presentation implemented locally; domain activation awaits exact Nginx/TLS approval and privileged operator action.",
-  "next_safe_action": "Obtain exact approval for docs/PORTAL-DEPLOYMENT.md targets/actions and privileged operator execution; then activate and verify HTTPS presentation.",
-  "blocking_issue": "New virtual host, certificate issuance and reload require scoped approval and privileged operator execution.",
+  "milestone": "M03",
+  "phase": "PLANNED",
+  "task_id": "FH-0011",
+  "live_verified_at_utc": "2026-10-15T07:58:16Z",
+  "last_checkpoint": "checkpoints/20261015T080413Z-FH-0011-handoff.md",
+  "current_summary": "Project presentation live; lab entry prepared; next-phase SSH/server onboarding design recorded, awaiting existing ctx1 access information.",
+  "next_safe_action": "Obtain existing ctx1 SSH account/port/key-access information or operator-run read-only inventory; approve exact access provisioning before changes.",
+  "blocking_issue": "ctx1 SSH account/access unverified; lab gateway activation separately awaits exact scoped approval.",
   "warnings": [
-    "M01 external baseline, home inventory and dependency/backup evidence incomplete.",
-    "M02 design approval pending; production changes and push require explicit scope approval.",
-    "Saved state is not a live agent heartbeat."
+    "Public progress presentation is live; protected platform/admin features are not deployed.",
+    "Current milestone points to next-phase design; M02 remains IN_PROGRESS and M01 needs further evidence.",
+    "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
+    "No secrets/private inventory in public presentation; no push without authorization.",
+    "Saved agent state is not a live heartbeat.",
+    "Project certificate renewal webroot exists but automatic post-renewal Nginx reload is not configured/verified; FH-0012."
   ]
 }

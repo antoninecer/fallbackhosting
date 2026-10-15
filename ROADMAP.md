@@ -18,4 +18,4 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
 Milestones may be reprioritized only after updating the architecture decision and explaining consequences. Use Git commits/PRs and evidence, not optimistic progress claims.
 
-Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance supersedes automatic push under explicit operator instructions. M02 remains PLANNED; design delivery is not portal completion.
+Session 001 evidence: docs/M01-AUDIT.md and checkpoints. M00 local acceptance supersedes automatic push under explicit operator instructions. M02 is now IN_PROGRESS: public presentation live, private portal and failure tests still pending.

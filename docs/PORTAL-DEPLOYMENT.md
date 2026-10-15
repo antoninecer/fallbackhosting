@@ -1,6 +1,6 @@
 # Public project presentation — deployment proposal
 
-Status: local build and HTTP checks PASS; production activation awaits exact operator approval and privileged execution. Task FH-0009, M02. No infrastructure commands below have been executed by this task.
+Status: project-domain activation explicitly APPROVED and EXECUTED on 2026-10-15. HTTPS/page/assets/isolation/canaries PASS; browser/mobile/filter QA pending. Task FH-0009, M02. Commands below record the original procedure; targets now exist, do not rerun blindly.
 
 ## Scope and benefit
 
@@ -93,3 +93,9 @@ Recheck protected production canary. Do not restore the entire Nginx backup over
 After each verified stage, update canonical TASKS.md, ROADMAP.md, state/current.json and checkpoint first, then run `python3 portal/build.py` as repository owner. This copies no operational document bodies and opens no ports. New task IDs require reviewed public labels in portal/build.py; unknown statuses/references fail the build and preserve the previous page. The artifact is ignored in Git and rebuilt from committed sources. Serving is read-only; build changes are deliberate operator/agent actions, not a cron job or public request.
 
 Static explanatory copy in portal/build.py must also be reviewed as capabilities change. This presentation is not the full canonical schema migration (FH-0006). Build timestamp and checkpoint timestamp are explicit; no agent heartbeat or live health is claimed.
+
+## Execution evidence — 2026-10-15
+
+Dedicated Certbot webroot issuance succeeded using existing account; expiry 2027-01-13. New host only, two approved syntax-tested reloads, private backup archive verified. Hash check of all 22 prior regular Nginx config files passed unchanged. Project page/CSS/JS 200 with verified TLS/CSP; HTTP redirect exact; six source/unknown routes 404. Reference route/TLS/two assets passed and six other root probe results matched baseline. Some unrelated roots already returned 404/502 before work; no whole-app health claim. Home test HTTP remained 200. Existing Nginx warnings predate changes. First immediate HTTPS probe after reload returned old certificate; subsequent checks passed without further reload. External web fetch tool unavailable; successful ACME provides independent challenge evidence. Renewal webroot/timer inspected, no renewal dry-run or outage test. See live checkpoint for timestamp.
+
+Final read-only renewal inspection: no per-certificate deploy/renew hook and no global deploy-hook files observed. A renewed certificate may not be loaded by Nginx until reload. FH-0012 tracks a separate exact project-specific hook and renewal-test proposal; current scope allowed the two activation reloads, not a new unattended reload mechanism. Do not claim end-to-end renewal tested.

@@ -51,4 +51,8 @@ No actual Coolify installation, wildcard Nginx routing, fallback engine, wildcar
 
 ## Public progress presentation (operator request, 2026-10-15)
 
-Add a sanitized read-only static presentation, separate from the authenticated project administration center. Build-time canonical Markdown/JSON projection exports reviewed labels/statuses and checkpoint identity/time only. Nginx serves three local files; no PHP, database, Docker, Tailscale or home runtime dependency. This does not weaken authentication requirements for administrative modules or expose runbooks/inventory. Activation plan requires scoped approval in docs/PORTAL-DEPLOYMENT.md.
+Add a sanitized read-only static presentation, separate from the authenticated project administration center. Build-time canonical Markdown/JSON projection exports reviewed labels/statuses and checkpoint identity/time only. Nginx serves three local files; no PHP, database, Docker, Tailscale or home runtime dependency. This does not weaken authentication requirements for administrative modules or expose runbooks/inventory. Project-domain activation was explicitly approved and completed with evidence in checkpoints and docs/PORTAL-DEPLOYMENT.md. Lab entry is prepared separately and not yet activated.
+
+## Platform first-run setup
+
+Operator clarified admin-provisioned users/projects/subdomains and per-user app management with safe per-app standby contacts. See docs/PLATFORM-WORKFLOW.md and docs/SERVER-ONBOARDING.md. No public admin setup, raw Docker API or general shell is exposed. Key custody belongs to the approved deployment controller; an audit key and controller automation key are distinct. Any change to the original planned home Coolify placement or broad privileges requires explicit architecture review.

@@ -4,7 +4,7 @@
 
 - GitHub: `https://github.com/antoninecer/fallbackhosting` (public).
 - Reported working copy: `/opt/fallback` on `setonuk`, using non-root account `tonda`.
-- Public project portal `project.lab.ventureout.cz` is **planned**, not deployed.
+- Public read-only presentation `project.lab.ventureout.cz` is **live**; protected administrative portal remains planned.
 - Keep sensitive connection details (IP inventory, credentials, SSH private keys, tokens) in an access-controlled operator secret store **outside Git**.
 
 ## Starting a Codex/agent session
@@ -51,4 +51,8 @@ A standby snapshot is not a backup of databases. During standby: disable logins,
 
 ## Public project presentation
 
-Public build: `python3 portal/build.py`, after each validated update of canonical tasks/milestones/state/checkpoint. Output public/ is the only webroot; never expose the repository root. Test with `python3 -m unittest discover -s tests -p test_portal.py -v`. Reviewed deployment/rollback and approval scope: docs/PORTAL-DEPLOYMENT.md. Publication is pending; no live gateway changes yet.
+Public build: `python3 portal/build.py`, after each validated update of canonical tasks/milestones/state/checkpoint. Output public/ is the only webroot; never expose the repository root. Test with `python3 -m unittest discover -s tests -p test_portal.py -v`. Reviewed deployment/rollback and approval scope: docs/PORTAL-DEPLOYMENT.md. Project publication is complete under operator approval; lab introduction is built locally and awaits separate exact gateway approval. Regeneration updates the live project page without reload; no server-side commands are exposed to visitors.
+
+## First platform server setup
+
+Follow docs/SERVER-ONBOARDING.md. Operator may review/copy scripts/inspect-node.sh and run it on ctx1 for bounded read-only evidence. No key, user, sudo, SSH or Docker changes are implied. Unknown host-key/account state stops remote connection; never guess credentials or use disabled host-key checking. Coolify connection validation can mutate/restart Docker, so it requires a separate approved plan.

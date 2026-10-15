@@ -47,3 +47,7 @@ M01 remains NEEDS_TEST: external baseline, dependency analysis and operational b
 ## Correction — public presentation follow-up
 
 2026-10-15: initial sites-enabled command enumerated only symbolic links. Subsequent read-only enumeration found regular vhost files as well. The original two-name list is incomplete and must not be used as production coverage. Existing site names/roots are intentionally not exported to the public presentation. No configuration was changed.
+
+## Deployment baseline follow-up — 2026-10-15
+
+Approved project presentation deployment repeated protected route/TLS/asset checks and sampled six other unrelated root URLs before/after. A pre-existing root probe returned 502, two returned 404; all sampled status/content-type/final-URL values were unchanged by deployment. Underlying application causes remain UNKNOWN and were not investigated or modified in this scope. This is a measured baseline, not a claim all production workflows are healthy. Full external app verification remains incomplete because web fetch tool was unavailable.
