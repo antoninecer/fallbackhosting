@@ -4,10 +4,10 @@
   "milestone": "M02",
   "phase": "IN_PROGRESS",
   "task_id": "FH-0019",
-  "live_verified_at_utc": "2026-10-15T20:51:08Z",
-  "last_checkpoint": "checkpoints/20261015T205108Z-FH-0019-center-activation-start.md",
-  "current_summary": "Operator reached the authenticated admin page and reported that its exact center URL returns 503. Active PHP release lacks the protected center artifact. Local preparation and verification are underway; no production release switch has occurred.",
-  "next_safe_action": "Build the read-only control-center artifact in local ignored storage; run the full test suite and pinned-source/manifest verification before creating the immutable release. Preserve the authenticated query route and all inventory/canary baselines.",
+  "live_verified_at_utc": "2026-10-15T20:52:39Z",
+  "last_checkpoint": "checkpoints/20261015T205239Z-FH-0019-center-candidate-pass.md",
+  "current_summary": "The candidate read-only center release passed all 88 repository tests, exact pinned-source/artifact manifest verification, PHP syntax checks, PHP-FPM config test, and current protected HTTPS/reference/project canaries. Candidate is local only; production symlink remains on f285d8ab5400c9364f4008c6c06db035ebe0f26e. Inventory baseline is privately captured.",
+  "next_safe_action": "Install the verified candidate as a new root-owned immutable release and atomically switch only /var/www/fallback-admin/current. Immediately test authenticated center plus all five assets, unauthenticated denial, logout revocation, unchanged inventory and canaries. Restore the prior symlink on any failure.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -249,6 +249,14 @@
     {
       "id": "admin_node_note_reconciled",
       "utc": "2026-10-15T20:49:32Z"
+    },
+    {
+      "id": "center_activation_started",
+      "utc": "2026-10-15T20:51:08Z"
+    },
+    {
+      "id": "center_release_candidate_tested",
+      "utc": "2026-10-15T20:52:39Z"
     },
     {
       "id": "ssh_identity_verified",

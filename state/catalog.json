@@ -684,7 +684,8 @@
         "FH-0007"
       ],
       "evidence": [
-        "checkpoints/20261015T150304Z-M01-readonly-pass.md"
+        "checkpoints/20261015T150304Z-M01-readonly-pass.md",
+        "checkpoints/20261015T205239Z-FH-0019-center-candidate-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,

@@ -15,6 +15,8 @@ Updated 2026-10-15T16:47:01Z, Codex. Observations are point-in-time, not live mo
 
 2026-10-15 20:51 UTC: Operator then reported HTTP 503 at the authenticated center URL. The active PHP release is missing `center-artifact/`, so the existing handler correctly fails closed; no production switch has occurred. Treating the exact error report as a request to fix this route, FH-0019 is now IN_PROGRESS. Prepare only an immutable release adding the read-only artifact, preserving existing authentication and inventory; no Nginx/PHP-FPM/service/network changes. Evidence/scope/rollback: `checkpoints/20261015T205108Z-FH-0019-center-activation-start.md`.
 
+2026-10-15 20:52 UTC: Local candidate release passed all 88 tests; exact source/artifact manifest verifier PASS; PHP syntax and FPM configuration checks PASS; protected HTTPS/reference/project canaries PASS. Candidate is built from commit `9ccca4b2a07c528cb7387ddbf3a052d53f2f82ea`, with 72,573 bytes of verified content; prior release still active and private inventory baseline captured. Deployment not yet performed. Evidence: `checkpoints/20261015T205239Z-FH-0019-center-candidate-pass.md`.
+
 ## Verified runtime changes
 
 Operator approved the exact project-domain deployment and existing Certbot use. Dedicated vhost/symlink, Certbot webroot certificate and two nginx -t gated reloads completed. Certificate expires 2027-01-13. Private backup and config hash manifest: /var/backups/fallbackhosting-project-20261015 (outside Git/webroot). All 22 pre-existing regular Nginx config hashes unchanged. Existing protocol-options warnings predate changes.

@@ -104,6 +104,7 @@ PUBLIC_EVENTS = {
  "admin_login_cookie_fix_pass": "Oprava přihlášení ověřena přes HTTPS i bez předchozí session cookie; kontrola původu požadavku zůstává zapnutá. ctx1, odhlášení i nezměněný inventář potvrzeny.",
  "admin_node_note_reconciled": "Administrátor potvrdil přístup do správy. Opravena zavádějící poznámka; ověřený stav identity zůstal zachován.",
  "center_activation_started": "Řídicí centrum vracelo chybu při otevření. Ověřili jsme chybějící chráněný podklad; připravujeme bezpečné opravené vydání bez změn síťové konfigurace.",
+ "center_release_candidate_tested": "Opravené vydání řídicího centra prošlo 88 testy a kontrolou integrity zdrojů a souborů; zatím je připravené pouze místně.",
 }
 
 def rows(path, pattern):
