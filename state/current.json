@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "TESTING",
-  "task_id": "FH-0004",
+  "task_id": "FH-0015",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T162318Z-FH-0004-modular-providers-tested.md",
-  "current_summary": "Operator-approved security direction reconciled with portable existing-tool architecture. Offline provider planner and five safety tests added; 76 repository tests PASS after generated-table sync and deterministic existing timeout-fixture correction. Coolify role fit remains NEEDS_TEST; no infrastructure or service change.",
-  "next_safe_action": "Implement local application role/revocation checks and validate upstream API permission scope. Real Proxmox/libvirt drivers and exact deployment targets remain separate authorized operations; continue local work.",
+  "last_checkpoint": "checkpoints/20261015T162604Z-FH-0015-application-policy-tested.md",
+  "current_summary": "Accepted role/revocation policy implemented locally; eight new negative/scope/session/strong-auth tests PASS and full 84-test suite PASS. No actual identity provider, current-policy broker admission, PHP routing or runtime isolation activated. Modular provider planning separately tested and committed.",
+  "next_safe_action": "Integrate current authorization with broker admission using isolated fixtures, preserving one-use operator approvals. Then verify existing identity/deployer components and exact target capabilities before operational activation.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -332,6 +332,10 @@
     {
       "id": "modular_providers_tested",
       "utc": "2026-10-15T16:23:18Z"
+    },
+    {
+      "id": "application_policy_tested",
+      "utc": "2026-10-15T16:26:04Z"
     }
   ],
   "catalog_path": "state/catalog.json",

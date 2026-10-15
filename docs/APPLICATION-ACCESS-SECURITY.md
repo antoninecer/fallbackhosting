@@ -80,3 +80,7 @@ Konkrétní role, rozsah VM a proces schválení jsou náš návrh odvozený z t
 ## Operator acceptance follow-up
 
 Operator accepted this security design and requested portable providers for Docker, Proxmox and plain Linux KVM. Role matrix and isolation direction are accepted for implementation; private identity/recovery enrollment and exact operational targets remain to be arranged before deployment. Earlier decision requests for the general role/isolation direction are superseded, not new blockers. No live account, service or infrastructure change authorized by an unspecified design acceptance.
+
+## Local policy implementation follow-up
+
+The role/revocation rules now exist as a tested local library: docs/APPLICATION-POLICY-PROTOTYPE.md. Earlier blanket nonimplementation wording is superseded only for these offline logical rules. MFA, durable identity/membership storage, issuer/broker enforcement and VM isolation still are not activated.

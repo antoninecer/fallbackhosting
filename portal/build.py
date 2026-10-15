@@ -51,6 +51,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "application_policy_tested": "Místní pravidla práv k aplikacím prošla osmi testy: cizí aplikace se odmítá, logy vyžadují zvláštní právo, zápisy silné přihlášení a odebrání práv zneplatní čekající požadavek při nové kontrole. Propojení s reálným přihlášením a brokerem ještě není aktivní.",
  "modular_providers_tested": "Schválen směr osobních účtů a práv k aplikacím. Připraven modulární návrh: Coolify/Docker pro aplikace, Proxmox nebo běžný Linux s libvirt/KVM pro VM a zálohy. Místní plánovač prošel testy; skutečné adaptéry ani změny infrastruktury zatím nejsou aktivní. Obecné schválení rolí a izolace už nečeká na operátora.",
  "access_security_proposed": "Připraven bezpečnostní návrh účtů a aplikací podle OWASP, Dockeru a Proxmoxu. Před nasazením potřebujeme rozhodnout: VM pro oddělené skupiny důvěry; passkeys a bezpečná obnova přístupu; správce pouze vlastní aplikace, mazání jen administrátor. Návrh není nasazený; místní vývoj pokračuje. Osobní údaje ani obnovovací kódy sem nevkládejte.",
  "dependency_audit_verified": "Kontrola závislostí dokončena v omezeném rozsahu: veřejný přehled a základ administrace používají místní soubory. Zahrnutí připojených dat Dockeru do zálohy zatím není doložené; obnova netestovaná, externí kopie nedoložená.",

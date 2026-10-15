@@ -570,13 +570,15 @@
       "title": "N\u00e1vrh odd\u011blen\u00ed opr\u00e1vn\u011bn\u00ed technick\u00e9ho p\u0159\u00edstupu",
       "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Concrete separate constrained-runner/issuer/code/policy/key-custody/recovery proposal prepared; current unrestricted sudo/Docker path re-observed. Operator review and real negative tests required; no enforcement or permission change claimed.",
+      "acceptance": "Operator accepted access/isolation design. Local role/revocation policy and eight tests PASS; trusted identity/policy source, actual issuer/broker atomic admission and enforceable agent/key/VM boundaries remain unimplemented or unverified. No permission changes claimed.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T153558Z-FH-0015-proposal-validated.md",
         "docs/AGENT-EXECUTION-BOUNDARY.md",
         "docs/APPLICATION-ACCESS-SECURITY.md",
-        "checkpoints/20261015T160256Z-FH-0015-access-proposal-reviewed.md"
+        "checkpoints/20261015T160256Z-FH-0015-access-proposal-reviewed.md",
+        "checkpoints/20261015T162603Z-FH-0015-app-policy-pass.md",
+        "docs/APPLICATION-POLICY-PROTOTYPE.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,

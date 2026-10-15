@@ -118,3 +118,7 @@ FH-0015 TESTING: docs/APPLICATION-ACCESS-SECURITY.md records researched role/ide
 ## Modular existing-tool integration — 2026-10-15T16:23:17Z
 
 Operator accepted app security design and requested portability to ordinary Linux KVM. FH-0004 TESTING: offline provider planner and five tests implemented; full suite 76 PASS. Coolify/Docker app layer is independent of Proxmox/libvirt hypervisor layer; actual adapters NOT_IMPLEMENTED. Coolify team Admin is too broad for app-only delegation; no native role access granted. Current LXC unchanged; VM/backup workers are future explicit operations, not activated. General role/isolation approval no longer pending; exact installation/credential/host scope still required.
+
+## Local application policy — 2026-10-15T16:26:03Z
+
+FH-0015 TESTING: accepted scoped role rules, separate logs grant, strong authentication/step-up and current-policy/session rechecks implemented locally; eight new tests and full 84-test suite PASS. No real IdP, durable role store, broker admission interlock, PHP wiring or runtime privilege isolation claimed. docs/APPLICATION-POLICY-PROTOTYPE.md records exact gaps; infrastructure unchanged.
