@@ -21,6 +21,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0015 | M03 | READY | Operator + Codex | Propose constrained agent execution boundary: current unrestricted sudo and possible rootful-Docker path defeat key isolation; exact privilege changes require approval |
 | FH-0016 | M03 | DONE | Codex | New-session Docker access, isolated create/start/exit-0/remove and absence, unchanged reference, pre/post endpoint checks passed; evidence docs/DOCKER-SMOKE-TEST.md and lifecycle checkpoint; containing local commit required |
 | FH-0017 | M02 | TESTING | Codex + Operator | Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Exact activation and browser QA pending; docs/MULTI-NODE-ADMIN.md |
+| FH-0018 | M02 | IN_PROGRESS | Codex | Final read-only preflight passed; exact planned activation and push approved. Add repeatable phase tooling, frozen release, backup/canaries, execute and verify lab HTTPS/admin; no home changes |
 
 FH-0006 may prepare a local prototype against the documented proposal while design approval is pending; publication remains blocked. The original Session 001 scope ended at design; the subsequent operator request adds the public presentation under FH-0009.
 

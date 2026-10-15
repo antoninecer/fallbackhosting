@@ -1,6 +1,6 @@
-# lab admin activation — concrete proposal, NOT EXECUTED
+# lab admin activation — approved activation, journaled execution
 
-This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. All preparation is complete locally; activation requires exact operational approval under AGENTS.md. No shared config, account, PHP service or certificate changed yet.
+This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. All preparation is complete locally; Operator explicitly approved this exact scope and Git push; no further approval is pending for these actions. No shared config, account, PHP service or certificate changed yet.
 
 ## Requested exact scope
 
@@ -12,7 +12,7 @@ This supersedes the static-only lab activation proposal for the operator's reque
 6. Dedicated `lab.ventureout.cz` certificate via existing Certbot webroot account/timer: `certbot certonly --webroot -w /opt/fallback/lab-public -d lab.ventureout.cz --cert-name lab.ventureout.cz --non-interactive`. No existing certificate or wildcard replacement. Inspect renewal settings afterward; actual renewal/reload validation remains a separate maintenance task, not implied here.
 7. Private prechange backup `/var/backups/fallbackhosting-admin-20261015/` (0700), including exact existing Nginx/PHP configuration and a protected copy of prepared app data. Never copy backups into public webroot/Git or print contents. Verify archive readability; record old file hashes privately.
 
-No DNS/firewall/routing/SSH/Tailscale/PVE/home Docker or service-key changes, no account permission increase on ctx1, no installation/upgrades of packages, no push.
+No DNS/firewall/routing/SSH/Tailscale/PVE/home Docker or service-key changes, no account permission increase on ctx1, no installation/upgrades of packages. Git push was separately authorized.
 
 ## Ordered activation and stop conditions
 
@@ -31,3 +31,20 @@ The app has no remote actions; per-server fields are stored configuration, not a
 If syntax fails, do not reload. Preserve failure evidence privately. Disable only the newly created lab symlink by moving it to this backup directory; test Nginx and reload only if it was activated. Existing project site and other virtual hosts remain enabled. Move only the new FPM pool to backup, test FPM and gracefully reload after its Nginx use is disabled; never overwrite all shared config from backup. Keep dedicated certificate and private inventory/auth data for reconciliation, do not delete automatically. For a later app-only rollback atomically select the prior reviewed release and recheck auth/inventory compatibility; no data migration is present. Keep new service user unused until operator approves cleanup; no automatic user deletion. Recheck protected canaries and record checkpoint after rollback.
 
 No approval is inferred from preparation or elapsed time. All targets/actions above need the operator's exact scope confirmation before execution.
+
+## Repeatable execution from Git
+
+Application source is frozen at 21c050b36e8ddd4cd3d7ec5e87a727f556348e9b. The tracked script reads those Git blobs, never a mutable working-tree app/template. Review script before running as root. Run each command separately and record checkpoint/evidence before continuing:
+
+```bash
+cd /opt/fallback
+sudo -n python3 scripts/activate-admin.py prepare
+sudo -n python3 scripts/activate-admin.py http
+sudo -n python3 scripts/activate-admin.py certificate
+sudo -n python3 scripts/activate-admin.py https
+sudo -n python3 scripts/activate-admin.py verify
+```
+
+The fixed private backup directory stores verified backup archive, existing-config hashes and per-phase started/done timestamps. A phase is never blindly replayed: started without done means UNKNOWN; inspect actual files, services and certificate first. On a fresh server execute phases in order. On this server use verify for repeatable read-only verification. Do not delete markers to force a replay. A later release uses an explicitly reviewed release-update procedure, not this first-install tool.
+
+Recovery within the approved scope: `sudo -n python3 scripts/activate-admin.py rollback`. It disables only the newly created lab vhost/pool, syntax-tests before graceful reload, retains all data, account, release and certificate, and checks unchanged pre-existing configs and protected canaries. Failure during rollback requires reconciliation rather than rerun. No complete shared-config restore is automatic.

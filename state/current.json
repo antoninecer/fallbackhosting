@@ -3,12 +3,12 @@
   "project": "FallbackHosting",
   "milestone": "M02",
   "phase": "IN_PROGRESS",
-  "task_id": "FH-0017",
-  "live_verified_at_utc": "2026-10-15T08:35:47Z",
-  "last_checkpoint": "checkpoints/20261015T090458Z-FH-0017-local-validated.md",
-  "current_summary": "Multi-node PHP administration locally implemented and tested, ctx1 Docker record privately prefilled, initial admin secured; public activation pending exact approval.",
-  "next_safe_action": "Review docs/ADMIN-ACTIVATION.md exact new web account/pool/release/vhost/certificate/backup/reload scope; obtain activation approval, then production/browser checks. No remote operations.",
-  "blocking_issue": "Live admin activation requires exact production approval; local app and ctx1 config ready. Independent SSH fingerprint and broker/agent isolation remain separate unresolved gates.",
+  "task_id": "FH-0018",
+  "live_verified_at_utc": "2026-10-15T11:36:16Z",
+  "last_checkpoint": "checkpoints/20261015T113824Z-FH-0018-tooling-verified.md",
+  "current_summary": "Home OS/resources/Compose verified; M01 wording corrected. Journaled activation tool prepared and local tests pass; public admin activation not started.",
+  "next_safe_action": "Commit/push repeatable activation tooling and preflight evidence, then execute journaled prepare/http/certificate/https phases with backups/canaries.",
+  "blocking_issue": null,
   "warnings": [
     "Public progress live; private multi-node admin locally tested with secured bootstrap, NOT deployed. No admin credential/private inventory in public export.",
     "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
@@ -100,6 +100,8 @@
     "browser_qa": "NOT_PERFORMED",
     "ssh_key_access": "NONE",
     "remote_operations": "NOT_IMPLEMENTED",
-    "deployment_plan": "docs/ADMIN-ACTIVATION.md"
+    "deployment_plan": "docs/ADMIN-ACTIVATION.md",
+    "activation_approval": "EXPLICIT_OPERATOR_APPROVAL_RECORDED_IN_CHECKPOINT",
+    "preflight": "PASS_CURRENT_SERVICES_TARGET_ABSENCE_DNS_PRIVATE_SEED_SOURCE_INTEGRITY"
   }
 }

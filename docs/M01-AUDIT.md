@@ -61,3 +61,9 @@ Explicit subsequent Docker probe: CLI found at standard path, daemon-version que
 ## Docker permission retest — supersedes earlier denial
 
 Operator added target Docker-group membership and requested retest. Agent observed fresh-session group membership, Docker Engine 29.9.0, and successful isolated create/start/exit-0/remove with verified absence. Existing reference state and endpoint canaries unchanged. Agent changed no rights. Evidence recorded 2026-10-15T08:35:47Z; docs/DOCKER-SMOKE-TEST.md. This establishes tested lifecycle capability, not host identity, OS/resources, per-user isolation or Coolify readiness.
+
+## Home inventory follow-up — 2026-10-15T11:36:16Z
+
+OBSERVED through existing strict technical SSH, running tracked scripts/inspect-node.sh via stdin, exit 0: Rocky Linux 9.8, Linux x86_64, LXC virtualization, 3 CPUs, 8192 MiB RAM (8069 available), 2048 MiB swap (unused), root filesystem 98G/1.3G used/92G available. Docker service active; client/server 29.9.0; daemon reports 3 CPUs and 8589934592 memory bytes; Compose v5.6.0. No writes, installs, permission changes or workload mutations. PVE host version/container numeric ID remain historical, not inspected.
+
+M01 is **partially verified**, not an untested infrastructure. Remaining audit gates: independent SSH identity attestation, external application canary, dependency and backup/rollback coverage. Controlled outage tests belong to M08; they do not need to be performed merely to close M01. Public wording now distinguishes partial verification from no evidence.
