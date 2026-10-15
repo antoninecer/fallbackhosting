@@ -47,7 +47,7 @@ Separate **per-application** state from **gateway/node** state. An HTTP response
 
 ## Operational implementation notes
 
-No actual Coolify installation, wildcard Nginx routing, fallback engine, wildcard TLS or Project Control Center is confirmed deployed yet. Follow `STATE.md` for last observed facts; recheck in runtime before changing anything.
+Initial private Coolify controller is now running on the home test node; administrator bootstrap and deployment-target validation remain pending. Wildcard Nginx routing, fallback engine, wildcard TLS and full Project Control Center are not confirmed deployed. Follow `STATE.md` for last observed facts; recheck in runtime before changing anything.
 
 ## Public progress presentation (operator request, 2026-10-15)
 
@@ -76,3 +76,7 @@ Proposed, not activated: docs/APPLICATION-ACCESS-SECURITY.md defines per-person 
 ## Accepted modular-provider direction — 2026-10-15
 
 Operator approved the application security design and provider portability: reuse Coolify/Docker for apps, Proxmox native API or libvirt/QEMU/KVM for VM lifecycle and backups. Docker on plain Linux requires neither Proxmox nor VM provisioning. Current LXC remains the demo; VM isolation is selected per trust boundary. docs/MODULAR-PROVIDERS.md records boundaries, local planning tests and pending operational gates. No hypervisor/deployer replacement, Coolify installation/location change or live migration performed; independent Oracle standby remains mandatory.
+
+## Initial controller installation observed — 2026-10-15
+
+Operator-requested home test installation now exists; see docs/COOLIFY-DEPLOYMENT.md. Loopback-only UI, no public proxy, no host automation credential or validated target. This supersedes earlier blanket no-installation wording, not security or independent Oracle acceptance gates.

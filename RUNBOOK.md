@@ -90,3 +90,7 @@ Build with `python3 center/build.py`; output is restricted to ignored .local/con
 ## Local operations integration
 
 Contract/limitations: docs/OPERATIONS-PROTOTYPE.md and docs/ADMIN-OPERATIONS-PROTOTYPE.md. PHP client uses bounded Unix frames and externally issued scoped capabilities, never a key/shell/SSH API. No production operation route or service is installed. Optional scripts/check-operations-browser.py serves only its generated private fixture page on loopback and stops afterward. Completed ctx1 exercise/cleanup evidence is separate in docs/CONTROLLED-DOCKER-EXERCISE.md.
+
+## Initial private Coolify controller
+
+Coolify 4.4.6 now runs on the home test Docker node with loopback-only UI. Follow docs/COOLIFY-DEPLOYMENT.md and the private installation journal before any retry: initial administrator email/bootstrap and actual login remain pending; no self-management key or validated deployment target exists. Never run the full installer to resolve these gates, open public registration, reuse the audit key or recreate unrelated containers. Exact nonsecret deployed Compose is deploy/coolify-compose.json; environment/secrets stay private.

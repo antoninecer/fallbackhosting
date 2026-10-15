@@ -1,0 +1,11 @@
+# 20261015T164701Z-FH-0004-coolify-private-ready
+- UTC: 2026-10-15T16:47:01Z; Codex; M03/FH-0004 TESTING.
+- Associated Git revision: f7fc93f6b596ef230abf99c50d441d68c46740ed; uncommitted changes must be inspected before resumption.
+- Last verified action/results: Private Coolify 4.4.6/DB/Redis healthy, IPv4-only app setting resolves LXC limitation. HTTP routes/four assets, disabled registration redirect, Chromium360/768/1440 and original workload/post Oracle canaries PASS. Admin email/bootstrap and real login/logout pending; no automation key/validated deployment target, public route or app deployment claimed.
+- Files changed: state/current.json, this checkpoint and generated public artifact; inspect Git for source/docs changes.
+- Scope: repository state/checkpoint/public static projection; any operational action requires its separately recorded exact authorization. No home runtime changes in this recorded stage.
+- Open issues/unverified: external application baseline, complete dependency/backup coverage, production-release QA and certificate-renewal reload validation remain open. Independent fingerprint is VERIFIED; restore NOT TESTED and external backup copy NOT DOCUMENTED.
+- Next exact step: Receive requested private administrator email, bootstrap unique native admin and verify actual login/logout. Prepare distinct controller-to-target credential plan and exact future validation scope; keep public registration/proxy disabled.
+- Rollback: reviewed Git revert and public rebuild for repository work; operational activation rollback remains documented separately in docs/ADMIN-ACTIVATION.md.
+- Required approvals: none within already approved activation/Git-push scope.
+- Additional verification: exact nonsecret Compose artifact copied to deploy/coolify-compose.json; remote/local SHA256 match. Three static deployment security regressions PASS and eight portal tests PASS; real browser registration redirect and login rendering PASS. Initial-admin authentication remains NOT_TESTED.

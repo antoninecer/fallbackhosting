@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "TESTING",
-  "task_id": "FH-0015",
+  "task_id": "FH-0004",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T162604Z-FH-0015-application-policy-tested.md",
-  "current_summary": "Accepted role/revocation policy implemented locally; eight new negative/scope/session/strong-auth tests PASS and full 84-test suite PASS. No actual identity provider, current-policy broker admission, PHP routing or runtime isolation activated. Modular provider planning separately tested and committed.",
-  "next_safe_action": "Integrate current authorization with broker admission using isolated fixtures, preserving one-use operator approvals. Then verify existing identity/deployer components and exact target capabilities before operational activation.",
+  "last_checkpoint": "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md",
+  "current_summary": "Private Coolify 4.4.6/DB/Redis healthy, IPv4-only app setting resolves LXC limitation. HTTP routes/four assets, disabled registration redirect, Chromium360/768/1440 and original workload/post Oracle canaries PASS. Admin email/bootstrap and real login/logout pending; no automation key/validated deployment target, public route or app deployment claimed.",
+  "next_safe_action": "Receive requested private administrator email, bootstrap unique native admin and verify actual login/logout. Prepare distinct controller-to-target credential plan and exact future validation scope; keep public registration/proxy disabled.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -336,6 +336,22 @@
     {
       "id": "application_policy_tested",
       "utc": "2026-10-15T16:26:04Z"
+    },
+    {
+      "id": "coolify_install_started",
+      "utc": "2026-10-15T16:35:34Z"
+    },
+    {
+      "id": "coolify_prepared",
+      "utc": "2026-10-15T16:39:37Z"
+    },
+    {
+      "id": "coolify_ipv4_reconcile",
+      "utc": "2026-10-15T16:43:05Z"
+    },
+    {
+      "id": "coolify_private_ready",
+      "utc": "2026-10-15T16:47:01Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -361,5 +377,17 @@
     "original_reference": "UNCHANGED",
     "image_pull": false,
     "evidence": "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
+  },
+  "coolify_installation": {
+    "status": "PRIVATE_CONTROL_PLANE_RUNNING_BOOTSTRAP_PENDING",
+    "version": "4.4.6",
+    "observed_at_utc": "2026-10-15T16:44:23Z",
+    "healthy_services": 3,
+    "public_exposure": false,
+    "initial_admin": "PENDING_PRIVATE_EMAIL",
+    "login_logout": "NOT_TESTED",
+    "automation_credential": "NOT_CONFIGURED",
+    "validated_deployment_target": "NOT_TESTED",
+    "evidence": "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md"
   }
 }

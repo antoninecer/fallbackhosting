@@ -9,7 +9,7 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 | M00 | Foundation and Git state | DONE | Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately |
 | M01 | Verified inventory and safety baselines | NEEDS_TEST | Evidence of live state; protected reference endpoint baseline; backup/rollback plans |
 | M02 | Independent Project Control Center | IN_PROGRESS | Protected portal survives home-node outage; tasks/incidents/checkpoints visible |
-| M03 | Coolify deployment on home node | PLANNED | Authorized admin can deploy/redeploy one example app without changing edge config |
+| M03 | Coolify deployment on home node | IN_PROGRESS | Authorized admin can deploy/redeploy one example app without changing edge config |
 | M04 | Wildcard routing and TLS | PLANNED | Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary |
 | M05 | Versioned Fallback Builder | PLANNED | Safe exported HTML/assets; preview; immutable release; atomic publish; rollback |
 | M06 | Standby Gateway + recovery | PLANNED | Per-app failover, hysteresis, manual force/restore, no cross-app outage |
@@ -37,3 +37,5 @@ See docs/DEPENDENCY-AUDIT.md: selected project static and admin PHP dependencies
 ## Accepted modular-provider direction — 2026-10-15
 
 Operator approved the application security design and provider portability: reuse Coolify/Docker for apps, Proxmox native API or libvirt/QEMU/KVM for VM lifecycle and backups. Docker on plain Linux requires neither Proxmox nor VM provisioning. Current LXC remains the demo; VM isolation is selected per trust boundary. docs/MODULAR-PROVIDERS.md records boundaries, local planning tests and pending operational gates. No hypervisor/deployer replacement, Coolify installation/location change or live migration performed; independent Oracle standby remains mandatory.
+
+Coolify initial controller installation: three healthy private services and real login-page browser QA verified; administrator bootstrap and app deploy/redeploy still pending. M03 IN_PROGRESS, never DONE from controller health alone. See docs/COOLIFY-DEPLOYMENT.md.

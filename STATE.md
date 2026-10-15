@@ -1,13 +1,13 @@
 # Current project state
 
-Updated 2026-10-15T14:24:49Z, Codex. Observations are point-in-time, not live monitoring.
+Updated 2026-10-15T16:47:01Z, Codex. Observations are point-in-time, not live monitoring.
 
 ## Milestones
 
 - M00 DONE, locally committed. Git push explicitly authorized by operator.
 - M01 NEEDS_TEST, partially verified: Oracle, SSH, Docker lifecycle/cleanup and home OS/resources/Compose observed. Independent SSH identity and operator-attested backup/integrity are verified; external application, remaining dependency coverage, restore/offsite evidence remain open. Controlled failure tests belong to M08.
 - M02 IN_PROGRESS: https://project.lab.ventureout.cz/ is LIVE as sanitized public progress presentation; private server-inventory admin LIVE at https://lab.ventureout.cz/, ctx1 seeded and real HTTPS admin login/list/logout verified; broader center modules remain planned. FH-0009 browser QA now passed in headless Chromium at 360/768/1440, including screenshot inspection, keyboard scrolling and all filters; see follow-up checkpoint.
-- M03 PLANNED: operator requested next-phase server onboarding. Design and bounded inventory script prepared; technical SSH access provisioned/tested by operator and subsequently verified by agent. No Coolify or agent-performed remote account/key/permission changes.
+- M03 IN_PROGRESS: private Coolify 4.4.6 controller installed on home test node; three services healthy, loopback UI/browser/canaries verified. Initial admin email/bootstrap, real login and validated application deployment target remain pending. No remote account/key/SSH/daemon changes.
 
 ## Verified runtime changes
 
@@ -122,3 +122,7 @@ Operator accepted app security design and requested portability to ordinary Linu
 ## Local application policy — 2026-10-15T16:26:03Z
 
 FH-0015 TESTING: accepted scoped role rules, separate logs grant, strong authentication/step-up and current-policy/session rechecks implemented locally; eight new tests and full 84-test suite PASS. No real IdP, durable role store, broker admission interlock, PHP wiring or runtime privilege isolation claimed. docs/APPLICATION-POLICY-PROTOTYPE.md records exact gaps; infrastructure unchanged.
+
+## Coolify private readiness — 2026-10-15T16:47:01Z
+
+Operator-requested ctx1 installation is running privately with all three services healthy. docs/COOLIFY-DEPLOYMENT.md records exact deltas, initial directory/IPv6 failures and safe reconciliation, private backups, browser/canary evidence and scoped rollback. FH-0004 TESTING, M03 IN_PROGRESS; initial administrator absent pending requested private email. Registration/updates/API/default SMTP disabled; no public route or automation credential/target configured. No application deployment or full milestone completion claimed.

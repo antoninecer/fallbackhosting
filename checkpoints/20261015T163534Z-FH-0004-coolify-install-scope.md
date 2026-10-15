@@ -1,0 +1,8 @@
+# Coolify installation scope and rollback
+- UTC: 2026-10-15T16:35:34Z; FH-0004 IN_PROGRESS. Operator requested deployment on current home test Docker; no Oracle installation.
+- Preflight OBSERVED: three CPUs, about 8 GiB available RAM, 91 GiB free root storage; Docker/Compose working, one existing running workload, no Coolify installation. Ports 80/443 occupied, 8000/6001/6002 free on loopback. Protected Oracle/reference/project/lab canaries PASS.
+- Intended authorized work: pull pinned Coolify 4.4.6 plus PostgreSQL/Redis and setup helper; create only new Coolify data tree, volumes/network and three service containers from reviewed upstream Compose. No shell installer, Docker daemon config/restart, SSH key/account change, existing container recreation, proxy startup or public ports.
+- UI/realtime bind IPv4 loopback only. No existing technical private key imported into Coolify. Node self-management remains unconfigured until its distinct exact credential/privilege scope is reviewed.
+- Initial admin email requested privately; independent generated credential kept outside Git, no public registration. No public DNS/TLS/gateway routing in scope.
+- Acceptance: healthy services, actual login/logout and registration disabled once admin created, local assets/routes, loopback-only bindings, existing workload unchanged, post-canaries, private secret backup. M03 full demo deploy gate remains distinct.
+- Rollback: stop/remove only exact newly registered Coolify containers by ID/project ownership; preserve database/Redis volumes and secret data for diagnosis. No volume deletion, prune or unrelated change. Retain image digests/journal privately. If startup outcome uncertain inspect exact resources before retrying.

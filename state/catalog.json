@@ -39,11 +39,13 @@
     {
       "id": "M03",
       "title": "Coolify deployment on home node",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
       "acceptance": "Authorized admin can deploy/redeploy one example app without changing edge config",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null
     },
@@ -205,15 +207,18 @@
     },
     {
       "id": "FH-0004",
-      "title": "N\u00e1vrh nasazov\u00e1n\u00ed aplikac\u00ed",
+      "title": "Nasazen\u00ed Coolify na testovac\u00edm uzlu",
       "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Operator accepted modular existing-tool architecture: Coolify/Docker apps, Proxmox or Linux libvirt/KVM VM/backup adapters. Offline provider planner tested; actual API scopes, drivers, host capabilities, installation scope and rollback remain untested. Do not install.",
+      "acceptance": "Private Coolify 4.4.6 control plane healthy on ctx1, loopback-only routes/assets/browser checks and original workload/canaries PASS. Initial admin email/bootstrap and real login/logout pending; no host automation credential or validated deployment target. M03 demo deployment acceptance remains open.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T161948Z-FH-0004-modular-start.md",
         "checkpoints/20261015T162317Z-FH-0004-modular-pass.md",
-        "docs/MODULAR-PROVIDERS.md"
+        "docs/MODULAR-PROVIDERS.md",
+        "checkpoints/20261015T163534Z-FH-0004-coolify-install-scope.md",
+        "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md",
+        "docs/COOLIFY-DEPLOYMENT.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -243,6 +248,22 @@
           "utc": "2026-10-15T16:23:17Z",
           "evidence": [
             "checkpoints/20261015T162317Z-FH-0004-modular-pass.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-15T16:35:34Z",
+          "evidence": [
+            "checkpoints/20261015T163534Z-FH-0004-coolify-install-scope.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T16:47:01Z",
+          "evidence": [
+            "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md"
           ]
         }
       ]
