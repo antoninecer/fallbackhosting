@@ -25,7 +25,7 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | FH-0017 | M02 | TESTING | Codex + Operator | Multi-node PHP admin, private ctx1 Docker seed and secured local admin ready; 13 tests and actual local login passed. Activation complete under FH-0018; browser QA pending; docs/MULTI-NODE-ADMIN.md |
 | FH-0018 | M02 | TESTING | Codex | Existing lab inventory HTTPS live. Prior direct-HTTP auth passed; local browser test found no-referrer/Origin compatibility issue in matching frozen source. Same-origin fix tested locally, not deployed. Live browser QA/rollback remain open. |
 | FH-0019 | M02 | BLOCKED_BY_OPERATOR | Codex + Operator | Approve exact new reviewed lab application release switch and rollback; no Nginx/PHP-FPM/cert/DNS/firewall change. Existing inventory deployment is already live. |
-| FH-0020 | M03 | IN_PROGRESS | Codex | Local fixtures: strict authorization, managed resource ownership, one-use approvals, idempotency/UNKNOWN, bounds/audit; no broker service activation. |
+| FH-0020 | M03 | TESTING | Codex | Fixture-only v1 implements eight managed actions and scoped Unix views; all 57 repository/16 broker tests PASS. Real driver/issuer/host sandbox/service activation remain separate gates. |
 | FH-0021 | M02 | READY | Codex | Local applications per server, dated container state, requests/progress/results/errors and sanitized audit; authenticated prototype only. |
 | FH-0022 | M03 | READY | Codex | Operator authorizes test Docker workloads on ctx1. Only uniquely owned small resources; unchanged original workload and exact cleanup evidence. |
 

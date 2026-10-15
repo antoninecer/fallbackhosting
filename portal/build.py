@@ -51,6 +51,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "docker_core_tests_pass": "Ověřeno místně: všech osm Docker operací prošlo testovacími daty; testy hlídají oprávnění, vlastnictví kontejnerů, potvrzení mazání, opakování požadavků a nejasný výsledek po timeoutu. Služba zatím není aktivovaná.",
  "ssh_identity_verified": "Dokončeno: identita testovacího uzlu nezávisle potvrzena správcem a porovnána s uloženou důvěrou klienta. Soukromá evidence je aktualizovaná; žádné síťové údaje ani fingerprint nezveřejňujeme.",
  "m01_refresh_pass": "Ověřeno: aktuální stav testovacího uzlu, vybrané služby a dostupnost chráněných webů. Nezávislý SSH fingerprint a úplné zálohové podklady stále chybí; pokračujeme místním Docker brokerem.",
  "center_auth_pass": "Dokončeno místně: centrum i všechny jeho soubory jsou chráněné relací; přihlášení, odhlášení a stažení prošly ve třech velikostech prohlížeče. Oprava nalezené chyby formuláře je připravená, živou verzi jsme zatím neměnili.",

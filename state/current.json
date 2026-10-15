@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0014",
+  "phase": "TESTING",
+  "task_id": "FH-0020",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T151032Z-FH-0014-ssh-identity-verified.md",
-  "current_summary": "FH-0014 DONE against local evidence commit d2cabaa: operator trusted-console attestation, existing client trust match and strict pinned-algorithm read-only SSH PASS; both private inventory records VERIFIED with locked audited updates and backups. Sanitized dashboard verified, no private fingerprint/address exported.",
-  "next_safe_action": "Resume FH-0020 local broker security fixtures, then local admin integration and separately authorized managed ctx1 exercise. No production service/config activation.",
+  "last_checkpoint": "checkpoints/20261015T151333Z-FH-0020-docker-core-tests-pass.md",
+  "current_summary": "All 57 repository tests and 16 broker security/lifecycle fixtures PASS. Eight actions, Unix peer authorization, registry+labels, one-use write approval, confirmed remove, dedupe, bounded logs/audit and timeout/recovery UNKNOWN verified. Core has no real SSH/Docker runner or installed service. External web baseline tool inaccessible; M01 remains partial.",
+  "next_safe_action": "Commit broker core and close fixture implementation against concrete revision; continue PHP/Unix prototype and authorized owned ctx1 Docker exercise.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -237,6 +237,14 @@
     {
       "id": "ssh_identity_verified",
       "utc": "2026-10-15T15:10:32Z"
+    },
+    {
+      "id": "docker_core_tests_pass",
+      "utc": "2026-10-15T15:10:32Z"
+    },
+    {
+      "id": "docker_core_tests_pass",
+      "utc": "2026-10-15T15:13:33Z"
     }
   ],
   "catalog_path": "state/catalog.json"

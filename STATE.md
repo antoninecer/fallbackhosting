@@ -78,3 +78,7 @@ Local-only read-only center built with eight modules, immutable artifact/manifes
 ## Independent ctx1 identity VERIFIED
 
 Trusted-console operator attestation privately matched existing ED25519 client trust and strict pinned-algorithm SSH. Both prepared/live private inventory updated with VERIFIED provenance and private backups; no host/trust/service/network changes. Earlier missing-fingerprint paragraphs are historical and superseded. Complete backup/dependency and independent external app evidence remain open; broker runtime privilege isolation remains separate.
+
+## Local broker v1 validation
+
+FH-0020: eight fixture actions, OS-peer plus signed-principal/project scope, separate one-use write approvals, durable registry/jobs/audit, timeout UNKNOWN/no repeat, bounded Unix framing and historical admin view implemented. All 57 repository tests/16 broker tests PASS. No real driver, service or protected issuer activated. Independent external web fetch remained unavailable; M01 external app and backup/dependency coverage remain open. User permits owned controlled ctx1 Docker exercises; no unrelated workload changes permitted by that exercise scope.

@@ -573,19 +573,29 @@
     {
       "id": "FH-0020",
       "title": "Isolated Docker operations core",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex",
-      "acceptance": "Local fixtures: strict authorization, managed resource ownership, one-use approvals, idempotency/UNKNOWN, bounds/audit; no broker service activation.",
+      "acceptance": "Fixture-only v1 implements eight managed actions and scoped Unix views; all 57 repository/16 broker tests PASS. Real driver/issuer/host sandbox/service activation remain separate gates.",
       "dependencies": [],
       "evidence": [
-        "checkpoints/20261015T150304Z-M01-readonly-pass.md"
+        "checkpoints/20261015T151332Z-FH-0020-validated.md",
+        "docs/OPERATIONS-PROTOTYPE.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Repository-only implementation/fixtures; separately recorded ctx1 exercise authorization for FH-0022. No production service changes.",
       "rollback": "Repository revert; any own ctx1 exercise resource removed by exact registered ID, never broad prune or existing-workload removal.",
-      "history": []
+      "history": [
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-15T15:13:32Z",
+          "evidence": [
+            "checkpoints/20261015T151332Z-FH-0020-validated.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0021",

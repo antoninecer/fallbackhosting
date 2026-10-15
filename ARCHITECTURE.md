@@ -64,3 +64,7 @@ Operator-provisioned Oracle-to-home technical SSH was independently exercised by
 ## One gateway, multiple application nodes — operator-requested extension
 
 The original home node is now the first member of a node list: a single independent Oracle public gateway can front multiple authorized home Docker nodes. Other runtime values are inventory declarations only, without implemented drivers. The private PHP inventory UI is prepared locally on Oracle; deployment control remains planned on home infrastructure via Coolify and separately reviewed technical broker. Per-app target node IDs must drive routing/health/fallback; one node outage must not alter other node routes or Oracle static serving. No public administrative setup, shared key exposure or automatic runtime action is added. User requested this extension; implementation and outstanding activation/security gates documented for review in docs/MULTI-NODE-ADMIN.md. No existing operational architecture changed by local metadata/UI preparation.
+
+## Local operations prototype follow-up
+
+Operator requested fixture-only managed Docker operations and private admin integration. A Python core with strict policy/capabilities/one-use write approvals, durable registry/jobs/audit and bounded Unix peer protocol is implemented locally; no SSH driver, listener or service is installed. Independent ctx1 identity is verified; runtime key/agent privilege separation remains unresolved. This supplements planned home Coolify and does not add any public gateway dependency. Contract/limits: docs/OPERATIONS-PROTOTYPE.md.

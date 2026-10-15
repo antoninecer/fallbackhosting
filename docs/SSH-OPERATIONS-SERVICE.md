@@ -1,6 +1,6 @@
 # Isolated SSH operations service — proposal for review
 
-Status: PROPOSED / NOT IMPLEMENTED / NOT DEPLOYED. M03, FH-0013.
+Status: LOCAL FIXTURE CORE IMPLEMENTED; NOT DEPLOYED. Original proposal below is historical design context; current local contract: docs/OPERATIONS-PROTOTYPE.md. M03, FH-0013.
 No account, permission, SSH trust, systemd or Docker change is made by this document.
 
 ## Evidence and scope
