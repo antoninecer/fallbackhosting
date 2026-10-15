@@ -82,3 +82,7 @@ Edit milestone/task records only in state/catalog.json, then run `python3 script
 For the first application deployment, the operator requests small demo Docker applications selected by the agent. Prefer a simple stateless web demo; choose the concrete image/version and resource limits when preparing the deployment plan. No image selected or deployed by this note.
 
 Public browser QA is reproducible with scripts/check-public-browser.py using an independently installed Playwright/Chromium. It visits only the public page, tests widths 360/768/1440, scroll/focus, filters and stable section position; screenshots/reports go to ignored .local/qa. Temporary tooling is not a production dependency and is not guaranteed to survive cleanup/reboot.
+
+## Local control-center prototype
+
+Build with `python3 center/build.py`; output is restricted to ignored .local/control-center with content-addressed releases and an atomic current pointer. This prototype is not authenticated and must not be exposed publicly. Local tests: docs/CONTROL-CENTER-UI.md and scripts/check-center-browser.py. Public progress and live inventory remain separate.

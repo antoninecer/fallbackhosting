@@ -7,16 +7,16 @@ Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED 
 | ID | Milestone | Status | Owner | Acceptance / next step |
 | --- | --- | --- | --- | --- |
 | FH-0001 | M00 | DONE | Codex | Required docs, valid state, working resume, checkpoint and local commit; Session 001 validation checkpoint is evidence |
-| FH-0002 | M01 | BLOCKED | Operator + Codex | Initial sanitized audit delivered; full scoped home inventory, dependency and backup evidence still unavailable; obtain authorized evidence |
+| FH-0002 | M01 | BLOCKED | Operator + Codex | Home OS/resources/Compose and transport observed; still missing complete backup/dependency coverage and independently verified host identity. Record remaining scoped evidence. |
 | FH-0003 | M01 | BLOCKED | Operator + Codex | Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline |
 | FH-0004 | M03 | BACKLOG | Operator + Codex | Coolify requirements/security/backup plan and explicit installation approval; do not install |
-| FH-0005 | M02 | BLOCKED | Operator + Codex | Proposal in docs/M02-CONTROL-CENTER.md; operator UI/privacy/auth design approval pending |
+| FH-0005 | M02 | READY | Operator + Codex | Operator agreed to repository-only control-center data/UI work. Design proposal available in docs/M02-CONTROL-CENTER.md; implementation underway in FH-0007. Protected-center deployment remains separate. |
 | FH-0006 | M02 | DONE | Codex | Canonical catalog and generated Markdown tables implemented; 28 repository tests, reference/evidence/revision/privacy/staleness checks passed. Evidence: docs/PROJECT-DATA.md and FH-0006 checkpoints. |
-| FH-0007 | M02 | BACKLOG | Codex | Depends FH-0006; responsive accessible UI, all modules and mobile verification |
+| FH-0007 | M02 | TESTING | Codex | Local-only eight-module read-only prototype implemented; 36 repository tests and Chromium 360/768/1440 keyboard/filter/copy/download/long-text checks PASS. Deployment/authentication remains separate FH-0008 scope. |
 | FH-0008 | M02 | BACKLOG | Operator + Codex | Depends FH-0005/FH-0007; exact isolated deployment/rollback proposal and approval before runtime changes |
 | FH-0009 | M02 | DONE | Codex | Live HTTPS/isolation checks previously passed; Chromium 360/768/1440 screenshots, keyboard history scrolling and all five filters now PASS. History growth does not move later content; see browser checkpoint. |
 | FH-0010 | M02 | READY | Operator + Codex | Historical static entry proposal superseded by live authenticated admin FH-0017/FH-0018; reconcile any future entry work with that deployment |
-| FH-0011 | M03 | BLOCKED | Operator + Codex | SSH and isolated Docker lifecycle/cleanup passed after operator group grant (FH-0016); independent fingerprint, node inventory and constrained operations boundary pending |
+| FH-0011 | M03 | BLOCKED | Operator + Codex | SSH, isolated Docker lifecycle and node OS/resources/Compose observed; independent fingerprint and constrained operations boundary remain pending. No Coolify installation implied. |
 | FH-0012 | M02 | READY | Operator + Codex | Dedicated webroot renewal recorded, but no per-cert/global deploy hook observed. Prepare exact nginx syntax-test/reload hook and renewal-test proposal; scoped approval required before changes |
 | FH-0013 | M03 | TESTING | Codex + Operator | Isolated SSH service proposal documented; operator review pending; no service deployed or operational permissions granted |
 | FH-0014 | M01 | BLOCKED | Operator + Codex | Independently verify actual negotiated SSH host fingerprint using trusted ctx1 console, compare privately with pinned client trust; record source/time/verifier/result before broker activation |

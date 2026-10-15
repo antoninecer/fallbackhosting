@@ -38,7 +38,19 @@ TASKS = {
  "FH-0018": "Kontrola a opakovatelné nasazení administrace",
 }
 
+BLOCKERS = {
+ "FH-0002": "Zbývá doložit zálohy a závislosti infrastruktury. OS, prostředky a Compose domácího uzlu už jsou ověřené.",
+ "FH-0003": "Zbývá kontrola referenční aplikace z nezávislého vnějšího místa a bezpečný test dynamické funkce.",
+ "FH-0011": "Pro automatické operace zbývá nezávislé ověření SSH identity a vymezení oprávnění. Připojení, Docker i prostředky uzlu už byly ověřeny.",
+ "FH-0014": "Chybí nezávislé porovnání SSH fingerprintu s údajem z důvěryhodné konzole cílového serveru.",
+}
+
 PUBLIC_EVENTS = {
+ "center_browser_pass": "Dokončeno místně: centrum prošlo prohlížečem při šířkách 360, 768 a 1440 px. Ověřeny filtry, klávesnice, kopírování a stažení podkladu; všech 36 místních testů prošlo. Nasazení centra je samostatný krok.",
+ "center_browser_retest": "Kontrola místního centra: přísná ochrana stránky zablokovala způsob čekání testovacího nástroje. Test upravujeme; ochranu stránky ponecháváme zapnutou.",
+ "center_unit_pass": "Dokončeno místně: osm modulů centra a osm testů ochrany dat, vloženého HTML, obnovy práce a zachování poslední platné verze. Probíhá kontrola v prohlížeči; centrum zatím není nasazené.",
+ "blockers_clarified": "Upřesněno: čekající úkoly nyní uvádějí konkrétní chybějící důkaz. Zastaralé čekání na souhlas s místním návrhem centra bylo odstraněno.",
+ "center_ui_started": "Probíhá: místní rozhraní řídicího centra — úkoly, milníky, události, stáří kontrol a podklady pro pokračování práce. Veřejný web zůstává jen přehledem.",
  "browser_qa_wait": "Kontrola zobrazení: testovací prohlížeč potřebuje doplnit knihovny v dočasné složce. Stránka je dostupná, vizuální kontrola zatím není dokončená.",
  "progress_scroll_pass": "Dokončeno: historie výsledků má vlastní posuvné pole s omezenou výškou, nejnovější záznamy zůstávají nahoře.",
  "data_model_pass": "Dokončeno: 11 milníků a 18 úkolů má jednotný datový zdroj. Kontroly návazností, důkazů, soukromí a zastaralých údajů prošly; tabulky dokumentace se generují z katalogu.",
@@ -95,6 +107,12 @@ def public_data(root=ROOT):
     if state["task_id"] not in ids:
         raise ValueError("Current task missing")
     result["next_task"] = TASKS[state["task_id"]]
+    result["blockers"] = []
+    for task in result["tasks"]:
+        if task["status"] == "BLOCKED":
+            if task["id"] not in BLOCKERS:
+                raise ValueError("Blocked task needs reviewed public explanation")
+            result["blockers"].append({"id":task["id"], "title":task["title"], "reason":BLOCKERS[task["id"]]})
     checkpoint = state["last_checkpoint"]
     if not re.fullmatch(r"checkpoints/\d{8}T\d{6}Z-[A-Za-z0-9-]+\.md", checkpoint) or not (root / checkpoint).is_file():
         raise ValueError("Invalid checkpoint reference")
@@ -124,6 +142,7 @@ def render(data):
     milestones = "".join(f'<li class="milestone"><span class="code">{m["id"]}</span><div><h3>{e(m["title"])}</h3>{badge(m["status"], "Částečně ověřeno" if m["id"] == "M01" and m["status"] == "NEEDS_TEST" else None)}</div></li>' for m in data["milestones"])
     tasks = "".join(f'<tr data-status="{t["status"]}"><td><span class="code">{t["id"]}</span></td><td>{e(t["title"])}</td><td>{t["milestone"]}</td><td>{badge(t["status"])}</td></tr>' for t in data["tasks"])
     events = "".join(f'<li><time datetime="{e(event["utc"])}">{e(prague_time(event["utc"]))}</time><p>{e(event["title"])}</p></li>' for event in reversed(data["events"]))
+    blockers = "".join(f'<article class="panel"><span class="code">{e(item["id"])}</span><h3>{e(item["title"])}</h3><p class="muted">{e(item["reason"])}</p></article>' for item in data["blockers"])
     counts = {s: sum(t["status"] == s for t in data["tasks"]) for s in STATUSES}
     done = sum(m["status"] == "DONE" for m in data["milestones"])
     return f'''<!doctype html>
@@ -132,6 +151,7 @@ def render(data):
 <main><section class="hero" id="stav"><p class="eyebrow">VÝVOJ PLATFORMY / PRŮBĚŽNÝ ZÁZNAM</p><h1>Projekt roste.<br><span>Každý krok má svůj záznam.</span></h1><p class="intro">FallbackHosting propojí nasazování aplikací se samostatnou záložní verzí webu. Tady najdete, co už vzniklo, co čeká na ověření a kam směřujeme dál.</p><div class="hero-bottom"><a class="button" href="#ukoly">Zobrazit průběh <span aria-hidden="true">↘</span></a><span class="phase">Aktuální etapa <strong>{e(data['milestone'])} · {e(MILESTONES[int(data['milestone'][1:])])}</strong></span></div></section>
 <section class="stats" aria-label="Souhrn"><div><span>Dokončené milníky</span><strong>{done}<small> / {len(data['milestones'])}</small></strong></div><div><span>Hotové úkoly</span><strong>{counts['DONE']}</strong></div><div><span>Rozpracováno / ověřování</span><strong>{counts['IN_PROGRESS'] + counts['TESTING']}</strong></div><div><span>Čeká na podklady</span><strong>{counts['BLOCKED']}</strong></div></section>
 <section class="overview"><article class="panel"><p class="eyebrow">CO UŽ MÁME</p><h2>Pevný základ pro další práci.</h2><ul class="checks"><li>Projektová dokumentace a pravidla bezpečných změn</li><li>Obnova práce z uložených checkpointů</li><li>Úvodní audit infrastruktury a návrh projektového centra</li><li>Veřejný přehled projektu na vlastní HTTPS adrese</li></ul><p class="muted">Oracle, SSH a vytvoření i úklid testovacího Docker kontejneru jsou ověřené. U domácího uzlu jsou ověřeny také OS, prostředky a Compose. Zbývá nezávislá kontrola SSH identity, externí aplikační kontrola a doplnění zálohových postupů. Automatické přepínání do záložního režimu zatím není zprovozněno.</p></article><article class="panel next"><p class="eyebrow">TEĎ A POTOM</p><h2>Připravujeme vstup do platformy a připojení serveru.</h2><p>Aktuální krok: {e(data['next_task'])}. Průběh jednotlivých úkolů najdete v přehledu níže.</p><p class="muted">Veřejná prezentace je pouze pro čtení. Chráněné řídicí centrum je další součástí plánu.</p></article></section>
+<section id="podklady"><h2>Na jaké podklady čekáme</h2><p class="muted">Tyto konkrétní úkoly čekají na důkaz. Ostatní práce může pokračovat.</p><div class="blocker-grid">{blockers or "<p>Žádný úkol právě nečeká na podklady.</p>"}</div></section>
 <section id="posledni-kroky"><h2 id="progress-heading">Poslední dokončené kroky a výsledky</h2><p class="muted">Nejnovější záznamy jsou nahoře. Starší výsledky najdete posunutím uvnitř přehledu.</p><div class="progress-log" role="region" aria-labelledby="progress-heading" tabindex="0"><ol>{events}</ol></div></section>
 <section id="milniky"><div class="section-head"><div><p class="eyebrow">CESTA K PRVNÍMU VYDÁNÍ</p><h2>Milníky projektu</h2></div><p class="muted">Hotovo znamená ověřeno a zaznamenáno.</p></div><ol class="roadmap">{milestones}</ol></section>
 <section id="ukoly"><div class="section-head"><div><p class="eyebrow">KONKRÉTNÍ KROKY</p><h2>Pracovní přehled</h2></div><label class="filter">Zobrazit <select id="task-filter"><option value="ALL">Všechny úkoly</option><option value="DONE">Hotové</option><option value="ACTIVE">Rozpracované</option><option value="BLOCKED">Čekající</option><option value="READY">Připravené</option></select></label></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Úkol</th><th>Etapa</th><th>Stav</th></tr></thead><tbody>{tasks}</tbody></table></div><p id="filter-result" role="status" class="muted"></p></section>

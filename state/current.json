@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M02",
-  "phase": "DONE",
-  "task_id": "FH-0009",
+  "phase": "TESTING",
+  "task_id": "FH-0007",
   "live_verified_at_utc": "2026-10-15T11:36:16Z",
-  "last_checkpoint": "checkpoints/20261015T143855Z-FH-0009-progress-scroll-pass.md",
-  "current_summary": "FH-0009 DONE against implementation commit c38c056: live HTTPS page/assets/isolation previously verified; headless Chromium 360/768/1440, all screenshots, keyboard scrolling, five filters and stable section position PASS. History stays bounded; no services changed.",
-  "next_safe_action": "FH-0007: prepare protected control-center read-only UI from validated catalog; keep operational data out of public projection. Admin visual and rollback QA remain separate.",
+  "last_checkpoint": "checkpoints/20261015T145236Z-FH-0007-center-browser-pass.md",
+  "current_summary": "FH-0007 local prototype validated: 36 repository tests and Chromium 360/768/1440 eight-module/filter/keyboard/clipboard/download/long-text checks PASS; screenshots reviewed. Existing public page also rechecked in browser at three widths after blocker clarification, PASS. Center remains private local artifact, no operational deployment.",
+  "next_safe_action": "Review and commit FH-0007 implementation, record completion revision, then prepare exact protected-center deployment proposal separately.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -178,6 +178,30 @@
     {
       "id": "progress_scroll_pass",
       "utc": "2026-10-15T14:38:55Z"
+    },
+    {
+      "id": "center_ui_started",
+      "utc": "2026-10-15T14:44:53Z"
+    },
+    {
+      "id": "blockers_clarified",
+      "utc": "2026-10-15T14:46:45Z"
+    },
+    {
+      "id": "center_unit_pass",
+      "utc": "2026-10-15T14:50:10Z"
+    },
+    {
+      "id": "center_browser_retest",
+      "utc": "2026-10-15T14:50:25Z"
+    },
+    {
+      "id": "center_browser_pass",
+      "utc": "2026-10-15T14:51:09Z"
+    },
+    {
+      "id": "center_browser_pass",
+      "utc": "2026-10-15T14:52:36Z"
     }
   ],
   "catalog_path": "state/catalog.json"

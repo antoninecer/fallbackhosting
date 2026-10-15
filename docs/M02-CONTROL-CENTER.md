@@ -48,3 +48,7 @@ Later authenticated editing needs a separately reviewed service, authorization, 
 ## FH-0006 implementation follow-up
 
 Canonical repository catalog, strict validator and generated Markdown tables are implemented; see docs/PROJECT-DATA.md. The existing public projection consumes validated records with reviewed labels only. This is repository-only implementation, not protected-center deployment. Europe/Prague replaces the original proposed UTC display labels; storage remains UTC.
+
+## FH-0007 implementation follow-up
+
+Operator agreed to repository data/UI implementation; the old local design-review wait is superseded. Eight-module static local prototype implemented and tested; scope/boundary in docs/CONTROL-CENTER-UI.md. The protected-center deployment/authentication remains a separate FH-0008 plan, not completed by local browser tests. Public project page remains a sanitized separate view.

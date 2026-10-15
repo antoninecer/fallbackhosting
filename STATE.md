@@ -66,3 +66,7 @@ Repository data implementation validated: 11 milestones/18 tasks preserved in st
 ## Public history and browser follow-up
 
 Operator-requested bounded history is live. Headless Chromium at 360/768/1440 PASS: keyboard scrolling, five filters, no page overflow/errors, 40 extra rows cause 0 px section movement. All three screenshots inspected; private report path in checkpoint. Admin visual QA and operational rollback remain separate and unperformed. No system package/service changes; browser tooling isolated under /tmp.
+
+## FH-0007 local control-center UI
+
+Local-only read-only center built with eight modules, immutable artifact/manifest and atomic current pointer. All 36 repository tests and loopback Chromium 360/768/1440 filters/keyboard/clipboard/download/long-text checks PASS; screenshots reviewed. No authentication/deployment is claimed. Public blocker explanations now show actual missing evidence; superseded FH-0005 local design wait moved to READY under operator approval. FH-0008 deployment remains separate.
