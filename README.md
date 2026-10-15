@@ -46,4 +46,4 @@ Public progress presentation source is in `portal/`; build with `python3 portal/
 
 Platform entry on lab.ventureout.cz is prepared locally, activation pending separate approval. [User workflow](docs/PLATFORM-WORKFLOW.md) and [server onboarding](docs/SERVER-ONBOARDING.md) document the next phase. `python3 portal/build.py` rebuilds project and lab static artifacts; they contain no administrative access.
 
-Technical SSH transport to the home node was operator-provisioned and subsequently checked by agent with three read-only probes. Independent host identity and enforced key/agent isolation remain open. [Operations service proposal](docs/SSH-OPERATIONS-SERVICE.md) records the next gates; no broker or remote privilege grant deployed.
+Technical SSH transport to the home node was operator-provisioned and subsequently checked by agent with three read-only probes. Independent host identity and enforced key/agent isolation remain open. [Operations service proposal](docs/SSH-OPERATIONS-SERVICE.md) records the next gates; no broker deployed. Operator subsequently granted Docker-group access; the isolated lifecycle test and cleanup passed (FH-0016).

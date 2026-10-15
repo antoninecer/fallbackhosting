@@ -7,7 +7,7 @@ No account, permission, SSH trust, systemd or Docker change is made by this docu
 
 The operator reported existing technical accounts and a working key-based Oracle-to-home connection. At 2026-10-15T08:25:31Z Codex independently completed three explicitly authorized SSH probes: hostname, effective username and uptime. All exited 0 and the identity outputs matched the operator's intended node/account. Existing host trust was accepted with StrictHostKeyChecking=yes; UpdateHostKeys=no prevented learning additional keys. This is verified transport, not independent host fingerprint attestation, Docker management or deployment readiness.
 
-The operator reports the destination account has no sudo or Docker rights. Codex did not query or change those permissions. Ordinary agent-user access to the private key is reported denied; no key contents were read, copied or exported. Endpoint, exact key path and account mapping stay in operator-controlled private inventory, not public Git. Its durable storage location has not been verified; subsequent sessions must obtain it through the approved operator channel, not guess credentials.
+Initially the operator reported no destination sudo/Docker rights; the first daemon probe was denied. Operator subsequently granted Docker-group membership, and a fresh-session agent lifecycle/cleanup test passed (docs/DOCKER-SMOKE-TEST.md). No permission changed by Codex. Remote sudo absence remains reported, not independently tested. Ordinary agent-user access to the private key is reported denied; no key contents were read, copied or exported. Endpoint, exact key path and account mapping stay in operator-controlled private inventory, not public Git. Its durable storage location has not been verified; subsequent sessions must obtain it through the approved operator channel, not guess credentials.
 
 ## Proposed boundary
 
@@ -61,7 +61,7 @@ Record production and public-portal baselines before/after activation. Controlle
 
 Deployment rollback proposal: stop/disable only the new broker through its approved service controls, retain job records and deny new submissions; reconcile RUNNING/UNKNOWN jobs before restart. Restore only its previous reviewed release/config/socket policy. Do not revoke the existing SSH key, change target rights, restart home services or alter shared gateway configs automatically. Static serving continues independently. Documentation rollback is a reviewed Git revert and rebuild of the sanitized public presentation. No deployment commands run now.
 
-## Operator-requested Docker smoke test — blocked, no grant
+## Earlier Docker smoke-test denial — historical helper alternative
 
 A subsequent explicitly authorized diagnostic found the remote Docker CLI, but daemon query was denied at its standard socket. No disposable resource was created and there was nothing to clean up. The initial broker must remain read-only; no change to its operation allowlist or account permissions is made here.
 
@@ -70,3 +70,7 @@ If the operator wants to authorize only a create/delete smoke test before a full
 Proposed helper behavior: use an operator-approved already-local immutable image ID; no pull, no start/exec, no mounts, ports, network or arbitrary container specification. Generate a unique test name and ownership label inside the trusted helper; create a stopped container, verify its ID/label, remove only that exact owned container and verify absence. Lock concurrent calls and persist owned resource ID before cleanup; if interrupted, reconcile only that ID, never broad prune or guessed names. Deny if approved image absent. Any failed cleanup records remaining ID privately and blocks success. Output only sanitized creation/deletion results. This tests metadata create/delete, not running applications or full Coolify privileges.
 
 Exact helper path/content, allowed image, sudoers rule, approval enforcement, backups and rollback are not yet selected/approved. Do not install a helper, edit sudoers or repeat the Docker operation as another remote user under current authorization. Full deployment privileges remain a distinct architectural review.
+
+## Current transport capability after operator change
+
+Operator separately granted broad Docker-group access and authorized a new diagnostic; create/start/exit-0/remove/absence passed without remote sudo. No helper/broker was installed. Earlier denied probe and helper proposal are historical context/possible restricted alternative, not current access blockers. Broker API remains read-only by design until separately reviewed; broad technical credentials are not authorization for arbitrary project operations or isolation proof. Account/group reduction or remote forced-command restriction would need exact approval and operator recovery plan.

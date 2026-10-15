@@ -3,12 +3,12 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "BLOCKED",
-  "task_id": "FH-0011",
-  "live_verified_at_utc": "2026-10-15T08:25:31Z",
-  "last_checkpoint": "checkpoints/20261015T083231Z-FH-0013-validated.md",
-  "current_summary": "Technical SSH verified. Docker CLI exists but daemon access denied; no test container created. Isolated operations-service proposal drafted; fingerprint and enforceable key isolation pending.",
-  "next_safe_action": "Review proposed restricted Docker smoke-test/helper scope and broker isolation; obtain independent host fingerprint. Do not grant rights or retry Docker via remote sudo without exact approval.",
-  "blocking_issue": "Remote Docker API access denied; independent host fingerprint unverified; local unrestricted agent sudo prevents enforcing key isolation.",
+  "task_id": "FH-0014",
+  "live_verified_at_utc": "2026-10-15T08:35:47Z",
+  "last_checkpoint": "checkpoints/20261015T083752Z-FH-0016-validated.md",
+  "current_summary": "SSH and isolated Docker create/start/remove test passed after operator Docker-group change; cleanup and existing reference unchanged. Independent fingerprint and enforced agent/key isolation still pending.",
+  "next_safe_action": "Obtain independent host fingerprint from trusted console and review broker/agent privilege boundary before any deployment; do not repeat the completed Docker probe.",
+  "blocking_issue": "Independent SSH fingerprint unverified and enforced key/agent separation unresolved; Docker access blocker resolved.",
   "warnings": [
     "Public progress presentation is live; protected platform/admin features are not deployed.",
     "Coolify server validation can install/restart Docker; not permitted as a read-only audit.",
@@ -17,7 +17,7 @@
     "Project certificate renewal webroot exists but automatic post-renewal Nginx reload is not configured/verified; FH-0012.",
     "M01/M02 gates remain incomplete; M03 transport verification is not deployment readiness.",
     "Independent SSH host fingerprint pending; current agent unrestricted sudo defeats strict account-only key isolation.",
-    "No target sudo/Docker privilege grant and no broker deployment approved."
+    "Operator granted broad destination Docker-group access; isolated test passed, but this is not per-project least privilege or general deployment authorization. Broker not deployed."
   ],
   "ssh_transport": {
     "verification": "AGENT_OBSERVED",
@@ -27,7 +27,7 @@
       "test_execution_utc": null,
       "setup": "existing technical accounts and key-based SSH working",
       "remote_sudo": "NOT_GRANTED_REPORTED",
-      "remote_docker": "NOT_GRANTED_REPORTED_AND_EFFECTIVE_SOCKET_DENIAL_OBSERVED"
+      "remote_docker": "DOCKER_GROUP_ADDED_BY_OPERATOR_THEN_EFFECTIVE_ACCESS_OBSERVED"
     },
     "probes": {
       "hostname": "PASS_EXPECTED_NODE",
@@ -40,6 +40,21 @@
     "permissions_changed_by_agent": false,
     "private_inventory_location": "UNKNOWN_OPERATOR_CUSTODY",
     "docker_probe": {
+      "evidence_recorded_at_utc": "2026-10-15T08:35:47Z",
+      "cli": "FOUND",
+      "daemon_query": "PASS",
+      "daemon_version": "29.9.0",
+      "container_create_start_delete": "PASS",
+      "container_exit_code": 0,
+      "cleanup": "ABSENCE_VERIFIED",
+      "test_resource_remaining": false,
+      "existing_reference": "UNCHANGED_ID_RUNNING_RESTART_COUNT_START_TIME_IMAGE",
+      "image_pull": false,
+      "agent_permissions_changed": false,
+      "remote_sudo_used": false,
+      "evidence": "checkpoints/20261015T083547Z-FH-0016-docker-smoke-pass.md"
+    },
+    "docker_probe_previous": {
       "evidence_recorded_at_utc": "2026-10-15T08:31:28Z",
       "cli": "FOUND",
       "daemon_query": "FAILED_PERMISSION_DENIED",
@@ -59,5 +74,17 @@
     "agent_boundary_task": "FH-0015",
     "local_agent_unrestricted_sudo": "AGENT_OBSERVED",
     "enforced_key_isolation": "NOT_ESTABLISHED"
+  },
+  "last_docker_smoke": {
+    "name": "fallbackhosting-smoke-20261015t083413z-d081cf7059dd3d09",
+    "ownership_token": "d081cf7059dd3d09",
+    "status": "PASS_CLEANED",
+    "checkpoint": "checkpoints/20261015T083413Z-FH-0011-retest-start.md",
+    "exit_code": 0,
+    "daemon_version": "29.9.0",
+    "container_id": "185287c3f72d43744392238d292ea3e53b13a91c98ab7fbc830d62394ffebcd6",
+    "evidence_recorded_at_utc": "2026-10-15T08:35:47Z",
+    "evidence": "checkpoints/20261015T083547Z-FH-0016-docker-smoke-pass.md",
+    "task_id": "FH-0016"
   }
 }

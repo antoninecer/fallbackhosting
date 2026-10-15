@@ -31,12 +31,16 @@ No change to the planned Coolify architecture is made here. If the required priv
 
 ## Current access evidence and next gate
 
-Technical accounts and key access already exist per operator, with subsequent agent transport verification. Exact private connection details remain in operator custody; no additional credentials should be sent in chat or Git. Destination sudo and Docker rights are NOT granted per operator. Do not grant them, recreate accounts/keys, or run installation. Independent console fingerprint comparison is the next gate.
+Technical accounts and key access already exist per operator, with subsequent agent transport verification. Exact private connection details remain in operator custody; no additional credentials should be sent in chat or Git. Operator subsequently granted Docker-group membership and agent verified an isolated lifecycle test; no rights changed by agent. Destination sudo absence remains operator-reported. Do not grant more rights, recreate accounts/keys, or run installation. Independent console fingerprint comparison is the next gate.
 
 `scripts/inspect-node.sh` is intended to be copied/reviewed and run locally on ctx1 by the operator. It reads only selected OS/resources/version/service values, does not list apps/containers or read configs/secrets, and marks denied Docker access UNKNOWN. It was syntax-checked in the repository, not executed on ctx1. Return only sanitized results through a private operator channel if needed.
 
 Next exact gate: independently compare the actual negotiated host-key fingerprint using trusted target console evidence, then review docs/SSH-OPERATIONS-SERVICE.md. No guessed usernames or new SSH methods used. Current agent unrestricted sudo means actual key isolation is not yet enforced; do not claim a separate Unix account alone protects the key from this agent. No permissions changed.
 
-## Explicit Docker diagnostic follow-up
+## Earlier Docker diagnostic — historical denial
 
 Operator requested a disposable Docker create/delete probe. Agent confirmed /usr/bin/docker exists but daemon query returned socket permission denied (exit 1); therefore no resource was created or deleted. Current daemon version/health remains UNKNOWN. This is an observed permission blocker; do not re-run as root, add Docker-group membership or grant sudo without exact operator approval. Any constrained test helper is a proposal only in docs/SSH-OPERATIONS-SERVICE.md.
+
+## Current Docker diagnostic — success after operator grant
+
+Operator added technical account to Docker group, then requested retest. Fresh SSH session observed membership and Docker Engine 29.9.0. Isolated creation/start/exit-0/removal and absence passed; pre-existing reference unchanged and HTTP pre/post canaries passed. Evidence: docs/DOCKER-SMOKE-TEST.md. Earlier denial is superseded; independent fingerprint, node OS/resource inventory and least-privilege/controller review remain pending.
