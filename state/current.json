@@ -2,10 +2,10 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M05",
-  "phase": "TESTING",
+  "phase": "DONE",
   "task_id": "FH-0027",
-  "live_verified_at_utc": "2026-10-16T08:40:56Z",
-  "last_checkpoint": "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md",
+  "live_verified_at_utc": "2026-10-16T18:24:32Z",
+  "last_checkpoint": "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "122 pinned-source tests and actual fixture browser360/768/1440 PASS; publication activation pending. Reference external root and actual single-int dynamic acceptance PASS. Live demo501 reported and corrected by replacing unsupported POST form with example link.",
-  "next_safe_action": "Finish browser/full pinned-source tests, freeze release, install isolated fixed publication worker and activate PHP release; verify actual HTTPS preview/publish/rollback with protected canaries.",
+  "current_summary": "FH-0027 live authenticated demo preparation/backup-gated preview/publication/rollback acceptance PASS;122 tests PASS. Demo501 corrected and actual order-navigation verified. Reference API and operator phone card-dashboard acceptance recorded; FH-0003 DONE. FH-0011 IN_PROGRESS for general enrollment/deployment engineering, not awaiting operator input.",
+  "next_safe_action": "Implement bounded application enrollment/deploy/redeploy adapter and its privilege contract under FH-0011/FH-0004. Existing fixed publication workflow is complete. Generic arbitrary-site export and controller/database/VM recovery remain separate.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -501,6 +501,18 @@
     {
       "id": "reference_api_pass",
       "utc": "2026-10-16T18:20:35Z"
+    },
+    {
+      "id": "publication_live_pass",
+      "utc": "2026-10-16T18:24:32Z"
+    },
+    {
+      "id": "demo_order_fix",
+      "utc": "2026-10-16T18:24:32Z"
+    },
+    {
+      "id": "onboarding_reconciled",
+      "utc": "2026-10-16T18:24:32Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -614,5 +626,21 @@
     "provenance": "PINNED_SSH_REPOSITORY_NOT_SIGNED_ARCHIVE",
     "controller_or_database_restore": "UNSUPPORTED",
     "evidence": "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md"
+  },
+  "demo_publication": {
+    "status": "LIVE_ACCEPTANCE_PASS",
+    "source_revision": "ecf0fb53e3f50632b5bc67ea8107b08fae8fc1d2",
+    "observed_at_utc": "2026-10-16T18:24:32Z",
+    "actual_remote_backup_readback_isolated_restore": "PASS",
+    "preview_browser": "PASS_360_768_1440",
+    "publish_and_previous_version_rollback": "PASS",
+    "static_without_publication_service": "PASS",
+    "csrf_origin_traversal_logout_denial": "PASS",
+    "units": "ACTIVE_ENABLED",
+    "final_phase": "ROLLED_BACK_AFTER_ACCEPTANCE",
+    "final_demo": "ONLINE_AUTO_NO_SCHEDULE",
+    "repository_tests": "122_PASS",
+    "activation_rollback": "DOCUMENTED_BACKED_UP_NOT_EXERCISED",
+    "evidence": "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
   }
 }

@@ -78,6 +78,7 @@ class StandbyTest(unittest.TestCase):
 
     def test_export_strips_dynamic_keeps_theme_and_optimizes(self):
         with fixture() as (root,origin,state,files):
+            files['/index.html']=files['/index.html'].replace(b'</body>',b'<form method="post" action="/checkout"><input name="private"><button>Submit</button></form></body>')
             release,report=build(origin,root/'releases','Provádíme údržbu.','Kontakt: demo@example.invalid')
             html=(release/'index.html').read_text()
             self.assertNotIn('<form',html);self.assertNotIn('<input',html)
@@ -149,7 +150,8 @@ class StandbyTest(unittest.TestCase):
                     try:status,headers,body=get(base+'/demo/');break
                     except OSError:time.sleep(.05)
                 self.assertEqual(status,200);self.assertIn(b'href="/demo/style.css"',body)
-                self.assertIn(b'action="/demo/objednavka/"',body)
+                self.assertIn(b'href="/demo/objednavka/"',body)
+                self.assertNotIn(b'<form',body)
                 self.assertEqual(get(base+'/demo/hero.jpg')[0],200)
                 state['healthy']=False
                 status,headers,body=get(base+'/demo/objednavka/')

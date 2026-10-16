@@ -17,6 +17,8 @@ BASE=Path('/var/lib/fallback-publication-demo')
 PUBLIC=Path('/var/www/fallback-standby-demo')
 ADMIN=Path('/var/www/fallback-admin/current')
 UNITS=('fallback-publication-demo.socket','fallback-publication-demo.service')
+POOL=Path('/etc/php/8.3/fpm/pool.d/fallback-admin.conf')
+PREVIEW_ROOT='/var/www/fallback-standby-demo/releases/'
 CODE=('standby/__init__.py','standby/publishing.py','standby/publish_service.py','standby/snapshot.py','standby/backup.py','standby/gateway.py','standby/transport.py','operations/__init__.py','operations/core.py','operations/protocol.py','operations/standby_backup.py')
 
 
@@ -54,6 +56,11 @@ def rollback(journal):
         candidate=item.get('candidate')
         if not isinstance(candidate,str) or current!=PUBLIC/'releases'/candidate:raise ValueError('Static pointer drift')
         switch(PUBLIC/'current',Path(data['previous_static']))
+    if data.get('pool_after_sha256'):
+        digest=hashlib.sha256(POOL.read_bytes()).hexdigest()
+        if digest==data['pool_after_sha256']:
+            POOL.write_bytes((journal/'pool-before.conf').read_bytes());run('php-fpm8.3','-t');run('systemctl','reload','php8.3-fpm')
+        elif digest!=data['pool_before_sha256']:raise ValueError('PHP pool drift')
     for path,info in data['ownership'].items():os.chown(path,info[0],info[1]);os.chmod(path,info[2])
     data['phase']='ROLLED_BACK_PRESERVED_DATA';write_json(journal/'journal.json',data)
     print('PASS scoped publication rollback; artifacts and private journal retained')
@@ -74,6 +81,14 @@ def apply():
     data={'phase':'PREPARED','revision':revision,'previous_admin':str(previous),'new_admin':str(release),'previous_static':str((PUBLIC/'current').resolve(strict=True)),
           'ownership':{str(p):[p.stat().st_uid,p.stat().st_gid,p.stat().st_mode&0o777] for p in (PUBLIC,PUBLIC/'releases')},
           'unit_hashes':{u:hashlib.sha256(blob('deploy/'+u)).hexdigest() for u in UNITS}}
+    pool_before=POOL.read_bytes()
+    lines=pool_before.decode().splitlines(keepends=True)
+    matching=[i for i,line in enumerate(lines) if line.startswith('php_admin_value[open_basedir] = ')]
+    if len(matching)!=1 or PREVIEW_ROOT in lines[matching[0]]:raise ValueError('Unexpected PHP directory policy')
+    lines[matching[0]]=lines[matching[0]].rstrip('\n')+':'+PREVIEW_ROOT+'\n'
+    pool_after=''.join(lines).encode()
+    (journal/'pool-before.conf').write_bytes(pool_before);(journal/'pool-before.conf').chmod(0o600)
+    data.update(pool_before_sha256=hashlib.sha256(pool_before).hexdigest(),pool_after_sha256=hashlib.sha256(pool_after).hexdigest())
     write_json(journal/'journal.json',data)
     try:
         BASE.mkdir(mode=0o755);code=BASE/'code';code.mkdir(mode=0o755)
@@ -103,6 +118,8 @@ def apply():
         for unit in UNITS:run('systemctl','enable','--now',unit)
         run('systemctl','is-active','--quiet',UNITS[1])
         if any(hashlib.sha256(Path(p).read_bytes()).hexdigest()!=v for p,v in before.items()):raise ValueError('Private state drift')
+        if POOL.read_bytes()!=pool_before:raise ValueError('PHP policy drift')
+        POOL.write_bytes(pool_after)
         switch(ADMIN,release);run('php-fpm8.3','-t');run('systemctl','reload','php8.3-fpm')
         data['phase']='ACTIVATED_NEEDS_HTTPS_ACCEPTANCE';write_json(journal/'journal.json',data)
         run('python3',str(ROOT/'scripts/activate-admin.py'),'verify')

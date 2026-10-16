@@ -533,17 +533,36 @@
     {
       "id": "FH-0011",
       "title": "Návrh připojení aplikačního serveru",
-      "status": "BLOCKED",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
-      "acceptance": "SSH identity, node OS/resources/Compose and isolated Docker lifecycle verified; constrained operations boundary/Coolify installation remain separate gates.",
+      "acceptance": "SSH identity, transport, Docker/resources verified. Fixed backup/publication worker actually deployed and peer-authenticated. Continue bounded app enrollment/deploy/redeploy and remote least-privilege contract; no missing operator input. Existing broad technical-account Docker rights are not per-project isolation.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Scope and context: TASKS.md, FH-0011",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "utc": "2026-10-16T18:24:32Z",
+          "evidence": [
+            "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T18:24:32Z",
+          "evidence": [
+            "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0012",
@@ -1089,19 +1108,20 @@
     {
       "id": "FH-0027",
       "title": "Publikování a náhled záložní verze z administrace",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
-      "acceptance": "Fixed-demo authenticated prepare/preview/publish/previous-version rollback. Independent remote backup/readback/isolated restore before READY, integrity and stale/concurrent revision checks, restart reconciliation. Local and real HTTPS/browser acceptance plus independent existing static serving.",
+      "acceptance": "Actual authenticated HTTPS prepare/remote backup/readback/isolated restore, static preview/assets360/768/1440, publication, independent serving with publisher stopped, previous-version rollback and CSRF/Origin/traversal/logout denial PASS. Full122 tests PASS; protected canaries and auth/inventory unchanged.",
       "dependencies": [
         "FH-0026"
       ],
       "evidence": [
         "docs/DEMO-PUBLICATION.md",
         "checkpoints/20261016T180912Z-FH-0027-publication-start.md",
-        "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
+        "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md",
+        "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-16T18:24:32Z",
+      "completion_revision": "ecf0fb53e3f50632b5bc67ea8107b08fae8fc1d2",
       "milestone": "M05",
       "scope": "Existing fixed public cafe demo only; separate private publication socket/worker, immutable PHP release, no generic web-supplied origin/path/SSH. No shared Nginx changes.",
       "rollback": "Stop only new publication units; restore journaled PHP/static pointers and exact static parent ownership; preserve archives/releases/runtime. Publication pointer rollback tested separately.",
@@ -1112,6 +1132,14 @@
           "utc": "2026-10-16T18:20:35Z",
           "evidence": [
             "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-16T18:24:32Z",
+          "evidence": [
+            "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
           ]
         }
       ]

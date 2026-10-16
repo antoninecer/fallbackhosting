@@ -57,6 +57,9 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "publication_live_pass": "V administraci funguje příprava nové záložní verze, chráněný náhled, publikování a návrat zpět. Skutečná vzdálená záloha a obnova, náhled na mobilu/tabletu/desktopu i nezávislost na publikační službě ověřeny. Všech 122 testů prošlo.",
+ "demo_order_fix": "Opravená chyba 501 v ukázce objednávky: nefunkční odesílání nahrazuje jasně označený odkaz na ukázkovou stránku. Cesta tam i zpět prošla skutečným prohlížečem.",
+ "onboarding_reconciled": "Připojení serveru už nečeká na podklady od operátora. První omezená automatizace záloh a publikování běží; obecné nasazování dalších aplikací pokračuje jako samostatná práce.",
  "publication_ready": "Nové ovládání přípravy, náhledu a publikování prošlo 122 testy i prohlížečem na mobilu, tabletu a desktopu. Připravuje se nasazení do administrace.",
  "reference_api_pass": "Referenční API je dostupné z mobilních dat; skutečný požadavek na jedno náhodné číslo v zadaném rozsahu prošel. Kontrola referenční aplikace je dokončená.",
  "publication_local_started": "Vzniká příprava, chráněný náhled, publikování a návrat záložní verze přímo z administrace. Zveřejnění vyžaduje ověřenou vzdálenou zálohu a obnovu; probíhají testy před nasazením.",

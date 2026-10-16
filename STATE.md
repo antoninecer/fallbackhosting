@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T18:24:32Z — FH-0027 DONE: actual live authenticated prepare/backup/readback/restore/preview/publish/rollback and independent serving PASS;122 tests PASS. Fixed demo501, actual order navigation PASS; reference API plus operator phone/dashboard evidence completes FH-0003. FH-0011 IN_PROGRESS without operator-input blocker. Final demo ONLINE_AUTO_NO_SCHEDULE, publication ROLLED_BACK after accepted rollback drill. See `checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md`.
+
 2026-10-16T18:20:35Z — FH-0003 bounded reference acceptance DONE; FH-0027 TESTING after122 pinned tests and disposable browser acceptance. Public demo POST501 correction applied to owned container with retained old image/container; unrelated workloads and protected canaries PASS. See `checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md`.
 
 FH-0027 IN_PROGRESS: fixed-demo preparation/backup-gated preview/publication/rollback implemented. Six new backend/PHP tests and actual disposable Chromium360/768/1440 workflow PASS. Pinned release tests need a commit containing the new source; no publication service activation yet. Operator also confirmed reference API root JSON and live cafe demo from phone; dynamic random test returned an empty result and remains unresolved.
