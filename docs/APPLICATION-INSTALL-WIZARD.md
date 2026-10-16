@@ -2,9 +2,13 @@
 
 The operator requested removal of the manually installed controller and a trial through the authenticated lab application. This first template reinstalls the already prepared Coolify 4.4.6 stack on ctx1, using its retained data/volumes and cached immutable images. It is not a general image/Compose runner or a fresh-server installer. The prior controller had no users; account creation refuses a nonempty user table.
 
+2026-10-16 actual trial: exactly one authenticated HTTPS browser request completed SUCCEEDED, all three services healthy, native owner created and registration disabled; native browser login/logout also passed. The operator-authorized credential correction subsequently synchronized lab and Coolify to a generated 16-character password with all four required groups, stored only in the ignored operator JSON. Never replay the installation/bootstrap against this now-enrolled instance. Broader deployment-target enrollment and demo deployment remain separate M03 gates.
+
 ## Operator flow
 
 In `lab.ventureout.cz`, open **Aplikace**, select the verified Docker node, read the template explanation and fill the initial administrator email, password and password confirmation. The wizard explains three services, resource limits, retained data, separate Coolify credentials and private access. It displays worker availability and requires an explicit installation checkbox. It never requests an SSH key or command. A missing worker rejects submission before saving credentials.
+
+Passwords must contain lowercase and uppercase letters, a digit and a symbol, without spaces (12–128 characters accepted). The operator generator `scripts/generate-admin-credential.py` defaults to 16 random characters and guarantees all four groups before writing a new private file. The initial incompatible generated password was replaced, not silently modified by the installer.
 
 After submission, the status page refreshes every five seconds. It displays only fixed stages/outcomes and timestamps. Success requires healthy services, creation of the native admin with a matching password hash, disabled registration and an unchanged unrelated workload. Native browser login is a further acceptance check; health alone is not that check. No public Coolify URL is created by this feature.
 

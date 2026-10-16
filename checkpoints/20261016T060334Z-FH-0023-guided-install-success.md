@@ -1,0 +1,7 @@
+# FH-0023 actual guided installation succeeded
+
+- UTC: 2026-10-16T06:03:34Z; worker SUCCEEDED at 06:03:10Z. Exactly one real installation request submitted through authenticated HTTPS Chromium after operator-authorized credential rotation. Browser status reached success and logout passed.
+- OBSERVED: new compatible lab credential works; original lab credential rejected in a fresh login. Private operator JSON and prepared/live Argon2id authentication synchronized with private recovery copies. No plaintext in this checkpoint or public project.
+- Remote fixed worker verified three healthy services, native administrator ownership/password hash, disabled registration and original unrelated workload unchanged. Actual native browser login remains the next acceptance check; no success inferred from health alone.
+- Operator asks whether 15/16 characters suffice. Generator defaults to 16 random characters with guaranteed lowercase/uppercase/digit/symbol, exclusive private output and regression tests. Current trial used the prior new 20-character credential; next scoped correction synchronizes both accounts to a new 16-character credential without container recreation or data deletion.
+- Recovery: never resubmit successful installation or rerun the bootstrap against an existing administrator. Further credential correction must verify the exact existing account and old hash, back up authentication privately and preserve team ownership/registration settings. Infrastructure configuration unchanged.
