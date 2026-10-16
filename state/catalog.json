@@ -948,7 +948,7 @@
     {
       "id": "FH-0025",
       "title": "První úplný průchod statickou zálohou a přepínáním",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex",
       "acceptance": "Repository-local vertical slice: approved fixture-site export with self-contained assets and resized images; preview, atomic versioned publication and previous-release retention; per-app backend/VPN-failure simulation, manual maintenance, controller-independent serving and stable recovery. Test unrelated-app isolation and disabled dynamic actions. No claim of actual production failover until separately scoped live verification. Include persisted planned maintenance windows, explicit affected apps, Prague/UTC time handling, contact-only notice, maintenance precedence over healthy probes, extension/overrun and health-gated return; announcement preview only, no actual messaging.",
       "dependencies": [],
@@ -958,10 +958,11 @@
         "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md",
         "docs/MINIMUM-STANDBY.md",
         "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md",
-        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
+        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md",
+        "checkpoints/20261016T084138Z-public-demo-complete.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-16T08:41:38Z",
+      "completion_revision": "8930bf250e02cee4f17949407ca7a04ebf95a39f",
       "milestone": "M05",
       "scope": "Local fixtures/proxy adapters only; reuse current controller and existing deployment products. No Nginx/HAProxy, Tailscale, service, DNS or live app changes.",
       "rollback": "Revert repository-local prototype and rebuild reviewed public projection; no runtime resources or deployed snapshots modified.",
@@ -981,13 +982,22 @@
           "evidence": [
             "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md"
           ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-16T08:41:38Z",
+          "evidence": [
+            "checkpoints/20261016T084138Z-public-demo-complete.md",
+            "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
+          ]
         }
       ]
     },
     {
       "id": "FH-0026",
       "title": "Veřejná aktivace demo fallbacku a údržby",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Operator + Codex",
       "acceptance": "Exact prepared scope in docs/MINIMUM-STANDBY.md: add only /demo/ locations to existing lab vhost, create named static/service trees, install/start only fallback-standby-demo socket/service, activate frozen PHP release with maintenance UI and narrow Nginx/PHP-FPM reloads. Require exact operator approval, immutable candidate/unchanged-state checks, private backup/journal/rollback and actual post-activation TLS/browser/control/auth/health/outage/recovery acceptance.",
       "dependencies": [],
@@ -996,10 +1006,11 @@
         "checkpoints/20261016T071300Z-FH-0025-public-activation-prepared.md",
         "checkpoints/20261016T083732Z-FH-0026-approved-activation-start.md",
         "checkpoints/20261016T083846Z-FH-0026-activated-testing.md",
-        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
+        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md",
+        "checkpoints/20261016T084138Z-public-demo-complete.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-16T08:41:38Z",
+      "completion_revision": "8930bf250e02cee4f17949407ca7a04ebf95a39f",
       "milestone": "M05",
       "scope": "Operator approved exact prepared demo/vhost/two-unit/admin activation and subsequent deployments within that application scope. Other infrastructure remains protected.",
       "rollback": "Use exact backed-up lab vhost/previous PHP pointer; stop/disable only two new units; syntax-test/narrow reload and recheck protected canaries; preserve artifacts/runtime/backups.",
@@ -1026,6 +1037,15 @@
           "utc": "2026-10-16T08:38:46Z",
           "evidence": [
             "checkpoints/20261016T083846Z-FH-0026-activated-testing.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-16T08:41:38Z",
+          "evidence": [
+            "checkpoints/20261016T084138Z-public-demo-complete.md",
+            "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
           ]
         }
       ]
