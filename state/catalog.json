@@ -1244,7 +1244,8 @@
         "checkpoints/20261016T203755Z-web-migration-scope-accepted.md",
         "checkpoints/20261016T211031Z-production-source-capacity-scope.md",
         "docs/WEB-VOLUME-MIGRATION.md",
-        "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md"
+        "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md",
+        "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -1263,7 +1264,8 @@
       "evidence": [
         "docs/WEB-MIGRATION-MVP.md",
         "checkpoints/20261016T203755Z-web-migration-scope-accepted.md",
-        "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md"
+        "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md",
+        "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -1334,6 +1336,24 @@
       "milestone": "M03",
       "scope": "Operator reports a further production Docker source; its endpoint, account and independently attested host key have not yet been supplied/verified. Source discovery and placement adapter not deployed. Migration adapter development can continue independently.",
       "rollback": "Read-only inspection creates no production resources; preserve original runtime/configuration. Any later consistent export/restore has separate app-scoped plan and private data custody.",
+      "history": []
+    },
+    {
+      "id": "FH-0033",
+      "title": "Webový přesun testovací aplikace s daty",
+      "status": "DONE",
+      "owner": "Codex",
+      "acceptance": "Actual authenticated browser create Redis+web with two labelled data volumes; migrate ctx1 to vasatkova, write new data, migrate back to fresh volumes and verify DB/file equality plus restart persistence. Real capacity checks, checksum/readback, source retention, no unrelated-container changes and auth/mobile/logout PASS.",
+      "dependencies": [],
+      "evidence": [
+        "docs/WEB-VOLUME-MIGRATION.md",
+        "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md"
+      ],
+      "completed_at_utc": "2026-10-16T21:26:22Z",
+      "completion_revision": "97f45f0dc4e3726adf36fe51975f018e7ea51dd5",
+      "milestone": "M03",
+      "scope": "Strictly owned artificial fixture, two private allowlisted nodes, fixed commands and digests; real web/Unix/SSH/Docker execution. General production import/shared-MySQL not implied.",
+      "rollback": "Reverse migrate current data to fresh volumes as tested. Preserve old volumes/archives; never restart stale source after writes. Exact code/policy/PHP rollback journal retained, not exercised live.",
       "history": []
     }
   ],

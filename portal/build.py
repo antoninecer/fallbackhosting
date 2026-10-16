@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0033": "Webový přesun testovací aplikace s daty",
  "FH-0032": "Inventura produkčního zdroje a výběr cíle",
  "FH-0031": "Průvodce přidáním a inicializací serveru",
  "FH-0028": "Domény aplikací a přehled směrování",
@@ -63,6 +64,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "volume_migration_live_pass": "Skutečný přesun ovládaný z webu prošel: testovací databáze a web se dvěma datovými svazky z ctx1 na druhý server a zpět. Nová data přežila přesuny i restart; původní svazky zůstaly zachované a ostatní aplikace beze změny. Obecný import produkčních aplikací a sdílené MySQL ještě nejsou dokončené.",
  "volume_migration_ready": "Nová VM má skutečně ověřený Docker a Compose. Webový přesun vlastní testovací aplikace se dvěma datovými svazky prošel místními testy a prohlížečem; skutečný přesun tam i zpět nyní ověřujeme. Obecný import produkčních aplikací ještě není hotový.",
  "server_onboarding_live_ready": "Průvodce přidáním serveru je nasazený. Skutečné SSH ověření testovací VM i prohlížeč na mobilu, tabletu a desktopu prošly. Instalace Dockeru čeká na výslovné potvrzení v administraci; zatím nebyla spuštěna.",
  "production_source_scope": "Doplněn produkční scénář: zdrojový Docker server pouze prověřit, zjistit aplikace a závislosti a doporučit cíl podle skutečné kapacity. Přístup ke zdroji zatím není ověřený. Historická maxima bez měření zůstávají neznámá; migrace ještě není hotová.",

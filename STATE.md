@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T21:26:22Z — FH-0033 DONE: actual WEB ctx1 → vasatkova → ctx1 owned Redis/file-volume migration, new data8 and restart persistence PASS.130 repository tests, mobile/tablet/desktop, CSRF/Origin/logout, strict SSH and unrelated workload/canary checks PASS. Two current containers running on ctx1, prior four stopped, six volumes retained; no public ports. FH-0031 real VM initialization DONE; general migration/shared-MySQL still IN_PROGRESS, production source access FH-0032 still BLOCKED. Evidence: `checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md`.
+
 2026-10-16T21:11:19Z — FH-0031 LIVE at pinned PHP/source831a239: actual browser360/768/1440, strict VM SSH inspection READY and protected canaries PASS. Docker absent; initialization NOT requested. Production-source read-only inventory and measured destination selection clarified in docs/WEB-MIGRATION-MVP.md. FH-0032 BLOCKED pending actual source access/identity; migration engineering FH-0029 continues. No production source queried or copied. See `checkpoints/20261016T211031Z-production-source-capacity-scope.md`.
 
 2026-10-16T21:05:46Z — FH-0031 new-server wizard implemented locally; actual vasatkova SSH/identity/resources/operator sudo PASS, Docker absent. Registered with SSH/fingerprint PASS and Docker UNKNOWN using private backups/lock/audit. No target runtime initialization or new gateway service yet. See `checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md`.

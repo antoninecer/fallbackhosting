@@ -4,8 +4,8 @@
   "milestone": "M03",
   "phase": "IN_PROGRESS",
   "task_id": "FH-0029",
-  "live_verified_at_utc": "2026-10-16T21:11:19Z",
-  "last_checkpoint": "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md",
+  "live_verified_at_utc": "2026-10-16T21:26:22Z",
+  "last_checkpoint": "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "Actual VM initialization completed and Docker/Compose readiness verified. Owned Redis/file-volume migration UI/broker passed130 repository tests and complete disposable browser360/768/1440. Real web roundtrip awaits journaled service/PHP activation.",
-  "next_safe_action": "Activate pinned private migration adapter and PHP UI; run actual browser ctx1 -> vasatkova -> ctx1 with new writes, restart persistence and protected canaries. Production source import/shared MySQL remain incomplete.",
+  "current_summary": "LIVE web-owned Redis/file-volume roundtrip ctx1 -> vasatkova -> ctx1 PASS, including new counter8 data and restart persistence. Two active containers, previous copies stopped/volumes retained, protected canaries PASS. General production import/shared MySQL not complete.",
+  "next_safe_action": "Use authenticated /?migration=1 to inspect capacity, move the retained owned fixture, add test records and verify restart persistence. Continue production-source discovery/shared-MySQL adapter; actual production source access/identity remains missing.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -120,7 +120,7 @@
     "tests_passed": 14,
     "browser_qa": "STANDBY_LOGIN_CENTER_LOGOUT_360_768_1440_PASS",
     "ssh_key_access": "NONE",
-    "remote_operations": "SCOPED_COOLIFY_TRIAL_ONLY_NO_GENERIC_DOCKER_SERVICE",
+    "remote_operations": "PRIVATE_NODE_INITIALIZATION_AND_OWNED_VOLUME_MIGRATION_LIVE",
     "deployment_plan": "docs/ADMIN-ACTIVATION.md",
     "activation_approval": "EXPLICIT_OPERATOR_APPROVAL_RECORDED_IN_CHECKPOINT",
     "preflight": "PASS_CURRENT_SERVICES_TARGET_ABSENCE_DNS_PRIVATE_SEED_SOURCE_INTEGRITY",
@@ -133,9 +133,9 @@
     "center_release_revision": "5b57a1e7886cf0976f948dc46da845c66c704d11",
     "center_release_status": "LIVE_HTTPS_AUTH_ASSET_LOGOUT_CANARIES_PASS",
     "center_operator_browser_confirmation": "PENDING",
-    "active_release_revision": "831a2394085010b90d4342f7bb6b06204efeb5b6",
+    "active_release_revision": "97f45f0dc4e3726adf36fe51975f018e7ea51dd5",
     "installer_ui_status": "LIVE_BROWSER_360_768_1440_PASS",
-    "last_full_repository_tests": 126
+    "last_full_repository_tests": 130
   },
   "public_events": [
     {
@@ -537,6 +537,10 @@
     {
       "id": "volume_migration_ready",
       "utc": "2026-10-16T21:22:44Z"
+    },
+    {
+      "id": "volume_migration_live_pass",
+      "utc": "2026-10-16T21:26:22Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -673,6 +677,22 @@
     "initialization": "SUCCEEDED_REAL_RUNTIME_VERIFIED",
     "browser": "LIVE_360_768_1440_PASS",
     "repository_tests": 130,
-    "evidence": "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md"
+    "evidence": "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md"
+  },
+  "web_volume_migration": {
+    "status": "LIVE_ACTUAL_BROWSER_ACCEPTANCE_PASS",
+    "observed_at_utc": "2026-10-16T21:26:22Z",
+    "task_id": "FH-0033",
+    "source_revision": "97f45f0dc4e3726adf36fe51975f018e7ea51dd5",
+    "directions": 2,
+    "new_data_counter": 8,
+    "db_and_files": "EXACT_EQUALITY_AND_RESTART_PERSISTENCE_PASS",
+    "browser": "360_768_1440_AUTH_CSRF_ORIGIN_LOGOUT_PASS",
+    "originals": "FOUR_OLD_CONTAINERS_STOPPED_SIX_VOLUMES_RETAINED",
+    "public_ports": 0,
+    "unrelated_workloads": "UNCHANGED",
+    "production_import": "NOT_IMPLEMENTED",
+    "shared_mysql": "NOT_IMPLEMENTED",
+    "evidence": "checkpoints/20261016T212622Z-FH-0033-web-volume-roundtrip-pass.md"
   }
 }
