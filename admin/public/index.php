@@ -72,6 +72,9 @@ try {
                 require dirname(__DIR__) . '/install.php';
                 install_action($action, $_POST, read_json('inventory'));
             }
+            if ($action==='standby-control') {
+                require dirname(__DIR__).'/standby.php';standby_action($_POST);
+            }
             if ($action !== 'save-server') { throw new InputError('Neznámá operace.'); }
             $revision = field($_POST,'revision',10);
             if (!ctype_digit($revision)) { throw new InputError('Neplatná revize.'); }
@@ -98,6 +101,10 @@ try {
     http_response_code(503); exit('Administrace zatím není bezpečně připravena. Kontaktujte správce.');
 }
 $csrf = $_SESSION['csrf'];
+if (array_key_exists('standby',$_GET)) {
+    if (!$loggedIn) { http_response_code(401);exit('Přihlaste se na hlavní stránce administrace.'); }
+    require_once dirname(__DIR__).'/standby.php';serve_standby($csrf,$error);
+}
 if (array_key_exists('install', $_GET)) {
     if (!$loggedIn) { http_response_code(401); exit('Přihlaste se na hlavní stránce administrace.'); }
     require_once dirname(__DIR__) . '/install.php';
@@ -116,7 +123,7 @@ function observation(array $server, string $kind): string {
 }
 ?>
 <!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FallbackHosting · Správa serverů</title><link rel="stylesheet" href="/admin.css"></head>
-<body><header><a class="brand" href="/">F/ <span>FallbackHosting</span></a><span class="tag">Administrace</span><?php if ($loggedIn): ?><a href="/?install=1">Aplikace</a><a href="/?center=index.html">Řídicí centrum</a><form method="post"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><input type="hidden" name="action" value="logout"><button class="quiet">Odhlásit</button></form><?php endif; ?></header>
+<body><header><a class="brand" href="/">F/ <span>FallbackHosting</span></a><span class="tag">Administrace</span><?php if ($loggedIn): ?><a href="/?install=1">Aplikace</a><a href="/?standby=1">Dostupnost a údržba</a><a href="/?center=index.html">Řídicí centrum</a><form method="post"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><input type="hidden" name="action" value="logout"><button class="quiet">Odhlásit</button></form><?php endif; ?></header>
 <main><?php if ($error !== ''): ?><p class="alert" role="alert"><?=e($error)?></p><?php endif; ?><?php if ($notice !== ''): ?><p class="notice" role="status"><?=e($notice)?></p><?php endif; ?>
 <?php if (!$loggedIn): ?>
 <section class="login panel"><p class="eyebrow">SPRÁVA PLATFORMY</p><h1>Přihlášení správce</h1><p class="muted">Konfigurace aplikačních serverů a jejich ověření.</p><form method="post"><input type="hidden" name="action" value="login"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><label>Uživatelské jméno<input name="username" autocomplete="username" maxlength="40" required></label><label>Heslo<input type="password" name="password" autocomplete="current-password" maxlength="256" required></label><button>Přihlásit se</button></form></section>

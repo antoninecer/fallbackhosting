@@ -1,0 +1,7 @@
+# FH-0025 authenticated control locally verified
+
+- UTC 2026-10-16T07:00:46Z. Nine new targeted tests pass (six core slice, three control/security/time tests). Actual PHP-to-Unix peer roundtrip checks auth/Origin/CSRF, scope/extra fields/actor/UID/revision denial and fail-closed transitions.
+- Actual Chromium360/768/1440 maintenance UI PASS: existing login, navigation, maintenance/auto, Prague interval save, announcement preview, cancellation, logout/anonymous denial and no horizontal overflow. Screenshots retained privately. No actual customer messages/window on production created.
+- Prague UTC conversion winter/summer PASS; nonexistent spring and ambiguous autumn local times rejected instead of silently selecting the wrong hour. Worker/public-copy code remain separate from PHP.
+- Candidate service/socket static verification PASS; no unit installed or daemon-reload performed. Full suite ran111 tests before a source commit; four release fixtures require the new committed files and could not run from old HEAD. All other107 passed; rerun after committing verified source rather than weakening exact-Git verifier. No full-suite PASS claimed yet.
+- Concrete public activation scope and rollback in docs/MINIMUM-STANDBY.md. Existing public site/prod Nginx/current PHP release are unchanged; service/UI publicly unactivated. Root-owned frozen source/artifacts must be staged and tested before exact operator approval is requested.

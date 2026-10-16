@@ -1,0 +1,36 @@
+[Unit]
+Description=FallbackHosting isolated demo health and maintenance
+Requires=fallback-standby-demo.socket
+After=network-online.target fallback-standby-demo.socket
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+Sockets=fallback-standby-demo.socket
+WorkingDirectory=/var/lib/fallback-standby-demo/code
+ExecStart=/usr/bin/python3 -m standby.control --policy /var/lib/fallback-standby-demo/policy.json --socket-fd 3
+ExecStopPost=/usr/bin/touch /var/lib/fallback-standby-demo/runtime/unhealthy
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/fallback-standby-demo/runtime
+RestrictAddressFamilies=AF_UNIX AF_INET
+CapabilityBoundingSet=
+LockPersonality=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+MemoryMax=96M
+CPUQuota=15%
+TasksMax=24
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

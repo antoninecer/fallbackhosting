@@ -1,0 +1,13 @@
+[Unit]
+Description=FallbackHosting demo maintenance control socket
+
+[Socket]
+ListenStream=/var/lib/fallback-web/admin/standby.sock
+SocketUser=fallback-web
+SocketGroup=fallback-web
+SocketMode=0600
+Service=fallback-standby-demo.service
+RemoveOnStop=true
+
+[Install]
+WantedBy=sockets.target

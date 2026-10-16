@@ -1,0 +1,7 @@
+# FH-0025 minimum composable standby slice
+
+- Work starts after 2026-10-16T06:34:22Z baseline. Operator requests immediate smallest useful assembled version, extensibility and a remote backup; permits an owned small remote demo/backuper. No new token budget/goal was specified.
+- Scope: modular local export/image tools, isolated Nginx proxy/static serving, maintenance/health gate, one owned small ctx1 demo using cached immutable image, isolated remote backup directory with checksum/readback and restore drill. Use existing SSH/Tailscale and preserve all current workloads. USB/disk mapping is optional later, not performed without identifying the exact disk.
+- Acceptance: actual ONLINE/STANDBY/maintenance/stable recovery with local assets, no dynamic writes during standby, bounded export, optimized image evidence, versioned rollback, independent serving and checked remote backup/isolated restore. Distinguish local demonstration from public activation; no unapproved shared Nginx/service/DNS change.
+- Baseline: clean Git 7b71dbc; protected production/project/lab canaries PASS; wget, Nginx and ImageMagick already installed. No OS installs needed.
+- Rollback: stop/remove exact newly owned demo resources after journal reconciliation; preserve current ctx1 workloads/Coolify/data. Stop isolated local processes. Retain prior snapshot pointers and remote backup; no volume deletion, disk mount or broad cleanup. Shared public activation requires a concrete reviewed target/config/rollback under AGENTS.md.

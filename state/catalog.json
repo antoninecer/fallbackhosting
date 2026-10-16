@@ -63,11 +63,13 @@
     {
       "id": "M05",
       "title": "Versioned Fallback Builder",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
       "acceptance": "Safe exported HTML/assets; preview; immutable release; atomic publish; rollback",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261016T070046Z-FH-0025-control-ui-local-pass.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null
     },
@@ -923,7 +925,7 @@
     {
       "id": "FH-0025",
       "title": "První úplný průchod statickou zálohou a přepínáním",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "owner": "Codex",
       "acceptance": "Repository-local vertical slice: approved fixture-site export with self-contained assets and resized images; preview, atomic versioned publication and previous-release retention; per-app backend/VPN-failure simulation, manual maintenance, controller-independent serving and stable recovery. Test unrelated-app isolation and disabled dynamic actions. No claim of actual production failover until separately scoped live verification. Include persisted planned maintenance windows, explicit affected apps, Prague/UTC time handling, contact-only notice, maintenance precedence over healthy probes, extension/overrun and health-gated return; announcement preview only, no actual messaging.",
       "dependencies": [],
@@ -937,7 +939,16 @@
       "milestone": "M05",
       "scope": "Local fixtures/proxy adapters only; reuse current controller and existing deployment products. No Nginx/HAProxy, Tailscale, service, DNS or live app changes.",
       "rollback": "Revert repository-local prototype and rebuild reviewed public projection; no runtime resources or deployed snapshots modified.",
-      "history": []
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T06:34:22Z",
+          "evidence": [
+            "checkpoints/20261016T063422Z-FH-0025-minimum-slice-start.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],

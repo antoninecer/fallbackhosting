@@ -1,0 +1,8 @@
+# FH-0025 actual remote outage/browser/backup cycle PASS
+
+- UTC 2026-10-16T06:55:01Z. Actual owned remote demo stop/start cycle and independent local Nginx verified, including prefixed `/demo/` candidate. This is not a public route activation.
+- Chromium PASS at360/768/1440: ONLINE, backend-stop STANDBY, healthy-backend MAINTENANCE; all images load locally, no external requests or horizontal overflow, no forms/scripts in standby. Mobile screenshot inspected; CTA label subsequently corrected to contact rather than online ordering and prefixed candidate reverified.
+- Stable three-success gate, scheduled interval and POST503 denial PASS. Remote backup readback was restored, served by Nginx, then atomically rolled back to original release. Original remote workload preservation checked after every scoped stop/start; protected gateway/reference/lab and Coolify canaries PASS.
+- Candidate for public lab `/demo/` prepared without editing `/etc/nginx`; full shadow Nginx syntax PASS. Initial shadow-relative include failure and fixture missing Content-Type were fixed in test setup; no production reload/change occurred. Six core slice tests PASS after namespace/isolation/overrun fixes.
+- Public candidate uses a new verified/remote-backed release; backup archive24,925 bytes, remote readback/isolated restore PASS. Backup scope remains static demo only, not databases/controller/VM.
+- Local authenticated maintenance UI and bounded Unix-peer adapter are being added using existing protocol/PHP client. They are NOT deployed yet. Public activation requires exact reviewed shared-vhost/service/release target authorization under AGENTS.md; unrelated engineering continues meanwhile.

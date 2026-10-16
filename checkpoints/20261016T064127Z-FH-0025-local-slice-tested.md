@@ -1,0 +1,8 @@
+# FH-0025 first local slice verified; remote demo next
+
+- UTC 2026-10-16T06:41:27Z. Five new tests PASS (10.269s), including a real isolated Nginx process with actual HTTP requests. No shared system service/config used.
+- Verified explicit one-page export with theme retained, forms removed/contact added, ImageMagick resized WebP smaller than source, manifest hashing and atomic publication. Redirect/cookie/unapproved image/active CSS rejection tested.
+- Verified real proxy ONLINE, backend503 intercepted to local standby, independently local image/CSS200, maintenance blocks POST before origin, health gate blocks return and recovery works without PHP/Coolify/watcher. Snapshot archival/isolated restore passes; corruption/traversal/overwrite rejected.
+- Maintenance scheduler/stable three-check recovery tested as local policy. Generic crawler/WordPress export, persistent production watcher, public route and operator UI remain incomplete.
+- Next scoped action: one fixed-name labelled small demo container on ctx1, built from existing cached BusyBox immutable image, read-only/nonroot/bounded, HTTP port18080 bound only to the existing tailnet IP. No volume, new image pull, existing workload change, firewall/DNS/Tailscale change. Private journal/baseline before mutation; reconcile before retry; rollback stop/remove this exact ownership-checked container only, leave image/data for diagnosis.
+- Operator authorized owned demo Docker practice and immediate minimal deployment; public shared Nginx activation is still a separate exact-target/config action under AGENTS.md. Continue concrete preparation/tests before any permission request.

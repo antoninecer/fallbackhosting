@@ -15,6 +15,8 @@ SOURCES = {
     'lib.php': 'admin/lib.php',
     'center.php': 'admin/center.php',
     'install.php': 'admin/install.php',
+    'standby.php': 'admin/standby.php',
+    'operations-client.php': 'admin/operations-client.php',
     'installer/install_worker.py': 'operations/install_worker.py',
     'installer/coolify_reinstall.py': 'operations/coolify_reinstall.py',
 }

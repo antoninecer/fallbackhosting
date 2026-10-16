@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M03",
-  "phase": "READY",
+  "milestone": "M05",
+  "phase": "IN_PROGRESS",
   "task_id": "FH-0025",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md",
-  "current_summary": "Availability-first operator clarification: one FallbackHosting UI over VPN-connected nodes; flexible Coolify placement/count behind adapters. Prioritize independent local static standby and per-app failure/maintenance/stable recovery. Current ctx1 controller unchanged; no migration needed solely for topology.",
+  "last_checkpoint": "checkpoints/20261016T070046Z-FH-0025-control-ui-local-pass.md",
+  "current_summary": "Actual remote demo stop/start, real isolated prefixed Nginx and Chromium360/768/1440 PASS for online/outage/static assets/maintenance/scheduled window/three-check recovery. Remote backup readback restored, served and rolled back. Adding authenticated UI via existing bounded Unix protocol; no public proxy/service activation yet.",
   "next_safe_action": "Implement/test repository-local standby vertical slice with fixture site export and resized images, versioned preview/publication, per-app outage and controller-independent proxy behavior, maintenance and stable recovery. Keep backup discovery FH-0024 READY; no live proxy/VPN/controller changes. Include scheduled maintenance/notice/contact-only windows and overrun tests; no actual window or notifications created.",
   "blocking_issue": null,
   "warnings": [
@@ -430,6 +430,26 @@
     {
       "id": "maintenance_windows_specified",
       "utc": "2026-10-16T06:32:01Z"
+    },
+    {
+      "id": "minimum_standby_started",
+      "utc": "2026-10-16T06:37:04Z"
+    },
+    {
+      "id": "minimum_standby_local_pass",
+      "utc": "2026-10-16T06:41:27Z"
+    },
+    {
+      "id": "minimum_standby_remote_backup",
+      "utc": "2026-10-16T06:45:19Z"
+    },
+    {
+      "id": "minimum_standby_actual_outage",
+      "utc": "2026-10-16T06:55:01Z"
+    },
+    {
+      "id": "minimum_standby_control_local_pass",
+      "utc": "2026-10-16T07:00:46Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -510,5 +530,20 @@
     "restore_test": "NOT_TESTED",
     "coolify_placement": "FLEXIBLE_BEHIND_FALLBACKHOSTING_ADAPTER",
     "priority": "INDEPENDENT_PUBLIC_CONTENT_AVAILABILITY"
+  },
+  "standby_demo": {
+    "scope": "OWNED_REMOTE_DEMO_ISOLATED_LOOPBACK_GATEWAY",
+    "public_activation": "CANDIDATE_PREPARED_NOT_ACTIVATED",
+    "source_image_bytes": 1019267,
+    "optimized_image_bytes": 22376,
+    "remote_static_backup": "VERIFIED_READBACK_AND_ISOLATED_RESTORE",
+    "controller_or_app_db_restore": "NOT_TESTED",
+    "evidence": "checkpoints/20261016T064519Z-FH-0025-remote-demo-and-backup.md",
+    "actual_remote_outage_browser": "PASS_360_768_1440",
+    "maintenance": "PASS",
+    "scheduled_window": "PASS",
+    "stable_recovery": "PASS_THREE_CHECKS",
+    "restore_serving_rollback": "PASS",
+    "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED"
   }
 }
