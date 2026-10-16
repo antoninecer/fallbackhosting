@@ -6,6 +6,8 @@ FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availabilit
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+FH-0024 first recovery increment at2026-10-16 07:22 UTC: actual three-copy SSH discovery, independent static restore drills and safe nonexecuting preview verified;116 tests PASS. M08 is IN_PROGRESS for this bounded work, not completed full-server disaster recovery. Exact public demo activation remains separately pending under FH-0026.
+
 FH-0025 minimum slice at 2026-10-16 07:10 UTC: actual remote-demo/independent-Nginx outage and static rollback verified,113 tests PASS, maintenance UI and unprivileged worker locally tested, backup/readback/isolated restore gates publication. Public `/demo/` activation and production control acceptance remain pending; M05 is IN_PROGRESS rather than complete from a one-page prototype.
 
 2026-10-16 06:30 clarification supersedes mandatory public Coolify placement: unified FallbackHosting control and independent public-content availability take priority. Coolify instances are replaceable deployment adapters; reuse existing controller for first complete VPN/backend-outage/standby/maintenance/recovery demonstration. First implement/test a repository-local standby vertical slice; SSH backup discovery remains a separate READY task. No live edge reconfiguration or controller migration performed.
@@ -28,7 +30,7 @@ Operator-directed placement/recovery clarification 2026-10-16: central managemen
 | M05 | Versioned Fallback Builder | IN_PROGRESS | Safe exported HTML/assets; preview; immutable release; atomic publish; rollback |
 | M06 | Standby Gateway + recovery | PLANNED | Per-app failover, hysteresis, manual force/restore, no cross-app outage |
 | M07 | Emergency Contact | PLANNED | Independently hosted contact mechanism passes abuse/delivery tests |
-| M08 | Resilience and recovery tests | PLANNED | One app, Docker, LXC, Tailscale outage tests; existing Quantum unaffected |
+| M08 | Resilience and recovery tests | IN_PROGRESS | One app, Docker, LXC, Tailscale outage tests; existing Quantum unaffected |
 | M09 | Durable AI continuity | PLANNED | Checkpoint + automatic project UI ingestion; controlled restart after interruption |
 | M10 | v1 release | PLANNED | Backup/restore, security review, docs and repeatable install tests |
 

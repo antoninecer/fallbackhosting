@@ -27,5 +27,6 @@ def backup_provider(release,archive,digest):
     with returned.open('xb') as stream:stream.write(readback)
     returned.chmod(0o600)
     restore(returned,archive.parent/(release.name+'-restore'),digest)
+    fixed_script(source,{'action':'mark_restore_tested','sha256':digest},node)
     return {'remote_copy':'VERIFIED','remote_readback':'VERIFIED','isolated_restore':'PASS','sha256':digest}
 print(json.dumps(publish_with_backup(config,backup_provider)))

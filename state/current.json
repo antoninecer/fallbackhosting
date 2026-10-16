@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M08",
-  "phase": "IN_PROGRESS",
+  "phase": "TESTING",
   "task_id": "FH-0024",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T071400Z-FH-0024-catalog-start.md",
-  "current_summary": "Actual remote demo stop/start, real isolated prefixed Nginx and Chromium360/768/1440 PASS for online/outage/static assets/maintenance/scheduled window/three-check recovery. Remote backup readback restored, served and rolled back. Adding authenticated UI via existing bounded Unix protocol; no public proxy/service activation yet.",
-  "next_safe_action": "Continue read-only bounded owned-backup catalog discovery/restore planning while exact public demo activation decision is pending. Only if explicitly approved, revalidate frozen candidate and apply the named scope, then perform real public acceptance tests.",
+  "last_checkpoint": "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md",
+  "current_summary": "Minimum standby slice implemented and verified: actual remote-demo outage/maintenance/recovery, optimized local snapshot, admin/Unix controls and backup-gated publication. Read-only SSH catalog found three archives; all three independently restored, safe selected preview works. Full116 tests PASS. Public demo activation awaits only exact operator approval FH-0026; existing production unchanged.",
+  "next_safe_action": "On explicit approval revalidate frozen22cec4b candidate, record checkpoint and apply exactly reviewed public demo/UI/two-unit scope with canaries and scoped rollback, then actual HTTPS/browser/control/unit/outage/recovery acceptance. Do not infer authorization; full controller/database recovery and generic WordPress export remain separate.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -458,6 +458,10 @@
     {
       "id": "minimum_standby_activation_prepared",
       "utc": "2026-10-16T07:13:00Z"
+    },
+    {
+      "id": "backup_discovery_restore_preview_pass",
+      "utc": "2026-10-16T07:22:48Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -553,8 +557,19 @@
     "stable_recovery": "PASS_THREE_CHECKS",
     "restore_serving_rollback": "PASS",
     "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED",
-    "repository_tests": "113_PASS",
+    "repository_tests": "116_PASS",
     "worker_identity_test": "REAL_WWW_DATA_PROCESS_PASS_NOT_SYSTEM_SERVICE",
     "publication": "BACKUP_READBACK_RESTORE_BEFORE_PUBLISH_PASS"
+  },
+  "backup_discovery": {
+    "scope": "OWNED_STATIC_SNAPSHOT_ONLY",
+    "observed_at_utc": "2026-10-16T07:22:48Z",
+    "discovered": 3,
+    "integrity_verified": 3,
+    "isolated_restore_tested": 3,
+    "preview": "NO_EXECUTION",
+    "provenance": "PINNED_SSH_REPOSITORY_NOT_SIGNED_ARCHIVE",
+    "controller_or_database_restore": "UNSUPPORTED",
+    "evidence": "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md"
   }
 }

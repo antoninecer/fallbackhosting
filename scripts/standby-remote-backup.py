@@ -33,5 +33,6 @@ assert hashlib.sha256(readback).hexdigest()==digest
 with args.readback.open('xb') as stream:stream.write(readback)
 args.readback.chmod(0o600)
 restored=restore(args.readback,args.restore_to,digest)
+fixed_script(source,{'action':'mark_restore_tested','sha256':digest},node)
 report={'remote_copy':'VERIFIED','remote_readback':'VERIFIED','isolated_restore':'PASS','sha256':digest,'bytes':len(body),'release':restored['release'],'scope':'STATIC_DEMO_RELEASE_ONLY'}
 print(json.dumps(report))

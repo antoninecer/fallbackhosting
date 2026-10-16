@@ -98,11 +98,13 @@
     {
       "id": "M08",
       "title": "Resilience and recovery tests",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
       "acceptance": "One app, Docker, LXC, Tailscale outage tests; existing Quantum unaffected",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null
     },
@@ -906,15 +908,16 @@
     {
       "id": "FH-0024",
       "title": "Obnova řídicího centra ze vzdálených záloh",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex",
-      "acceptance": "Fixture-only versioned backup catalog discovery and restore preview: safe bounded parsing, archive presence/integrity/provenance and compatibility checks, controller versus application data and encryption-material requirements, exact target preview and negative tests. No live SSH/restore/migration. Public controller placement plan protects existing gateway/static independence.",
+      "acceptance": "Fixture-only versioned backup catalog discovery and restore preview: safe bounded parsing, archive presence/integrity/provenance and compatibility checks, controller versus application data and encryption-material requirements, exact target preview and negative tests. No live SSH/restore/migration. Public controller placement plan protects existing gateway/static independence. First static-only format PASS: actual SSH catalog found three copies, independently fetched/hash-verified/isolated-restored all three; nonexecuting new-destination preview and three recovery tests PASS. Full116 tests PASS. General controller/private-key/database/VM format remains UNSUPPORTED and must not be inferred from static success.",
       "dependencies": [],
       "evidence": [
         "docs/PUBLIC-CONTROLLER-RECOVERY.md",
         "checkpoints/20261016T062539Z-public-controller-recovery-design-start.md",
         "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md",
-        "checkpoints/20261016T071400Z-FH-0024-catalog-start.md"
+        "checkpoints/20261016T071400Z-FH-0024-catalog-start.md",
+        "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -928,6 +931,14 @@
           "utc": "2026-10-16T07:14:00Z",
           "evidence": [
             "checkpoints/20261016T071400Z-FH-0024-catalog-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T07:22:48Z",
+          "evidence": [
+            "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md"
           ]
         }
       ]

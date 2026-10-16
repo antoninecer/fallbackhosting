@@ -14,6 +14,7 @@ The first demo uses a fixed small owned BusyBox image/container with no persiste
 - `standby/gateway.py`: reviewed Nginx locations, independent health gate, persisted manual/windows policy and stable recovery.
 - `standby/backup.py`: portable tar+manifest, bounded strict isolated extraction, checksums and no overwrite.
 - `operations/standby_backup.py` / `standby/transport.py`: explicit operator-only fixed SSH repository adapter. A normal private directory is sufficient; no root Docker socket or new backup daemon is required. Later a specifically approved mounted USB path can be another repository provider.
+- `standby/recovery.py` / `scripts/discover-standby-backups.py`: bounded read-only catalog discovery and a selected isolated restore preview, with format/integrity/provenance distinctions. No automatic publish or controller/database restore is implied.
 - `standby/control.py`: maintenance/status/window control over the existing bounded peer-authenticated Unix protocol, with revision checks and bounded audit. No SSH/Docker/commands or arbitrary origins are accepted from the web.
 - `admin/standby.php`: existing administrator/session/Origin/CSRF boundary, Prague-time conversion including DST ambiguity rejection, manual/automatic buttons, one scheduled interval, announcement preview and clearly dated health/backup evidence.
 
@@ -24,6 +25,8 @@ The PHP socket client and framing are reused from the operations prototype. New 
 `scripts/standby.py` supports export, verified publish/rollback, backup, isolated restore, isolated Nginx config, bounded health watch and manual maintenance. `scripts/standby-remote-backup.py` requires an explicit execute flag, verified inventory identity, and copies/readbacks/restores one owned static archive. Credentials are never argv/output. Examples use approved private configuration only; never expose source origins/inventory/policies through public status.
 
 CLI export is still an operator step; the first UI controls maintenance/scheduling and shows the last verified release/backup. General app onboarding, generic crawling, customer messaging delivery, cross-version controller/database/VM recovery and a redundant second public edge are separate increments.
+
+`scripts/publish-standby.py` composes export, remote archive upload, independent readback, bounded isolated restore and only then atomic publication. Failed backup leaves the last published release untouched. Discovery verified three actual owned copies without using Coolify; each was fetched and independently restored again before recording the exact static-scope restore attestation. Catalog provenance is pinned-SSH repository trust, not a signed archive or proof that a compromised repository is trustworthy. Bootstrapping private/controller secrets requires a separately reviewed authenticated/encrypted format and independently recoverable identity/key material.
 
 ## Concrete public activation candidate (not applied)
 

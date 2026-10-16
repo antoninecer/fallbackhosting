@@ -1,5 +1,6 @@
 """Portable snapshot backup and strict isolated restore; no disk/service changes."""
 import hashlib
+import gzip
 import io
 import json
 from pathlib import Path
@@ -25,8 +26,10 @@ def restore(archive, destination, expected_sha256):
     archive, destination = Path(archive), Path(destination)
     if archive.stat().st_size > 32 * 1024 * 1024: raise ValueError('Backup too large')
     if hashlib.sha256(archive.read_bytes()).hexdigest() != expected_sha256: raise ValueError('Archive integrity mismatch')
+    with gzip.open(archive,'rb') as stream: raw=stream.read(34*1024*1024+1)
+    if len(raw)>34*1024*1024:raise ValueError('Uncompressed backup exceeds budget')
     bodies = {}
-    with tarfile.open(archive, mode='r:gz') as tar:
+    with tarfile.open(fileobj=io.BytesIO(raw), mode='r:') as tar:
         for member in tar:
             if member.name not in NAMES or member.name in bodies or not member.isfile() or member.size > 8 * 1024 * 1024:
                 raise ValueError('Unexpected, duplicate, linked or oversized backup member')

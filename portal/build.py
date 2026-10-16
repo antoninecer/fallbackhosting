@@ -56,6 +56,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "backup_discovery_restore_preview_pass": "Katalog přes SSH našel a ověřil tři skutečné zálohy statických stránek. Všechny tři byly stažené a znovu obnovené do oddělených adresářů. Funguje náhled vybrané obnovy bez přepisování živých dat; všech 116 testů prošlo. Obnova databází a celého řídicího centra zůstává samostatným úkolem.",
  "minimum_standby_activation_prepared": "Veřejné demo a ovládání jsou připravené, prověřené a zmrazené do verze. Čeká pouze konkrétní schválení zásahu do lab vhostu a dvou nových služeb podle pravidel projektu. Ostatní práce pokračuje rozpoznáváním vzdálených záloh; celé řešení na tuto otázku nečeká.",
  "minimum_standby_release_ready": "Všech 113 testů prošlo. Ovládání údržby i plánování v pražském čase je ověřené v prohlížeči; samostatná služba funguje pod neprivilegovaným účtem. Nová statická verze se publikuje až po vzdálené záloze a ověřené obnově. Připravena úzká aktivace pod /demo/; veřejné nasazení zatím neproběhlo.",
  "minimum_standby_control_local_pass": "Ovládání údržby v administraci už prošlo místním prohlížečem na mobilu, tabletu i desktopu: zapnutí/vypnutí, plánovaný interval v pražském čase, oznámení a zrušení intervalu. Ověřeny přístupové kontroly a oddělená technická služba. Veřejná aktivace této části ještě neproběhla.",
