@@ -93,4 +93,6 @@ Contract/limitations: docs/OPERATIONS-PROTOTYPE.md and docs/ADMIN-OPERATIONS-PRO
 
 ## Initial private Coolify controller
 
+The authenticated **Aplikace** menu now offers the FH-0023 server/help/account wizard. See docs/APPLICATION-INSTALL-WIZARD.md. A scoped operator-started worker can accept exactly one trial request while its heartbeat is current; no permanent service was installed. After interruption/expiry, inspect root ledger and live resources before arming another invocation. Account credentials are entered only in the authenticated form, never in chat/public project. The worker's readiness timestamp is not an agent heartbeat.
+
 The initial Coolify containers were removed at operator request on 2026-10-16 for the FH-0023 guided installation trial; data/volumes and pinned recovery material are retained. Follow docs/COOLIFY-DEPLOYMENT.md and the private journal before any retry. Initial account details will be entered in the authenticated wizard. No self-management key or validated deployment target exists. Never open public registration, reuse the audit key or recreate unrelated containers. Exact nonsecret template is deploy/coolify-compose.json; environment/secrets stay private.

@@ -52,6 +52,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "install_wizard_live": "V administraci je nový průvodce Aplikace: server, nápověda, účet a potvrzení instalace. Ověřen ve skutečném HTTPS prohlížeči; jednorázová zkouška čeká na údaje z formuláře. Samotná instalace zatím neproběhla.",
  "install_wizard_ready": "Průvodce a oddělený instalační postup prošly všemi 100 testy a předběžnou kontrolou testovacího serveru. Připravujeme aktivaci pro jeden potvrzený pokus z administrace.",
  "install_wizard_local_pass": "Průvodce instalací prošel místními testy i prohlížečem na mobilu, tabletu a desktopu. Oddělený vykonavatel přijímá jen ověřenou šablonu; skutečná instalace z formuláře ještě neproběhla.",
  "coolify_removed_for_wizard": "Původní tři služby Coolify odstraněny pro zkoušku instalace z administrace. Datová úložiště jsou zachovaná a původní aplikace beze změny; připravujeme průvodce s nápovědou.",

@@ -2,6 +2,8 @@
 
 2026-10-16 update: operator requested an in-app guided Coolify installation instead of manual initial installation. Prior owned containers removed, data retained; FH-0023 implements a scoped wizard/help/account flow and one-shot worker. M03 remains IN_PROGRESS until actual guided deployment, account login and demo deployment gates are evidenced.
 
+FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availability/auth/canary checks passed; status TESTING. One bounded trial worker was observed ready, with no permanent system service. Actual install/account validation awaits operator-supplied form details; no completion claimed from mocked tests or an armed worker.
+
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
 <!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->

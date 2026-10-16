@@ -858,19 +858,29 @@
     {
       "id": "FH-0023",
       "title": "Průvodce instalací aplikací",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex + Operator",
-      "acceptance": "Authenticated server/template/help/account wizard and separately scoped one-shot installer. Prior Coolify containers removed with data retained. Authorization, injection/replay/secret tests and deployed browser trial required; guided Coolify installation/native login remain pending.",
+      "acceptance": "Guided admin UI live: actual HTTPS login/server/help/account form, 360/768/1440 browser view, logout/unauth denial and unchanged inventory/canaries PASS. 100 local tests PASS. One bounded fixed-template worker observed ready for one operator-submitted trial; actual guided Coolify installation/bootstrap/native browser login pending.",
       "dependencies": [],
       "evidence": [
-        "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
+        "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md",
+        "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Existing lab PHP app and one pre-authorized operator-started installation attempt of the fixed Coolify 4.4.6 template on ctx1, reusing retained verified installation data. No system service, arbitrary shell/image, SSH key exposure or public Coolify route.",
       "rollback": "Restore prior immutable lab release; stop worker and withdraw heartbeat; retain request audit and recovery data. Reconcile any started remote job before rollback/retry. No automatic data deletion.",
-      "history": []
+      "history": [
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T05:50:11Z",
+          "evidence": [
+            "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],
