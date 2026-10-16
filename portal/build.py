@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0026": "Veřejná aktivace demo fallbacku a údržby",
  "FH-0025": "První úplný průchod statickou zálohou a přepínáním",
  "FH-0024": "Obnova řídicího centra ze vzdálených záloh",
  "FH-0023": "Průvodce instalací aplikací",
@@ -46,6 +47,7 @@ TASKS = {
 }
 
 BLOCKERS = {
+ "FH-0026": "Schválit přesný připravený rozsah: demo cesta na labu, dva nové pojmenované servisní soubory a vyhrazená úložiště, ověřená verze administrace a kontrolované reloady se zálohou a návratem. Ostatní vývoj pokračuje; DNS, VPN ani jiné weby se nemění.",
  "FH-0019": "Je potřeba schválit přepnutí nové prověřené verze aplikace na lab.ventureout.cz: oprava přihlášení a chráněné centrum, se zachováním inventáře. Bez změny Nginx, PHP-FPM nebo certifikátů.",
  "FH-0002": "Zbývá doložit zálohy a závislosti infrastruktury. OS, prostředky a Compose domácího uzlu už jsou ověřené.",
  "FH-0003": "Zbývá kontrola referenční aplikace z nezávislého vnějšího místa a bezpečný test dynamické funkce.",
@@ -54,6 +56,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "minimum_standby_activation_prepared": "Veřejné demo a ovládání jsou připravené, prověřené a zmrazené do verze. Čeká pouze konkrétní schválení zásahu do lab vhostu a dvou nových služeb podle pravidel projektu. Ostatní práce pokračuje rozpoznáváním vzdálených záloh; celé řešení na tuto otázku nečeká.",
  "minimum_standby_release_ready": "Všech 113 testů prošlo. Ovládání údržby i plánování v pražském čase je ověřené v prohlížeči; samostatná služba funguje pod neprivilegovaným účtem. Nová statická verze se publikuje až po vzdálené záloze a ověřené obnově. Připravena úzká aktivace pod /demo/; veřejné nasazení zatím neproběhlo.",
  "minimum_standby_control_local_pass": "Ovládání údržby v administraci už prošlo místním prohlížečem na mobilu, tabletu i desktopu: zapnutí/vypnutí, plánovaný interval v pražském čase, oznámení a zrušení intervalu. Ověřeny přístupové kontroly a oddělená technická služba. Veřejná aktivace této části ještě neproběhla.",
  "minimum_standby_actual_outage": "Skutečný výpadek demo kontejneru ověřen: web přešel na místní kopii, obrázky zůstaly dostupné a návrat čekal na tři úspěšné kontroly. Prohlížeč na mobilu, tabletu i desktopu prošel. Ověřena také údržba, časový interval, obnova ze vzdálené kopie a návrat verze. Přidáváme ovládání do administrace.",

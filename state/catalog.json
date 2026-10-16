@@ -906,21 +906,31 @@
     {
       "id": "FH-0024",
       "title": "Obnova řídicího centra ze vzdálených záloh",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "owner": "Codex",
       "acceptance": "Fixture-only versioned backup catalog discovery and restore preview: safe bounded parsing, archive presence/integrity/provenance and compatibility checks, controller versus application data and encryption-material requirements, exact target preview and negative tests. No live SSH/restore/migration. Public controller placement plan protects existing gateway/static independence.",
       "dependencies": [],
       "evidence": [
         "docs/PUBLIC-CONTROLLER-RECOVERY.md",
         "checkpoints/20261016T062539Z-public-controller-recovery-design-start.md",
-        "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md"
+        "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md",
+        "checkpoints/20261016T071400Z-FH-0024-catalog-start.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M08",
       "scope": "Repository-local recovery catalog/restore-plan prototype. FallbackHosting stays on public edge; Coolify placement is flexible. Prepare any controller migration proposal only when justified; actual controller remains on ctx1.",
       "rollback": "Revert local prototype/docs/public projection; no infrastructure or backup mutation. Future live migration/restore needs exact action, target and rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T07:14:00Z",
+          "evidence": [
+            "checkpoints/20261016T071400Z-FH-0024-catalog-start.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0025",
@@ -959,6 +969,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0026",
+      "title": "Veřejná aktivace demo fallbacku a údržby",
+      "status": "BLOCKED_BY_OPERATOR",
+      "owner": "Operator + Codex",
+      "acceptance": "Exact prepared scope in docs/MINIMUM-STANDBY.md: add only /demo/ locations to existing lab vhost, create named static/service trees, install/start only fallback-standby-demo socket/service, activate frozen PHP release with maintenance UI and narrow Nginx/PHP-FPM reloads. Require exact operator approval, immutable candidate/unchanged-state checks, private backup/journal/rollback and actual post-activation TLS/browser/control/auth/health/outage/recovery acceptance.",
+      "dependencies": [],
+      "evidence": [
+        "docs/MINIMUM-STANDBY.md",
+        "checkpoints/20261016T071300Z-FH-0025-public-activation-prepared.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M05",
+      "scope": "Only exact named owned demo and existing lab app/vhost. No DNS/cert/VPN/firewall/disk changes or other site edits. Await the pending explicit operator decision; continue independent safe engineering.",
+      "rollback": "Use exact backed-up lab vhost/previous PHP pointer; stop/disable only two new units; syntax-test/narrow reload and recheck protected canaries; preserve artifacts/runtime/backups.",
+      "history": []
     }
   ],
   "incidents": [],

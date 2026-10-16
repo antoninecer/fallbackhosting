@@ -1,0 +1,7 @@
+# FH-0025 exact public activation prepared; operator decision isolated
+
+- UTC 2026-10-16T07:13:00Z. Root-owned frozen candidate revision22cec4bc5d29460a0f5d8d6f72cccd28ac4df888 passes exact-Git PHP/source/static verification. Candidate checker confirms unchanged private auth/inventory, vhost and active release, absent owned targets, protected health and privileged Nginx/FPM syntax.
+- Full shadow Nginx configuration with candidate private backend/runtime paths PASS. New service/socket static verification PASS; warnings belong to unrelated existing unit/config files and were not changed. Source/files frozen under ignored `.local/standby-candidate`; actual production activation remains NOT_PERFORMED.
+- Operator asked to approve ONLY exact scope in docs/MINIMUM-STANDBY.md: owned demo prefix in lab vhost, new static/service trees, two new named units/private socket, verified PHP release pointer and narrow tested reloads with backup/journal/rollback. No DNS/certificate/VPN/firewall/disk or other site changes.
+- Approval request is required by AGENTS.md exact action/target rule, not an invented blanket project block. FH-0026 BLOCKED_BY_OPERATOR tracks only public activation. Do not infer approval from time, available sudo or broad earlier permission. Continue FH-0024 safe backup catalog work while decision is pending.
+- Rollback/helper are concrete and reviewable; apply mode has not been invoked. Candidate acceptance still needs actual public TLS/browser/admin/control/unit/outage tests after approval.
