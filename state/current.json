@@ -5,9 +5,9 @@
   "phase": "TESTING",
   "task_id": "FH-0023",
   "live_verified_at_utc": "2026-10-16T05:50:11Z",
-  "last_checkpoint": "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md",
-  "current_summary": "Guided Coolify installer live in Aplikace. Real HTTPS browser login/server/help/account form PASS at 360/768/1440; inventory unchanged and canaries PASS. One bounded operator-started worker observed ready for one request. Coolify remains removed with data retained; actual installation/account/native login awaits operator submission in the authenticated wizard.",
-  "next_safe_action": "Operator opens Aplikace, selects ctx1, reads help and submits native Coolify admin details only through the authenticated wizard. Inspect one-shot worker/job state and reconcile results; do not automatically retry UNKNOWN or overwrite an existing account. Verify actual native login and update project evidence after a submitted job completes.",
+  "last_checkpoint": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md",
+  "current_summary": "Actual HTTPS browser trial with exact operator-requested credentials rejected installation submission for missing password symbol. Lab login/logout PASS; independent private queue inspection found no request/secret/result. Coolify remains removed with data retained; installation and native account login untested.",
+  "next_safe_action": "Operator selects a compatible native Coolify password containing a symbol; preserve lab credentials. Before one further wizard trial inspect bounded-worker readiness and ledger. Continue unrelated safe engineering independently.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -406,6 +406,10 @@
     {
       "id": "install_wizard_live",
       "utc": "2026-10-16T05:50:11Z"
+    },
+    {
+      "id": "install_credentials_rejected",
+      "utc": "2026-10-16T05:59:16Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -450,7 +454,14 @@
     "last_observed": "READY",
     "observed_at_utc": "2026-10-16T05:50:11Z",
     "max_wait_seconds": 1800,
-    "actual_installation": "NOT_SUBMITTED_BY_AGENT",
-    "evidence": "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md"
+    "actual_installation": "NOT_DISPATCHED_CREDENTIAL_VALIDATION_REJECTED",
+    "evidence": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md",
+    "credential_validation": {
+      "result": "REJECTED_MISSING_SYMBOL",
+      "observed_at_utc": "2026-10-16T05:59:16Z",
+      "queued_requests": 0,
+      "stored_secrets": 0,
+      "evidence": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md"
+    }
   }
 }

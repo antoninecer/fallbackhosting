@@ -860,11 +860,12 @@
       "title": "Průvodce instalací aplikací",
       "status": "TESTING",
       "owner": "Codex + Operator",
-      "acceptance": "Guided admin UI live: actual HTTPS login/server/help/account form, 360/768/1440 browser view, logout/unauth denial and unchanged inventory/canaries PASS. 100 local tests PASS. One bounded fixed-template worker observed ready for one operator-submitted trial; actual guided Coolify installation/bootstrap/native browser login pending.",
+      "acceptance": "Guided admin UI live: actual HTTPS login/server/help/account form, 360/768/1440 browser view, logout/unauth denial and unchanged inventory/canaries PASS. 100 local tests PASS. One bounded fixed-template worker observed ready for one operator-submitted trial; actual guided Coolify installation/bootstrap/native browser login pending. Actual exact-credentials HTTPS form trial rejected missing password symbol before dispatch; private queue empty. Operator must select a compatible Coolify password before another trial; existing lab credentials unchanged.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md",
-        "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md"
+        "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md",
+        "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
