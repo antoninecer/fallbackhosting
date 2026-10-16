@@ -1,13 +1,13 @@
 # Architecture (draft; verify before implementation)
 
-2026-10-16 operator-directed placement: the diagram below is the revised TARGET. FallbackHosting management and the central Coolify controller belong on the public-IP node; remote selfhosted nodes provide application execution and optional backup repositories. Existing ctx1 controller has not moved. Recovery catalog/SSH-discovery contract and failure boundaries: `docs/PUBLIC-CONTROLLER-RECOVERY.md`. Earlier preferred home-controller placement is superseded; no live migration is implied.
+2026-10-16 operator availability clarification: the diagram below is the revised TARGET. FallbackHosting unifies control over VPN-reachable nodes while the public edge independently serves live apps or local standby. Coolify placement/count is flexible behind the adapter, rather than mandatory on every node or the public host. Existing ctx1 controller has not moved; reuse it for the first end-to-end test unless a reviewed requirement warrants migration. Recovery and availability contract: `docs/PUBLIC-CONTROLLER-RECOVERY.md`.
 
 ```text
 Internet / DNS lab + *.lab
              |
              v
 Public node: existing Nginx / TLS / independent portal + local standby copies
-             + FallbackHosting management / central Coolify (planned)
+             + FallbackHosting management -> Coolify adapter (placement flexible)
       |                                 |
       | lab traffic only                +--> local versioned static standby
       v

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Operator placement clarification (2026-10-16): target management/Coolify control plane resides on the public-IP node; remote selfhosted Linux nodes run applications and may store cataloged backups. A fresh installation should discover available recovery points over verified SSH and prepare a selected restore. Independent public-edge standby copies remain local and serviceable without the remote node or controller. Current Coolify still runs on ctx1; migration and recovery implementation are pending. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`.
+Operator availability clarification (2026-10-16): FallbackHosting provides unified control and an independent public edge; VPN-reachable remote Linux nodes run applications and may store cataloged backups. Coolify placement/count is flexible behind the integration, with reuse of the current private controller preferred for the first end-to-end test. A fresh installation should discover recovery points over verified SSH and prepare a selected restore. Independent public-edge standby copies remain local and serviceable without VPN, remote node, controller or backup repository. Current Coolify still runs on ctx1; full fallback and recovery implementation are pending. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`.
 
 A self-hosted platform to deploy and manage web applications using a graphical interface and Git/Docker, with an optional **independent, versioned STANDBY experience** when a primary app or its dependencies are unavailable.
 
@@ -16,6 +16,7 @@ This is an internal development platform for the owner and authorized collaborat
 4. Automatically enter standby when *that specific application's* health policy warrants it, or force standby with recorded operator action.
 5. Return to online only after repeated healthy checks; guard against flapping.
 6. Consult `project.lab.ventureout.cz` for verified status, roadmap, tasks, incidents, runbooks, logs (redacted) and AI resume checkpoints.
+7. Schedule a per-app or explicit multi-app maintenance window with advance notice. During the window serve the approved theme-matched static/contact version and disable transactional actions; resume only after stable health checks, with extension/overrun visible.
 
 ## Non-goals in MVP
 

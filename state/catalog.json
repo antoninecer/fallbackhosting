@@ -916,8 +916,27 @@
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M08",
-      "scope": "Repository-local recovery catalog/restore-plan prototype and public-controller migration proposal. Operator target accepted; actual controller remains on ctx1.",
+      "scope": "Repository-local recovery catalog/restore-plan prototype. FallbackHosting stays on public edge; Coolify placement is flexible. Prepare any controller migration proposal only when justified; actual controller remains on ctx1.",
       "rollback": "Revert local prototype/docs/public projection; no infrastructure or backup mutation. Future live migration/restore needs exact action, target and rollback.",
+      "history": []
+    },
+    {
+      "id": "FH-0025",
+      "title": "První úplný průchod statickou zálohou a přepínáním",
+      "status": "READY",
+      "owner": "Codex",
+      "acceptance": "Repository-local vertical slice: approved fixture-site export with self-contained assets and resized images; preview, atomic versioned publication and previous-release retention; per-app backend/VPN-failure simulation, manual maintenance, controller-independent serving and stable recovery. Test unrelated-app isolation and disabled dynamic actions. No claim of actual production failover until separately scoped live verification. Include persisted planned maintenance windows, explicit affected apps, Prague/UTC time handling, contact-only notice, maintenance precedence over healthy probes, extension/overrun and health-gated return; announcement preview only, no actual messaging.",
+      "dependencies": [],
+      "evidence": [
+        "docs/PUBLIC-CONTROLLER-RECOVERY.md",
+        "checkpoints/20261016T063002Z-availability-first-design-start.md",
+        "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M05",
+      "scope": "Local fixtures/proxy adapters only; reuse current controller and existing deployment products. No Nginx/HAProxy, Tailscale, service, DNS or live app changes.",
+      "rollback": "Revert repository-local prototype and rebuild reviewed public projection; no runtime resources or deployed snapshots modified.",
       "history": []
     }
   ],

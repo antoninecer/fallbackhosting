@@ -6,6 +6,8 @@ FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availabilit
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+2026-10-16 06:30 clarification supersedes mandatory public Coolify placement: unified FallbackHosting control and independent public-content availability take priority. Coolify instances are replaceable deployment adapters; reuse existing controller for first complete VPN/backend-outage/standby/maintenance/recovery demonstration. First implement/test a repository-local standby vertical slice; SSH backup discovery remains a separate READY task. No live edge reconfiguration or controller migration performed.
+
 Operator-directed placement/recovery clarification 2026-10-16: central management/Coolify target is the public-IP node, applications and optional cataloged backups on remote selfhosted nodes. Fresh-install SSH backup discovery and selected restore are planned; existing ctx1 controller remains unchanged. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`; repository-local recovery planning proceeds independently of later exact migration approval.
 
 2026-10-16 06:06 UTC: FH-0023 bounded guided prototype DONE after actual installation, administrator enrollment, final compatible16-character credential synchronization and real browser login/logout in lab/Coolify. All102 tests and production canaries PASS. M03 remains IN_PROGRESS: target enrollment, MFA/recovery and demo deployment are not completed by a working controller.

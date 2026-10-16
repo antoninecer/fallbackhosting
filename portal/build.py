@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0025": "První úplný průchod statickou zálohou a přepínáním",
  "FH-0024": "Obnova řídicího centra ze vzdálených záloh",
  "FH-0023": "Průvodce instalací aplikací",
  "FH-0001": "Projektová dokumentace a obnova práce",
@@ -53,6 +54,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "maintenance_windows_specified": "Do návrhu doplněna plánovaná údržba od–do: výběr dotčených webů, oznámení a vzhledově sladěná kontaktní verze místo objednávek. Návrat až po ověření zdraví; při zpoždění prodloužení nebo hlášení překročení termínu. Funkce je zatím plánovaná.",
+ "availability_first_design": "Prioritou je dostupnost webů a jednotné ovládání přes FallbackHosting. Umístění Coolify je volitelné; další práce se zaměří na vytvoření statické kopie, náhled, údržbu a přepnutí při výpadku aplikace nebo VPN. Přesun služeb zatím není potřeba.",
  "public_controller_recovery_design": "Upřesněna cílová architektura: řídicí centrum na veřejném uzlu, aplikace a volitelné zálohy na vzdálených serverech. Připravíme rozpoznání záloh přes SSH a průvodce obnovou; žádný přesun služeb ani obnova zatím neproběhly. Statické záložní stránky zůstávají nezávislé.",
  "credentials_and_native_login_verified": "Opraven generátor hesel: standardně 16 náhodných znaků a povinně malé i velké písmeno, číslice a symbol. Nové přihlášení i odhlášení ověřené v administraci a Coolify. Skutečná instalace dokončena; všech 102 testů prošlo, původní služby jsou beze změny.",
  "install_wizard_success": "Skutečná instalace Coolify přes průvodce dokončena: tři služby jsou zdravé, správce založen a registrace vypnutá. Nové přihlášení do administrace ověřené; následuje kontrola přihlášení přímo do Coolify a sjednocení délky hesla.",

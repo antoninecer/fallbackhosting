@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "READY",
-  "task_id": "FH-0024",
+  "task_id": "FH-0025",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md",
-  "current_summary": "Operator selects public-IP node for FallbackHosting/Coolify control plane, remote selfhosted application nodes and optional SSH-discoverable backup repositories. Architecture recorded; current controller remains on ctx1. No live migration or restore. Local static standby remains independent.",
-  "next_safe_action": "Implement fixture-only versioned backup catalog/discovery and restore-plan prototype, then prepare exact public-controller migration plan with protected-edge/resource/rollback checks. Do not migrate or restore production from this design clarification.",
+  "last_checkpoint": "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md",
+  "current_summary": "Availability-first operator clarification: one FallbackHosting UI over VPN-connected nodes; flexible Coolify placement/count behind adapters. Prioritize independent local static standby and per-app failure/maintenance/stable recovery. Current ctx1 controller unchanged; no migration needed solely for topology.",
+  "next_safe_action": "Implement/test repository-local standby vertical slice with fixture site export and resized images, versioned preview/publication, per-app outage and controller-independent proxy behavior, maintenance and stable recovery. Keep backup discovery FH-0024 READY; no live proxy/VPN/controller changes. Include scheduled maintenance/notice/contact-only windows and overrun tests; no actual window or notifications created.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -422,6 +422,14 @@
     {
       "id": "public_controller_recovery_design",
       "utc": "2026-10-16T06:25:39Z"
+    },
+    {
+      "id": "availability_first_design",
+      "utc": "2026-10-16T06:30:02Z"
+    },
+    {
+      "id": "maintenance_windows_specified",
+      "utc": "2026-10-16T06:32:01Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -499,6 +507,8 @@
     "backup_repository": "REMOTE_SELFHOSTED_OVER_VERIFIED_SSH",
     "current_controller_unchanged": true,
     "contract": "docs/PUBLIC-CONTROLLER-RECOVERY.md",
-    "restore_test": "NOT_TESTED"
+    "restore_test": "NOT_TESTED",
+    "coolify_placement": "FLEXIBLE_BEHIND_FALLBACKHOSTING_ADAPTER",
+    "priority": "INDEPENDENT_PUBLIC_CONTENT_AVAILABILITY"
   }
 }
