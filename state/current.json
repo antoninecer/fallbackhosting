@@ -5,7 +5,7 @@
   "phase": "TESTING",
   "task_id": "FH-0024",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T072248Z-FH-0024-discovery-restore-preview-pass.md",
+  "last_checkpoint": "checkpoints/20261016T072835Z-minimum-standby-resume.md",
   "current_summary": "Minimum standby slice implemented and verified: actual remote-demo outage/maintenance/recovery, optimized local snapshot, admin/Unix controls and backup-gated publication. Read-only SSH catalog found three archives; all three independently restored, safe selected preview works. Full116 tests PASS. Public demo activation awaits only exact operator approval FH-0026; existing production unchanged.",
   "next_safe_action": "On explicit approval revalidate frozen22cec4b candidate, record checkpoint and apply exactly reviewed public demo/UI/two-unit scope with canaries and scoped rollback, then actual HTTPS/browser/control/unit/outage/recovery acceptance. Do not infer authorization; full controller/database recovery and generic WordPress export remain separate.",
   "blocking_issue": null,
@@ -559,7 +559,9 @@
     "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED",
     "repository_tests": "116_PASS",
     "worker_identity_test": "REAL_WWW_DATA_PROCESS_PASS_NOT_SYSTEM_SERVICE",
-    "publication": "BACKUP_READBACK_RESTORE_BEFORE_PUBLISH_PASS"
+    "publication": "BACKUP_READBACK_RESTORE_BEFORE_PUBLISH_PASS",
+    "isolated_gateway": "STOPPED_AFTER_SUCCESSFUL_TESTS",
+    "remote_demo": "RUNNING_LAST_VERIFIED_2026-10-16T07:27:31Z"
   },
   "backup_discovery": {
     "scope": "OWNED_STATIC_SNAPSHOT_ONLY",
