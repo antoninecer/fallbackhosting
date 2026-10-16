@@ -63,6 +63,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "volume_migration_ready": "Nová VM má skutečně ověřený Docker a Compose. Webový přesun vlastní testovací aplikace se dvěma datovými svazky prošel místními testy a prohlížečem; skutečný přesun tam i zpět nyní ověřujeme. Obecný import produkčních aplikací ještě není hotový.",
  "server_onboarding_live_ready": "Průvodce přidáním serveru je nasazený. Skutečné SSH ověření testovací VM i prohlížeč na mobilu, tabletu a desktopu prošly. Instalace Dockeru čeká na výslovné potvrzení v administraci; zatím nebyla spuštěna.",
  "production_source_scope": "Doplněn produkční scénář: zdrojový Docker server pouze prověřit, zjistit aplikace a závislosti a doporučit cíl podle skutečné kapacity. Přístup ke zdroji zatím není ověřený. Historická maxima bez měření zůstávají neznámá; migrace ještě není hotová.",
  "server_onboarding_started": "Nový testovací server je dostupný a jeho SSH identita i přístup byly ověřeny. Vzniká webový průvodce: první přístup, automatické ověření a výslovně potvrzená příprava chybějícího prostředí. Instalace zatím nebyla spuštěna.",

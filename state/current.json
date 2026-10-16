@@ -2,10 +2,10 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M03",
-  "phase": "TESTING",
-  "task_id": "FH-0031",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0029",
   "live_verified_at_utc": "2026-10-16T21:11:19Z",
-  "last_checkpoint": "checkpoints/20261016T211031Z-production-source-capacity-scope.md",
+  "last_checkpoint": "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "New node wizard LIVE: actual authenticated browser360/768/1440, strict SSH inspection of test VM READY, and canaries PASS. Docker initialization NOT requested. Production source discovery/capacity-based target selection accepted; actual source access not supplied, FH-0032 BLOCKED.",
-  "next_safe_action": "Implement distinct read-only production-source discovery and capacity-aware placement. Collect source identity/access privately before real inventory. Test VM initialization remains explicit in authenticated wizard; do not initialize production source.",
+  "current_summary": "Actual VM initialization completed and Docker/Compose readiness verified. Owned Redis/file-volume migration UI/broker passed130 repository tests and complete disposable browser360/768/1440. Real web roundtrip awaits journaled service/PHP activation.",
+  "next_safe_action": "Activate pinned private migration adapter and PHP UI; run actual browser ctx1 -> vasatkova -> ctx1 with new writes, restart persistence and protected canaries. Production source import/shared MySQL remain incomplete.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -533,6 +533,10 @@
     {
       "id": "production_source_scope",
       "utc": "2026-10-16T21:11:19Z"
+    },
+    {
+      "id": "volume_migration_ready",
+      "utc": "2026-10-16T21:22:44Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -664,11 +668,11 @@
     "evidence": "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
   },
   "node_onboarding": {
-    "status": "LIVE_SSH_INSPECTION_READY",
-    "observed_at_utc": "2026-10-16T21:11:19Z",
-    "initialization": "NOT_REQUESTED",
+    "status": "LIVE_INITIALIZATION_SUCCEEDED",
+    "observed_at_utc": "2026-10-16T21:22:44Z",
+    "initialization": "SUCCEEDED_REAL_RUNTIME_VERIFIED",
     "browser": "LIVE_360_768_1440_PASS",
-    "repository_tests": 126,
-    "evidence": "checkpoints/20261016T211031Z-production-source-capacity-scope.md"
+    "repository_tests": 130,
+    "evidence": "checkpoints/20261016T211429Z-FH-0030-volume-roundtrip-start.md"
   }
 }
