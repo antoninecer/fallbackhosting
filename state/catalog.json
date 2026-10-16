@@ -208,9 +208,9 @@
     {
       "id": "FH-0004",
       "title": "Nasazení Coolify na testovacím uzlu",
-      "status": "TESTING",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
-      "acceptance": "Private Coolify 4.4.6 control plane healthy on ctx1, loopback-only routes/assets/browser checks and original workload/canaries PASS. Initial admin email/bootstrap and real login/logout pending; no host automation credential or validated deployment target. M03 demo deployment acceptance remains open.",
+      "acceptance": "Previous three-container Coolify instance removed at operator request; retained data/volumes allow rollback. Reinstallation and initial admin enrollment must now run through the guided lab application (FH-0023). Actual guided deployment, native login and target validation remain pending.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T161948Z-FH-0004-modular-start.md",
@@ -264,6 +264,14 @@
           "utc": "2026-10-15T16:47:01Z",
           "evidence": [
             "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T05:40:27Z",
+          "evidence": [
+            "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
           ]
         }
       ]
@@ -846,6 +854,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0023",
+      "title": "Průvodce instalací aplikací",
+      "status": "IN_PROGRESS",
+      "owner": "Codex + Operator",
+      "acceptance": "Authenticated server/template/help/account wizard and separately scoped one-shot installer. Prior Coolify containers removed with data retained. Authorization, injection/replay/secret tests and deployed browser trial required; guided Coolify installation/native login remain pending.",
+      "dependencies": [],
+      "evidence": [
+        "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Existing lab PHP app and one pre-authorized operator-started installation attempt of the fixed Coolify 4.4.6 template on ctx1, reusing retained verified installation data. No system service, arbitrary shell/image, SSH key exposure or public Coolify route.",
+      "rollback": "Restore prior immutable lab release; stop worker and withdraw heartbeat; retain request audit and recovery data. Reconcile any started remote job before rollback/retry. No automatic data deletion.",
+      "history": []
     }
   ],
   "incidents": [],

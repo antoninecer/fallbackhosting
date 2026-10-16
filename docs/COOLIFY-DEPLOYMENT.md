@@ -1,5 +1,7 @@
 # Coolify on the home test node — initial private installation
 
+Current status, 2026-10-16: operator requested removal and testing installation through an explanatory in-app wizard (FH-0023). All three owned containers were stopped/removed with exact ID/label checks; volumes, private data and pinned recovery material retained. Unrelated workload and gateway canaries passed. The historical installation evidence below does not claim a currently running controller. Account details will be supplied through the authenticated wizard rather than chat.
+
 2026-10-15. Operator explicitly requested deployment on the current ctx1 Docker/LXC test environment. Status: PRIVATE_CONTROL_PLANE_RUNNING / FH-0004 TESTING, not completed application deployment or M03 acceptance. Initial administrator email has been requested privately; no identity was invented and login/logout is NOT_TESTED.
 
 ## Observed installation

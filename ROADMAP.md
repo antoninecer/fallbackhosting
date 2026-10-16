@@ -1,5 +1,7 @@
 # Roadmap and acceptance gates
 
+2026-10-16 update: operator requested an in-app guided Coolify installation instead of manual initial installation. Prior owned containers removed, data retained; FH-0023 implements a scoped wizard/help/account flow and one-shot worker. M03 remains IN_PROGRESS until actual guided deployment, account login and demo deployment gates are evidenced.
+
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
 <!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->

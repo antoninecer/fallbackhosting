@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M01",
-  "phase": "TESTING",
-  "task_id": "FH-0002",
-  "live_verified_at_utc": "2026-10-15T20:56:37Z",
-  "last_checkpoint": "checkpoints/20261015T205637Z-FH-0019-center-docs-reconciled.md",
-  "current_summary": "FH-0019 center release is live and server-verified: authenticated page/assets pass, anonymous and post-logout access denied, inventory unchanged, protected canaries pass. Wider visual QA and rollback drill are pending. Resume FH-0002 with read-only dependency and backup coverage audit; restore remains NOT_TESTED and external copy NOT_DOCUMENTED.",
-  "next_safe_action": "Perform read-only FH-0002 dependency and backup-coverage audit. Compare existing backup records and infrastructure/service definitions to identify data or volumes not proven covered; record UNKNOWN where evidence is absent. Do not change backup schedules, files or infrastructure.",
+  "milestone": "M03",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0023",
+  "live_verified_at_utc": "2026-10-16T05:40:27Z",
+  "last_checkpoint": "checkpoints/20261016T054536Z-FH-0023-wizard-local-verified.md",
+  "current_summary": "Coolify removal and real retained-template precheck PASS. Guided UI/queue and isolated one-shot installer implemented; local HTTP/worker tests and Chromium 360/768/1440 fixture flow PASS. UI release and bounded live trial worker not activated yet; actual operator-submitted install remains pending.",
+  "next_safe_action": "Extend pinned release verification to the installer sources, run complete tests, freeze and activate the reviewed app release and one bounded operator-started trial worker. Account details must be entered only in the authenticated wizard.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -387,6 +387,14 @@
     {
       "id": "coolify_private_ready",
       "utc": "2026-10-15T16:47:01Z"
+    },
+    {
+      "id": "coolify_removed_for_wizard",
+      "utc": "2026-10-16T05:40:27Z"
+    },
+    {
+      "id": "install_wizard_local_pass",
+      "utc": "2026-10-16T05:45:36Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -414,15 +422,15 @@
     "evidence": "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
   },
   "coolify_installation": {
-    "status": "PRIVATE_CONTROL_PLANE_RUNNING_BOOTSTRAP_PENDING",
+    "status": "REMOVED_CONTAINERS_DATA_RETAINED",
     "version": "4.4.6",
-    "observed_at_utc": "2026-10-15T16:44:23Z",
-    "healthy_services": 3,
+    "observed_at_utc": "2026-10-16T05:40:27Z",
+    "healthy_services": 0,
     "public_exposure": false,
-    "initial_admin": "PENDING_PRIVATE_EMAIL",
+    "initial_admin": "PENDING_WIZARD_ACCOUNT_DETAILS",
     "login_logout": "NOT_TESTED",
     "automation_credential": "NOT_CONFIGURED",
     "validated_deployment_target": "NOT_TESTED",
-    "evidence": "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md"
+    "evidence": "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
   }
 }

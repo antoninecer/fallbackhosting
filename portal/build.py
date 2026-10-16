@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0023": "Průvodce instalací aplikací",
  "FH-0001": "Projektová dokumentace a obnova práce",
  "FH-0002": "Inventura infrastruktury",
  "FH-0003": "Ověření referenční aplikace",
@@ -51,6 +52,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "install_wizard_local_pass": "Průvodce instalací prošel místními testy i prohlížečem na mobilu, tabletu a desktopu. Oddělený vykonavatel přijímá jen ověřenou šablonu; skutečná instalace z formuláře ještě neproběhla.",
+ "coolify_removed_for_wizard": "Původní tři služby Coolify odstraněny pro zkoušku instalace z administrace. Datová úložiště jsou zachovaná a původní aplikace beze změny; připravujeme průvodce s nápovědou.",
  "coolify_private_ready": "Coolify 4.4.6, databáze a Redis běží a jsou zdravé. Stránky, soubory i mobilní zobrazení ověřené; původní služba a veřejný gateway beze změny. Přístup je jen místní, registrace vypnutá. Pro první účet chybí soukromě sdělený e-mail správce; přihlášení ani nasazení aplikace ještě nejsou ověřené.",
  "coolify_ipv4_reconcile": "Databáze a Redis jsou zdravé. Kontrola Coolify odhalila nepodporované IPv6 v testovacím LXC; připravujeme opravu jen uvnitř nové aplikace. Hostitelská síť, veřejný gateway a existující služba se nemění.",
  "coolify_prepared": "Obrazy Coolify a databázových služeb jsou stažené a připnuté na přesné otisky. Nové datové úložiště a konfigurace jsou připravené; kontrola potvrdila jen místní porty a vypnuté automatické aktualizace. Následuje spuštění a kontrola zdraví.",

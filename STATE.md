@@ -1,5 +1,9 @@
 # Current project state
 
+2026-10-16 05:45 UTC — FH-0023: wizard, private request/secret spool and scoped one-shot worker implemented locally. HTTP/worker tests, three fixed remote-driver tests and disposable Chromium 360/768/1440 flow PASS. Real retained-template precheck PASS without installing services. No live UI release/worker yet; operator will enter account details in the authenticated wizard. Evidence: `checkpoints/20261016T054536Z-FH-0023-wizard-local-verified.md`.
+
+2026-10-16 05:40 UTC — FH-0023: operator requested removal of existing Coolify and a guided application-based installation trial. Three exact owned containers removed; both volumes/private data retained; unrelated workload and protected canaries unchanged. Current work: authenticated wizard/help/account request and a fixed-template one-shot worker. No new installation or system service yet; see `checkpoints/20261016T054027Z-FH-0023-coolify-removed.md`.
+
 Updated 2026-10-15T16:47:01Z, Codex. Observations are point-in-time, not live monitoring.
 
 ## Milestones

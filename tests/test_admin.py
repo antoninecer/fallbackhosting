@@ -117,6 +117,58 @@ class AdminTests(unittest.TestCase):
         self.assertIn('192.0.2.10',self.request()[1])
         self.assertEqual(self.request(data={'action':'logout','csrf':'bad'},origin='https://evil.example')[0],403)
 
+    def wizard_plan(self):
+        inventory=self.inventory()
+        inventory['servers'][0]['observations']['fingerprint']={'status':'PASS'}
+        (self.data/'inventory.json').write_text(json.dumps(inventory))
+        self.login()
+        self.assertEqual(self.request('/?install=1',dict(action='install-plan',csrf=self.csrf(),node='ctx-test'))[0],303)
+        status,body,_=self.request('/?install=review');self.assertEqual(status,200)
+        token=re.search(r'name="plan_token" value="([a-f0-9]+)"',body)[1]
+        from datetime import datetime,timezone
+        (self.data/'install-worker.json').write_text(json.dumps(dict(utc=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),node='ctx-test',template='coolify-4.4.6',ready=True)))
+        return dict(action='install-submit',csrf=self.csrf(),plan_token=token,email='operator@example.org',password='Test-Wizard7!Secret',password_confirmation='Test-Wizard7!Secret',confirmation='1')
+
+    def test_install_wizard_requires_auth_origin_csrf_and_verified_node(self):
+        self.assertEqual(self.request('/?install=1')[0],401)
+        self.login()
+        self.assertEqual(self.request('/?install=1',dict(action='install-plan',csrf='bad',node='ctx-test'))[0],403)
+        self.assertEqual(self.request('/?install=1',dict(action='install-plan',csrf=self.csrf(),node='ctx-test'))[0],422)
+        self.assertEqual(self.request('/?install=1',dict(action='install-plan',csrf=self.csrf(),node='ctx-test'),origin='https://evil.example')[0],403)
+        self.assertFalse((self.data/'install-requests').exists())
+
+    def test_install_wizard_creates_private_queue_without_secrets_in_history(self):
+        data=self.wizard_plan();status,_,headers=self.request('/?install=review',data)
+        self.assertEqual(status,303)
+        queue=self.data/'install-requests'
+        request_path=next(queue.glob('*.request.json'));request=json.loads(request_path.read_text())
+        self.assertEqual(request['template'],'coolify-4.4.6');self.assertNotIn('email',request)
+        self.assertNotIn('password',request)
+        secret=next(queue.glob('*.secret.json'))
+        self.assertEqual(secret.stat().st_mode&0o777,0o600)
+        self.assertEqual(json.loads(secret.read_text())['password'],data['password'])
+        status,body,_=self.request(headers['Location']);self.assertEqual(status,200)
+        self.assertNotIn(data['password'],body);self.assertNotIn(data['email'],body)
+        self.assertNotIn('SSH',request_path.read_text())
+        self.assertEqual(self.inventory()['revision'],1)
+        self.assertEqual(self.request('/?install=job&id=../../auth')[0],404)
+
+    def test_install_wizard_rejects_command_fields_password_mismatch_and_stale_plan(self):
+        data=self.wizard_plan()
+        for extra in ({'command':'id'},{'image':'evil:latest'},{'password_confirmation':'mismatch'}):
+            status,body,_=self.request('/?install=review',dict(data,**extra))
+            self.assertEqual(status,422);self.assertNotIn(data['password'],body)
+        inventory=self.inventory();inventory['revision']=2
+        (self.data/'inventory.json').write_text(json.dumps(inventory))
+        self.assertEqual(self.request('/?install=review',data)[0],422)
+        self.assertFalse((self.data/'install-requests').exists())
+
+    def test_install_wizard_worker_unavailable_does_not_store_password(self):
+        data=self.wizard_plan();(self.data/'install-worker.json').unlink()
+        status,body,_=self.request('/?install=review',data)
+        self.assertEqual(status,422);self.assertNotIn(data['password'],body)
+        self.assertFalse((self.data/'install-requests').exists())
+
     def test_csrf_origin_and_unauthorized_raw_paths(self):
         self.login()
         self.assertEqual(self.request(data={'action':'save-server','csrf':'bad'})[0],403)
