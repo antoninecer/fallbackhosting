@@ -5,7 +5,7 @@
   "phase": "DONE",
   "task_id": "FH-0026",
   "live_verified_at_utc": "2026-10-16T08:40:56Z",
-  "last_checkpoint": "checkpoints/20261016T084138Z-public-demo-complete.md",
+  "last_checkpoint": "checkpoints/20261016T084241Z-portal-summary-reconciled.md",
   "current_summary": "Public demo, independent local standby and authenticated maintenance LIVE. Actual HTTPS browser360/768/1440, manual/planned maintenance, remote demo+worker outage and stable recovery PASS; full116 tests PASS. Original workloads and protected canaries unchanged.",
   "next_safe_action": "Bounded application-specific export/publication/preview UI with peer authorization and fixed operator-configured sources, reusing backup-before-publication. Further deployment within approved app scope does not require repeating approval. Generic WordPress/controller/database recovery remains open.",
   "blocking_issue": null,
