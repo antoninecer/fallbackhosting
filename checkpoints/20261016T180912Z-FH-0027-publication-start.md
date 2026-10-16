@@ -1,0 +1,11 @@
+# FH-0027 — authenticated demo publication workflow
+
+- Started UTC 2026-10-16T18:09:12Z, following operator request to complete autonomous next work. Operator revoked project Markdown command restrictions; retain product architecture and secret handling as implementation requirements.
+- Scope: fixed demo preparation, independent backup/readback/restore, authenticated static preview, explicit publication and previous-version rollback. Existing independent Nginx serving and maintenance remain. No arbitrary web-provided origins, paths, SSH commands or credentials. General export/controller/database recovery excluded.
+- Baseline: actual root read-only existing canaries/TLS/reference/project assets/admin integrity PASS. Both existing demo units active after reboot; initial Git main ahead1 (previous documented local checkpoint).
+- Acceptance: negative peer/auth/CSRF/Origin/path/revision tests, backup failure preserving current, preview preserving current, interrupted operation requiring reconciliation, real publication/rollback and HTTPS/browser checks. Service uses existing technical identity without exposing it to PHP; fixed immutable policy/code; no sudo under NoNewPrivileges.
+- Rollback: retain prior PHP release, prior static current target and exact service/unit ownership journal; stop only new publication units and restore prior PHP/static pointer if required. No Nginx config change is needed. Existing snapshot remains serviceable if publication service stops.
+- Status IN_PROGRESS. Local code started; no new live publication service or PHP release activated yet. Subsequent checkpoint records actual validation and deployment outcome.
+
+- Local increment: six new backend/PHP tests PASS in11.485s; actual Chromium360/768/1440 prepare/preview/local-assets/publish/rollback/logout-denial PASS. Initial preview image failure identified opaque-origin sandbox interaction; sandbox allow-same-origin retains disabled scripts/forms and enables authenticated assets. Browser dependencies extracted privately under ignored .local; no OS packages installed.
+- Initial full122-test run:118 PASS,4 pinned-release setup errors because HEAD predates new publication.php. Freeze source in commit, then rerun full acceptance. PHP syntax and new-unit systemd verification PASS (unrelated existing monitoring-unit executable-bit warnings only). No deployment yet.

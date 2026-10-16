@@ -72,6 +72,9 @@ try {
                 require dirname(__DIR__) . '/install.php';
                 install_action($action, $_POST, read_json('inventory'));
             }
+            if ($action==='standby-publication') {
+                require dirname(__DIR__).'/publication.php';publication_action($_POST);
+            }
             if ($action==='standby-control') {
                 require dirname(__DIR__).'/standby.php';standby_action($_POST);
             }
@@ -101,6 +104,11 @@ try {
     http_response_code(503); exit('Administrace zatím není bezpečně připravena. Kontaktujte správce.');
 }
 $csrf = $_SESSION['csrf'];
+if (array_key_exists('publication-preview',$_GET)) {
+    if (!$loggedIn) { http_response_code(401);exit('Přihlaste se.'); }
+    require_once dirname(__DIR__).'/publication.php';
+    publication_preview($_GET['publication-preview'],$_GET['asset']??'index.html');
+}
 if (array_key_exists('standby',$_GET)) {
     if (!$loggedIn) { http_response_code(401);exit('Přihlaste se na hlavní stránce administrace.'); }
     require_once dirname(__DIR__).'/standby.php';serve_standby($csrf,$error);

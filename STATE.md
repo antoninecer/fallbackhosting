@@ -1,5 +1,7 @@
 # Current project state
 
+FH-0027 IN_PROGRESS: fixed-demo preparation/backup-gated preview/publication/rollback implemented. Six new backend/PHP tests and actual disposable Chromium360/768/1440 workflow PASS. Pinned release tests need a commit containing the new source; no publication service activation yet. Operator also confirmed reference API root JSON and live cafe demo from phone; dynamic random test returned an empty result and remains unresolved.
+
 2026-10-16T18:02:25Z — Post-reboot read-only verification PASS. Host boot 17:59:02 UTC; fallback-standby-demo socket/service active and enabled, Result=success, active since 17:59:16 UTC. Demo HTTPS content is ONLINE; demo CSS/JPEG and project HTML/CSS/JS return200 with verified TLS. Anonymous maintenance returns401. No runtime/configuration change; authenticated actions, remote Coolify health and outage drills were not repeated. See `checkpoints/20261016T180225Z-post-reboot-verified.md`.
 
 2026-10-16T08:42:41Z — Public overview reconciled with actual deployed demo/maintenance evidence; stale not-operational/local-only claims removed. Eight public tests and actual HTTPS wording checks PASS. See `checkpoints/20261016T084241Z-portal-summary-reconciled.md`.

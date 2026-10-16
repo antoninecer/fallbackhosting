@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0027": "Publikování a náhled záložní verze z administrace",
  "FH-0026": "Veřejná aktivace demo fallbacku a údržby",
  "FH-0025": "První úplný průchod statickou zálohou a přepínáním",
  "FH-0024": "Obnova řídicího centra ze vzdálených záloh",
@@ -56,6 +57,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "publication_local_started": "Vzniká příprava, chráněný náhled, publikování a návrat záložní verze přímo z administrace. Zveřejnění vyžaduje ověřenou vzdálenou zálohu a obnovu; probíhají testy před nasazením.",
  "post_reboot_verified": "Po restartu obě služby dema automaticky naběhly. Živé demo, veřejný přehled a jejich statické soubory jsou dostupné přes HTTPS; ovládání údržby vyžaduje přihlášení.",
  "minimum_standby_public_pass": "Veřejné demo a ovládání údržby nasazené a ověřené. Přihlášení, mobil/tablet/desktop, ruční i plánovaná údržba a skutečný výpadek prošly. Statická kopie fungovala i bez řídicí služby; návrat čekal na tři zdravé kontroly. Všech 116 testů prošlo, ostatní weby a původní kontejnery beze změny.",
  "minimum_standby_public_testing": "Demo je veřejně nasazené přes HTTPS a samostatná služba běží s omezenými právy. Probíhají skutečné testy přihlášení, údržby, výpadku a návratu; dokončení ještě nepotvrzeno.",

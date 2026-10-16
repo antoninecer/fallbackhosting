@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M06",
-  "phase": "DONE",
-  "task_id": "FH-0026",
+  "milestone": "M05",
+  "phase": "IN_PROGRESS",
+  "task_id": "FH-0027",
   "live_verified_at_utc": "2026-10-16T08:40:56Z",
-  "last_checkpoint": "checkpoints/20261016T180225Z-post-reboot-verified.md",
+  "last_checkpoint": "checkpoints/20261016T180912Z-FH-0027-publication-start.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "Public demo, independent local standby and authenticated maintenance LIVE. Actual HTTPS browser360/768/1440, manual/planned maintenance, remote demo+worker outage and stable recovery PASS; full116 tests PASS. Original workloads and protected canaries unchanged.",
-  "next_safe_action": "Bounded application-specific export/publication/preview UI with peer authorization and fixed operator-configured sources, reusing backup-before-publication. Further deployment within approved app scope does not require repeating approval. Generic WordPress/controller/database recovery remains open.",
+  "current_summary": "Fixed-demo authenticated publication workflow implemented; six new backend/PHP tests pass. Browser and full pinned-release acceptance underway. No live publication activation yet.",
+  "next_safe_action": "Finish browser/full pinned-source tests, freeze release, install isolated fixed publication worker and activate PHP release; verify actual HTTPS preview/publish/rollback with protected canaries.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -489,6 +489,10 @@
     {
       "id": "minimum_standby_public_pass",
       "utc": "2026-10-16T08:40:56Z"
+    },
+    {
+      "id": "publication_local_started",
+      "utc": "2026-10-16T18:09:12Z"
     }
   ],
   "catalog_path": "state/catalog.json",

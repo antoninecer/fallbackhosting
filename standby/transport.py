@@ -1,6 +1,8 @@
 """Operator-only fixed-script SSH transport; never exposed to PHP/web inputs."""
 import base64
 import json
+import os
+import pwd
 from pathlib import Path
 import re
 import subprocess
@@ -14,7 +16,8 @@ def fixed_script(source, payload, node):
     code=Path(source).read_text()
     if code.count('PAYLOAD_PLACEHOLDER')!=1:raise ValueError('Fixed payload binding missing or repeated')
     code=code.replace('PAYLOAD_PLACEHOLDER',"json.loads(__import__('base64').b64decode("+repr(encoded)+"))")
-    args=['sudo','-n','-u','fallback-agent','ssh','-o','BatchMode=yes','-o','ConnectTimeout=5','-o','HostKeyAlgorithms=ssh-ed25519','-o','StrictHostKeyChecking=yes','-o','UpdateHostKeys=no','-o','ForwardAgent=no','-o','ClearAllForwardings=yes','-T','-p',str(port),user+'@'+host,'python3','-']
+    prefix=[] if os.geteuid()==pwd.getpwnam('fallback-agent').pw_uid else ['sudo','-n','-u','fallback-agent']
+    args=prefix+['ssh','-o','BatchMode=yes','-o','ConnectTimeout=5','-o','HostKeyAlgorithms=ssh-ed25519','-o','StrictHostKeyChecking=yes','-o','UpdateHostKeys=no','-o','ForwardAgent=no','-o','ClearAllForwardings=yes','-T','-p',str(port),user+'@'+host,'python3','-']
     result=subprocess.run(args,input=code,text=True,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=180)
     if result.returncode:raise RuntimeError('Fixed remote action failed; reconcile before retry')
     if len(result.stdout)>48*1024*1024:raise ValueError('Oversized remote reply')

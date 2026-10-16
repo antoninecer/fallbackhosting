@@ -199,17 +199,44 @@
     {
       "id": "FH-0003",
       "title": "Ověření referenční aplikace",
-      "status": "BLOCKED",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Oracle route/TLS/two assets passed; independent external vantage and safe dynamic test evidence missing; obtain external baseline",
+      "acceptance": "Operator confirmed expected API root JSON from phone/mobile data; external reachability OPERATOR_ATTESTED at recorded time (actual test time unspecified). Safe dynamic random-generation test remains pending; no visual UI claimed.",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M01",
       "scope": "Scope and context: TASKS.md, FH-0003",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
-      "history": []
+      "history": [
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "utc": "2026-10-16T18:15:37Z",
+          "evidence": [
+            "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T18:15:37Z",
+          "evidence": [
+            "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T18:15:37Z",
+          "evidence": [
+            "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+          ]
+        }
+      ]
     },
     {
       "id": "FH-0004",
@@ -1049,6 +1076,26 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0027",
+      "title": "Publikování a náhled záložní verze z administrace",
+      "status": "IN_PROGRESS",
+      "owner": "Codex",
+      "acceptance": "Fixed-demo authenticated prepare/preview/publish/previous-version rollback. Independent remote backup/readback/isolated restore before READY, integrity and stale/concurrent revision checks, restart reconciliation. Local and real HTTPS/browser acceptance plus independent existing static serving.",
+      "dependencies": [
+        "FH-0026"
+      ],
+      "evidence": [
+        "docs/DEMO-PUBLICATION.md",
+        "checkpoints/20261016T180912Z-FH-0027-publication-start.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M05",
+      "scope": "Existing fixed public cafe demo only; separate private publication socket/worker, immutable PHP release, no generic web-supplied origin/path/SSH. No shared Nginx changes.",
+      "rollback": "Stop only new publication units; restore journaled PHP/static pointers and exact static parent ownership; preserve archives/releases/runtime. Publication pointer rollback tested separately.",
+      "history": []
     }
   ],
   "incidents": [],
