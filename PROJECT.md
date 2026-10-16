@@ -2,6 +2,8 @@
 
 ## Purpose
 
+Operator placement clarification (2026-10-16): target management/Coolify control plane resides on the public-IP node; remote selfhosted Linux nodes run applications and may store cataloged backups. A fresh installation should discover available recovery points over verified SSH and prepare a selected restore. Independent public-edge standby copies remain local and serviceable without the remote node or controller. Current Coolify still runs on ctx1; migration and recovery implementation are pending. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`.
+
 A self-hosted platform to deploy and manage web applications using a graphical interface and Git/Docker, with an optional **independent, versioned STANDBY experience** when a primary app or its dependencies are unavailable.
 
 This is an internal development platform for the owner and authorized collaborators (including Aleš), **not** a public shared hosting company or a guaranteed high-availability application platform.

@@ -3,11 +3,11 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "READY",
-  "task_id": "FH-0023",
+  "task_id": "FH-0024",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md",
-  "current_summary": "FH-0023 bounded guided prototype DONE: actual installation, native owner, healthy services and registration disabled verified. Final compatible 16-character credential synchronized privately; actual browser lab/Coolify login/logout PASS, prior lab credential rejected. Generator regression checks and all 102 tests PASS; original workload and protected canaries unchanged.",
-  "next_safe_action": "Prepare reviewed target-enrollment and MFA/recovery plan for the private Coolify controller. Do not repeat successful bootstrap, automatically validate target or expose Coolify publicly; target validation can install/restart Docker and needs exact scope review.",
+  "last_checkpoint": "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md",
+  "current_summary": "Operator selects public-IP node for FallbackHosting/Coolify control plane, remote selfhosted application nodes and optional SSH-discoverable backup repositories. Architecture recorded; current controller remains on ctx1. No live migration or restore. Local static standby remains independent.",
+  "next_safe_action": "Implement fixture-only versioned backup catalog/discovery and restore-plan prototype, then prepare exact public-controller migration plan with protected-edge/resource/rollback checks. Do not migrate or restore production from this design clarification.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -418,6 +418,10 @@
     {
       "id": "credentials_and_native_login_verified",
       "utc": "2026-10-16T06:06:07Z"
+    },
+    {
+      "id": "public_controller_recovery_design",
+      "utc": "2026-10-16T06:25:39Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -488,5 +492,13 @@
       "lab_browser_login_logout": "PASS",
       "evidence": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
     }
+  },
+  "controller_recovery_design": {
+    "status": "OPERATOR_DIRECTED_TARGET_NOT_DEPLOYED",
+    "controller_location": "PUBLIC_IP_NODE",
+    "backup_repository": "REMOTE_SELFHOSTED_OVER_VERIFIED_SSH",
+    "current_controller_unchanged": true,
+    "contract": "docs/PUBLIC-CONTROLLER-RECOVERY.md",
+    "restore_test": "NOT_TESTED"
   }
 }

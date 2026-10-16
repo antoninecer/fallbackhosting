@@ -1,0 +1,7 @@
+# Public controller/recovery architecture recorded
+
+- UTC 2026-10-16T06:27:04Z. Operator-selected target is now explicit in PROJECT, ARCHITECTURE, modular-provider guidance, STATE and ROADMAP: control plane on public-IP node; application execution and optional backup repository on remote selfhosted nodes. Existing ctx1 controller remains unchanged.
+- `docs/PUBLIC-CONTROLLER-RECOVERY.md` specifies verified SSH discovery, bounded versioned catalogs, archive verification/provenance/compatibility, separate controller/app/encryption recovery material, selected target preview and evidenced restore testing. Existing local public standby stays available independently of Docker/controller/backup server. Sole unavailable backup node cannot provide immediate restore.
+- FH-0024 READY is the next fixture-only catalog/discovery/restore-plan engineering task, not a claim of a working recovery service. Actual public-controller migration and actual restore are NOT_PERFORMED. No operational approval requested or consumed for migration.
+- PASS: canonical catalog evidence/revision/table validation (11 milestones/24 tasks); all eight public projection tests. Read-only protected production/reference/project/lab TLS/assets/access/integrity canaries PASS this turn. Public projection rebuilt with reviewed sanitized architecture event; verify HTTPS before commit.
+- Rollback: repository revert/public rebuild; no infrastructure/data/account/backup changes to undo.

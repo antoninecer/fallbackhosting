@@ -38,7 +38,7 @@
     },
     {
       "id": "M03",
-      "title": "Coolify deployment on home node",
+      "title": "Central Coolify controller and remote application nodes",
       "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
       "acceptance": "Authorized admin can deploy/redeploy one example app without changing edge config",
@@ -900,6 +900,25 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0024",
+      "title": "Obnova řídicího centra ze vzdálených záloh",
+      "status": "READY",
+      "owner": "Codex",
+      "acceptance": "Fixture-only versioned backup catalog discovery and restore preview: safe bounded parsing, archive presence/integrity/provenance and compatibility checks, controller versus application data and encryption-material requirements, exact target preview and negative tests. No live SSH/restore/migration. Public controller placement plan protects existing gateway/static independence.",
+      "dependencies": [],
+      "evidence": [
+        "docs/PUBLIC-CONTROLLER-RECOVERY.md",
+        "checkpoints/20261016T062539Z-public-controller-recovery-design-start.md",
+        "checkpoints/20261016T062704Z-public-controller-recovery-design-recorded.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M08",
+      "scope": "Repository-local recovery catalog/restore-plan prototype and public-controller migration proposal. Operator target accepted; actual controller remains on ctx1.",
+      "rollback": "Revert local prototype/docs/public projection; no infrastructure or backup mutation. Future live migration/restore needs exact action, target and rollback.",
+      "history": []
     }
   ],
   "incidents": [],

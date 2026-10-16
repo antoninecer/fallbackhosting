@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0024": "Obnova řídicího centra ze vzdálených záloh",
  "FH-0023": "Průvodce instalací aplikací",
  "FH-0001": "Projektová dokumentace a obnova práce",
  "FH-0002": "Inventura infrastruktury",
@@ -52,6 +53,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "public_controller_recovery_design": "Upřesněna cílová architektura: řídicí centrum na veřejném uzlu, aplikace a volitelné zálohy na vzdálených serverech. Připravíme rozpoznání záloh přes SSH a průvodce obnovou; žádný přesun služeb ani obnova zatím neproběhly. Statické záložní stránky zůstávají nezávislé.",
  "credentials_and_native_login_verified": "Opraven generátor hesel: standardně 16 náhodných znaků a povinně malé i velké písmeno, číslice a symbol. Nové přihlášení i odhlášení ověřené v administraci a Coolify. Skutečná instalace dokončena; všech 102 testů prošlo, původní služby jsou beze změny.",
  "install_wizard_success": "Skutečná instalace Coolify přes průvodce dokončena: tři služby jsou zdravé, správce založen a registrace vypnutá. Nové přihlášení do administrace ověřené; následuje kontrola přihlášení přímo do Coolify a sjednocení délky hesla.",
  "install_credentials_rejected": "Skutečný průchod instalačním formulářem odhalil chybějící symbol v požadovaném hesle. Přihlášení do administrace prošlo; instalace se nespustila a údaje se neuložily do fronty. Pro další pokus je potřeba zvolit heslo splňující pravidla formuláře.",

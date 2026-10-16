@@ -6,6 +6,8 @@ FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availabilit
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+Operator-directed placement/recovery clarification 2026-10-16: central management/Coolify target is the public-IP node, applications and optional cataloged backups on remote selfhosted nodes. Fresh-install SSH backup discovery and selected restore are planned; existing ctx1 controller remains unchanged. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`; repository-local recovery planning proceeds independently of later exact migration approval.
+
 2026-10-16 06:06 UTC: FH-0023 bounded guided prototype DONE after actual installation, administrator enrollment, final compatible16-character credential synchronization and real browser login/logout in lab/Coolify. All102 tests and production canaries PASS. M03 remains IN_PROGRESS: target enrollment, MFA/recovery and demo deployment are not completed by a working controller.
 
 2026-10-16 05:59 UTC: actual guided account submission rejected the exact requested password because it lacks a symbol. No installation request or secret was queued. FH-0023 remains TESTING and M03 IN_PROGRESS; select a compatible Coolify password before another trial. Existing lab login works; no credential replacement performed.
@@ -17,7 +19,7 @@ Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 | M00 | Foundation and Git state | DONE | Docs and checkpoint locally committed; fresh-session resume works; remote verification tracked separately |
 | M01 | Verified inventory and safety baselines | NEEDS_TEST | Evidence of live state; protected reference endpoint baseline; backup/rollback plans |
 | M02 | Independent Project Control Center | IN_PROGRESS | Protected portal survives home-node outage; tasks/incidents/checkpoints visible |
-| M03 | Coolify deployment on home node | IN_PROGRESS | Authorized admin can deploy/redeploy one example app without changing edge config |
+| M03 | Central Coolify controller and remote application nodes | IN_PROGRESS | Authorized admin can deploy/redeploy one example app without changing edge config |
 | M04 | Wildcard routing and TLS | PLANNED | Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary |
 | M05 | Versioned Fallback Builder | PLANNED | Safe exported HTML/assets; preview; immutable release; atomic publish; rollback |
 | M06 | Standby Gateway + recovery | PLANNED | Per-app failover, hysteresis, manual force/restore, no cross-app outage |

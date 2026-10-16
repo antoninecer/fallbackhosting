@@ -1,16 +1,20 @@
 # Architecture (draft; verify before implementation)
 
+2026-10-16 operator-directed placement: the diagram below is the revised TARGET. FallbackHosting management and the central Coolify controller belong on the public-IP node; remote selfhosted nodes provide application execution and optional backup repositories. Existing ctx1 controller has not moved. Recovery catalog/SSH-discovery contract and failure boundaries: `docs/PUBLIC-CONTROLLER-RECOVERY.md`. Earlier preferred home-controller placement is superseded; no live migration is implied.
+
 ```text
 Internet / DNS lab + *.lab
              |
              v
-Oracle gateway: existing Nginx / TLS / independent project portal + standby copies
+Public node: existing Nginx / TLS / independent portal + local standby copies
+             + FallbackHosting management / central Coolify (planned)
       |                                 |
       | lab traffic only                +--> local versioned static standby
       v
 Tailscale encrypted path
       v
-Home PVE -> unprivileged Rocky Linux LXC -> Docker -> Coolify / Traefik -> Apps
+Remote Linux physical/VM/LXC -> Docker / application proxy -> Apps
+             + cataloged backup repository (SSH discovery / selected restore)
 ```
 
 ## Trust and failure boundaries
