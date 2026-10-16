@@ -1237,11 +1237,12 @@
       "title": "Webový přesun aplikací mezi servery",
       "status": "IN_PROGRESS",
       "owner": "Codex + Operator",
-      "acceptance": "First supported browser-driven two-node Docker+shared-MySQL migration: isolated per-app DB/user, consistent app-scoped backup/restore, test hostname, passive snapshot, controlled cutover/write-safe rollback and optional exact-app cleanup preserving shared services. Real acceptance target2026-10-17; mocks are not completion.",
+      "acceptance": "First supported browser-driven two-node Docker+shared-MySQL migration: isolated per-app DB/user, consistent app-scoped backup/restore, test hostname, passive snapshot, controlled cutover/write-safe rollback and optional exact-app cleanup preserving shared services. Real acceptance target2026-10-17; mocks are not completion. Production source discovery is read-only; destination recommendation must use actual existing workloads, filesystem space/inodes, reservations and separated current/limit/history metrics. Unknown peaks remain unknown.",
       "dependencies": [],
       "evidence": [
         "docs/WEB-MIGRATION-MVP.md",
-        "checkpoints/20261016T203755Z-web-migration-scope-accepted.md"
+        "checkpoints/20261016T203755Z-web-migration-scope-accepted.md",
+        "checkpoints/20261016T211031Z-production-source-capacity-scope.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -1305,6 +1306,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0032",
+      "title": "Inventura produkčního zdroje a výběr cíle",
+      "status": "BLOCKED",
+      "owner": "Codex + Operator",
+      "acceptance": "Verified production-source SSH identity/access; bounded nonmutating Docker/app/shared-dependency inventory, data sizes and candidate destination capacity. Recommend a compatible target with explained CPU/RAM/storage headroom and timestamped metrics; historical peak UNKNOWN without telemetry. No source initialization, install, restart or data copy during discovery.",
+      "dependencies": [],
+      "evidence": [
+        "docs/WEB-MIGRATION-MVP.md",
+        "checkpoints/20261016T211031Z-production-source-capacity-scope.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Operator reports a further production Docker source; its endpoint, account and independently attested host key have not yet been supplied/verified. Source discovery and placement adapter not deployed. Migration adapter development can continue independently.",
+      "rollback": "Read-only inspection creates no production resources; preserve original runtime/configuration. Any later consistent export/restore has separate app-scoped plan and private data custody.",
+      "history": []
     }
   ],
   "incidents": [],

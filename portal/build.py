@@ -18,6 +18,7 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0032": "Inventura produkčního zdroje a výběr cíle",
  "FH-0031": "Průvodce přidáním a inicializací serveru",
  "FH-0028": "Domény aplikací a přehled směrování",
  "FH-0029": "Webový přesun aplikací mezi servery",
@@ -52,6 +53,7 @@ TASKS = {
 }
 
 BLOCKERS = {
+ "FH-0032": "Produkční Docker server je zatím oznámený. Chybí ověřený přístup a identita zdroje; jeho aplikace, velikost dat a historie zátěže nejsou zjištěné. Vývoj migrace pokračuje nezávisle.",
  "FH-0026": "Schválit přesný připravený rozsah: demo cesta na labu, dva nové pojmenované servisní soubory a vyhrazená úložiště, ověřená verze administrace a kontrolované reloady se zálohou a návratem. Ostatní vývoj pokračuje; DNS, VPN ani jiné weby se nemění.",
  "FH-0019": "Je potřeba schválit přepnutí nové prověřené verze aplikace na lab.ventureout.cz: oprava přihlášení a chráněné centrum, se zachováním inventáře. Bez změny Nginx, PHP-FPM nebo certifikátů.",
  "FH-0002": "Zbývá doložit zálohy a závislosti infrastruktury. OS, prostředky a Compose domácího uzlu už jsou ověřené.",
@@ -61,6 +63,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "server_onboarding_live_ready": "Průvodce přidáním serveru je nasazený. Skutečné SSH ověření testovací VM i prohlížeč na mobilu, tabletu a desktopu prošly. Instalace Dockeru čeká na výslovné potvrzení v administraci; zatím nebyla spuštěna.",
+ "production_source_scope": "Doplněn produkční scénář: zdrojový Docker server pouze prověřit, zjistit aplikace a závislosti a doporučit cíl podle skutečné kapacity. Přístup ke zdroji zatím není ověřený. Historická maxima bez měření zůstávají neznámá; migrace ještě není hotová.",
  "server_onboarding_started": "Nový testovací server je dostupný a jeho SSH identita i přístup byly ověřeny. Vzniká webový průvodce: první přístup, automatické ověření a výslovně potvrzená příprava chybějícího prostředí. Instalace zatím nebyla spuštěna.",
  "web_migration_scope_accepted": "Upřesněné zadání: z webu připojit zdrojový i domácí server, přesouvat aplikace postupně včetně jejich databází, dát jim vlastní subdomény a připravit nezávislou statickou zálohu. První skutečný podporovaný průchod je cílem na 17. října; druhý testovací uzel se připravuje, obecná migrace ještě není hotová.",
  "admin_acceptance_reconciled": "Dokončeny tři zastaralé položky administrace a chráněného centra. Přidání/úprava/vypnutí testovacího serveru, mobil/tablet/desktop, přihlášení, soubory, filtrování a skutečný návrat předchozí verze prošly. Osm zbývajících úkolů má upřesněné podmínky dokončení.",

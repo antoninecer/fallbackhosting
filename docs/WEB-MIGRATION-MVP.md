@@ -12,6 +12,22 @@ Every published application owns an entire hostname, initially <application>.lab
 
 ## First supported workflow
 
+### Production source and capacity-aware destination — operator clarification
+
+The operator has an additional server already running production Docker workloads. Register it as an existing production source, distinct from a fresh destination. Source discovery must not install Docker/Coolify/monitoring agents, initialize the node, restart/recreate containers, stop writers or change configuration. Initial access instructions must distinguish reusing existing access from provisioning a fresh target; do not apply the fresh-node administrative bootstrap blindly to production. This is an accepted requirement, not a claim that the source discovery UI/adapter is deployed.
+
+Discover bounded selected metadata: containers including stopped applications, Compose/project grouping when available, image IDs/digests and architecture, mounts/volumes/bind paths, ports, restart/health state, configured CPU/RAM/PID limits, filesystem capacity/free space and inodes on actual Docker/data/export filesystems. Discover database/shared-service ownership and required configuration privately. Never publish raw Docker inspect output: environments, labels, command arguments and mounts can contain secrets. Missing Compose files, external storage and shared dependencies are explicit unknowns.
+
+For each candidate destination, measure current workloads, architecture/runtime compatibility, CPU/RAM capacity and available resources, storage capacity/inodes on the actual target filesystems and existing reservations. Account for selected application data, database restore, staging archives, image extraction, rollback retention and safety headroom; do not equate the free space of /var with capacity of every volume. Avoid double-counting shared images/data; show uncertain size estimates. The gateway's independent standby role does not make it an application migration target.
+
+Show instantaneous utilization, configured limits and observed historical peaks as separate values, with timestamps, units, sample interval/window and provenance. Docker current stats do not establish a historical maximum, a resource limit or a guarantee of future demand. Read existing telemetry when available; absent history stays UNKNOWN. A bounded approved sampling period can establish an observed peak for its window, never an all-time maximum. Shared database and host overhead contribute to sizing; missing limits do not mean zero usage.
+
+Recommend a destination from measured candidates, with a human-readable explanation of compatibility, usable disk/RAM/CPU headroom, reservations and uncertainties. No destination is selected as safe from stale or missing critical measurements. If no candidate fits, show the unmet requirements rather than initiating a transfer. The operator reviews the concrete app, source and destination before any copy/restore.
+
+Transfer means application files/configuration plus a consistent database-native backup and required image references/portable images, not copying a running Docker data directory or archiving a live shared MySQL volume. Archives and secrets travel/stay privately, with integrity/readback checks. Start only an isolated copy, suppress duplicated workers/cron/mail/payment side effects and use a test hostname. Source cutover/write freeze and source deletion remain separate explicit operations under the workflow below.
+
+Acceptance: discovery makes no production changes; source inventory and metrics distinguish facts/unknowns; target recommendation accounts for existing workloads and real storage paths; insufficient/unknown capacity blocks unattended transfer; selected app restores with verified data while source and unrelated apps continue serving. The additional production source's identity/access and its actual apps, size and historical peaks are currently UNKNOWN.
+
 1. Connect/register two nodes, verify identity, reachability, supported OS/runtime and capacity. Initial enrollment may require one operator bootstrap action; normal ongoing management uses the web console.
 2. Discover supported applications on the source using a bounded read-only adapter. Select an application and show its containers/Compose identity, image/template, volumes, database and shared dependencies. Unknown/unreadable dependencies block migration explicitly.
 3. Select destination, dedicated production/test hostnames and an existing or newly provisioned shared target MySQL instance. Prepare only the selected app, with unique target database/account and private credential custody.
@@ -39,7 +55,7 @@ A planning mock, a green progress label, a controller login or a generic 200 is 
 
 ## Observed prerequisites and current limits
 
-As of the operator clarification, ctx1 is the only registered verified node. A second full VM is operator-prepared; SSH user-key generation/login is reported, but VM OS, VPN reachability and independently attested SSH server key are not yet established. The reported user-key fingerprint is not server-key attestation. No existing customer VPS/application access has been supplied.
+ctx1 and the new test VM are now registered. The new VM's console-attested SSH identity, actual login, Rocky Linux 9.8, two CPUs, approximately 3.6 GiB RAM and available storage were verified; Docker is absent and initialization has not been requested. A further production Docker source is operator-reported, but no verified source access/application inventory has been supplied. Its resources, applications and historical load remain UNKNOWN.
 
 Existing verified components: authenticated inventory/control center; owned stateless cafe demo; independent local static standby; manual/scheduled maintenance; authenticated backup-gated snapshot preview/publication/rollback; static archive discovery/readback/restore. General app import/migration, shared-MySQL lifecycle integration and production app subdomain enrollment remain implementation work.
 

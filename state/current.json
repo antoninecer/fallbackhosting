@@ -4,8 +4,8 @@
   "milestone": "M03",
   "phase": "TESTING",
   "task_id": "FH-0031",
-  "live_verified_at_utc": "2026-10-16T18:42:23Z",
-  "last_checkpoint": "checkpoints/20261016T210741Z-FH-0031-predeploy-pass.md",
+  "live_verified_at_utc": "2026-10-16T21:11:19Z",
+  "last_checkpoint": "checkpoints/20261016T211031Z-production-source-capacity-scope.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "Web onboarding wizard passed126 tests and actual disposable browser360/768/1440. Private node initialization service and PHP release ready for guarded activation. Real vasatkova inspect will stop before explicit operator initialization confirmation.",
-  "next_safe_action": "Finish pinned/browser acceptance; activate new onboarding service and PHP wizard, inspect real vasatkova and present explicit initialization confirmation. Then prepare runtime via the wizard and proceed with shared-MySQL migration adapter.",
+  "current_summary": "New node wizard LIVE: actual authenticated browser360/768/1440, strict SSH inspection of test VM READY, and canaries PASS. Docker initialization NOT requested. Production source discovery/capacity-based target selection accepted; actual source access not supplied, FH-0032 BLOCKED.",
+  "next_safe_action": "Implement distinct read-only production-source discovery and capacity-aware placement. Collect source identity/access privately before real inventory. Test VM initialization remains explicit in authenticated wizard; do not initialize production source.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -133,9 +133,9 @@
     "center_release_revision": "5b57a1e7886cf0976f948dc46da845c66c704d11",
     "center_release_status": "LIVE_HTTPS_AUTH_ASSET_LOGOUT_CANARIES_PASS",
     "center_operator_browser_confirmation": "PENDING",
-    "active_release_revision": "22cec4bc5d29460a0f5d8d6f72cccd28ac4df888",
+    "active_release_revision": "831a2394085010b90d4342f7bb6b06204efeb5b6",
     "installer_ui_status": "LIVE_BROWSER_360_768_1440_PASS",
-    "last_full_repository_tests": 116
+    "last_full_repository_tests": 126
   },
   "public_events": [
     {
@@ -525,6 +525,14 @@
     {
       "id": "server_onboarding_started",
       "utc": "2026-10-16T21:05:46Z"
+    },
+    {
+      "id": "server_onboarding_live_ready",
+      "utc": "2026-10-16T21:11:19Z"
+    },
+    {
+      "id": "production_source_scope",
+      "utc": "2026-10-16T21:11:19Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -654,5 +662,13 @@
     "repository_tests": "122_PASS",
     "activation_rollback": "DOCUMENTED_BACKED_UP_NOT_EXERCISED",
     "evidence": "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md"
+  },
+  "node_onboarding": {
+    "status": "LIVE_SSH_INSPECTION_READY",
+    "observed_at_utc": "2026-10-16T21:11:19Z",
+    "initialization": "NOT_REQUESTED",
+    "browser": "LIVE_360_768_1440_PASS",
+    "repository_tests": 126,
+    "evidence": "checkpoints/20261016T211031Z-production-source-capacity-scope.md"
   }
 }

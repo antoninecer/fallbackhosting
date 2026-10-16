@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T21:11:19Z — FH-0031 LIVE at pinned PHP/source831a239: actual browser360/768/1440, strict VM SSH inspection READY and protected canaries PASS. Docker absent; initialization NOT requested. Production-source read-only inventory and measured destination selection clarified in docs/WEB-MIGRATION-MVP.md. FH-0032 BLOCKED pending actual source access/identity; migration engineering FH-0029 continues. No production source queried or copied. See `checkpoints/20261016T211031Z-production-source-capacity-scope.md`.
+
 2026-10-16T21:05:46Z — FH-0031 new-server wizard implemented locally; actual vasatkova SSH/identity/resources/operator sudo PASS, Docker absent. Registered with SSH/fingerprint PASS and Docker UNKNOWN using private backups/lock/audit. No target runtime initialization or new gateway service yet. See `checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md`.
 
 2026-10-16T20:37:55Z — Operator-approved web-managed incremental Docker/shared-MySQL migration contract recorded, first actual supported two-node acceptance target2026-10-17. FH-0028/FH-0029/FH-0030 added; new VM preparation operator-reported, VPN/server identity/source app still pending. No universal migration or new-domain activation claimed. See `checkpoints/20261016T203755Z-web-migration-scope-accepted.md` and docs/WEB-MIGRATION-MVP.md.
