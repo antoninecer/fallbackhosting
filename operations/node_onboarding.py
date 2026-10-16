@@ -39,8 +39,9 @@ def validate(spec):
 
 
 class SSHDriver:
-    def __init__(self,root,home,source):
+    def __init__(self,root,home,source,max_reply=16384):
         self.root,self.home,self.source=Path(root),Path(home),Path(source)
+        self.max_reply=max_reply
         self.root.mkdir(mode=0o700,parents=True,exist_ok=True)
     def __call__(self,spec,action):
         validate(spec);folder=self.root/spec['id'];folder.mkdir(mode=0o700,exist_ok=True)
@@ -58,7 +59,7 @@ class SSHDriver:
         body=body.replace('PAYLOAD_PLACEHOLDER',repr({'action':action}))
         args=['ssh','-F','/dev/null','-o','BatchMode=yes','-o','ConnectTimeout=5','-o','PasswordAuthentication=no','-o','KbdInteractiveAuthentication=no','-o','StrictHostKeyChecking=yes','-o','HostKeyAlgorithms=ssh-ed25519','-o','UserKnownHostsFile='+str(pinned),'-o','GlobalKnownHostsFile=/dev/null','-o','IdentitiesOnly=yes','-o','IdentityAgent=none','-o','ForwardAgent=no','-o','ClearAllForwardings=yes','-i',str(self.home/'.ssh/id_ed25519'),'-p',str(spec['ssh_port']),'-T',spec['ssh_user']+'@'+spec['host'],'python3','-']
         result=subprocess.run(args,input=body,capture_output=True,text=True,timeout=660)
-        if result.returncode or len(result.stdout)>16384:raise Denied('SSH_OR_REMOTE_CHECK_FAILED')
+        if result.returncode or len(result.stdout)>self.max_reply:raise Denied('SSH_OR_REMOTE_CHECK_FAILED')
         reply=json.loads(result.stdout)
         if reply.get('ok') is not True:raise Denied('REMOTE_PREPARATION_REQUIRES_REVIEW')
         facts=reply['facts']
@@ -92,6 +93,9 @@ class Onboarding:
         with self.lock:return {'ok':True,'public_key':self.public_key,'job':self.view(request['node'])}
     def submit(self,request,uid):
         self.authorize(request,uid)
+        if isinstance(request.get('kind'),str) and request['kind'].startswith('migration_'):
+            if not getattr(self,'migration',None):raise Denied('MIGRATION_NOT_CONFIGURED')
+            return self.migration.submit(request)
         with self.lock:
             if request.get('kind')=='inspect_node':
                 exact(request,'kind actor spec');spec=validate(request['spec']);old=self.view(spec['id'])
@@ -130,11 +134,18 @@ def main():
     if os.geteuid()!=account.pw_uid:raise ValueError('Incorrect service identity')
     public=(Path(account.pw_dir)/'.ssh/id_ed25519.pub').read_text().strip()
     api=Onboarding(policy['runtime'],policy['web_uid'],policy['actor'],public,SSHDriver(Path(policy['runtime'])/'trust',account.pw_dir,policy['source']))
+    if policy.get('migration_nodes'):
+        from operations.volume_migration import VolumeMigration
+        nodes=policy['migration_nodes']
+        for spec in nodes.values():validate(spec)
+        api.migration=VolumeMigration(Path(policy['runtime'])/'migration',nodes,SSHDriver(Path(policy['runtime'])/'migration-trust',account.pw_dir,policy['migration_source'],max_reply=4*1024*1024))
     listener=socket.socket(fileno=3);selector=selectors.DefaultSelector();selector.register(listener,selectors.EVENT_READ);stop=threading.Event();failed=threading.Event()
     signal.signal(signal.SIGTERM,lambda *unused:stop.set());signal.signal(signal.SIGINT,lambda *unused:stop.set())
     def work():
         try:
-            while not stop.wait(.2):api.advance()
+            while not stop.wait(.2):
+                api.advance()
+                if getattr(api,'migration',None):api.migration.advance()
         except Exception:failed.set();stop.set()
     thread=threading.Thread(target=work);thread.start()
     try:

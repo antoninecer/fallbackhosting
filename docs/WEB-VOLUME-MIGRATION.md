@@ -1,0 +1,26 @@
+# Web-operated owned Docker volume migration — first supported fixture
+
+This bounded adapter is the first real web-operated transfer exercise, not a production import wizard. Authenticated **Přesun aplikací** (`/?migration=1`) controls an owned two-container Redis/BusyBox HTTP fixture between the two privately allowlisted nodes. Existing cafe demo, Coolify and unrelated containers are protected. No public port, new Nginx/TLS route or shared database dependency is introduced.
+
+The operator explicitly authorized preparing the new VM and autonomously testing Docker Hub workloads with volumes in both directions; subsequently required web control. Actual preparation via the existing revision-confirmed onboarding service completed with Docker29.9.1 and Compose verified. Node measurements are dated observations, not permanent capacity guarantees.
+
+## User flow and acceptance
+
+1. In Servery select **Přesun aplikací**, choose **Prověřit cíl ctx1** and confirm. See actual Docker/runtime/architecture, CPU count, available host memory, free space on DockerRootDir filesystem, container count and instantaneous aggregate container CPU. Historical maximum is explicitly unknown. This read-only check installs/restarts nothing.
+2. Confirm creation of the owned test app. Pull official Redis7.4-alpine and BusyBox1.37.0 once, resolve image digests and use immutable references thereafter. Two labelled containers, two labelled named volumes, no network/public port, 96MiB/0.25CPU each, bounded logs/PIDs. Artificial marker and counter7 are stored in Redis RDB and web index.html. Redis GET plus HTTP read inside web container must agree.
+3. Check the other node, then explicitly confirm the move. The capacity result is revision-bound and expires after five minutes; available capacity is rechecked before source stop. Minimum512MiB disk and256MiB available memory are conservative fixture requirements, not a generic production sizing model.
+4. Save Redis synchronously, stop only these two source containers, stream both volume archives privately through verified SSH, retain SHA256 and bytes. Source files/volumes remain intact. Pull the same image digests on the destination, restore into newly named volumes/containers, validate bounded archive members and verify restored database+HTTP content exactly. The source stays stopped, avoiding divergent writes. Only one artificial fixture is active through this UI.
+5. Add a test record from the web (counter8 in DB+file), then move back to new source-node volumes. Verify current data, not an old snapshot. Restart only owned current containers from the web and reverify persistence. History records both directions and checksums; archives stay private.
+
+Actual success requires real browser/Unix/SSH/Docker results, not fixture-driver test output. Reaching RUNNING requires DB and web verification. Existing nonfixture container IDs/status/start times/restarting state must remain unchanged during source export and target creation. Independent public canaries are checked separately before/after activation and live exercise.
+
+## Boundaries, interruptions and rollback
+
+- Existing onboarding socket authenticates actor and kernel UID; root-owned migration policy contains exactly the two permitted SSH targets and attested fingerprints. Web never supplies a host/key/path/shell/image/archive. Private identity remains in the technical account. New code runs inside the existing unprivileged systemd sandbox; independent gateway/static serving does not depend on it.
+- Fixed remote code only accepts uniquely named artificial fixture resources. Every existing container and volume must carry the exact ownership label. No existing production app import, shared MySQL migration, source cleanup, generic shell or arbitrary path is exposed.
+- Durable intent precedes create/export/restore/write/restart. Interrupted or failed actions become NEEDS_REVIEW and cannot be replayed from the web. Current resource references, original volumes and verified available archives are preserved for operator reconciliation. No automatic restart of stale source after a destination may have accepted writes.
+- A successful reverse move carries current data into fresh volumes; old source is never blindly reactivated. Failed restores may leave an owned incomplete target; inspect the exact journal/resources before removing only that target. The initial owned source can be restarted only after verifying the target has not accepted newer writes.
+- Up to20 retained placements bound resource growth; original volumes are intentionally retained as recovery points. Cleanup/production deletion are separate future operations. Images remain cached; no broad prune.
+- Roll back activation by stopping only onboarding service, restoring journal-backed previous code/policy and immutable PHP pointer, then starting the service and checking canaries. Preserve migration runtime/archives; do not undo Docker installation or delete fixture data as part of UI rollback.
+
+Primary references inspected: [official Redis image](https://hub.docker.com/_/redis), [Docker volumes](https://docs.docker.com/engine/storage/volumes/). Redis /data is the persistent path; explicit SAVE and stopped-volume export provide this fixture's consistency point. General apps need app-native consistency and dependency-specific adapters.

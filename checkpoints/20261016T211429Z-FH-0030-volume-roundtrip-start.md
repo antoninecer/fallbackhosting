@@ -1,0 +1,14 @@
+# FH-0030 owned volume roundtrip — authorized runtime exercise
+
+- UTC 2026-10-16T21:14:29Z. Operator explicitly authorizes initializing vasatkova and creating Docker Hub test workloads with persistent volumes, moving them ctx1 -> vasatkova -> ctx1 without further chat approval. Existing cafe demo and unrelated workloads preserved.
+- Acceptance: actual supported Rocky Docker/Compose initialization verified; uniquely owned Redis data + static-file volume fixture on ctx1; bounded consistent export/checksum/readback, isolated restore/start/data verification on vasatkova, new writes there, reverse migration to new ctx1 volumes, persistence through owned restart, no unrelated-container identity/state changes. No public routing/DNS/firewall/Nginx change.
+- Scope: existing onboarding initializer on vasatkova, then only newly labelled fixture containers/volumes on ctx1 and vasatkova. Official multiarchitecture Redis and BusyBox images, resolved digests retained privately. Bind no public ports. Data contains deterministic artificial markers only, never customer data or credentials.
+- Dependencies: current SSH trust, target package access/disk, Docker runtime; fail closed on unknown job, collision or partial installation. Real web workflow/general migration not claimed by this operator exercise.
+- Rollback: preserve original owned source volumes and each verified archive; stop only owned destination if restore fails, restart original owned source. Never replay unknown initialization or delete shared volumes. Existing runtime package install has private journal and nondestructive stop/disable rollback. Inspect actual state after interruption.
+- Baseline: protected reference/project/lab TLS/auth/assets/release canaries PASS immediately before work. Durable private resource journal and before/after container metadata will be kept under ignored .local.
+
+## Verified prerequisite and web implementation
+
+- 2026-10-16T21:20:40Z: actual existing onboarding initialization SUCCEEDED on vasatkova, Docker29.9.1 + Compose verified (private job and remote journal retained). Actual read-only fixed SSH probes on both nodes PASS; both x86_64, Docker-root filesystems and host memory have sufficient room for this bounded fixture. No fixture created yet.
+- Web module and private durable broker now implement check/create/move/write/restart of a strictly owned Redis+file fixture. Four meaningful authorization/CSRF/Unix/revision/capacity/two-direction/persistence/interruption groups PASS. No production app import or general shared-MySQL completion claimed.
+- Next activation: journal-backed update of only existing onboarding service root-owned code/policy and immutable PHP pointer; restart only this service (no active job), syntax-tested FPM reload. Existing units/socket/Nginx/firewall/DNS unchanged. Rollback restores exact prior code/policy/PHP, preserving job archives and remote resources. Full pinned-source checks precede activation.
