@@ -6,6 +6,8 @@ FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availabilit
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+2026-10-16 06:06 UTC: FH-0023 bounded guided prototype DONE after actual installation, administrator enrollment, final compatible16-character credential synchronization and real browser login/logout in lab/Coolify. All102 tests and production canaries PASS. M03 remains IN_PROGRESS: target enrollment, MFA/recovery and demo deployment are not completed by a working controller.
+
 2026-10-16 05:59 UTC: actual guided account submission rejected the exact requested password because it lacks a symbol. No installation request or secret was queued. FH-0023 remains TESTING and M03 IN_PROGRESS; select a compatible Coolify password before another trial. Existing lab login works; no credential replacement performed.
 
 <!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->

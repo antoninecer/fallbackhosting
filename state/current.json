@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M03",
-  "phase": "TESTING",
+  "phase": "READY",
   "task_id": "FH-0023",
-  "live_verified_at_utc": "2026-10-16T05:50:11Z",
-  "last_checkpoint": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md",
-  "current_summary": "Actual HTTPS browser trial with exact operator-requested credentials rejected installation submission for missing password symbol. Lab login/logout PASS; independent private queue inspection found no request/secret/result. Coolify remains removed with data retained; installation and native account login untested.",
-  "next_safe_action": "Operator selects a compatible native Coolify password containing a symbol; preserve lab credentials. Before one further wizard trial inspect bounded-worker readiness and ledger. Continue unrelated safe engineering independently.",
+  "live_verified_at_utc": "2026-10-16T06:06:07Z",
+  "last_checkpoint": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md",
+  "current_summary": "FH-0023 bounded guided prototype DONE: actual installation, native owner, healthy services and registration disabled verified. Final compatible 16-character credential synchronized privately; actual browser lab/Coolify login/logout PASS, prior lab credential rejected. Generator regression checks and all 102 tests PASS; original workload and protected canaries unchanged.",
+  "next_safe_action": "Prepare reviewed target-enrollment and MFA/recovery plan for the private Coolify controller. Do not repeat successful bootstrap, automatically validate target or expose Coolify publicly; target validation can install/restart Docker and needs exact scope review.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -410,6 +410,14 @@
     {
       "id": "install_credentials_rejected",
       "utc": "2026-10-16T05:59:16Z"
+    },
+    {
+      "id": "install_wizard_success",
+      "utc": "2026-10-16T06:03:34Z"
+    },
+    {
+      "id": "credentials_and_native_login_verified",
+      "utc": "2026-10-16T06:06:07Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -437,31 +445,48 @@
     "evidence": "checkpoints/20261015T152337Z-FH-0022-lifecycle-pass.md"
   },
   "coolify_installation": {
-    "status": "REMOVED_CONTAINERS_DATA_RETAINED",
+    "status": "PRIVATE_CONTROL_PLANE_RUNNING",
     "version": "4.4.6",
-    "observed_at_utc": "2026-10-16T05:40:27Z",
-    "healthy_services": 0,
+    "observed_at_utc": "2026-10-16T06:06:07Z",
+    "healthy_services": 3,
     "public_exposure": false,
-    "initial_admin": "PENDING_WIZARD_ACCOUNT_DETAILS",
-    "login_logout": "NOT_TESTED",
+    "initial_admin": "ENROLLED_NATIVE_OWNER_VERIFIED",
+    "login_logout": "ACTUAL_BROWSER_PASS",
     "automation_credential": "NOT_CONFIGURED",
     "validated_deployment_target": "NOT_TESTED",
-    "evidence": "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
+    "evidence": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
   },
   "installer_trial": {
     "mode": "BOUNDED_OPERATOR_STARTED_ONE_ATTEMPT",
     "persistent_system_service": false,
-    "last_observed": "READY",
-    "observed_at_utc": "2026-10-16T05:50:11Z",
+    "last_observed": "SUCCEEDED",
+    "observed_at_utc": "2026-10-16T06:03:10Z",
     "max_wait_seconds": 1800,
-    "actual_installation": "NOT_DISPATCHED_CREDENTIAL_VALIDATION_REJECTED",
-    "evidence": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md",
-    "credential_validation": {
+    "actual_installation": "SUCCEEDED",
+    "evidence": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md",
+    "worker_ready": false,
+    "stored_secrets": 0,
+    "unfinished_operations": 0,
+    "previous_credential_validation": {
       "result": "REJECTED_MISSING_SYMBOL",
       "observed_at_utc": "2026-10-16T05:59:16Z",
       "queued_requests": 0,
       "stored_secrets": 0,
       "evidence": "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md"
+    },
+    "credential_validation": {
+      "result": "PASS_BOTH_ACCOUNTS",
+      "observed_at_utc": "2026-10-16T06:06:07Z",
+      "generated_length": 16,
+      "required_groups": [
+        "lowercase",
+        "uppercase",
+        "digit",
+        "symbol"
+      ],
+      "native_browser_login_logout": "PASS",
+      "lab_browser_login_logout": "PASS",
+      "evidence": "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
     }
   }
 }

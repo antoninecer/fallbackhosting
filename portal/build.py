@@ -52,6 +52,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "credentials_and_native_login_verified": "Opraven generátor hesel: standardně 16 náhodných znaků a povinně malé i velké písmeno, číslice a symbol. Nové přihlášení i odhlášení ověřené v administraci a Coolify. Skutečná instalace dokončena; všech 102 testů prošlo, původní služby jsou beze změny.",
+ "install_wizard_success": "Skutečná instalace Coolify přes průvodce dokončena: tři služby jsou zdravé, správce založen a registrace vypnutá. Nové přihlášení do administrace ověřené; následuje kontrola přihlášení přímo do Coolify a sjednocení délky hesla.",
  "install_credentials_rejected": "Skutečný průchod instalačním formulářem odhalil chybějící symbol v požadovaném hesle. Přihlášení do administrace prošlo; instalace se nespustila a údaje se neuložily do fronty. Pro další pokus je potřeba zvolit heslo splňující pravidla formuláře.",
  "install_wizard_live": "V administraci je nový průvodce Aplikace: server, nápověda, účet a potvrzení instalace. Ověřen ve skutečném HTTPS prohlížeči; jednorázová zkouška čeká na údaje z formuláře. Samotná instalace zatím neproběhla.",
  "install_wizard_ready": "Průvodce a oddělený instalační postup prošly všemi 100 testy a předběžnou kontrolou testovacího serveru. Připravujeme aktivaci pro jeden potvrzený pokus z administrace.",

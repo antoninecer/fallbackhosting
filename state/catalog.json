@@ -208,9 +208,9 @@
     {
       "id": "FH-0004",
       "title": "Nasazení Coolify na testovacím uzlu",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Operator + Codex",
-      "acceptance": "Previous three-container Coolify instance removed at operator request; retained data/volumes allow rollback. Reinstallation and initial admin enrollment must now run through the guided lab application (FH-0023). Actual guided deployment, native login and target validation remain pending.",
+      "acceptance": "Actual guided private controller installation and native administrator browser login/logout PASS; three services healthy, registration disabled, compatible credential privately delivered. Deployment target validation, MFA/recovery, automation credential and owned demo deploy/redeploy remain pending; M03 incomplete.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261015T161948Z-FH-0004-modular-start.md",
@@ -218,7 +218,8 @@
         "docs/MODULAR-PROVIDERS.md",
         "checkpoints/20261015T163534Z-FH-0004-coolify-install-scope.md",
         "checkpoints/20261015T164701Z-FH-0004-coolify-private-ready.md",
-        "docs/COOLIFY-DEPLOYMENT.md"
+        "docs/COOLIFY-DEPLOYMENT.md",
+        "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -272,6 +273,14 @@
           "utc": "2026-10-16T05:40:27Z",
           "evidence": [
             "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T06:06:07Z",
+          "evidence": [
+            "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
           ]
         }
       ]
@@ -858,17 +867,18 @@
     {
       "id": "FH-0023",
       "title": "Průvodce instalací aplikací",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Codex + Operator",
-      "acceptance": "Guided admin UI live: actual HTTPS login/server/help/account form, 360/768/1440 browser view, logout/unauth denial and unchanged inventory/canaries PASS. 100 local tests PASS. One bounded fixed-template worker observed ready for one operator-submitted trial; actual guided Coolify installation/bootstrap/native browser login pending. Actual exact-credentials HTTPS form trial rejected missing password symbol before dispatch; private queue empty. Operator must select a compatible Coolify password before another trial; existing lab credentials unchanged.",
+      "acceptance": "Bounded guided prototype verified: actual authenticated HTTPS form installation SUCCEEDED once; three healthy services, native owner and registration disabled. Compatible 16-character generated credentials synchronized; real lab/Coolify browser login/logout PASS, old lab credential rejected. All102 tests PASS; worker exited, no retained spool secrets or unfinished job; protected canaries/original workload unchanged. General installer/target enrollment remains outside this bounded prototype.",
       "dependencies": [],
       "evidence": [
         "checkpoints/20261016T054027Z-FH-0023-coolify-removed.md",
         "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md",
-        "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md"
+        "checkpoints/20261016T055916Z-FH-0023-exact-credentials-result.md",
+        "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-16T06:06:07Z",
+      "completion_revision": "7c2501d2f3feea1983cb875877ff5c3d6b90876e",
       "milestone": "M03",
       "scope": "Existing lab PHP app and one pre-authorized operator-started installation attempt of the fixed Coolify 4.4.6 template on ctx1, reusing retained verified installation data. No system service, arbitrary shell/image, SSH key exposure or public Coolify route.",
       "rollback": "Restore prior immutable lab release; stop worker and withdraw heartbeat; retain request audit and recovery data. Reconcile any started remote job before rollback/retry. No automatic data deletion.",
@@ -879,6 +889,14 @@
           "utc": "2026-10-16T05:50:11Z",
           "evidence": [
             "checkpoints/20261016T055011Z-FH-0023-wizard-live-ready.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-16T06:06:07Z",
+          "evidence": [
+            "checkpoints/20261016T060607Z-FH-0023-credentials-and-native-login-verified.md"
           ]
         }
       ]
