@@ -2,10 +2,10 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M05",
-  "phase": "IN_PROGRESS",
+  "phase": "TESTING",
   "task_id": "FH-0025",
   "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T070046Z-FH-0025-control-ui-local-pass.md",
+  "last_checkpoint": "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md",
   "current_summary": "Actual remote demo stop/start, real isolated prefixed Nginx and Chromium360/768/1440 PASS for online/outage/static assets/maintenance/scheduled window/three-check recovery. Remote backup readback restored, served and rolled back. Adding authenticated UI via existing bounded Unix protocol; no public proxy/service activation yet.",
   "next_safe_action": "Implement/test repository-local standby vertical slice with fixture site export and resized images, versioned preview/publication, per-app outage and controller-independent proxy behavior, maintenance and stable recovery. Keep backup discovery FH-0024 READY; no live proxy/VPN/controller changes. Include scheduled maintenance/notice/contact-only windows and overrun tests; no actual window or notifications created.",
   "blocking_issue": null,
@@ -450,6 +450,10 @@
     {
       "id": "minimum_standby_control_local_pass",
       "utc": "2026-10-16T07:00:46Z"
+    },
+    {
+      "id": "minimum_standby_release_ready",
+      "utc": "2026-10-16T07:10:52Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -544,6 +548,9 @@
     "scheduled_window": "PASS",
     "stable_recovery": "PASS_THREE_CHECKS",
     "restore_serving_rollback": "PASS",
-    "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED"
+    "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED",
+    "repository_tests": "113_PASS",
+    "worker_identity_test": "REAL_WWW_DATA_PROCESS_PASS_NOT_SYSTEM_SERVICE",
+    "publication": "BACKUP_READBACK_RESTORE_BEFORE_PUBLISH_PASS"
   }
 }

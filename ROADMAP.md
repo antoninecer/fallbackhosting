@@ -6,6 +6,8 @@ FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availabilit
 
 Status codes: `PLANNED`, `IN_PROGRESS`, `NEEDS_TEST`, `BLOCKED`, `DONE`.
 
+FH-0025 minimum slice at 2026-10-16 07:10 UTC: actual remote-demo/independent-Nginx outage and static rollback verified,113 tests PASS, maintenance UI and unprivileged worker locally tested, backup/readback/isolated restore gates publication. Public `/demo/` activation and production control acceptance remain pending; M05 is IN_PROGRESS rather than complete from a one-page prototype.
+
 2026-10-16 06:30 clarification supersedes mandatory public Coolify placement: unified FallbackHosting control and independent public-content availability take priority. Coolify instances are replaceable deployment adapters; reuse existing controller for first complete VPN/backend-outage/standby/maintenance/recovery demonstration. First implement/test a repository-local standby vertical slice; SSH backup discovery remains a separate READY task. No live edge reconfiguration or controller migration performed.
 
 Operator-directed placement/recovery clarification 2026-10-16: central management/Coolify target is the public-IP node, applications and optional cataloged backups on remote selfhosted nodes. Fresh-install SSH backup discovery and selected restore are planned; existing ctx1 controller remains unchanged. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`; repository-local recovery planning proceeds independently of later exact migration approval.

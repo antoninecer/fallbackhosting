@@ -925,14 +925,16 @@
     {
       "id": "FH-0025",
       "title": "První úplný průchod statickou zálohou a přepínáním",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex",
       "acceptance": "Repository-local vertical slice: approved fixture-site export with self-contained assets and resized images; preview, atomic versioned publication and previous-release retention; per-app backend/VPN-failure simulation, manual maintenance, controller-independent serving and stable recovery. Test unrelated-app isolation and disabled dynamic actions. No claim of actual production failover until separately scoped live verification. Include persisted planned maintenance windows, explicit affected apps, Prague/UTC time handling, contact-only notice, maintenance precedence over healthy probes, extension/overrun and health-gated return; announcement preview only, no actual messaging.",
       "dependencies": [],
       "evidence": [
         "docs/PUBLIC-CONTROLLER-RECOVERY.md",
         "checkpoints/20261016T063002Z-availability-first-design-start.md",
-        "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md"
+        "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md",
+        "docs/MINIMUM-STANDBY.md",
+        "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -946,6 +948,14 @@
           "utc": "2026-10-16T06:34:22Z",
           "evidence": [
             "checkpoints/20261016T063422Z-FH-0025-minimum-slice-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T07:10:52Z",
+          "evidence": [
+            "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md"
           ]
         }
       ]

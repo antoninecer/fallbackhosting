@@ -54,6 +54,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "minimum_standby_release_ready": "Všech 113 testů prošlo. Ovládání údržby i plánování v pražském čase je ověřené v prohlížeči; samostatná služba funguje pod neprivilegovaným účtem. Nová statická verze se publikuje až po vzdálené záloze a ověřené obnově. Připravena úzká aktivace pod /demo/; veřejné nasazení zatím neproběhlo.",
  "minimum_standby_control_local_pass": "Ovládání údržby v administraci už prošlo místním prohlížečem na mobilu, tabletu i desktopu: zapnutí/vypnutí, plánovaný interval v pražském čase, oznámení a zrušení intervalu. Ověřeny přístupové kontroly a oddělená technická služba. Veřejná aktivace této části ještě neproběhla.",
  "minimum_standby_actual_outage": "Skutečný výpadek demo kontejneru ověřen: web přešel na místní kopii, obrázky zůstaly dostupné a návrat čekal na tři úspěšné kontroly. Prohlížeč na mobilu, tabletu i desktopu prošel. Ověřena také údržba, časový interval, obnova ze vzdálené kopie a návrat verze. Přidáváme ovládání do administrace.",
  "minimum_standby_remote_backup": "Demo běží na vzdáleném uzlu. Statická kopie vznikla ze skutečného webu; obrázek zmenšen z přibližně 1 MB na 22 kB. Záložní archiv uložen vzdáleně, stažen zpět a úspěšně obnoven do odděleného adresáře. Následuje skutečná zkouška výpadku a návratu; veřejná cesta ještě není aktivní.",
