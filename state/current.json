@@ -130,10 +130,10 @@
     "login_fix_status": "DEPLOYED_LIVE_HTTPS_TEST_PASS_AFTER_GRACEFUL_PHP_FPM_RELOAD",
     "login_fix_test": "NO_PREAUTH_COOKIE_LOGIN_PASS_CTX1_VISIBLE_SESSION_ROTATION_LOGOUT_PASS_INVENTORY_UNCHANGED",
     "operator_browser_confirmation": "OPERATOR_REPORTED_AUTHENTICATED_ADMIN_PAGE_REACHED",
-    "center_release_revision": "5b57a1e7886cf0976f948dc46da845c66c704d11",
-    "center_release_status": "LIVE_HTTPS_AUTH_ASSET_LOGOUT_CANARIES_PASS",
+    "center_release_revision": "eb4bf6f62b0b80852daa7b5126fe2cf6684e8054",
+    "center_release_status": "LIVE_CURRENT_FH0033_CATALOG_AND_360_768_1440_AUTH_LOGOUT_PASS",
     "center_operator_browser_confirmation": "PENDING",
-    "active_release_revision": "97f45f0dc4e3726adf36fe51975f018e7ea51dd5",
+    "active_release_revision": "eb4bf6f62b0b80852daa7b5126fe2cf6684e8054",
     "installer_ui_status": "LIVE_BROWSER_360_768_1440_PASS",
     "last_full_repository_tests": 130
   },
