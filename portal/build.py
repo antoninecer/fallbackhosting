@@ -52,6 +52,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "install_wizard_ready": "Průvodce a oddělený instalační postup prošly všemi 100 testy a předběžnou kontrolou testovacího serveru. Připravujeme aktivaci pro jeden potvrzený pokus z administrace.",
  "install_wizard_local_pass": "Průvodce instalací prošel místními testy i prohlížečem na mobilu, tabletu a desktopu. Oddělený vykonavatel přijímá jen ověřenou šablonu; skutečná instalace z formuláře ještě neproběhla.",
  "coolify_removed_for_wizard": "Původní tři služby Coolify odstraněny pro zkoušku instalace z administrace. Datová úložiště jsou zachovaná a původní aplikace beze změny; připravujeme průvodce s nápovědou.",
  "coolify_private_ready": "Coolify 4.4.6, databáze a Redis běží a jsou zdravé. Stránky, soubory i mobilní zobrazení ověřené; původní služba a veřejný gateway beze změny. Přístup je jen místní, registrace vypnutá. Pro první účet chybí soukromě sdělený e-mail správce; přihlášení ani nasazení aplikace ještě nejsou ověřené.",

@@ -14,6 +14,9 @@ SOURCES = {
     'public/admin.css': 'admin/public/admin.css',
     'lib.php': 'admin/lib.php',
     'center.php': 'admin/center.php',
+    'install.php': 'admin/install.php',
+    'installer/install_worker.py': 'operations/install_worker.py',
+    'installer/coolify_reinstall.py': 'operations/coolify_reinstall.py',
 }
 LIMITS = {'index.html': 1048576, 'center.css': 262144,
           'center.js': 131072, 'resume.txt': 131072}
@@ -29,7 +32,7 @@ def verify(release, revision, manifest_digest, require_root=False):
         if path.is_symlink():
             raise ValueError('Symlinked release path')
     expected = set(SOURCES) | {'center-artifact/' + n for n in (*LIMITS, 'manifest.json')}
-    expected_dirs = {'public', 'center-artifact'}
+    expected_dirs = {'public', 'center-artifact', 'installer'}
     found = set()
     for path in [release, *release.rglob('*')]:
         info = path.lstat()

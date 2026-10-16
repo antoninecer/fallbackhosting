@@ -5,9 +5,9 @@
   "phase": "IN_PROGRESS",
   "task_id": "FH-0023",
   "live_verified_at_utc": "2026-10-16T05:40:27Z",
-  "last_checkpoint": "checkpoints/20261016T054536Z-FH-0023-wizard-local-verified.md",
-  "current_summary": "Coolify removal and real retained-template precheck PASS. Guided UI/queue and isolated one-shot installer implemented; local HTTP/worker tests and Chromium 360/768/1440 fixture flow PASS. UI release and bounded live trial worker not activated yet; actual operator-submitted install remains pending.",
-  "next_safe_action": "Extend pinned release verification to the installer sources, run complete tests, freeze and activate the reviewed app release and one bounded operator-started trial worker. Account details must be entered only in the authenticated wizard.",
+  "last_checkpoint": "checkpoints/20261016T054729Z-FH-0023-wizard-predeploy.md",
+  "current_summary": "All 100 repository tests and disposable Chromium 360/768/1440 wizard flow PASS. Real retained-template precheck and protected pre-canaries PASS. New immutable lab UI release and bounded one-attempt trial worker are ready for activation; actual account/install request has not been submitted.",
+  "next_safe_action": "Activate only the verified immutable lab release, check real login/wizard/center/unauthenticated denial and unchanged inventory/canaries, then start one root-policy-scoped worker waiting at most 1800 seconds for one user-submitted Coolify trial request.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -395,6 +395,10 @@
     {
       "id": "install_wizard_local_pass",
       "utc": "2026-10-16T05:45:36Z"
+    },
+    {
+      "id": "install_wizard_ready",
+      "utc": "2026-10-16T05:47:29Z"
     }
   ],
   "catalog_path": "state/catalog.json",
