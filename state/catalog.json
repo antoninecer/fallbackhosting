@@ -1281,20 +1281,30 @@
     {
       "id": "FH-0031",
       "title": "Průvodce přidáním a inicializací serveru",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex",
       "acceptance": "Web first-access script/key, console-attested fingerprint and actual SSH/system/runtime test; explicit revision-bound initialization confirmation; automatic supported-node prerequisite installation and real readiness evidence. Browser/auth/restart/failure tests; no user Docker/SQL/visudo steps after initial bootstrap.",
       "dependencies": [],
       "evidence": [
         "docs/SERVER-ONBOARDING-WIZARD.md",
-        "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md"
+        "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md",
+        "checkpoints/20261016T210741Z-FH-0031-predeploy-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M03",
       "scope": "Private peer-authenticated onboarding service and first Rocky9/working-Docker adapter. Existing authorized technical SSH identity; no arbitrary remote command API or unverified trust.",
       "rollback": "Stop only new onboarding units, restore previous immutable PHP pointer with syntax-tested reload; preserve private jobs and remote package/data journals. Fresh target Docker can be stopped/disabled; no automatic package/data deletion.",
-      "history": []
+      "history": [
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T21:07:41Z",
+          "evidence": [
+            "checkpoints/20261016T210741Z-FH-0031-predeploy-pass.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],

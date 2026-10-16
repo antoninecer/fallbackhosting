@@ -2,10 +2,10 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M03",
-  "phase": "IN_PROGRESS",
+  "phase": "TESTING",
   "task_id": "FH-0031",
   "live_verified_at_utc": "2026-10-16T18:42:23Z",
-  "last_checkpoint": "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md",
+  "last_checkpoint": "checkpoints/20261016T210741Z-FH-0031-predeploy-pass.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,7 +17,7 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "New VM actual pinned SSH and operator sudo verified; registered with Docker UNKNOWN. Explicitly requested web onboarding/init wizard implemented locally; fixture acceptance and isolated service deployment underway, no actual VM initialization yet.",
+  "current_summary": "Web onboarding wizard passed126 tests and actual disposable browser360/768/1440. Private node initialization service and PHP release ready for guarded activation. Real vasatkova inspect will stop before explicit operator initialization confirmation.",
   "next_safe_action": "Finish pinned/browser acceptance; activate new onboarding service and PHP wizard, inspect real vasatkova and present explicit initialization confirmation. Then prepare runtime via the wizard and proceed with shared-MySQL migration adapter.",
   "blocking_issue": null,
   "warnings": [
