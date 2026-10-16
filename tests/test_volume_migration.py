@@ -72,6 +72,6 @@ class VolumeMigrationTests(unittest.TestCase):
     self.assertEqual(app.request('/?migration=1',r,origin='https://invalid.example')[0],403)
     self.assertEqual(app.request('/?migration=1',dict(r,confirmation='0'))[0],422)
     self.assertEqual(app.request('/?migration=1',r)[0],303);broker.migration.advance()
-   post('check','ctx1');post('create','ctx1');post('check','vasatkova');post('move','vasatkova');broker.migration.advance();post('write','vasatkova');post('check','ctx1');post('move','ctx1');broker.migration.advance();post('restart','ctx1')
+   post('check','ctx1');self.assertIn('Historické maximum',app.request('/?migration=1')[1]);post('create','ctx1');post('check','vasatkova');post('move','vasatkova');broker.migration.advance();post('write','vasatkova');post('check','ctx1');post('move','ctx1');broker.migration.advance();post('restart','ctx1')
    self.assertEqual(broker.migration.load()['verification']['counter'],8);self.assertEqual(len(broker.migration.load()['transfers']),2)
   finally:stop.set();thread.join(3);listener.close()
