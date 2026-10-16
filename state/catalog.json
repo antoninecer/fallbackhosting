@@ -199,15 +199,16 @@
     {
       "id": "FH-0003",
       "title": "Ověření referenční aplikace",
-      "status": "TESTING",
+      "status": "DONE",
       "owner": "Operator + Codex",
-      "acceptance": "Operator confirmed expected API root JSON from phone/mobile data; external reachability OPERATOR_ATTESTED at recorded time (actual test time unspecified). Safe dynamic random-generation test remains pending; no visual UI claimed.",
+      "acceptance": "External reference API root confirmed by operator via phone/mobile data; actual bounded supported-int generation HTTPS request verified exact result shape/count/range. Local existing reference/TLS canaries PASS. No reference configuration changes or entropy-quality claim.",
       "dependencies": [],
       "evidence": [
-        "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+        "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md",
+        "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
       ],
-      "completed_at_utc": null,
-      "completion_revision": null,
+      "completed_at_utc": "2026-10-16T18:20:35Z",
+      "completion_revision": "a942b7f81b17270a81b9e82cdd4a5541052cf2b3",
       "milestone": "M01",
       "scope": "Scope and context: TASKS.md, FH-0003",
       "rollback": "Repository changes: reviewed Git revert; operational changes require the task-specific documented rollback.",
@@ -234,6 +235,14 @@
           "utc": "2026-10-16T18:15:37Z",
           "evidence": [
             "checkpoints/20261016T181537Z-FH-0003-mobile-api-attested.md"
+          ]
+        },
+        {
+          "from": "TESTING",
+          "to": "DONE",
+          "utc": "2026-10-16T18:20:35Z",
+          "evidence": [
+            "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
           ]
         }
       ]
@@ -1080,7 +1089,7 @@
     {
       "id": "FH-0027",
       "title": "Publikování a náhled záložní verze z administrace",
-      "status": "IN_PROGRESS",
+      "status": "TESTING",
       "owner": "Codex",
       "acceptance": "Fixed-demo authenticated prepare/preview/publish/previous-version rollback. Independent remote backup/readback/isolated restore before READY, integrity and stale/concurrent revision checks, restart reconciliation. Local and real HTTPS/browser acceptance plus independent existing static serving.",
       "dependencies": [
@@ -1088,14 +1097,24 @@
       ],
       "evidence": [
         "docs/DEMO-PUBLICATION.md",
-        "checkpoints/20261016T180912Z-FH-0027-publication-start.md"
+        "checkpoints/20261016T180912Z-FH-0027-publication-start.md",
+        "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M05",
       "scope": "Existing fixed public cafe demo only; separate private publication socket/worker, immutable PHP release, no generic web-supplied origin/path/SSH. No shared Nginx changes.",
       "rollback": "Stop only new publication units; restore journaled PHP/static pointers and exact static parent ownership; preserve archives/releases/runtime. Publication pointer rollback tested separately.",
-      "history": []
+      "history": [
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T18:20:35Z",
+          "evidence": [
+            "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],

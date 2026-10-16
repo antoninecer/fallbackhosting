@@ -57,6 +57,8 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "publication_ready": "Nové ovládání přípravy, náhledu a publikování prošlo 122 testy i prohlížečem na mobilu, tabletu a desktopu. Připravuje se nasazení do administrace.",
+ "reference_api_pass": "Referenční API je dostupné z mobilních dat; skutečný požadavek na jedno náhodné číslo v zadaném rozsahu prošel. Kontrola referenční aplikace je dokončená.",
  "publication_local_started": "Vzniká příprava, chráněný náhled, publikování a návrat záložní verze přímo z administrace. Zveřejnění vyžaduje ověřenou vzdálenou zálohu a obnovu; probíhají testy před nasazením.",
  "post_reboot_verified": "Po restartu obě služby dema automaticky naběhly. Živé demo, veřejný přehled a jejich statické soubory jsou dostupné přes HTTPS; ovládání údržby vyžaduje přihlášení.",
  "minimum_standby_public_pass": "Veřejné demo a ovládání údržby nasazené a ověřené. Přihlášení, mobil/tablet/desktop, ruční i plánovaná údržba a skutečný výpadek prošly. Statická kopie fungovala i bez řídicí služby; návrat čekal na tři zdravé kontroly. Všech 116 testů prošlo, ostatní weby a původní kontejnery beze změny.",

@@ -2,10 +2,10 @@
   "schema_version": 1,
   "project": "FallbackHosting",
   "milestone": "M05",
-  "phase": "IN_PROGRESS",
+  "phase": "TESTING",
   "task_id": "FH-0027",
   "live_verified_at_utc": "2026-10-16T08:40:56Z",
-  "last_checkpoint": "checkpoints/20261016T180912Z-FH-0027-publication-start.md",
+  "last_checkpoint": "checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,7 +17,7 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "Fixed-demo authenticated publication workflow implemented; six new backend/PHP tests pass. Browser and full pinned-release acceptance underway. No live publication activation yet.",
+  "current_summary": "122 pinned-source tests and actual fixture browser360/768/1440 PASS; publication activation pending. Reference external root and actual single-int dynamic acceptance PASS. Live demo501 reported and corrected by replacing unsupported POST form with example link.",
   "next_safe_action": "Finish browser/full pinned-source tests, freeze release, install isolated fixed publication worker and activate PHP release; verify actual HTTPS preview/publish/rollback with protected canaries.",
   "blocking_issue": null,
   "warnings": [
@@ -493,6 +493,14 @@
     {
       "id": "publication_local_started",
       "utc": "2026-10-16T18:09:12Z"
+    },
+    {
+      "id": "publication_ready",
+      "utc": "2026-10-16T18:20:35Z"
+    },
+    {
+      "id": "reference_api_pass",
+      "utc": "2026-10-16T18:20:35Z"
     }
   ],
   "catalog_path": "state/catalog.json",
