@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M08",
+  "milestone": "M06",
   "phase": "TESTING",
-  "task_id": "FH-0024",
-  "live_verified_at_utc": "2026-10-16T06:06:07Z",
-  "last_checkpoint": "checkpoints/20261016T072835Z-minimum-standby-resume.md",
-  "current_summary": "Minimum standby slice implemented and verified: actual remote-demo outage/maintenance/recovery, optimized local snapshot, admin/Unix controls and backup-gated publication. Read-only SSH catalog found three archives; all three independently restored, safe selected preview works. Full116 tests PASS. Public demo activation awaits only exact operator approval FH-0026; existing production unchanged.",
-  "next_safe_action": "On explicit approval revalidate frozen22cec4b candidate, record checkpoint and apply exactly reviewed public demo/UI/two-unit scope with canaries and scoped rollback, then actual HTTPS/browser/control/unit/outage/recovery acceptance. Do not infer authorization; full controller/database recovery and generic WordPress export remain separate.",
+  "task_id": "FH-0026",
+  "live_verified_at_utc": "2026-10-16T08:40:56Z",
+  "last_checkpoint": "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md",
+  "current_summary": "Public demo, independent local standby and authenticated maintenance LIVE. Actual HTTPS browser360/768/1440, manual/planned maintenance, remote demo+worker outage and stable recovery PASS; full116 tests PASS. Original workloads and protected canaries unchanged.",
+  "next_safe_action": "Commit verified activation evidence and close bounded demo tasks; implement app-specific preview/publication around existing backup-gated export. Generic WordPress/controller/database recovery remains open.",
   "blocking_issue": null,
   "warnings": [
     "Public progress and authenticated multi-node inventory LIVE; browser/mobile review and rollback drill pending. No private credentials or inventory in public export.",
@@ -107,7 +107,7 @@
     "private_config": "IGNORED_LOCAL_ONLY",
     "initial_admin": "PROVISIONED_LOCALLY_CREDENTIAL_NOT_EXPORTED",
     "tests_passed": 14,
-    "browser_qa": "NOT_PERFORMED",
+    "browser_qa": "STANDBY_LOGIN_CENTER_LOGOUT_360_768_1440_PASS",
     "ssh_key_access": "NONE",
     "remote_operations": "SCOPED_COOLIFY_TRIAL_ONLY_NO_GENERIC_DOCKER_SERVICE",
     "deployment_plan": "docs/ADMIN-ACTIVATION.md",
@@ -122,9 +122,9 @@
     "center_release_revision": "5b57a1e7886cf0976f948dc46da845c66c704d11",
     "center_release_status": "LIVE_HTTPS_AUTH_ASSET_LOGOUT_CANARIES_PASS",
     "center_operator_browser_confirmation": "PENDING",
-    "active_release_revision": "10eb26c37ddbc9e1fdb078b946893f6a08d08eb4",
+    "active_release_revision": "22cec4bc5d29460a0f5d8d6f72cccd28ac4df888",
     "installer_ui_status": "LIVE_BROWSER_360_768_1440_PASS",
-    "last_full_repository_tests": 100
+    "last_full_repository_tests": 116
   },
   "public_events": [
     {
@@ -462,6 +462,18 @@
     {
       "id": "backup_discovery_restore_preview_pass",
       "utc": "2026-10-16T07:22:48Z"
+    },
+    {
+      "id": "minimum_standby_activation_approved",
+      "utc": "2026-10-16T08:37:32Z"
+    },
+    {
+      "id": "minimum_standby_public_testing",
+      "utc": "2026-10-16T08:38:46Z"
+    },
+    {
+      "id": "minimum_standby_public_pass",
+      "utc": "2026-10-16T08:40:56Z"
     }
   ],
   "catalog_path": "state/catalog.json",
@@ -544,24 +556,26 @@
     "priority": "INDEPENDENT_PUBLIC_CONTENT_AVAILABILITY"
   },
   "standby_demo": {
-    "scope": "OWNED_REMOTE_DEMO_ISOLATED_LOOPBACK_GATEWAY",
-    "public_activation": "PREPARED_PENDING_EXACT_OPERATOR_APPROVAL_FH_0026",
+    "scope": "OWNED_REMOTE_DEMO_PUBLIC_HTTPS_INDEPENDENT_LOCAL_GATEWAY",
+    "public_activation": "LIVE_ACTUAL_ACCEPTANCE_PASS",
     "source_image_bytes": 1019267,
     "optimized_image_bytes": 22376,
     "remote_static_backup": "VERIFIED_READBACK_AND_ISOLATED_RESTORE",
     "controller_or_app_db_restore": "NOT_TESTED",
-    "evidence": "checkpoints/20261016T064519Z-FH-0025-remote-demo-and-backup.md",
+    "evidence": "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md",
     "actual_remote_outage_browser": "PASS_360_768_1440",
     "maintenance": "PASS",
     "scheduled_window": "PASS",
     "stable_recovery": "PASS_THREE_CHECKS",
     "restore_serving_rollback": "PASS",
-    "admin_control": "LOCAL_BROWSER_AND_UNIX_RPC_PASS_NOT_DEPLOYED",
+    "admin_control": "LIVE_PHP_FPM_UNIX_RPC_BROWSER_PASS",
     "repository_tests": "116_PASS",
-    "worker_identity_test": "REAL_WWW_DATA_PROCESS_PASS_NOT_SYSTEM_SERVICE",
+    "worker_identity_test": "REAL_SYSTEMD_SANDBOX_AND_STOP_RESTART_PASS",
     "publication": "BACKUP_READBACK_RESTORE_BEFORE_PUBLISH_PASS",
     "isolated_gateway": "STOPPED_AFTER_SUCCESSFUL_TESTS",
-    "remote_demo": "RUNNING_LAST_VERIFIED_2026-10-16T07:27:31Z"
+    "remote_demo": "RUNNING_LAST_VERIFIED_2026-10-16T08:40:56Z",
+    "final_mode": "ONLINE_AUTO_NO_SCHEDULE",
+    "live_activation_rollback": "DOCUMENTED_BACKED_UP_NOT_EXERCISED"
   },
   "backup_discovery": {
     "scope": "OWNED_STATIC_SNAPSHOT_ONLY",

@@ -28,9 +28,9 @@ CLI export is still an operator step; the first UI controls maintenance/scheduli
 
 `scripts/publish-standby.py` composes export, remote archive upload, independent readback, bounded isolated restore and only then atomic publication. Failed backup leaves the last published release untouched. Discovery verified three actual owned copies without using Coolify; each was fetched and independently restored again before recording the exact static-scope restore attestation. Catalog provenance is pinned-SSH repository trust, not a signed archive or proof that a compromised repository is trustworthy. Bootstrapping private/controller secrets requires a separately reviewed authenticated/encrypted format and independently recoverable identity/key material.
 
-## Concrete public activation candidate (not applied)
+## Public activation — deployed and verified 2026-10-16
 
-Proposed public URL `https://lab.ventureout.cz/demo/`; authenticated controls `https://lab.ventureout.cz/?standby=1`. Existing TLS/DNS are reused, no wildcard/certificate change. Scope is exactly:
+Live public URL `https://lab.ventureout.cz/demo/`; authenticated controls `https://lab.ventureout.cz/?standby=1`. Existing TLS/DNS are reused, no wildcard/certificate change. Scope is exactly:
 
 1. Add only the generated `/demo/`, its local asset location and an internal standby location to `/etc/nginx/sites-available/lab.ventureout.cz`; preserve both existing hosts/root/PHP routes. Candidate is built against the observed file hash and syntax-checked in a complete shadow configuration.
 2. Create only new public-static tree `/var/www/fallback-standby-demo/` and protected service tree `/var/lib/fallback-standby-demo/`. Static release copied from the verified, remote-backed artifact, root-owned immutable code/policy separate from writable runtime.
@@ -38,6 +38,9 @@ Proposed public URL `https://lab.ventureout.cz/demo/`; authenticated controls `h
 4. Stage/verify a new immutable lab PHP release with maintenance page/client, switch the existing current pointer and perform one syntax-tested graceful PHP-FPM reload for cache reconciliation, as in the earlier approved release flow.
 5. Back up the exact original vhost and previous release pointer, verify unrelated reference/project/admin/Coolify health; nginx syntax test; one narrow Nginx reload; actual TLS/browser/dynamic controls/denial/outage/recovery checks after activation.
 
-AGENTS.md requires exact action/target authorization for shared Nginx/systemd/production app changes. Prepared artifacts and isolated tests do not imply that authorization. No DNS/firewall/VPN/disk changes or host/container recreation are needed for this candidate.
+Operator explicitly approved this exact prepared scope and further deployments within the application scope. Activation completed; real HTTPS browser360/768/1440, auth/CSRF/Origin, manual/scheduled maintenance, remote-demo outage, worker independence and stable recovery all PASS. Root-owned frozen source22cec4b is active. Full116 tests and protected canaries PASS; auth/inventory and unrelated configs unchanged. This supersedes earlier prepared/not-applied records. AGENTS.md exact-target restrictions remain for new unrelated infrastructure changes. No DNS/firewall/VPN/disk changes or host/container recreation are needed for this candidate.
 
 Rollback: stop only these new units, disable their startup; restore only the exact backed-up lab vhost/current pointer; syntax-test and narrowly reload affected services with canaries. Keep snapshots, archives, private policy/journal and remote demo for reconciliation. Do not restore unrelated gateway configuration, delete volumes, prune or blindly repeat a partial activation.
+
+
+Acceptance evidence: `checkpoints/20261016T084056Z-FH-0026-public-live-pass.md`. Actual shared live activation rollback has not been exercised; the private original-vhost/current-pointer backup and guarded rollback are retained. Static snapshot restore and atomic publication rollback were tested.

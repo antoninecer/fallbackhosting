@@ -28,7 +28,7 @@ Operator-directed placement/recovery clarification 2026-10-16: central managemen
 | M03 | Central Coolify controller and remote application nodes | IN_PROGRESS | Authorized admin can deploy/redeploy one example app without changing edge config |
 | M04 | Wildcard routing and TLS | PLANNED | Multiple test hostnames route correctly; TLS renew plan; existing hosts pass canary |
 | M05 | Versioned Fallback Builder | IN_PROGRESS | Safe exported HTML/assets; preview; immutable release; atomic publish; rollback |
-| M06 | Standby Gateway + recovery | PLANNED | Per-app failover, hysteresis, manual force/restore, no cross-app outage |
+| M06 | Standby Gateway + recovery | IN_PROGRESS | Per-app failover, hysteresis, manual force/restore, no cross-app outage |
 | M07 | Emergency Contact | PLANNED | Independently hosted contact mechanism passes abuse/delivery tests |
 | M08 | Resilience and recovery tests | IN_PROGRESS | One app, Docker, LXC, Tailscale outage tests; existing Quantum unaffected |
 | M09 | Durable AI continuity | PLANNED | Checkpoint + automatic project UI ingestion; controlled restart after interruption |

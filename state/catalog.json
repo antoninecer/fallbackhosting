@@ -76,11 +76,13 @@
     {
       "id": "M06",
       "title": "Standby Gateway + recovery",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "owner": "Operator + Codex",
       "acceptance": "Per-app failover, hysteresis, manual force/restore, no cross-app outage",
       "dependencies": [],
-      "evidence": [],
+      "evidence": [
+        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
+      ],
       "completed_at_utc": null,
       "completion_revision": null
     },
@@ -955,7 +957,8 @@
         "checkpoints/20261016T063002Z-availability-first-design-start.md",
         "checkpoints/20261016T063201Z-availability-and-maintenance-contract.md",
         "docs/MINIMUM-STANDBY.md",
-        "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md"
+        "checkpoints/20261016T071052Z-FH-0025-release-ready-tests.md",
+        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
@@ -984,20 +987,48 @@
     {
       "id": "FH-0026",
       "title": "Veřejná aktivace demo fallbacku a údržby",
-      "status": "BLOCKED_BY_OPERATOR",
+      "status": "TESTING",
       "owner": "Operator + Codex",
       "acceptance": "Exact prepared scope in docs/MINIMUM-STANDBY.md: add only /demo/ locations to existing lab vhost, create named static/service trees, install/start only fallback-standby-demo socket/service, activate frozen PHP release with maintenance UI and narrow Nginx/PHP-FPM reloads. Require exact operator approval, immutable candidate/unchanged-state checks, private backup/journal/rollback and actual post-activation TLS/browser/control/auth/health/outage/recovery acceptance.",
       "dependencies": [],
       "evidence": [
         "docs/MINIMUM-STANDBY.md",
-        "checkpoints/20261016T071300Z-FH-0025-public-activation-prepared.md"
+        "checkpoints/20261016T071300Z-FH-0025-public-activation-prepared.md",
+        "checkpoints/20261016T083732Z-FH-0026-approved-activation-start.md",
+        "checkpoints/20261016T083846Z-FH-0026-activated-testing.md",
+        "checkpoints/20261016T084056Z-FH-0026-public-live-pass.md"
       ],
       "completed_at_utc": null,
       "completion_revision": null,
       "milestone": "M05",
-      "scope": "Only exact named owned demo and existing lab app/vhost. No DNS/cert/VPN/firewall/disk changes or other site edits. Await the pending explicit operator decision; continue independent safe engineering.",
+      "scope": "Operator approved exact prepared demo/vhost/two-unit/admin activation and subsequent deployments within that application scope. Other infrastructure remains protected.",
       "rollback": "Use exact backed-up lab vhost/previous PHP pointer; stop/disable only two new units; syntax-test/narrow reload and recheck protected canaries; preserve artifacts/runtime/backups.",
-      "history": []
+      "history": [
+        {
+          "from": "BLOCKED_BY_OPERATOR",
+          "to": "READY",
+          "utc": "2026-10-16T08:37:32Z",
+          "evidence": [
+            "checkpoints/20261016T083732Z-FH-0026-approved-activation-start.md"
+          ]
+        },
+        {
+          "from": "READY",
+          "to": "IN_PROGRESS",
+          "utc": "2026-10-16T08:37:32Z",
+          "evidence": [
+            "checkpoints/20261016T083732Z-FH-0026-approved-activation-start.md"
+          ]
+        },
+        {
+          "from": "IN_PROGRESS",
+          "to": "TESTING",
+          "utc": "2026-10-16T08:38:46Z",
+          "evidence": [
+            "checkpoints/20261016T083846Z-FH-0026-activated-testing.md"
+          ]
+        }
+      ]
     }
   ],
   "incidents": [],

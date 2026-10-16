@@ -56,6 +56,9 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "minimum_standby_public_pass": "Veřejné demo a ovládání údržby nasazené a ověřené. Přihlášení, mobil/tablet/desktop, ruční i plánovaná údržba a skutečný výpadek prošly. Statická kopie fungovala i bez řídicí služby; návrat čekal na tři zdravé kontroly. Všech 116 testů prošlo, ostatní weby a původní kontejnery beze změny.",
+ "minimum_standby_public_testing": "Demo je veřejně nasazené přes HTTPS a samostatná služba běží s omezenými právy. Probíhají skutečné testy přihlášení, údržby, výpadku a návratu; dokončení ještě nepotvrzeno.",
+ "minimum_standby_activation_approved": "Operátor schválil připravené nasazení. Předběžné kontroly prošly; probíhá veřejná aktivace dema, údržby a oddělené služby. Dokončení potvrdí skutečné testy přes HTTPS a zkouška výpadku.",
  "backup_discovery_restore_preview_pass": "Katalog přes SSH našel a ověřil tři skutečné zálohy statických stránek. Všechny tři byly stažené a znovu obnovené do oddělených adresářů. Funguje náhled vybrané obnovy bez přepisování živých dat; všech 116 testů prošlo. Obnova databází a celého řídicího centra zůstává samostatným úkolem.",
  "minimum_standby_activation_prepared": "Veřejné demo a ovládání jsou připravené, prověřené a zmrazené do verze. Čeká pouze konkrétní schválení zásahu do lab vhostu a dvou nových služeb podle pravidel projektu. Ostatní práce pokračuje rozpoznáváním vzdálených záloh; celé řešení na tuto otázku nečeká.",
  "minimum_standby_release_ready": "Všech 113 testů prošlo. Ovládání údržby i plánování v pražském čase je ověřené v prohlížeči; samostatná služba funguje pod neprivilegovaným účtem. Nová statická verze se publikuje až po vzdálené záloze a ověřené obnově. Připravena úzká aktivace pod /demo/; veřejné nasazení zatím neproběhlo.",
