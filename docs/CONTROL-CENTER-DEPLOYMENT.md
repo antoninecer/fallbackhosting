@@ -1,4 +1,8 @@
-# Protected control-center integration — reviewable proposal, not activated
+# Protected control-center integration — deployed
+
+2026-10-16 reconciliation: same-session delivery and corrected headers are LIVE. Actual browser360/768/1440 login/assets/filter/clipboard/download/logout and exact previous/current app-release rollback PASS; FH-0005/FH-0019 complete. Latest acceptance checkpoint and state/catalog.json supersede historical unactivated claims below. Full original host/pool/vhost/certificate rollback remains FH-0018, not implied by app-release rollback.
+
+Historical design and initial validation:
 
 The local prototype now has a same-session PHP delivery adapter. This proposal narrows deployment to an application release update of the existing lab administration. Existing public project host, Nginx/PHP configuration, certificate, users/groups, private inventory/auth, SSH and home runtime remain unchanged. The adapter is locally tested; no production release has been switched for this feature. Local browser integration also reproduced a pre-existing login bug in the frozen source: no-referrer caused Origin: null for form POST and strict validation rejected it. The reviewed new source uses Referrer-Policy: same-origin so same-origin forms preserve Origin while cross-origin referrers remain suppressed. CSRF and exact-origin checks are unchanged. Live frozen source was verified to still contain the old header; this correction is not yet active.
 

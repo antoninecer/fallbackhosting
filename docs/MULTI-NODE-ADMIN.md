@@ -1,6 +1,6 @@
 # Multiple app nodes and private configuration — FH-0017
 
-Status: multi-node inventory and authenticated read-only project center are active at `lab.ventureout.cz`. The operator reached the authenticated admin page; live HTTPS checks cover the center route/assets and session revocation. Full visual QA and production rollback drill remain unverified. Architecture extension requested by operator on 2026-10-15; no Coolify/runtime replacement or node operation was added.
+Status: multi-node inventory and authenticated read-only project center are active at `lab.ventureout.cz`. The operator reached the authenticated admin page; live HTTPS checks cover the center route/assets and session revocation. Actual360/768/1440 fixture add/edit/disable and live inventory/center browser QA now PASS, as does exact previous/current immutable PHP release rollback. Production inventory/auth preserved; FH-0017 complete. Full original configuration recovery remains FH-0018. Historical implementation-stage claims below are superseded by state/catalog.json and latest acceptance checkpoint. Architecture extension requested by operator on 2026-10-15; no Coolify/runtime replacement or node operation was added.
 
 ## What exists and what remains
 

@@ -26,7 +26,7 @@ TASKS = {
  "FH-0001": "Projektová dokumentace a obnova práce",
  "FH-0002": "Inventura infrastruktury",
  "FH-0003": "Ověření referenční aplikace",
- "FH-0004": "Nasazení Coolify na testovacím uzlu",
+ "FH-0004": "Coolify: připojení cíle a první nasazení",
  "FH-0005": "Návrh chráněného projektového centra",
  "FH-0006": "Validace a export projektových dat",
  "FH-0007": "Rozhraní projektového centra",
@@ -40,7 +40,7 @@ TASKS = {
  "FH-0015": "Návrh oddělení oprávnění technického přístupu",
  "FH-0016": "Ověřený test vytvoření, spuštění a úklidu kontejneru",
  "FH-0017": "Administrace více aplikačních serverů",
- "FH-0018": "Kontrola a opakovatelné nasazení administrace",
+ "FH-0018": "Ověření úplné obnovy konfigurace administrace",
  "FH-0019": "Schválení nové verze administrace a přihlášení",
  "FH-0020": "Izolovaná služba Docker operací — místní verze",
  "FH-0021": "Místní správa aplikací a požadavků na operace",
@@ -57,6 +57,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "admin_acceptance_reconciled": "Dokončeny tři zastaralé položky administrace a chráněného centra. Přidání/úprava/vypnutí testovacího serveru, mobil/tablet/desktop, přihlášení, soubory, filtrování a skutečný návrat předchozí verze prošly. Osm zbývajících úkolů má upřesněné podmínky dokončení.",
  "publication_live_pass": "V administraci funguje příprava nové záložní verze, chráněný náhled, publikování a návrat zpět. Skutečná vzdálená záloha a obnova, náhled na mobilu/tabletu/desktopu i nezávislost na publikační službě ověřeny. Všech 122 testů prošlo.",
  "demo_order_fix": "Opravená chyba 501 v ukázce objednávky: nefunkční odesílání nahrazuje jasně označený odkaz na ukázkovou stránku. Cesta tam i zpět prošla skutečným prohlížečem.",
  "onboarding_reconciled": "Připojení serveru už nečeká na podklady od operátora. První omezená automatizace záloh a publikování běží; obecné nasazování dalších aplikací pokračuje jako samostatná práce.",

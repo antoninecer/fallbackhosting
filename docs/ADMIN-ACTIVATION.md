@@ -1,6 +1,6 @@
 # lab admin activation — approved activation, journaled execution
 
-This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. Activation is complete and HTTPS authentication verified; the operator explicitly approved the exact scope below and Git push. The dedicated account, FPM pool, vhost and certificate are deployed. Browser/mobile QA and a live rollback drill remain unperformed. Commands below document the original activation; do not replay completed phases.
+This supersedes the static-only lab activation proposal for the operator's requested server administration. Existing project.lab.ventureout.cz progress site remains separate. Activation is complete and HTTPS authentication verified; the operator explicitly approved the exact scope below and Git push. The dedicated account, FPM pool, vhost and certificate are deployed. Browser/mobile QA and live application-release rollback/restore now PASS (2026-10-16). Full original pool/vhost/certificate configuration rollback remains unperformed under FH-0018; do not equate app-release rollback with removal/recovery of host configuration. Commands below document the original activation; do not replay completed phases.
 
 ## Requested exact scope
 

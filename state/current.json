@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "project": "FallbackHosting",
-  "milestone": "M05",
+  "milestone": "M02",
   "phase": "DONE",
-  "task_id": "FH-0027",
+  "task_id": "FH-0019",
   "live_verified_at_utc": "2026-10-16T18:24:32Z",
-  "last_checkpoint": "checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md",
+  "last_checkpoint": "checkpoints/20261016T183935Z-admin-qa-and-task-reconciliation.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "FH-0027 live authenticated demo preparation/backup-gated preview/publication/rollback acceptance PASS;122 tests PASS. Demo501 corrected and actual order-navigation verified. Reference API and operator phone card-dashboard acceptance recorded; FH-0003 DONE. FH-0011 IN_PROGRESS for general enrollment/deployment engineering, not awaiting operator input.",
-  "next_safe_action": "Implement bounded application enrollment/deploy/redeploy adapter and its privilege contract under FH-0011/FH-0004. Existing fixed publication workflow is complete. Generic arbitrary-site export and controller/database/VM recovery remain separate.",
+  "current_summary": "Three stale admin/center tasks completed after actual360/768/1440 multi-node and live center browser checks plus exact PHP release rollback/restore. Eight open tasks have explicit remaining gates. Refreshing stale protected center artifact from canonical catalog.",
+  "next_safe_action": "Continue bounded deploy/redeploy integration FH-0011/FH-0004; plan isolated full original admin-configuration recovery for FH-0018. Full node/controller/database recovery and general privilege isolation remain open.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -513,6 +513,10 @@
     {
       "id": "onboarding_reconciled",
       "utc": "2026-10-16T18:24:32Z"
+    },
+    {
+      "id": "admin_acceptance_reconciled",
+      "utc": "2026-10-16T18:39:35Z"
     }
   ],
   "catalog_path": "state/catalog.json",

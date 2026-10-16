@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T18:39:35Z — FH-0005/FH-0017/FH-0019 DONE after actual fixture multi-node/live center360/768/1440 and exact app-release rollback/restore. Private state/pool/static unchanged; canaries PASS. FH-0018 retains full configuration recovery gate; eight tasks remain open with explicit outstanding engineering. Protected center catalog refresh next. Evidence: `checkpoints/20261016T183935Z-admin-qa-and-task-reconciliation.md`.
+
 2026-10-16T18:24:32Z — FH-0027 DONE: actual live authenticated prepare/backup/readback/restore/preview/publish/rollback and independent serving PASS;122 tests PASS. Fixed demo501, actual order navigation PASS; reference API plus operator phone/dashboard evidence completes FH-0003. FH-0011 IN_PROGRESS without operator-input blocker. Final demo ONLINE_AUTO_NO_SCHEDULE, publication ROLLED_BACK after accepted rollback drill. See `checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md`.
 
 2026-10-16T18:20:35Z — FH-0003 bounded reference acceptance DONE; FH-0027 TESTING after122 pinned tests and disposable browser acceptance. Public demo POST501 correction applied to owned container with retained old image/container; unrelated workloads and protected canaries PASS. See `checkpoints/20261016T182035Z-publication-predeploy-and-reference-pass.md`.
