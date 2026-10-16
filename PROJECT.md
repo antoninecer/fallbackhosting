@@ -1,5 +1,8 @@
 # Project charter — FallbackHosting
 
+2026-10-16 accepted operator scope: browser-managed incremental migration from existing VPS nodes to home nodes, shared MySQL with separate per-app databases/accounts, app-owned subdomains/root paths, independent passive static mini-sites and optional verified source cleanup. Coolify is an internal adapter; Aplikace must be the app/domain/server/migration dashboard. First real supported two-node demonstration target:2026-10-17, not an implementation claim. docs/WEB-MIGRATION-MVP.md defines acceptance and supersedes conflicting historical workflow/placement assumptions.
+
+
 ## Purpose
 
 Operator availability clarification (2026-10-16): FallbackHosting provides unified control and an independent public edge; VPN-reachable remote Linux nodes run applications and may store cataloged backups. Coolify placement/count is flexible behind the integration, with reuse of the current private controller preferred for the first end-to-end test. A fresh installation should discover recovery points over verified SSH and prepare a selected restore. Independent public-edge standby copies remain local and serviceable without VPN, remote node, controller or backup repository. Current Coolify still runs on ctx1; full fallback and recovery implementation are pending. See `docs/PUBLIC-CONTROLLER-RECOVERY.md`.

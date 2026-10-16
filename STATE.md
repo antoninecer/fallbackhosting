@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T20:37:55Z — Operator-approved web-managed incremental Docker/shared-MySQL migration contract recorded, first actual supported two-node acceptance target2026-10-17. FH-0028/FH-0029/FH-0030 added; new VM preparation operator-reported, VPN/server identity/source app still pending. No universal migration or new-domain activation claimed. See `checkpoints/20261016T203755Z-web-migration-scope-accepted.md` and docs/WEB-MIGRATION-MVP.md.
+
 2026-10-16T18:39:35Z — FH-0005/FH-0017/FH-0019 DONE after actual fixture multi-node/live center360/768/1440 and exact app-release rollback/restore. Private state/pool/static unchanged; canaries PASS. FH-0018 retains full configuration recovery gate; eight tasks remain open with explicit outstanding engineering. Protected center catalog refreshed in pinned release411956f; actual public/protected views agree on8 active tasks and latest resume checkpoint. Evidence: `checkpoints/20261016T183935Z-admin-qa-and-task-reconciliation.md`.
 
 2026-10-16T18:24:32Z — FH-0027 DONE: actual live authenticated prepare/backup/readback/restore/preview/publish/rollback and independent serving PASS;122 tests PASS. Fixed demo501, actual order navigation PASS; reference API plus operator phone/dashboard evidence completes FH-0003. FH-0011 IN_PROGRESS without operator-input blocker. Final demo ONLINE_AUTO_NO_SCHEDULE, publication ROLLED_BACK after accepted rollback drill. See `checkpoints/20261016T182432Z-FH-0027-live-publication-pass.md`.

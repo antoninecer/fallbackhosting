@@ -1213,6 +1213,60 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FH-0028",
+      "title": "Domény aplikací a přehled směrování",
+      "status": "READY",
+      "owner": "Codex + Operator",
+      "acceptance": "Authenticated app dashboard showing own hostname, target/source node and independent standby. No path-prefix app hosting. Fix completed Coolify UX and bind actual reviewed domain/TLS/router evidence before claiming activation.",
+      "dependencies": [],
+      "evidence": [
+        "docs/WEB-MIGRATION-MVP.md",
+        "checkpoints/20261016T203755Z-web-migration-scope-accepted.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M04",
+      "scope": "Bounded first supported application workflow; preserve existing production and explicit private credential custody. No universal migration claim.",
+      "rollback": "Application-local immutable source revert and known-good pointers; before runtime work record exact affected resources, write-consistency point and tested rollback. Never delete shared services or replay unknown jobs.",
+      "history": []
+    },
+    {
+      "id": "FH-0029",
+      "title": "Webový přesun aplikací mezi servery",
+      "status": "IN_PROGRESS",
+      "owner": "Codex + Operator",
+      "acceptance": "First supported browser-driven two-node Docker+shared-MySQL migration: isolated per-app DB/user, consistent app-scoped backup/restore, test hostname, passive snapshot, controlled cutover/write-safe rollback and optional exact-app cleanup preserving shared services. Real acceptance target2026-10-17; mocks are not completion.",
+      "dependencies": [],
+      "evidence": [
+        "docs/WEB-MIGRATION-MVP.md",
+        "checkpoints/20261016T203755Z-web-migration-scope-accepted.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M03",
+      "scope": "Bounded first supported application workflow; preserve existing production and explicit private credential custody. No universal migration claim.",
+      "rollback": "Application-local immutable source revert and known-good pointers; before runtime work record exact affected resources, write-consistency point and tested rollback. Never delete shared services or replay unknown jobs.",
+      "history": []
+    },
+    {
+      "id": "FH-0030",
+      "title": "Ověření přesunu na druhé VM",
+      "status": "READY",
+      "owner": "Codex + Operator",
+      "acceptance": "Verify actual new VM identity/VPN/OS/runtime and execute owned two-node DB/data/application migration, cross-DB denial, fallback/outage/recovery/rollback/cleanup acceptance. Operator VM preparation reported; reachability and host trust not yet established.",
+      "dependencies": [],
+      "evidence": [
+        "docs/WEB-MIGRATION-MVP.md",
+        "checkpoints/20261016T203755Z-web-migration-scope-accepted.md"
+      ],
+      "completed_at_utc": null,
+      "completion_revision": null,
+      "milestone": "M08",
+      "scope": "Bounded first supported application workflow; preserve existing production and explicit private credential custody. No universal migration claim.",
+      "rollback": "Application-local immutable source revert and known-good pointers; before runtime work record exact affected resources, write-consistency point and tested rollback. Never delete shared services or replay unknown jobs.",
+      "history": []
     }
   ],
   "incidents": [],

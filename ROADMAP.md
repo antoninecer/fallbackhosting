@@ -1,5 +1,8 @@
 # Roadmap and acceptance gates
 
+2026-10-16 accepted operator scope: browser-managed incremental migration from existing VPS nodes to home nodes, shared MySQL with separate per-app databases/accounts, app-owned subdomains/root paths, independent passive static mini-sites and optional verified source cleanup. Coolify is an internal adapter; Aplikace must be the app/domain/server/migration dashboard. First real supported two-node demonstration target:2026-10-17, not an implementation claim. docs/WEB-MIGRATION-MVP.md defines acceptance and supersedes conflicting historical workflow/placement assumptions.
+
+
 2026-10-16 update: operator requested an in-app guided Coolify installation instead of manual initial installation. Prior owned containers removed, data retained; FH-0023 implements a scoped wizard/help/account flow and one-shot worker. M03 remains IN_PROGRESS until actual guided deployment, account login and demo deployment gates are evidenced.
 
 FH-0023 follow-up at 05:50 UTC: guide is live and real HTTPS browser/availability/auth/canary checks passed; status TESTING. One bounded trial worker was observed ready, with no permanent system service. Actual install/account validation awaits operator-supplied form details; no completion claimed from mocked tests or an armed worker.

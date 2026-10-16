@@ -18,6 +18,9 @@ STATUSES = {"DONE", "PLANNED", "NEEDS_TEST", "BLOCKED", "IN_PROGRESS", "READY", 
 LABELS = {"BLOCKED_BY_OPERATOR": "Čeká na rozhodnutí operátora","DONE": "Hotovo", "PLANNED": "Plánováno", "NEEDS_TEST": "Čeká na ověření", "BLOCKED": "Čeká na podklady", "IN_PROGRESS": "Rozpracováno", "READY": "Připraveno", "BACKLOG": "Ve frontě", "TESTING": "Ověřování"}
 MILESTONES = ["Základy projektu", "Audit infrastruktury", "Projektový přehled", "Nasazování aplikací", "Domény a HTTPS", "Statické záložní verze", "Standby a návrat do provozu", "Nouzový kontakt", "Testy odolnosti", "Návaznost práce agentů", "První vydání"]
 TASKS = {
+ "FH-0028": "Domény aplikací a přehled směrování",
+ "FH-0029": "Webový přesun aplikací mezi servery",
+ "FH-0030": "Ověření přesunu na druhé VM",
  "FH-0027": "Publikování a náhled záložní verze z administrace",
  "FH-0026": "Veřejná aktivace demo fallbacku a údržby",
  "FH-0025": "První úplný průchod statickou zálohou a přepínáním",
@@ -57,6 +60,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "web_migration_scope_accepted": "Upřesněné zadání: z webu připojit zdrojový i domácí server, přesouvat aplikace postupně včetně jejich databází, dát jim vlastní subdomény a připravit nezávislou statickou zálohu. První skutečný podporovaný průchod je cílem na 17. října; druhý testovací uzel se připravuje, obecná migrace ještě není hotová.",
  "admin_acceptance_reconciled": "Dokončeny tři zastaralé položky administrace a chráněného centra. Přidání/úprava/vypnutí testovacího serveru, mobil/tablet/desktop, přihlášení, soubory, filtrování a skutečný návrat předchozí verze prošly. Osm zbývajících úkolů má upřesněné podmínky dokončení.",
  "publication_live_pass": "V administraci funguje příprava nové záložní verze, chráněný náhled, publikování a návrat zpět. Skutečná vzdálená záloha a obnova, náhled na mobilu/tabletu/desktopu i nezávislost na publikační službě ověřeny. Všech 122 testů prošlo.",
  "demo_order_fix": "Opravená chyba 501 v ukázce objednávky: nefunkční odesílání nahrazuje jasně označený odkaz na ukázkovou stránku. Cesta tam i zpět prošla skutečným prohlížečem.",

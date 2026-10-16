@@ -1,5 +1,8 @@
 # Platform workflow — operator clarification, 2026-10-15
 
+2026-10-16 accepted operator scope: browser-managed incremental migration from existing VPS nodes to home nodes, shared MySQL with separate per-app databases/accounts, app-owned subdomains/root paths, independent passive static mini-sites and optional verified source cleanup. Coolify is an internal adapter; Aplikace must be the app/domain/server/migration dashboard. First real supported two-node demonstration target:2026-10-17, not an implementation claim. docs/WEB-MIGRATION-MVP.md defines acceptance and supersedes conflicting historical workflow/placement assumptions.
+
+
 Status: planned, not implemented. This refines the existing mission; no home Docker, authentication or database changes made.
 
 ## Domain responsibilities
