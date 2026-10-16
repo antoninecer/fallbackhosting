@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T21:05:46Z — FH-0031 new-server wizard implemented locally; actual vasatkova SSH/identity/resources/operator sudo PASS, Docker absent. Registered with SSH/fingerprint PASS and Docker UNKNOWN using private backups/lock/audit. No target runtime initialization or new gateway service yet. See `checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md`.
+
 2026-10-16T20:37:55Z — Operator-approved web-managed incremental Docker/shared-MySQL migration contract recorded, first actual supported two-node acceptance target2026-10-17. FH-0028/FH-0029/FH-0030 added; new VM preparation operator-reported, VPN/server identity/source app still pending. No universal migration or new-domain activation claimed. See `checkpoints/20261016T203755Z-web-migration-scope-accepted.md` and docs/WEB-MIGRATION-MVP.md.
 
 2026-10-16T18:39:35Z — FH-0005/FH-0017/FH-0019 DONE after actual fixture multi-node/live center360/768/1440 and exact app-release rollback/restore. Private state/pool/static unchanged; canaries PASS. FH-0018 retains full configuration recovery gate; eight tasks remain open with explicit outstanding engineering. Protected center catalog refreshed in pinned release411956f; actual public/protected views agree on8 active tasks and latest resume checkpoint. Evidence: `checkpoints/20261016T183935Z-admin-qa-and-task-reconciliation.md`.

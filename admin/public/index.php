@@ -68,6 +68,9 @@ try {
                 setcookie(session_name(),'', ['expires'=>1,'path'=>'/','secure'=>true,'httponly'=>true,'samesite'=>'Strict']);
                 header('Location: /',true,303); exit;
             }
+            if (in_array($action,['onboard-check','onboard-init','onboard-finish'],true)) {
+                require dirname(__DIR__).'/onboarding.php';onboarding_action($_POST,read_json('inventory'));
+            }
             if (in_array($action,['install-plan','install-submit'],true)) {
                 require dirname(__DIR__) . '/install.php';
                 install_action($action, $_POST, read_json('inventory'));
@@ -113,6 +116,10 @@ if (array_key_exists('standby',$_GET)) {
     if (!$loggedIn) { http_response_code(401);exit('Přihlaste se na hlavní stránce administrace.'); }
     require_once dirname(__DIR__).'/standby.php';serve_standby($csrf,$error);
 }
+if (array_key_exists('onboard',$_GET)) {
+    if (!$loggedIn) { http_response_code(401);exit('Přihlaste se.'); }
+    require_once dirname(__DIR__).'/onboarding.php';serve_onboarding($inventory,$csrf,$error);
+}
 if (array_key_exists('install', $_GET)) {
     if (!$loggedIn) { http_response_code(401); exit('Přihlaste se na hlavní stránce administrace.'); }
     require_once dirname(__DIR__) . '/install.php';
@@ -138,9 +145,9 @@ function observation(array $server, string $kind): string {
 <?php else: ?>
 <section class="heading"><p class="eyebrow">INFRASTRUKTURA</p><h1>Jeden veřejný vstup.<br><span>Více aplikačních serverů.</span></h1><p class="muted">Přidejte protějšky, na kterých budou běžet aplikace. Konfigurace je dostupná pouze správci.</p></section>
 <section class="gateway panel"><div><span class="tag">Veřejný VPS</span><h2><?=e($inventory['gateway']['name'])?></h2><p><?=e($inventory['gateway']['url'])?></p></div><div><strong><?=count($inventory['servers'])?> aplikačních serverů</strong><p class="muted">Záložní stránky a projektový přehled zůstávají nezávislé na domácích uzlech.</p></div></section>
-<div class="section-title"><h2>Aplikační servery</h2><a class="button" href="/#server-form">+ Přidat server</a></div>
+<div class="section-title"><h2>Aplikační servery</h2><a class="button" href="/?onboard=1">+ Přidat server</a></div>
 <section class="nodes" aria-label="Seznam serverů"><?php foreach ($inventory['servers'] as $server): ?>
-<article class="panel node"><div class="row"><span class="tag"><?=e(strtoupper($server['runtime']))?> · <?=e(strtoupper($server['platform']))?></span><span class="muted"><?=$server['enabled'] ? 'Zařazený' : 'Pozastavený'?></span></div><h2><?=e($server['name'])?></h2><p class="address"><?=e($server['host'])?>:<?=e($server['ssh_port'])?></p><p class="muted">SSH účet <?=e($server['ssh_user'])?></p><dl><dt>SSH</dt><dd><?=e(observation($server,'ssh'))?></dd><dt>Docker</dt><dd><?=e(observation($server,'docker'))?></dd><dt>Identita serveru</dt><dd><?=e(observation($server,'fingerprint'))?></dd></dl><p class="muted"><?=e($server['description'])?></p><a href="/?edit=<?=rawurlencode($server['id'])?>#server-form">Upravit konfiguraci →</a></article>
+<article class="panel node"><div class="row"><span class="tag"><?=e(strtoupper($server['runtime']))?> · <?=e(strtoupper($server['platform']))?></span><span class="muted"><?=$server['enabled'] ? 'Zařazený' : 'Pozastavený'?></span></div><h2><?=e($server['name'])?></h2><p class="address"><?=e($server['host'])?>:<?=e($server['ssh_port'])?></p><p class="muted">SSH účet <?=e($server['ssh_user'])?></p><dl><dt>SSH</dt><dd><?=e(observation($server,'ssh'))?></dd><dt>Docker</dt><dd><?=e(observation($server,'docker'))?></dd><dt>Identita serveru</dt><dd><?=e(observation($server,'fingerprint'))?></dd></dl><p class="muted"><?=e($server['description'])?></p><a href="/?edit=<?=rawurlencode($server['id'])?>#server-form">Upravit konfiguraci →</a> · <a href="/?onboard=1&amp;node=<?=rawurlencode($server['id'])?>">Prověřit a připravit server</a></article>
 <?php endforeach; ?></section>
 <section class="panel" id="server-form"><p class="eyebrow">KONFIGURACE PROTĚJŠKU</p><h2><?=$editing ? 'Upravit server' : 'Přidat aplikační server'?></h2><p class="muted">Uložení pouze změní evidenci. Nepřipojuje se přes SSH, neinstaluje software a neovládá Docker. Podman a další typy jsou zatím jen konfigurační záznamy.</p>
 <form method="post"><input type="hidden" name="action" value="save-server"><input type="hidden" name="mode" value="<?=$editing ? 'edit' : 'create'?>"><input type="hidden" name="csrf" value="<?=e($csrf)?>"><input type="hidden" name="revision" value="<?=e($inventory['revision'])?>"><div class="fields">

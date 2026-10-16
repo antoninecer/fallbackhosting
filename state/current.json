@@ -3,9 +3,9 @@
   "project": "FallbackHosting",
   "milestone": "M03",
   "phase": "IN_PROGRESS",
-  "task_id": "FH-0029",
+  "task_id": "FH-0031",
   "live_verified_at_utc": "2026-10-16T18:42:23Z",
-  "last_checkpoint": "checkpoints/20261016T203755Z-web-migration-scope-accepted.md",
+  "last_checkpoint": "checkpoints/20261016T210546Z-FH-0031-onboarding-implementation.md",
   "post_reboot_verification": {
     "observed_at_utc": "2026-10-16T18:02:25Z",
     "boot_at_utc": "2026-10-16T17:59:02Z",
@@ -17,8 +17,8 @@
     "authenticated_actions_and_remote_controller": "NOT_RETESTED",
     "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
   },
-  "current_summary": "Accepted browser-only incremental app migration scope recorded, first actual Docker/shared-MySQL/two-node demonstration targeted for2026-10-17. Existing standby proof remains live. Operator preparing second VM; VPN/host identity and source application pending. General migration is not implemented yet.",
-  "next_safe_action": "Implement app dashboard/completed-installer UX and domain/source/target/dependency model while operator enrolls second VM. Verify exact VM identity/access; implement and exercise bounded two-node Docker+MySQL migration with independent static fallback.",
+  "current_summary": "New VM actual pinned SSH and operator sudo verified; registered with Docker UNKNOWN. Explicitly requested web onboarding/init wizard implemented locally; fixture acceptance and isolated service deployment underway, no actual VM initialization yet.",
+  "next_safe_action": "Finish pinned/browser acceptance; activate new onboarding service and PHP wizard, inspect real vasatkova and present explicit initialization confirmation. Then prepare runtime via the wizard and proceed with shared-MySQL migration adapter.",
   "blocking_issue": null,
   "warnings": [
     "Public progress, authenticated inventory and demo maintenance LIVE; scoped browser/mobile tests PASS. Full live activation rollback not exercised. No private credentials or inventory in public export.",
@@ -521,6 +521,10 @@
     {
       "id": "web_migration_scope_accepted",
       "utc": "2026-10-16T20:37:55Z"
+    },
+    {
+      "id": "server_onboarding_started",
+      "utc": "2026-10-16T21:05:46Z"
     }
   ],
   "catalog_path": "state/catalog.json",

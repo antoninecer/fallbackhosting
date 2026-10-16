@@ -15,6 +15,7 @@ SOURCES = {
     'lib.php': 'admin/lib.php',
     'center.php': 'admin/center.php',
     'install.php': 'admin/install.php',
+    'onboarding.php': 'admin/onboarding.php',
     'standby.php': 'admin/standby.php',
     'publication.php': 'admin/publication.php',
     'operations-client.php': 'admin/operations-client.php',

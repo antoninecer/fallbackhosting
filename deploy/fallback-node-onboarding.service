@@ -1,0 +1,36 @@
+[Unit]
+Description=FallbackHosting server inspection and confirmed initialization
+Requires=fallback-node-onboarding.socket
+After=network-online.target fallback-node-onboarding.socket
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fallback-agent
+Group=fallback-agent
+Sockets=fallback-node-onboarding.socket
+WorkingDirectory=/var/lib/fallback-node-onboarding/code
+ExecStart=/usr/bin/python3 -m operations.node_onboarding --policy /var/lib/fallback-node-onboarding/policy.json
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/fallback-node-onboarding/runtime
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+LockPersonality=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+MemoryMax=192M
+CPUQuota=25%
+TasksMax=24
+TimeoutStopSec=720
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

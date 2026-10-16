@@ -1,0 +1,12 @@
+[Unit]
+Description=FallbackHosting private server onboarding socket
+
+[Socket]
+ListenStream=/var/lib/fallback-web/admin/onboarding.sock
+SocketUser=fallback-web
+SocketGroup=fallback-web
+SocketMode=0600
+RemoveOnStop=true
+
+[Install]
+WantedBy=sockets.target
