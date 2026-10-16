@@ -1,5 +1,7 @@
 # Tasks
 
+FH-0026 post-reboot follow-up: 2026-10-16T18:02:25Z read-only startup/HTTPS/content/assets/auth-denial verification PASS; both installed units active and enabled after observed host boot. No new deployment or full acceptance rerun. Evidence: `checkpoints/20261016T180225Z-post-reboot-verified.md`.
+
 Task lifecycle: BACKLOG → READY → IN_PROGRESS → TESTING → DONE; BLOCKED requires reason and next safe step. Legacy PLANNED maps to BACKLOG for tasks only. Milestone statuses remain defined in ROADMAP.md.
 
 <!-- Table generated from state/catalog.json; edit catalog then run python3 scripts/project-data.py sync. -->

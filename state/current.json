@@ -5,7 +5,18 @@
   "phase": "DONE",
   "task_id": "FH-0026",
   "live_verified_at_utc": "2026-10-16T08:40:56Z",
-  "last_checkpoint": "checkpoints/20261016T084241Z-portal-summary-reconciled.md",
+  "last_checkpoint": "checkpoints/20261016T180225Z-post-reboot-verified.md",
+  "post_reboot_verification": {
+    "observed_at_utc": "2026-10-16T18:02:25Z",
+    "boot_at_utc": "2026-10-16T17:59:02Z",
+    "demo_units": "BOTH_ACTIVE_ENABLED_RESULT_SUCCESS",
+    "demo_units_active_since_utc": "2026-10-16T17:59:16Z",
+    "demo_https_content_and_assets": "PASS_ONLINE",
+    "project_https_content_and_assets": "PASS",
+    "anonymous_maintenance": "401",
+    "authenticated_actions_and_remote_controller": "NOT_RETESTED",
+    "evidence": "checkpoints/20261016T180225Z-post-reboot-verified.md"
+  },
   "current_summary": "Public demo, independent local standby and authenticated maintenance LIVE. Actual HTTPS browser360/768/1440, manual/planned maintenance, remote demo+worker outage and stable recovery PASS; full116 tests PASS. Original workloads and protected canaries unchanged.",
   "next_safe_action": "Bounded application-specific export/publication/preview UI with peer authorization and fixed operator-configured sources, reusing backup-before-publication. Further deployment within approved app scope does not require repeating approval. Generic WordPress/controller/database recovery remains open.",
   "blocking_issue": null,
@@ -127,6 +138,10 @@
     "last_full_repository_tests": 116
   },
   "public_events": [
+    {
+      "id": "post_reboot_verified",
+      "utc": "2026-10-16T18:02:25Z"
+    },
     {
       "id": "home_inventory_pass",
       "utc": "2026-10-15T11:36:16Z"

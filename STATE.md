@@ -1,5 +1,7 @@
 # Current project state
 
+2026-10-16T18:02:25Z — Post-reboot read-only verification PASS. Host boot 17:59:02 UTC; fallback-standby-demo socket/service active and enabled, Result=success, active since 17:59:16 UTC. Demo HTTPS content is ONLINE; demo CSS/JPEG and project HTML/CSS/JS return200 with verified TLS. Anonymous maintenance returns401. No runtime/configuration change; authenticated actions, remote Coolify health and outage drills were not repeated. See `checkpoints/20261016T180225Z-post-reboot-verified.md`.
+
 2026-10-16T08:42:41Z — Public overview reconciled with actual deployed demo/maintenance evidence; stale not-operational/local-only claims removed. Eight public tests and actual HTTPS wording checks PASS. See `checkpoints/20261016T084241Z-portal-summary-reconciled.md`.
 
 2026-10-16T08:40:56Z — Public demo and authenticated maintenance are LIVE and actual HTTPS/browser/outage/recovery verified. FH-0026/FH-0025 DONE after evidenced acceptance and commit8930bf2; full116 tests PASS. Final automatic ONLINE/no planned window; auth/inventory/unrelated configs unchanged, protected canaries and three Coolify services healthy. See `checkpoints/20261016T084056Z-FH-0026-public-live-pass.md`. Earlier approval-pending/not-deployed paragraphs below are historical and superseded. Generic exporter and controller/database/VM recovery remain open.

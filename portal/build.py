@@ -56,6 +56,7 @@ BLOCKERS = {
 }
 
 PUBLIC_EVENTS = {
+ "post_reboot_verified": "Po restartu obě služby dema automaticky naběhly. Živé demo, veřejný přehled a jejich statické soubory jsou dostupné přes HTTPS; ovládání údržby vyžaduje přihlášení.",
  "minimum_standby_public_pass": "Veřejné demo a ovládání údržby nasazené a ověřené. Přihlášení, mobil/tablet/desktop, ruční i plánovaná údržba a skutečný výpadek prošly. Statická kopie fungovala i bez řídicí služby; návrat čekal na tři zdravé kontroly. Všech 116 testů prošlo, ostatní weby a původní kontejnery beze změny.",
  "minimum_standby_public_testing": "Demo je veřejně nasazené přes HTTPS a samostatná služba běží s omezenými právy. Probíhají skutečné testy přihlášení, údržby, výpadku a návratu; dokončení ještě nepotvrzeno.",
  "minimum_standby_activation_approved": "Operátor schválil připravené nasazení. Předběžné kontroly prošly; probíhá veřejná aktivace dema, údržby a oddělené služby. Dokončení potvrdí skutečné testy přes HTTPS a zkouška výpadku.",

@@ -1,0 +1,11 @@
+# Post-reboot verification
+
+- Evidence UTC: 2026-10-16T18:02:25Z. Scope: read-only verification following operator reboot and supplied continuation checkpoint; no runtime/configuration changes. Acceptance: observed new boot, both installed demo units active/enabled, actual demo/project HTTPS content and required assets, anonymous maintenance denied.
+- OBSERVED host boot: 2026-10-16T17:59:02Z. Both fallback-standby-demo.socket and fallback-standby-demo.service active/running, enabled, Result=success, active since17:59:16 UTC. No agent restart/reload/enable action performed.
+- OBSERVED verified-TLS GET: demo200, expected live cafe demo content; stylesheet200 text/css and hero200 image/jpeg. Project200 with expected project content, stylesheet200 text/css and JavaScript200 application/javascript. Anonymous /?standby=1 returns401.
+- Initial Git main clean and tracking origin/main without reported divergence; HEAD1c18fea. No remote fetch performed, so current remote tip not independently refreshed.
+- Limits: authenticated maintenance mutations, full outage/recovery drill, independent external vantage, protected reference app and remote Coolify/container health NOT_RETESTED. Earlier broader acceptance remains historical evidence, not a new test result.
+- Tooling: sandbox process creation failed with bwrap loopback Operation not permitted; approved read-only shell calls outside sandbox completed verification. This is not an observed application failure.
+- Dependencies: existing systemd, TLS/Nginx, demo backend and public assets; no installation. Rollback: documentation/source revert and public rebuild only; no operational rollback needed. Canonical state, task follow-up and reviewed public event updated. Final publication/test/commit evidence follows below.
+- Next safe work remains bounded application publication/preview around backup-gated export; no new operational target authorization implied by this verification.
+- Final validation: canonical catalog check PASS; all8 public portal tests PASS in0.438s; public build PASS; git diff --check PASS. New reviewed reboot event fetched over actual project HTTPS and expected text matched. Diff reviewed: only checkpoint, state/task notes and reviewed public event; no secret/private inventory or runtime files. Local commit contains this evidence; no push performed.
